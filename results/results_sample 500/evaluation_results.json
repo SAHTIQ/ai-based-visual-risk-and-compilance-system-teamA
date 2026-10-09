@@ -1,0 +1,66 @@
+{
+  "finance_ridge": {
+    "MAE": 493.69,
+    "RMSE": 717.0,
+    "R2": 0.535
+  },
+  "finance_hgb": {
+    "MAE": 323.82,
+    "RMSE": 449.6,
+    "R2": 0.8172
+  },
+  "finance_xgb": {
+    "MAE": 325.4,
+    "RMSE": 449.09,
+    "R2": 0.8176
+  },
+  "finance_stack": {
+    "MAE": 333.68,
+    "RMSE": 466.68,
+    "R2": 0.803
+  },
+  "study_ridge": {
+    "MAE": 146.85,
+    "RMSE": 186.58,
+    "R2": 0.2485
+  },
+  "study_hgb": {
+    "MAE": 144.22,
+    "RMSE": 182.73,
+    "R2": 0.2791
+  },
+  "study_xgb": {
+    "MAE": 145.32,
+    "RMSE": 184.07,
+    "R2": 0.2685
+  },
+  "study_stack": {
+    "MAE": 144.98,
+    "RMSE": 183.97,
+    "R2": 0.2694
+  },
+  "habit_lr": {
+    "Accuracy": 0.6426,
+    "ROC-AUC": 0.8002,
+    "PR-AUC": 0.2545,
+    "F1_macro": 0.5324
+  },
+  "habit_hgb": {
+    "Accuracy": 0.6434,
+    "ROC-AUC": 0.7938,
+    "PR-AUC": 0.259,
+    "F1_macro": 0.5321
+  },
+  "habit_xgb": {
+    "Accuracy": 0.6411,
+    "ROC-AUC": 0.7937,
+    "PR-AUC": 0.2594,
+    "F1_macro": 0.5315
+  },
+  "habit_stack": {
+    "Accuracy": 0.6376,
+    "ROC-AUC": 0.7977,
+    "PR-AUC": 0.2515,
+    "F1_macro": 0.5291
+  }
+}

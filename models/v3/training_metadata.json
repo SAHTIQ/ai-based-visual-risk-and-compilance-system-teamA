@@ -1,0 +1,15 @@
+{
+  "pipeline": "QUANTA Milestone 2 v3.1",
+  "data_dir": "datasets\\v2",
+  "model_dir": "models\\v3",
+  "training_users": 500,
+  "random_state": 42,
+  "leakage_controls": [
+    "per-user temporal split",
+    "past-only expanding user statistics",
+    "shifted rolling and EWM features",
+    "validation-only threshold selection",
+    "XGBoost early stopping on validation"
+  ],
+  "study_note": "exam_next7d/cycle_phase/days_to_slack/is_slack_week are generator-provided signals. Keep them only if equivalent information is available at production inference time."
+}

@@ -1,0 +1,156 @@
+﻿rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // SECURITY UTILITIES & AUTH GUARDS
+    // ─────────────────────────────────────────────────────────────────────────
+
+    // Check if the request is from an authenticated user
+    function isAuthenticated() {
+      return request.auth != null && request.auth.uid != null;
+    }
+
+    // Check if the authenticated user matches the specified userId
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Check if an existing document belongs to the authenticated user
+    function isDocOwner() {
+      return isAuthenticated() && resource.data.uid == request.auth.uid;
+    }
+
+    // Check if the incoming document specifies the authenticated user as owner
+    function willBeDocOwner() {
+      return isAuthenticated() && request.resource.data.uid == request.auth.uid;
+    }
+
+    // Ensure the uid field cannot be modified / hijacked during updates
+    function uidUnchanged() {
+      return !('uid' in request.resource.data) || request.resource.data.uid == resource.data.uid;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // 1. USER PROFILES & GAMIFICATION
+    // ─────────────────────────────────────────────────────────────────────────
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+      allow create: if isOwner(userId)
+                    && request.resource.data.email is string
+                    && request.resource.data.display_name is string;
+      allow update: if isOwner(userId);
+      allow delete: if isOwner(userId);
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // 2. FINANCIAL DATA (INCOME, EXPENSES, SAVINGS)
+    // ─────────────────────────────────────────────────────────────────────────
+    match /income/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.amount is number
+                    && request.resource.data.amount > 0
+                    && request.resource.data.source is string;
+      allow update: if isDocOwner()
+                    && willBeDocOwner()
+                    && uidUnchanged()
+                    && (!('amount' in request.resource.data) || (request.resource.data.amount is number && request.resource.data.amount > 0));
+    }
+
+    match /expenses/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.amount is number
+                    && request.resource.data.amount > 0
+                    && request.resource.data.category is string;
+      allow update: if isDocOwner()
+                    && willBeDocOwner()
+                    && uidUnchanged()
+                    && (!('amount' in request.resource.data) || (request.resource.data.amount is number && request.resource.data.amount > 0));
+    }
+
+    match /savings/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.account_name is string
+                    && (!('target_amount' in request.resource.data) || request.resource.data.target_amount >= 0)
+                    && (!('current_amount' in request.resource.data) || request.resource.data.current_amount >= 0);
+      allow update: if isDocOwner() && willBeDocOwner() && uidUnchanged();
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // 3. PRODUCTIVITY & ACADEMICS
+    // ─────────────────────────────────────────────────────────────────────────
+    match /study_records/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.duration_minutes is number
+                    && request.resource.data.duration_minutes > 0
+                    && request.resource.data.subject is string;
+      allow update: if isDocOwner()
+                    && willBeDocOwner()
+                    && uidUnchanged()
+                    && (!('duration_minutes' in request.resource.data) || request.resource.data.duration_minutes > 0);
+    }
+
+    match /academics/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.course_name is string;
+      allow update: if isDocOwner() && willBeDocOwner() && uidUnchanged();
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // 4. HABITS, FITNESS & GOALS
+    // ─────────────────────────────────────────────────────────────────────────
+    match /habits/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.name is string
+                    && (!('target_days_per_week' in request.resource.data) 
+                        || (request.resource.data.target_days_per_week >= 1 && request.resource.data.target_days_per_week <= 7));
+      allow update: if isDocOwner() && willBeDocOwner() && uidUnchanged();
+    }
+
+    match /fitness_records/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.activity_type is string
+                    && request.resource.data.duration_minutes is number
+                    && request.resource.data.duration_minutes > 0;
+      allow update: if isDocOwner()
+                    && willBeDocOwner()
+                    && uidUnchanged()
+                    && (!('duration_minutes' in request.resource.data) || request.resource.data.duration_minutes > 0);
+    }
+
+    match /goals/{docId} {
+      allow read, delete: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.title is string
+                    && (!('progress_percentage' in request.resource.data) 
+                        || (request.resource.data.progress_percentage >= 0 && request.resource.data.progress_percentage <= 100));
+      allow update: if isDocOwner() && willBeDocOwner() && uidUnchanged();
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // 5. ACTIVITY HISTORY (AUDIT TRAIL — APPEND ONLY, IMMUTABLE)
+    // ─────────────────────────────────────────────────────────────────────────
+    match /activity_history/{docId} {
+      allow read: if isDocOwner();
+      allow create: if willBeDocOwner()
+                    && request.resource.data.action is string
+                    && request.resource.data.entity_type is string;
+      // Activity history is an immutable audit log — modifications & deletions denied
+      allow update, delete: if false;
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // 6. DEFAULT DENY
+    // ─────────────────────────────────────────────────────────────────────────
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

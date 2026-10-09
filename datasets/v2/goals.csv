@@ -1,0 +1,2066 @@
+user_id,title,description,category,target_date,status,priority,progress_percentage
+U0001,Drink 2L Water,Goal: drink 2l water,Health,2025-04-02,In Progress,Low,43
+U0001,Read 12 Books,Goal: read 12 books,Personal,2024-10-04,In Progress,Low,47
+U0001,Reduce Screen Time,Goal: reduce screen time,Personal,2025-02-20,Completed,High,100
+U0001,Save for Vacation,Goal: save for vacation,Financial,2024-08-16,Not Started,Medium,0
+U0002,Pay off Loan,Goal: pay off loan,Financial,2025-10-08,Completed,Medium,100
+U0002,Complete Course,Goal: complete course,Academic,2024-11-15,In Progress,Medium,41
+U0002,Improve Flexibility,Goal: improve flexibility,Fitness,2025-08-12,In Progress,Low,45
+U0002,Complete Course,Goal: complete course,Academic,2024-11-27,Abandoned,Medium,32
+U0002,Complete Course,Goal: complete course,Academic,2025-06-10,Abandoned,Medium,37
+U0002,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-25,Completed,Low,100
+U0002,Save Emergency Fund,Goal: save emergency fund,Financial,2024-09-26,In Progress,Medium,62
+U0002,Learn Cooking,Goal: learn cooking,Personal,2025-06-01,Completed,Medium,100
+U0003,Switch Domain,Goal: switch domain,Career,2024-04-26,Not Started,Medium,0
+U0003,Build Portfolio,Goal: build portfolio,Career,2025-05-07,Abandoned,Low,4
+U0003,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-10-04,Abandoned,High,4
+U0003,Build Portfolio,Goal: build portfolio,Career,2025-02-08,Completed,Low,100
+U0003,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-14,Abandoned,Medium,25
+U0003,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-24,In Progress,Medium,90
+U0004,Learn New Skill,Goal: learn new skill,Academic,2025-05-23,In Progress,High,35
+U0004,Regular Health Check-up,Goal: regular health check-up,Health,2025-02-19,In Progress,Medium,48
+U0004,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-02-18,In Progress,Low,68
+U0004,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-04-09,Completed,Low,100
+U0004,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-10-26,Abandoned,Low,20
+U0005,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-05-15,Not Started,High,0
+U0006,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-06-17,Not Started,High,0
+U0006,Finish Certification,Goal: finish certification,Academic,2025-06-06,Not Started,Low,0
+U0006,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-10-11,Completed,Medium,100
+U0006,Drink 2L Water,Goal: drink 2l water,Health,2025-02-14,Not Started,High,0
+U0007,Switch Domain,Goal: switch domain,Career,2024-09-14,Completed,Medium,100
+U0007,Switch Domain,Goal: switch domain,Career,2025-03-18,Abandoned,Medium,26
+U0007,Complete Course,Goal: complete course,Academic,2024-03-11,Abandoned,Low,36
+U0007,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-05,In Progress,High,30
+U0008,Save Emergency Fund,Goal: save emergency fund,Financial,2024-10-01,Abandoned,Low,36
+U0008,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-22,In Progress,High,59
+U0008,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-09-20,In Progress,Medium,75
+U0009,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-03,Abandoned,Medium,40
+U0009,Pay off Loan,Goal: pay off loan,Financial,2025-06-12,In Progress,High,80
+U0009,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-27,Completed,Medium,100
+U0009,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-26,In Progress,Medium,56
+U0009,Build Portfolio,Goal: build portfolio,Career,2024-12-04,Completed,Low,100
+U0010,Read 12 Books,Goal: read 12 books,Personal,2024-11-30,In Progress,Medium,50
+U0010,Finish Certification,Goal: finish certification,Academic,2025-07-19,Completed,Low,100
+U0010,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-08,Completed,High,100
+U0010,Meditate Daily,Goal: meditate daily,Personal,2024-10-07,Completed,Medium,100
+U0011,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-05-15,Not Started,High,0
+U0011,Complete Course,Goal: complete course,Academic,2025-09-18,In Progress,High,30
+U0011,Network 10 Professionals,Goal: network 10 professionals,Career,2024-07-13,Completed,Low,100
+U0012,Read 12 Books,Goal: read 12 books,Personal,2024-05-30,Completed,Medium,100
+U0012,Save for Vacation,Goal: save for vacation,Financial,2024-11-28,Completed,Low,100
+U0012,Network 10 Professionals,Goal: network 10 professionals,Career,2024-08-30,In Progress,High,58
+U0012,Regular Health Check-up,Goal: regular health check-up,Health,2024-04-23,Completed,Low,100
+U0012,Get Promoted,Goal: get promoted,Career,2024-12-27,In Progress,Medium,80
+U0013,Switch Domain,Goal: switch domain,Career,2025-01-03,Completed,Low,100
+U0013,Lose 5kg,Goal: lose 5kg,Fitness,2024-09-27,Completed,Low,100
+U0013,Run 5km,Goal: run 5km,Fitness,2024-10-14,Abandoned,High,22
+U0013,Save Emergency Fund,Goal: save emergency fund,Financial,2025-06-27,Completed,High,100
+U0013,Learn Cooking,Goal: learn cooking,Personal,2024-07-09,In Progress,Low,49
+U0013,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-04-16,Completed,Medium,100
+U0014,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-08,Not Started,Medium,0
+U0014,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-11-21,Completed,Medium,100
+U0014,Save for Vacation,Goal: save for vacation,Financial,2024-04-20,Abandoned,Medium,22
+U0014,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-02-14,Not Started,High,0
+U0015,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-18,Not Started,High,0
+U0015,Quit Junk Food,Goal: quit junk food,Health,2025-03-28,Not Started,Medium,0
+U0016,Learn New Skill,Goal: learn new skill,Academic,2024-10-25,Not Started,High,0
+U0016,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-12-21,Abandoned,Low,5
+U0016,Drink 2L Water,Goal: drink 2l water,Health,2025-02-12,Abandoned,Medium,22
+U0017,Meditate Daily,Goal: meditate daily,Personal,2024-12-02,Completed,High,100
+U0017,Quit Junk Food,Goal: quit junk food,Health,2025-01-13,Completed,High,100
+U0017,Learn Cooking,Goal: learn cooking,Personal,2024-10-21,In Progress,Low,44
+U0017,Switch Domain,Goal: switch domain,Career,2025-09-05,Completed,High,100
+U0017,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-06-01,Not Started,High,0
+U0018,Switch Domain,Goal: switch domain,Career,2025-04-23,Completed,High,100
+U0019,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-03-29,Completed,Low,100
+U0019,Save Emergency Fund,Goal: save emergency fund,Financial,2024-07-12,In Progress,Medium,32
+U0020,Network 10 Professionals,Goal: network 10 professionals,Career,2024-03-03,In Progress,High,30
+U0020,Reduce Screen Time,Goal: reduce screen time,Personal,2025-05-08,In Progress,Low,70
+U0020,Finish Certification,Goal: finish certification,Academic,2025-06-12,In Progress,Low,78
+U0020,Lose 5kg,Goal: lose 5kg,Fitness,2024-07-19,Not Started,Low,0
+U0021,Learn Cooking,Goal: learn cooking,Personal,2025-10-11,Completed,Medium,100
+U0021,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-04-20,Abandoned,Medium,0
+U0021,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-05,Not Started,Low,0
+U0021,Learn Cooking,Goal: learn cooking,Personal,2025-10-20,Completed,High,100
+U0021,Switch Domain,Goal: switch domain,Career,2025-08-22,Completed,Low,100
+U0021,Reduce Screen Time,Goal: reduce screen time,Personal,2025-03-23,In Progress,High,59
+U0021,Pay off Loan,Goal: pay off loan,Financial,2025-05-06,Not Started,Medium,0
+U0022,Run 5km,Goal: run 5km,Fitness,2024-10-03,Not Started,Medium,0
+U0022,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-08-08,Not Started,High,0
+U0022,Save for Vacation,Goal: save for vacation,Financial,2025-03-29,Not Started,Low,0
+U0023,Save Emergency Fund,Goal: save emergency fund,Financial,2024-07-06,Completed,Low,100
+U0023,Run 5km,Goal: run 5km,Fitness,2025-01-09,Abandoned,Medium,24
+U0023,Pay off Loan,Goal: pay off loan,Financial,2025-01-02,Abandoned,High,18
+U0023,Quit Junk Food,Goal: quit junk food,Health,2024-04-22,Completed,Medium,100
+U0023,Regular Health Check-up,Goal: regular health check-up,Health,2024-12-14,Completed,Low,100
+U0024,Switch Domain,Goal: switch domain,Career,2024-08-22,In Progress,Medium,35
+U0024,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-10-31,In Progress,High,43
+U0024,Finish Certification,Goal: finish certification,Academic,2025-04-27,Not Started,Low,0
+U0024,Quit Junk Food,Goal: quit junk food,Health,2025-06-02,Completed,Low,100
+U0024,Meditate Daily,Goal: meditate daily,Personal,2025-07-25,Not Started,Low,0
+U0025,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-08-10,Not Started,Low,0
+U0026,Run 5km,Goal: run 5km,Fitness,2025-09-02,Completed,Low,100
+U0026,Drink 2L Water,Goal: drink 2l water,Health,2025-03-01,Completed,Medium,100
+U0026,Switch Domain,Goal: switch domain,Career,2024-11-17,Completed,High,100
+U0026,Reduce Screen Time,Goal: reduce screen time,Personal,2024-07-22,Not Started,High,0
+U0026,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-07-11,Not Started,High,0
+U0026,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-20,In Progress,Medium,26
+U0027,Quit Junk Food,Goal: quit junk food,Health,2024-09-15,Not Started,Medium,0
+U0027,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-07-26,Not Started,Medium,0
+U0027,Learn Cooking,Goal: learn cooking,Personal,2024-07-11,Not Started,Medium,0
+U0028,Build Portfolio,Goal: build portfolio,Career,2024-06-14,Not Started,High,0
+U0028,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-16,Not Started,Low,0
+U0029,Build Portfolio,Goal: build portfolio,Career,2025-03-29,Completed,Medium,100
+U0029,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-19,In Progress,Low,60
+U0029,Meditate Daily,Goal: meditate daily,Personal,2024-12-26,In Progress,Low,84
+U0029,Read 12 Books,Goal: read 12 books,Personal,2025-09-28,Completed,High,100
+U0029,Learn New Skill,Goal: learn new skill,Academic,2024-10-10,In Progress,Medium,42
+U0029,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-28,In Progress,Medium,66
+U0029,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-11-26,Completed,Low,100
+U0029,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-04-20,Completed,Low,100
+U0030,Regular Health Check-up,Goal: regular health check-up,Health,2024-09-03,Completed,Medium,100
+U0030,Improve Flexibility,Goal: improve flexibility,Fitness,2024-11-19,Abandoned,Low,34
+U0030,Save Emergency Fund,Goal: save emergency fund,Financial,2024-11-15,In Progress,High,50
+U0030,Buy a Laptop,Goal: buy a laptop,Financial,2025-07-08,Completed,High,100
+U0030,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-28,Not Started,Medium,0
+U0030,Get Promoted,Goal: get promoted,Career,2025-09-03,In Progress,High,31
+U0031,Quit Junk Food,Goal: quit junk food,Health,2024-06-25,Completed,High,100
+U0031,Buy a Laptop,Goal: buy a laptop,Financial,2024-11-06,Completed,Medium,100
+U0031,Regular Health Check-up,Goal: regular health check-up,Health,2025-01-04,Abandoned,Medium,31
+U0031,Learn New Skill,Goal: learn new skill,Academic,2025-03-12,Abandoned,Low,7
+U0031,Read 12 Books,Goal: read 12 books,Personal,2025-03-28,In Progress,High,30
+U0031,Learn Cooking,Goal: learn cooking,Personal,2024-08-28,Completed,Low,100
+U0032,Build Portfolio,Goal: build portfolio,Career,2024-11-06,In Progress,Medium,77
+U0032,Save for Vacation,Goal: save for vacation,Financial,2025-01-19,Not Started,Medium,0
+U0032,Drink 2L Water,Goal: drink 2l water,Health,2025-02-28,In Progress,Medium,86
+U0033,Build Portfolio,Goal: build portfolio,Career,2024-05-05,Completed,Low,100
+U0033,Run 5km,Goal: run 5km,Fitness,2024-06-05,Completed,Medium,100
+U0033,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-06,Completed,High,100
+U0033,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-08-07,Completed,Low,100
+U0033,Get Promoted,Goal: get promoted,Career,2024-04-23,Completed,Medium,100
+U0033,Network 10 Professionals,Goal: network 10 professionals,Career,2025-07-31,Not Started,Low,0
+U0034,Save for Vacation,Goal: save for vacation,Financial,2024-08-21,Completed,Low,100
+U0034,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-21,In Progress,High,83
+U0034,Pay off Loan,Goal: pay off loan,Financial,2025-07-05,Completed,Medium,100
+U0034,Get Promoted,Goal: get promoted,Career,2025-01-13,In Progress,Medium,33
+U0034,Network 10 Professionals,Goal: network 10 professionals,Career,2024-07-08,Completed,High,100
+U0034,Quit Junk Food,Goal: quit junk food,Health,2024-11-26,In Progress,Low,34
+U0034,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-04-22,Completed,High,100
+U0035,Learn Cooking,Goal: learn cooking,Personal,2025-06-28,In Progress,Medium,28
+U0035,Meditate Daily,Goal: meditate daily,Personal,2025-05-01,Abandoned,Low,17
+U0035,Get Promoted,Goal: get promoted,Career,2024-08-07,Completed,High,100
+U0035,Save Emergency Fund,Goal: save emergency fund,Financial,2025-06-14,Not Started,Low,0
+U0035,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-04-04,In Progress,Medium,60
+U0036,Quit Junk Food,Goal: quit junk food,Health,2025-03-03,Not Started,Medium,0
+U0036,Network 10 Professionals,Goal: network 10 professionals,Career,2025-04-29,Completed,Medium,100
+U0036,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-15,In Progress,Medium,64
+U0036,Quit Junk Food,Goal: quit junk food,Health,2024-02-14,Not Started,Medium,0
+U0036,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-12-27,Completed,Medium,100
+U0036,Switch Domain,Goal: switch domain,Career,2024-12-03,Abandoned,Medium,2
+U0037,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-06-20,Not Started,High,0
+U0037,Finish Certification,Goal: finish certification,Academic,2024-10-13,In Progress,Medium,65
+U0037,Build Portfolio,Goal: build portfolio,Career,2024-10-16,Abandoned,Low,18
+U0037,Learn Cooking,Goal: learn cooking,Personal,2025-04-25,Abandoned,Low,0
+U0038,Meditate Daily,Goal: meditate daily,Personal,2024-11-05,Not Started,Low,0
+U0038,Drink 2L Water,Goal: drink 2l water,Health,2025-05-07,Completed,Medium,100
+U0038,Save for Vacation,Goal: save for vacation,Financial,2025-02-19,Abandoned,Low,8
+U0038,Complete Course,Goal: complete course,Academic,2025-05-16,Completed,High,100
+U0038,Complete Course,Goal: complete course,Academic,2025-02-26,Not Started,Medium,0
+U0038,Read 12 Books,Goal: read 12 books,Personal,2024-04-20,Completed,High,100
+U0039,Buy a Laptop,Goal: buy a laptop,Financial,2025-12-04,Completed,Low,100
+U0039,Get Promoted,Goal: get promoted,Career,2025-04-21,Abandoned,Low,6
+U0039,Finish Certification,Goal: finish certification,Academic,2025-02-14,Completed,Low,100
+U0039,Finish Certification,Goal: finish certification,Academic,2025-12-14,Abandoned,High,8
+U0040,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-02-26,In Progress,Medium,25
+U0040,Complete Course,Goal: complete course,Academic,2024-10-02,Not Started,Low,0
+U0041,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-20,In Progress,Medium,56
+U0041,Lose 5kg,Goal: lose 5kg,Fitness,2024-05-14,Not Started,Low,0
+U0041,Read 12 Books,Goal: read 12 books,Personal,2024-07-27,Not Started,Medium,0
+U0042,Network 10 Professionals,Goal: network 10 professionals,Career,2025-05-06,In Progress,Medium,26
+U0043,Improve Flexibility,Goal: improve flexibility,Fitness,2025-04-19,Completed,Low,100
+U0043,Meditate Daily,Goal: meditate daily,Personal,2025-08-15,Abandoned,Medium,19
+U0043,Pay off Loan,Goal: pay off loan,Financial,2024-11-24,Completed,High,100
+U0043,Build Portfolio,Goal: build portfolio,Career,2025-10-14,Completed,High,100
+U0043,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-05-01,Completed,Medium,100
+U0044,Save Emergency Fund,Goal: save emergency fund,Financial,2024-06-04,In Progress,Low,31
+U0044,Run 5km,Goal: run 5km,Fitness,2024-08-27,Completed,High,100
+U0044,Improve Flexibility,Goal: improve flexibility,Fitness,2024-08-22,Completed,Medium,100
+U0044,Improve Flexibility,Goal: improve flexibility,Fitness,2025-03-08,Completed,High,100
+U0044,Quit Junk Food,Goal: quit junk food,Health,2024-11-24,Completed,Low,100
+U0045,Learn Cooking,Goal: learn cooking,Personal,2024-12-14,In Progress,Medium,67
+U0045,Drink 2L Water,Goal: drink 2l water,Health,2025-01-19,In Progress,Low,44
+U0046,Finish Certification,Goal: finish certification,Academic,2025-06-19,Not Started,High,0
+U0046,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-02,In Progress,Low,69
+U0046,Finish Certification,Goal: finish certification,Academic,2024-11-28,Completed,Low,100
+U0046,Learn New Skill,Goal: learn new skill,Academic,2025-05-27,In Progress,Low,82
+U0046,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-22,Not Started,High,0
+U0046,Save Emergency Fund,Goal: save emergency fund,Financial,2024-07-01,Abandoned,Low,22
+U0047,Improve Flexibility,Goal: improve flexibility,Fitness,2025-05-03,Completed,Low,100
+U0047,Drink 2L Water,Goal: drink 2l water,Health,2024-11-15,Not Started,High,0
+U0047,Switch Domain,Goal: switch domain,Career,2024-12-01,Not Started,Low,0
+U0047,Complete Course,Goal: complete course,Academic,2024-10-18,In Progress,High,47
+U0048,Finish Certification,Goal: finish certification,Academic,2025-02-20,Completed,Low,100
+U0049,Learn Cooking,Goal: learn cooking,Personal,2025-08-09,Not Started,Medium,0
+U0049,Save Emergency Fund,Goal: save emergency fund,Financial,2024-11-14,Not Started,Low,0
+U0049,Complete Course,Goal: complete course,Academic,2024-11-19,Not Started,Low,0
+U0050,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-11,Not Started,Low,0
+U0051,Complete Course,Goal: complete course,Academic,2025-05-18,Completed,Medium,100
+U0051,Lose 5kg,Goal: lose 5kg,Fitness,2025-05-02,Abandoned,Low,16
+U0051,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-18,Abandoned,High,5
+U0051,Run 5km,Goal: run 5km,Fitness,2024-10-31,Completed,Low,100
+U0051,Run 5km,Goal: run 5km,Fitness,2024-12-27,Abandoned,Low,4
+U0051,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-03-22,Completed,High,100
+U0052,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-03-06,Completed,Medium,100
+U0052,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-10-03,Abandoned,High,32
+U0052,Save for Vacation,Goal: save for vacation,Financial,2025-06-10,Not Started,Low,0
+U0053,Learn New Skill,Goal: learn new skill,Academic,2024-12-06,Completed,Medium,100
+U0053,Regular Health Check-up,Goal: regular health check-up,Health,2025-10-05,Completed,High,100
+U0053,Drink 2L Water,Goal: drink 2l water,Health,2025-08-16,Completed,Medium,100
+U0053,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-07-20,Completed,High,100
+U0053,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-10-01,Abandoned,High,0
+U0053,Run 5km,Goal: run 5km,Fitness,2025-04-30,Completed,High,100
+U0054,Switch Domain,Goal: switch domain,Career,2024-10-09,Completed,Medium,100
+U0054,Meditate Daily,Goal: meditate daily,Personal,2025-04-13,In Progress,Medium,51
+U0054,Buy a Laptop,Goal: buy a laptop,Financial,2024-08-06,Completed,Medium,100
+U0054,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-08,In Progress,High,57
+U0054,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-04-15,Not Started,Low,0
+U0055,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-05,In Progress,Medium,75
+U0055,Save for Vacation,Goal: save for vacation,Financial,2024-05-11,Not Started,Low,0
+U0055,Finish Certification,Goal: finish certification,Academic,2024-11-23,Completed,Low,100
+U0055,Network 10 Professionals,Goal: network 10 professionals,Career,2024-08-16,Completed,Medium,100
+U0056,Improve Flexibility,Goal: improve flexibility,Fitness,2024-11-28,Completed,Low,100
+U0056,Learn Cooking,Goal: learn cooking,Personal,2025-07-12,Abandoned,Low,19
+U0056,Run 5km,Goal: run 5km,Fitness,2025-04-26,Completed,Medium,100
+U0056,Regular Health Check-up,Goal: regular health check-up,Health,2025-11-21,Completed,High,100
+U0056,Complete Course,Goal: complete course,Academic,2024-12-16,Abandoned,High,36
+U0056,Drink 2L Water,Goal: drink 2l water,Health,2024-10-11,Abandoned,Medium,7
+U0056,Drink 2L Water,Goal: drink 2l water,Health,2025-01-11,Completed,Medium,100
+U0057,Build Portfolio,Goal: build portfolio,Career,2025-06-30,Completed,Low,100
+U0057,Quit Junk Food,Goal: quit junk food,Health,2024-07-12,Not Started,Low,0
+U0057,Learn Cooking,Goal: learn cooking,Personal,2024-12-26,Abandoned,Medium,20
+U0058,Learn New Skill,Goal: learn new skill,Academic,2024-11-15,Not Started,High,0
+U0058,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-06-28,Not Started,High,0
+U0058,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-04-09,Not Started,Low,0
+U0058,Build Portfolio,Goal: build portfolio,Career,2025-06-11,Not Started,Low,0
+U0059,Complete Course,Goal: complete course,Academic,2025-05-03,In Progress,Medium,59
+U0059,Complete Course,Goal: complete course,Academic,2025-06-08,Completed,High,100
+U0059,Complete Course,Goal: complete course,Academic,2024-12-22,Completed,High,100
+U0060,Pay off Loan,Goal: pay off loan,Financial,2024-06-26,In Progress,High,31
+U0060,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-28,Not Started,High,0
+U0060,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-14,Not Started,High,0
+U0060,Improve Flexibility,Goal: improve flexibility,Fitness,2024-06-03,Not Started,Low,0
+U0061,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-19,Completed,Low,100
+U0061,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-25,Completed,Medium,100
+U0061,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-18,In Progress,Medium,38
+U0061,Save for Vacation,Goal: save for vacation,Financial,2025-04-08,Not Started,High,0
+U0061,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-11,Abandoned,Medium,22
+U0062,Buy a Laptop,Goal: buy a laptop,Financial,2024-12-30,In Progress,Medium,70
+U0062,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-24,Not Started,Medium,0
+U0062,Learn New Skill,Goal: learn new skill,Academic,2025-04-07,Abandoned,Low,26
+U0063,Complete Course,Goal: complete course,Academic,2024-10-25,Completed,High,100
+U0063,Quit Junk Food,Goal: quit junk food,Health,2024-08-10,Completed,High,100
+U0063,Learn Cooking,Goal: learn cooking,Personal,2025-01-21,Abandoned,High,33
+U0063,Learn Cooking,Goal: learn cooking,Personal,2024-04-16,Completed,Medium,100
+U0064,Regular Health Check-up,Goal: regular health check-up,Health,2024-11-11,In Progress,Medium,77
+U0064,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-12,Completed,High,100
+U0064,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-03,Not Started,High,0
+U0065,Run 5km,Goal: run 5km,Fitness,2024-08-04,Not Started,Medium,0
+U0065,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-08-18,Completed,Medium,100
+U0065,Build Portfolio,Goal: build portfolio,Career,2024-06-18,Not Started,Medium,0
+U0066,Run 5km,Goal: run 5km,Fitness,2024-04-19,Not Started,Low,0
+U0067,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-24,Abandoned,Medium,17
+U0067,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-10-26,Not Started,Low,0
+U0067,Read 12 Books,Goal: read 12 books,Personal,2024-12-24,Completed,Low,100
+U0067,Get Promoted,Goal: get promoted,Career,2024-12-08,Completed,Low,100
+U0068,Learn Cooking,Goal: learn cooking,Personal,2025-05-15,Not Started,High,0
+U0068,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-09-25,Completed,Medium,100
+U0068,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-11-26,Completed,High,100
+U0068,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-08-21,Completed,High,100
+U0069,Build Portfolio,Goal: build portfolio,Career,2024-12-03,Completed,High,100
+U0069,Learn Cooking,Goal: learn cooking,Personal,2024-06-28,Not Started,High,0
+U0069,Build Portfolio,Goal: build portfolio,Career,2025-03-16,In Progress,Medium,58
+U0069,Pay off Loan,Goal: pay off loan,Financial,2025-09-14,Abandoned,High,2
+U0069,Drink 2L Water,Goal: drink 2l water,Health,2024-09-25,In Progress,Low,89
+U0070,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-30,In Progress,Medium,68
+U0070,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-09,Abandoned,Medium,16
+U0070,Quit Junk Food,Goal: quit junk food,Health,2024-12-11,In Progress,Low,77
+U0070,Quit Junk Food,Goal: quit junk food,Health,2025-06-04,Abandoned,Medium,36
+U0070,Learn New Skill,Goal: learn new skill,Academic,2025-04-29,Completed,Low,100
+U0070,Build Portfolio,Goal: build portfolio,Career,2025-02-16,Not Started,Low,0
+U0070,Get Promoted,Goal: get promoted,Career,2025-02-28,Completed,Low,100
+U0070,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-07-08,In Progress,High,32
+U0071,Get Promoted,Goal: get promoted,Career,2024-12-01,Not Started,Medium,0
+U0071,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-16,Completed,Medium,100
+U0071,Build Portfolio,Goal: build portfolio,Career,2025-01-27,Not Started,Low,0
+U0071,Learn New Skill,Goal: learn new skill,Academic,2024-09-03,Not Started,High,0
+U0071,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-02,In Progress,Medium,83
+U0071,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-11,Completed,Medium,100
+U0072,Complete Course,Goal: complete course,Academic,2024-11-19,Completed,Medium,100
+U0072,Finish Certification,Goal: finish certification,Academic,2024-12-03,In Progress,High,22
+U0073,Buy a Laptop,Goal: buy a laptop,Financial,2024-08-16,In Progress,Low,23
+U0073,Complete Course,Goal: complete course,Academic,2024-09-23,Completed,High,100
+U0073,Regular Health Check-up,Goal: regular health check-up,Health,2024-08-30,In Progress,Medium,68
+U0073,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-04,Completed,Medium,100
+U0074,Quit Junk Food,Goal: quit junk food,Health,2025-06-26,Not Started,High,0
+U0074,Read 12 Books,Goal: read 12 books,Personal,2024-09-26,Not Started,High,0
+U0074,Buy a Laptop,Goal: buy a laptop,Financial,2024-05-07,Completed,Low,100
+U0074,Learn Cooking,Goal: learn cooking,Personal,2025-07-07,In Progress,High,57
+U0075,Buy a Laptop,Goal: buy a laptop,Financial,2024-06-17,Abandoned,Low,15
+U0075,Meditate Daily,Goal: meditate daily,Personal,2024-05-06,Abandoned,Low,37
+U0075,Learn Cooking,Goal: learn cooking,Personal,2025-02-08,Not Started,Medium,0
+U0075,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-03-26,Abandoned,Low,3
+U0075,Meditate Daily,Goal: meditate daily,Personal,2025-02-10,Abandoned,Medium,5
+U0075,Run 5km,Goal: run 5km,Fitness,2025-10-05,Not Started,High,0
+U0076,Finish Certification,Goal: finish certification,Academic,2024-12-06,Abandoned,Medium,27
+U0076,Save for Vacation,Goal: save for vacation,Financial,2025-06-18,Completed,Low,100
+U0076,Read 12 Books,Goal: read 12 books,Personal,2024-11-08,Completed,High,100
+U0077,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-10,Not Started,High,0
+U0077,Finish Certification,Goal: finish certification,Academic,2024-07-19,Not Started,Medium,0
+U0077,Improve Flexibility,Goal: improve flexibility,Fitness,2025-04-04,Abandoned,High,21
+U0077,Reduce Screen Time,Goal: reduce screen time,Personal,2024-10-12,Completed,Medium,100
+U0077,Read 12 Books,Goal: read 12 books,Personal,2024-12-10,Not Started,Low,0
+U0077,Drink 2L Water,Goal: drink 2l water,Health,2024-08-17,Abandoned,Medium,18
+U0078,Meditate Daily,Goal: meditate daily,Personal,2024-08-31,Completed,Low,100
+U0078,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-06,Completed,Low,100
+U0078,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-07-11,Abandoned,High,27
+U0078,Read 12 Books,Goal: read 12 books,Personal,2025-03-21,Completed,Low,100
+U0078,Quit Junk Food,Goal: quit junk food,Health,2024-08-14,Abandoned,Low,25
+U0078,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-28,Completed,Medium,100
+U0079,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-09-17,In Progress,Low,83
+U0079,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-13,Not Started,High,0
+U0079,Switch Domain,Goal: switch domain,Career,2024-12-01,Not Started,Medium,0
+U0080,Regular Health Check-up,Goal: regular health check-up,Health,2025-02-02,Not Started,Low,0
+U0080,Finish Certification,Goal: finish certification,Academic,2025-01-23,Not Started,Medium,0
+U0081,Learn New Skill,Goal: learn new skill,Academic,2024-12-09,Not Started,Medium,0
+U0081,Lose 5kg,Goal: lose 5kg,Fitness,2025-05-12,In Progress,High,24
+U0081,Run 5km,Goal: run 5km,Fitness,2024-09-09,Completed,Low,100
+U0081,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-06-20,In Progress,High,84
+U0081,Learn Cooking,Goal: learn cooking,Personal,2024-05-29,In Progress,High,67
+U0082,Build Portfolio,Goal: build portfolio,Career,2025-02-13,Completed,Low,100
+U0082,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-10-06,Completed,High,100
+U0082,Pay off Loan,Goal: pay off loan,Financial,2024-09-19,Not Started,Low,0
+U0082,Get Promoted,Goal: get promoted,Career,2024-12-08,Not Started,High,0
+U0082,Learn Cooking,Goal: learn cooking,Personal,2025-05-30,Abandoned,Low,3
+U0083,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-29,Completed,High,100
+U0083,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-04-19,In Progress,Low,78
+U0084,Complete Course,Goal: complete course,Academic,2025-09-13,In Progress,Medium,49
+U0084,Learn New Skill,Goal: learn new skill,Academic,2024-11-13,Completed,Medium,100
+U0084,Switch Domain,Goal: switch domain,Career,2025-04-01,Completed,Low,100
+U0084,Finish Certification,Goal: finish certification,Academic,2024-06-24,Not Started,Medium,0
+U0085,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-10,In Progress,Low,51
+U0085,Complete Course,Goal: complete course,Academic,2025-11-12,Abandoned,Low,3
+U0085,Quit Junk Food,Goal: quit junk food,Health,2024-07-22,Abandoned,Medium,31
+U0085,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-01,Completed,High,100
+U0085,Save for Vacation,Goal: save for vacation,Financial,2025-10-26,Not Started,Low,0
+U0086,Build Portfolio,Goal: build portfolio,Career,2025-03-04,Abandoned,Low,16
+U0086,Improve Flexibility,Goal: improve flexibility,Fitness,2024-11-14,Completed,Low,100
+U0086,Save for Vacation,Goal: save for vacation,Financial,2024-06-11,Completed,High,100
+U0087,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-05,Abandoned,Medium,13
+U0087,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-03-15,Not Started,High,0
+U0087,Run 5km,Goal: run 5km,Fitness,2024-11-04,Not Started,High,0
+U0087,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-11,Abandoned,Medium,10
+U0087,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-28,Completed,Low,100
+U0088,Get Promoted,Goal: get promoted,Career,2024-08-20,Not Started,High,0
+U0088,Switch Domain,Goal: switch domain,Career,2025-01-01,In Progress,High,59
+U0088,Save for Vacation,Goal: save for vacation,Financial,2025-04-05,Abandoned,High,6
+U0088,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-26,Completed,High,100
+U0088,Save Emergency Fund,Goal: save emergency fund,Financial,2025-08-24,In Progress,High,88
+U0088,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-02-22,Completed,Medium,100
+U0089,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-18,Completed,High,100
+U0089,Learn Cooking,Goal: learn cooking,Personal,2025-06-02,In Progress,Low,76
+U0089,Quit Junk Food,Goal: quit junk food,Health,2024-08-07,Completed,Low,100
+U0089,Run 5km,Goal: run 5km,Fitness,2024-06-13,Abandoned,Low,17
+U0089,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-06,Completed,Low,100
+U0090,Quit Junk Food,Goal: quit junk food,Health,2025-03-18,Abandoned,High,8
+U0090,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-07-31,Not Started,Low,0
+U0090,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-06-04,Not Started,High,0
+U0091,Build Portfolio,Goal: build portfolio,Career,2024-09-26,Not Started,Low,0
+U0091,Save for Vacation,Goal: save for vacation,Financial,2024-08-21,Not Started,Medium,0
+U0091,Learn Cooking,Goal: learn cooking,Personal,2025-02-10,Not Started,High,0
+U0091,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-02,In Progress,Low,37
+U0092,Complete Course,Goal: complete course,Academic,2025-03-24,Not Started,Medium,0
+U0092,Save for Vacation,Goal: save for vacation,Financial,2025-09-05,Abandoned,Medium,13
+U0092,Complete Course,Goal: complete course,Academic,2024-09-17,In Progress,Medium,52
+U0093,Quit Junk Food,Goal: quit junk food,Health,2025-05-15,In Progress,High,37
+U0093,Get Promoted,Goal: get promoted,Career,2024-12-14,In Progress,Medium,70
+U0093,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-07-03,Completed,High,100
+U0093,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-18,Not Started,Medium,0
+U0093,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-06-13,Completed,Low,100
+U0093,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-05-14,Completed,High,100
+U0094,Meditate Daily,Goal: meditate daily,Personal,2024-11-18,Not Started,Medium,0
+U0095,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-05-21,In Progress,High,50
+U0095,Complete Course,Goal: complete course,Academic,2025-08-29,Completed,High,100
+U0095,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-02,Completed,Medium,100
+U0095,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-08-20,In Progress,Medium,54
+U0096,Pay off Loan,Goal: pay off loan,Financial,2025-06-03,Completed,Low,100
+U0097,Learn Cooking,Goal: learn cooking,Personal,2024-11-26,Not Started,Medium,0
+U0098,Save for Vacation,Goal: save for vacation,Financial,2024-12-06,Not Started,High,0
+U0098,Learn New Skill,Goal: learn new skill,Academic,2024-05-09,Not Started,Low,0
+U0098,Network 10 Professionals,Goal: network 10 professionals,Career,2025-08-02,Not Started,Low,0
+U0099,Complete Course,Goal: complete course,Academic,2024-09-24,Abandoned,Medium,36
+U0099,Learn New Skill,Goal: learn new skill,Academic,2025-03-07,In Progress,Low,35
+U0099,Finish Certification,Goal: finish certification,Academic,2025-09-13,In Progress,High,66
+U0100,Pay off Loan,Goal: pay off loan,Financial,2025-07-25,Abandoned,High,38
+U0100,Complete Course,Goal: complete course,Academic,2024-04-02,Completed,High,100
+U0100,Switch Domain,Goal: switch domain,Career,2025-01-21,Completed,High,100
+U0100,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-11-13,Completed,Medium,100
+U0100,Complete Course,Goal: complete course,Academic,2024-09-18,Completed,High,100
+U0100,Save for Vacation,Goal: save for vacation,Financial,2024-11-10,Abandoned,Medium,1
+U0101,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-06-24,Completed,Medium,100
+U0101,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-09-08,In Progress,Low,28
+U0101,Network 10 Professionals,Goal: network 10 professionals,Career,2025-06-19,Completed,Medium,100
+U0102,Pay off Loan,Goal: pay off loan,Financial,2025-09-04,Completed,Low,100
+U0102,Finish Certification,Goal: finish certification,Academic,2025-05-04,Completed,Medium,100
+U0102,Get Promoted,Goal: get promoted,Career,2025-05-12,In Progress,Medium,90
+U0102,Switch Domain,Goal: switch domain,Career,2024-04-07,Completed,Low,100
+U0102,Finish Certification,Goal: finish certification,Academic,2025-05-10,Completed,High,100
+U0102,Pay off Loan,Goal: pay off loan,Financial,2025-05-31,Completed,Low,100
+U0102,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-09,Abandoned,Medium,28
+U0103,Complete Course,Goal: complete course,Academic,2024-06-24,Abandoned,Low,18
+U0103,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-12-14,Not Started,Low,0
+U0103,Finish Certification,Goal: finish certification,Academic,2024-04-14,Not Started,High,0
+U0103,Run 5km,Goal: run 5km,Fitness,2024-05-21,Completed,High,100
+U0104,Complete Course,Goal: complete course,Academic,2025-03-28,Not Started,Low,0
+U0104,Complete Course,Goal: complete course,Academic,2024-07-04,Not Started,Low,0
+U0105,Lose 5kg,Goal: lose 5kg,Fitness,2025-03-13,Completed,Low,100
+U0105,Finish Certification,Goal: finish certification,Academic,2024-09-23,Not Started,Low,0
+U0105,Improve Flexibility,Goal: improve flexibility,Fitness,2025-03-31,In Progress,Medium,49
+U0105,Regular Health Check-up,Goal: regular health check-up,Health,2024-07-11,Completed,Medium,100
+U0106,Finish Certification,Goal: finish certification,Academic,2024-10-22,Not Started,Low,0
+U0106,Lose 5kg,Goal: lose 5kg,Fitness,2025-04-26,In Progress,High,33
+U0106,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-09,Completed,Medium,100
+U0106,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-27,Not Started,Low,0
+U0107,Run 5km,Goal: run 5km,Fitness,2024-07-15,Completed,High,100
+U0107,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-31,Not Started,Medium,0
+U0108,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-09,Not Started,Medium,0
+U0108,Complete Course,Goal: complete course,Academic,2024-12-08,In Progress,High,53
+U0108,Run 5km,Goal: run 5km,Fitness,2024-09-12,In Progress,Low,49
+U0108,Drink 2L Water,Goal: drink 2l water,Health,2024-12-20,In Progress,Low,21
+U0108,Learn Cooking,Goal: learn cooking,Personal,2024-10-06,Abandoned,High,3
+U0108,Meditate Daily,Goal: meditate daily,Personal,2024-10-06,Not Started,Low,0
+U0109,Switch Domain,Goal: switch domain,Career,2024-07-26,Abandoned,High,8
+U0109,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-29,Not Started,High,0
+U0109,Read 12 Books,Goal: read 12 books,Personal,2024-07-17,Completed,Medium,100
+U0109,Save Emergency Fund,Goal: save emergency fund,Financial,2024-06-27,Not Started,Medium,0
+U0110,Finish Certification,Goal: finish certification,Academic,2024-02-03,In Progress,High,79
+U0110,Switch Domain,Goal: switch domain,Career,2025-01-23,In Progress,Low,33
+U0110,Complete Course,Goal: complete course,Academic,2025-05-17,In Progress,Low,30
+U0111,Quit Junk Food,Goal: quit junk food,Health,2024-10-10,Not Started,High,0
+U0111,Run 5km,Goal: run 5km,Fitness,2025-05-16,Not Started,High,0
+U0112,Improve Flexibility,Goal: improve flexibility,Fitness,2024-12-28,Not Started,Medium,0
+U0113,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-16,Completed,Medium,100
+U0113,Reduce Screen Time,Goal: reduce screen time,Personal,2025-07-17,Not Started,High,0
+U0113,Run 5km,Goal: run 5km,Fitness,2024-04-29,Completed,Low,100
+U0113,Switch Domain,Goal: switch domain,Career,2024-12-05,In Progress,High,30
+U0113,Quit Junk Food,Goal: quit junk food,Health,2025-07-05,In Progress,Medium,63
+U0113,Read 12 Books,Goal: read 12 books,Personal,2025-10-21,Not Started,Low,0
+U0114,Quit Junk Food,Goal: quit junk food,Health,2024-06-11,Not Started,Low,0
+U0114,Drink 2L Water,Goal: drink 2l water,Health,2024-11-24,In Progress,Medium,87
+U0114,Switch Domain,Goal: switch domain,Career,2025-03-22,Abandoned,Medium,11
+U0114,Quit Junk Food,Goal: quit junk food,Health,2024-11-16,Completed,Low,100
+U0114,Complete Course,Goal: complete course,Academic,2025-10-22,Completed,Low,100
+U0114,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-06,Not Started,Medium,0
+U0115,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-04-05,Completed,High,100
+U0115,Save Emergency Fund,Goal: save emergency fund,Financial,2024-02-02,In Progress,Low,48
+U0115,Pay off Loan,Goal: pay off loan,Financial,2025-05-06,Not Started,Low,0
+U0115,Reduce Screen Time,Goal: reduce screen time,Personal,2025-05-31,In Progress,Medium,68
+U0115,Learn New Skill,Goal: learn new skill,Academic,2025-01-19,Completed,Low,100
+U0115,Improve Flexibility,Goal: improve flexibility,Fitness,2024-12-09,Completed,Medium,100
+U0115,Reduce Screen Time,Goal: reduce screen time,Personal,2025-03-16,In Progress,Medium,88
+U0116,Run 5km,Goal: run 5km,Fitness,2024-11-01,In Progress,Medium,55
+U0116,Lose 5kg,Goal: lose 5kg,Fitness,2024-06-18,In Progress,Medium,23
+U0116,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-04-09,Completed,Low,100
+U0116,Lose 5kg,Goal: lose 5kg,Fitness,2025-08-01,Completed,Low,100
+U0116,Learn New Skill,Goal: learn new skill,Academic,2025-01-01,Completed,Low,100
+U0117,Pay off Loan,Goal: pay off loan,Financial,2025-01-28,Not Started,High,0
+U0117,Pay off Loan,Goal: pay off loan,Financial,2025-02-17,Completed,Low,100
+U0117,Read 12 Books,Goal: read 12 books,Personal,2024-12-03,In Progress,Low,47
+U0118,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-05-02,Not Started,High,0
+U0118,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-18,In Progress,High,60
+U0118,Reduce Screen Time,Goal: reduce screen time,Personal,2025-04-12,Not Started,High,0
+U0118,Learn Cooking,Goal: learn cooking,Personal,2024-09-14,Abandoned,Low,18
+U0119,Switch Domain,Goal: switch domain,Career,2025-04-17,Completed,Low,100
+U0119,Meditate Daily,Goal: meditate daily,Personal,2024-06-06,Completed,Medium,100
+U0119,Switch Domain,Goal: switch domain,Career,2024-03-06,Abandoned,High,21
+U0120,Get Promoted,Goal: get promoted,Career,2024-07-01,Completed,Medium,100
+U0120,Learn New Skill,Goal: learn new skill,Academic,2024-09-28,Abandoned,Low,1
+U0120,Run 5km,Goal: run 5km,Fitness,2024-12-18,Completed,High,100
+U0121,Meditate Daily,Goal: meditate daily,Personal,2024-09-13,In Progress,Low,78
+U0121,Drink 2L Water,Goal: drink 2l water,Health,2025-02-07,Not Started,High,0
+U0121,Save Emergency Fund,Goal: save emergency fund,Financial,2025-05-01,Completed,Low,100
+U0121,Run 5km,Goal: run 5km,Fitness,2024-02-25,In Progress,Low,64
+U0121,Run 5km,Goal: run 5km,Fitness,2025-04-12,In Progress,Low,53
+U0121,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-12,Abandoned,Medium,19
+U0122,Run 5km,Goal: run 5km,Fitness,2024-06-03,Not Started,Low,0
+U0122,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-06-27,In Progress,Medium,23
+U0122,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-16,Not Started,Medium,0
+U0122,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-06,Completed,Medium,100
+U0122,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-14,Not Started,Low,0
+U0122,Switch Domain,Goal: switch domain,Career,2025-02-28,In Progress,Medium,78
+U0123,Run 5km,Goal: run 5km,Fitness,2024-11-30,Completed,Low,100
+U0123,Save Emergency Fund,Goal: save emergency fund,Financial,2025-04-02,Completed,Medium,100
+U0123,Quit Junk Food,Goal: quit junk food,Health,2025-01-22,Completed,High,100
+U0124,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-10,Completed,Low,100
+U0124,Switch Domain,Goal: switch domain,Career,2025-10-13,In Progress,High,46
+U0124,Get Promoted,Goal: get promoted,Career,2024-07-24,In Progress,Low,86
+U0125,Build Portfolio,Goal: build portfolio,Career,2024-05-22,Not Started,Low,0
+U0125,Get Promoted,Goal: get promoted,Career,2024-10-08,Not Started,High,0
+U0126,Switch Domain,Goal: switch domain,Career,2025-07-18,Abandoned,High,11
+U0126,Meditate Daily,Goal: meditate daily,Personal,2024-07-04,Completed,High,100
+U0127,Meditate Daily,Goal: meditate daily,Personal,2024-07-06,Not Started,High,0
+U0127,Learn New Skill,Goal: learn new skill,Academic,2025-02-26,In Progress,High,59
+U0127,Save for Vacation,Goal: save for vacation,Financial,2024-11-26,Completed,Low,100
+U0127,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-08,Abandoned,High,30
+U0127,Switch Domain,Goal: switch domain,Career,2025-01-17,Abandoned,High,30
+U0128,Quit Junk Food,Goal: quit junk food,Health,2024-11-06,Completed,High,100
+U0128,Switch Domain,Goal: switch domain,Career,2024-12-14,In Progress,Low,50
+U0128,Reduce Screen Time,Goal: reduce screen time,Personal,2024-10-04,Completed,High,100
+U0128,Buy a Laptop,Goal: buy a laptop,Financial,2025-02-20,Completed,High,100
+U0128,Reduce Screen Time,Goal: reduce screen time,Personal,2025-05-15,Not Started,Medium,0
+U0129,Save for Vacation,Goal: save for vacation,Financial,2025-04-14,Completed,Low,100
+U0129,Run 5km,Goal: run 5km,Fitness,2024-09-15,Completed,Low,100
+U0129,Complete Course,Goal: complete course,Academic,2025-04-05,In Progress,Medium,20
+U0129,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-05-18,Not Started,Medium,0
+U0130,Quit Junk Food,Goal: quit junk food,Health,2025-02-22,Not Started,Low,0
+U0130,Run 5km,Goal: run 5km,Fitness,2024-10-20,Not Started,High,0
+U0131,Pay off Loan,Goal: pay off loan,Financial,2024-07-09,Completed,Low,100
+U0131,Meditate Daily,Goal: meditate daily,Personal,2024-12-10,Abandoned,High,31
+U0132,Complete Course,Goal: complete course,Academic,2024-08-10,In Progress,Medium,64
+U0132,Reduce Screen Time,Goal: reduce screen time,Personal,2024-06-11,In Progress,Low,68
+U0133,Learn New Skill,Goal: learn new skill,Academic,2025-01-18,In Progress,Low,34
+U0133,Regular Health Check-up,Goal: regular health check-up,Health,2024-12-20,Not Started,High,0
+U0134,Meditate Daily,Goal: meditate daily,Personal,2024-08-03,Completed,Medium,100
+U0134,Network 10 Professionals,Goal: network 10 professionals,Career,2025-04-21,Not Started,Medium,0
+U0134,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-09-21,In Progress,High,61
+U0134,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-10-09,Completed,Low,100
+U0134,Lose 5kg,Goal: lose 5kg,Fitness,2025-08-31,Abandoned,Medium,11
+U0135,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-21,Abandoned,High,6
+U0135,Regular Health Check-up,Goal: regular health check-up,Health,2025-04-10,Completed,Low,100
+U0135,Learn New Skill,Goal: learn new skill,Academic,2025-03-06,Abandoned,Low,22
+U0135,Learn New Skill,Goal: learn new skill,Academic,2024-11-06,Not Started,Medium,0
+U0135,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-02-14,Completed,Low,100
+U0135,Network 10 Professionals,Goal: network 10 professionals,Career,2024-07-16,In Progress,Low,46
+U0135,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-05-13,Abandoned,High,28
+U0135,Build Portfolio,Goal: build portfolio,Career,2025-07-02,In Progress,Medium,65
+U0136,Network 10 Professionals,Goal: network 10 professionals,Career,2025-04-20,Completed,High,100
+U0136,Regular Health Check-up,Goal: regular health check-up,Health,2025-03-03,Not Started,Medium,0
+U0136,Save for Vacation,Goal: save for vacation,Financial,2025-06-29,Not Started,Medium,0
+U0137,Learn New Skill,Goal: learn new skill,Academic,2024-02-16,Not Started,High,0
+U0138,Regular Health Check-up,Goal: regular health check-up,Health,2024-05-08,In Progress,High,61
+U0138,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-11,Abandoned,Low,7
+U0138,Build Portfolio,Goal: build portfolio,Career,2024-07-20,Not Started,Medium,0
+U0138,Buy a Laptop,Goal: buy a laptop,Financial,2024-04-25,Abandoned,Medium,20
+U0138,Drink 2L Water,Goal: drink 2l water,Health,2025-01-23,Completed,Medium,100
+U0139,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-29,In Progress,High,63
+U0139,Save for Vacation,Goal: save for vacation,Financial,2025-01-11,Abandoned,Medium,21
+U0140,Get Promoted,Goal: get promoted,Career,2025-05-03,In Progress,High,34
+U0140,Complete Course,Goal: complete course,Academic,2024-09-19,Completed,Low,100
+U0140,Quit Junk Food,Goal: quit junk food,Health,2025-05-22,Not Started,Medium,0
+U0140,Save for Vacation,Goal: save for vacation,Financial,2024-09-02,Completed,High,100
+U0140,Switch Domain,Goal: switch domain,Career,2024-08-31,Completed,High,100
+U0140,Meditate Daily,Goal: meditate daily,Personal,2025-04-26,In Progress,High,32
+U0141,Save for Vacation,Goal: save for vacation,Financial,2024-06-04,Completed,Medium,100
+U0141,Reduce Screen Time,Goal: reduce screen time,Personal,2024-11-16,In Progress,Medium,43
+U0141,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-01,Completed,Low,100
+U0141,Improve Flexibility,Goal: improve flexibility,Fitness,2024-05-09,Abandoned,Low,31
+U0141,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-02,Completed,Low,100
+U0142,Buy a Laptop,Goal: buy a laptop,Financial,2025-02-21,Completed,Low,100
+U0142,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-07,Abandoned,Medium,19
+U0142,Read 12 Books,Goal: read 12 books,Personal,2025-06-21,Not Started,Medium,0
+U0142,Save for Vacation,Goal: save for vacation,Financial,2025-04-22,Completed,High,100
+U0143,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-05,Abandoned,High,32
+U0144,Reduce Screen Time,Goal: reduce screen time,Personal,2024-10-10,Not Started,Low,0
+U0144,Finish Certification,Goal: finish certification,Academic,2025-02-09,Completed,Medium,100
+U0144,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-23,Abandoned,High,16
+U0145,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-19,Not Started,Low,0
+U0145,Learn Cooking,Goal: learn cooking,Personal,2024-11-03,Completed,Low,100
+U0146,Read 12 Books,Goal: read 12 books,Personal,2024-12-01,Completed,Low,100
+U0146,Pay off Loan,Goal: pay off loan,Financial,2024-11-16,Completed,Medium,100
+U0146,Switch Domain,Goal: switch domain,Career,2024-11-28,Completed,Low,100
+U0146,Read 12 Books,Goal: read 12 books,Personal,2024-10-04,Completed,High,100
+U0146,Buy a Laptop,Goal: buy a laptop,Financial,2024-08-30,Abandoned,High,31
+U0147,Save Emergency Fund,Goal: save emergency fund,Financial,2025-06-14,In Progress,High,50
+U0147,Read 12 Books,Goal: read 12 books,Personal,2024-11-01,Completed,Medium,100
+U0147,Save Emergency Fund,Goal: save emergency fund,Financial,2024-12-18,Abandoned,Medium,15
+U0147,Pay off Loan,Goal: pay off loan,Financial,2024-11-18,Completed,Low,100
+U0147,Complete Course,Goal: complete course,Academic,2025-02-05,Completed,Medium,100
+U0147,Get Promoted,Goal: get promoted,Career,2025-02-27,Completed,Medium,100
+U0147,Pay off Loan,Goal: pay off loan,Financial,2025-02-08,Not Started,Low,0
+U0148,Learn Cooking,Goal: learn cooking,Personal,2024-10-23,Not Started,High,0
+U0148,Save Emergency Fund,Goal: save emergency fund,Financial,2024-06-17,Not Started,High,0
+U0148,Improve Flexibility,Goal: improve flexibility,Fitness,2024-12-07,In Progress,High,87
+U0149,Save for Vacation,Goal: save for vacation,Financial,2025-03-16,Completed,Low,100
+U0149,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-14,Completed,High,100
+U0149,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-10-27,In Progress,Low,77
+U0149,Read 12 Books,Goal: read 12 books,Personal,2025-04-05,Completed,Medium,100
+U0150,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-05-11,Not Started,High,0
+U0150,Get Promoted,Goal: get promoted,Career,2024-08-02,Completed,Low,100
+U0150,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-24,Completed,Medium,100
+U0150,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-07-24,Not Started,Medium,0
+U0150,Get Promoted,Goal: get promoted,Career,2024-12-23,In Progress,High,34
+U0151,Complete Course,Goal: complete course,Academic,2024-08-07,Completed,Medium,100
+U0151,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-12-12,In Progress,Medium,40
+U0151,Quit Junk Food,Goal: quit junk food,Health,2025-03-10,Completed,Low,100
+U0151,Improve Flexibility,Goal: improve flexibility,Fitness,2025-07-03,Not Started,Medium,0
+U0152,Quit Junk Food,Goal: quit junk food,Health,2024-12-31,Completed,Medium,100
+U0152,Read 12 Books,Goal: read 12 books,Personal,2025-04-09,Completed,Medium,100
+U0153,Run 5km,Goal: run 5km,Fitness,2024-10-04,Abandoned,Low,6
+U0154,Build Portfolio,Goal: build portfolio,Career,2025-01-29,Not Started,Medium,0
+U0154,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-05-23,Not Started,Low,0
+U0155,Reduce Screen Time,Goal: reduce screen time,Personal,2024-05-28,Completed,Medium,100
+U0155,Learn Cooking,Goal: learn cooking,Personal,2025-02-22,In Progress,Low,23
+U0155,Run 5km,Goal: run 5km,Fitness,2025-02-21,Completed,High,100
+U0155,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-10,Completed,Medium,100
+U0155,Switch Domain,Goal: switch domain,Career,2024-06-18,Completed,Medium,100
+U0155,Switch Domain,Goal: switch domain,Career,2024-10-21,In Progress,Medium,78
+U0155,Complete Course,Goal: complete course,Academic,2025-10-20,Completed,Low,100
+U0155,Complete Course,Goal: complete course,Academic,2025-01-11,Completed,Low,100
+U0156,Build Portfolio,Goal: build portfolio,Career,2024-08-25,Not Started,Low,0
+U0156,Get Promoted,Goal: get promoted,Career,2025-04-14,Not Started,Low,0
+U0156,Reduce Screen Time,Goal: reduce screen time,Personal,2024-04-05,Not Started,High,0
+U0156,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-11,Not Started,High,0
+U0157,Pay off Loan,Goal: pay off loan,Financial,2024-07-21,In Progress,Medium,66
+U0157,Buy a Laptop,Goal: buy a laptop,Financial,2024-10-24,Not Started,High,0
+U0157,Save Emergency Fund,Goal: save emergency fund,Financial,2025-04-11,Abandoned,Medium,37
+U0157,Save for Vacation,Goal: save for vacation,Financial,2024-09-14,In Progress,Medium,62
+U0157,Learn New Skill,Goal: learn new skill,Academic,2025-02-04,Completed,High,100
+U0157,Network 10 Professionals,Goal: network 10 professionals,Career,2025-09-27,Completed,Low,100
+U0158,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-12-09,Not Started,High,0
+U0158,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-12,Abandoned,High,35
+U0158,Reduce Screen Time,Goal: reduce screen time,Personal,2024-11-10,In Progress,Low,49
+U0158,Regular Health Check-up,Goal: regular health check-up,Health,2024-05-10,Abandoned,Low,36
+U0159,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-03,In Progress,High,32
+U0160,Build Portfolio,Goal: build portfolio,Career,2025-01-18,Abandoned,Medium,8
+U0160,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-07,In Progress,High,80
+U0160,Reduce Screen Time,Goal: reduce screen time,Personal,2025-04-08,Completed,Low,100
+U0160,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-29,Not Started,High,0
+U0160,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-21,Not Started,Low,0
+U0161,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-17,Completed,Medium,100
+U0161,Save Emergency Fund,Goal: save emergency fund,Financial,2024-08-08,Abandoned,High,28
+U0161,Learn New Skill,Goal: learn new skill,Academic,2025-05-26,In Progress,High,67
+U0162,Build Portfolio,Goal: build portfolio,Career,2024-10-02,Not Started,High,0
+U0162,Read 12 Books,Goal: read 12 books,Personal,2025-02-01,Completed,Medium,100
+U0162,Get Promoted,Goal: get promoted,Career,2025-05-25,Completed,Low,100
+U0162,Learn Cooking,Goal: learn cooking,Personal,2025-10-09,Abandoned,Low,27
+U0162,Learn New Skill,Goal: learn new skill,Academic,2025-01-05,Completed,Medium,100
+U0163,Improve Flexibility,Goal: improve flexibility,Fitness,2025-03-27,Abandoned,High,38
+U0163,Switch Domain,Goal: switch domain,Career,2024-08-21,Completed,Medium,100
+U0163,Regular Health Check-up,Goal: regular health check-up,Health,2025-02-11,Completed,Medium,100
+U0163,Quit Junk Food,Goal: quit junk food,Health,2025-03-04,Abandoned,Medium,35
+U0163,Buy a Laptop,Goal: buy a laptop,Financial,2024-06-27,Completed,Low,100
+U0163,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-09-19,Abandoned,High,0
+U0164,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-25,Not Started,High,0
+U0165,Buy a Laptop,Goal: buy a laptop,Financial,2024-04-10,In Progress,High,57
+U0165,Learn New Skill,Goal: learn new skill,Academic,2024-09-28,Abandoned,Low,9
+U0165,Build Portfolio,Goal: build portfolio,Career,2025-04-02,Abandoned,High,15
+U0166,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-01-11,Completed,Medium,100
+U0166,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-08-06,Abandoned,High,5
+U0166,Improve Flexibility,Goal: improve flexibility,Fitness,2025-05-01,Completed,Low,100
+U0167,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-11,Not Started,Low,0
+U0167,Complete Course,Goal: complete course,Academic,2025-01-14,In Progress,Medium,87
+U0167,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-05-07,Not Started,Low,0
+U0168,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-15,Not Started,Low,0
+U0168,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-26,Not Started,Low,0
+U0169,Improve Flexibility,Goal: improve flexibility,Fitness,2024-05-28,Completed,Medium,100
+U0169,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-08-13,Completed,Medium,100
+U0169,Finish Certification,Goal: finish certification,Academic,2024-12-13,Completed,Medium,100
+U0170,Learn New Skill,Goal: learn new skill,Academic,2024-10-26,In Progress,High,65
+U0170,Get Promoted,Goal: get promoted,Career,2024-05-29,In Progress,High,62
+U0170,Switch Domain,Goal: switch domain,Career,2024-10-30,Abandoned,High,12
+U0170,Network 10 Professionals,Goal: network 10 professionals,Career,2024-05-18,Completed,High,100
+U0170,Pay off Loan,Goal: pay off loan,Financial,2024-10-13,Completed,Medium,100
+U0170,Reduce Screen Time,Goal: reduce screen time,Personal,2025-03-20,Completed,High,100
+U0170,Read 12 Books,Goal: read 12 books,Personal,2025-05-24,In Progress,Low,55
+U0171,Get Promoted,Goal: get promoted,Career,2024-04-20,Completed,High,100
+U0171,Quit Junk Food,Goal: quit junk food,Health,2024-11-06,Completed,Low,100
+U0171,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-08-27,In Progress,High,24
+U0171,Quit Junk Food,Goal: quit junk food,Health,2025-07-20,In Progress,Medium,31
+U0171,Complete Course,Goal: complete course,Academic,2025-02-20,Abandoned,Low,38
+U0171,Network 10 Professionals,Goal: network 10 professionals,Career,2025-05-06,Abandoned,Low,4
+U0171,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-11-23,Completed,High,100
+U0171,Save for Vacation,Goal: save for vacation,Financial,2024-05-10,Abandoned,Medium,34
+U0172,Save Emergency Fund,Goal: save emergency fund,Financial,2024-04-26,In Progress,Low,75
+U0172,Switch Domain,Goal: switch domain,Career,2025-08-04,In Progress,Medium,55
+U0172,Run 5km,Goal: run 5km,Fitness,2025-07-03,Abandoned,High,20
+U0172,Run 5km,Goal: run 5km,Fitness,2024-09-16,Not Started,Medium,0
+U0173,Improve Flexibility,Goal: improve flexibility,Fitness,2024-08-13,Not Started,High,0
+U0174,Get Promoted,Goal: get promoted,Career,2024-10-20,Not Started,High,0
+U0174,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-10,Completed,Medium,100
+U0174,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-09,Not Started,Medium,0
+U0174,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-25,Abandoned,High,20
+U0175,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-21,In Progress,Low,90
+U0175,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-03-03,Completed,Medium,100
+U0175,Save for Vacation,Goal: save for vacation,Financial,2024-12-14,Completed,Low,100
+U0175,Build Portfolio,Goal: build portfolio,Career,2025-08-05,In Progress,Medium,36
+U0175,Meditate Daily,Goal: meditate daily,Personal,2024-09-18,Not Started,Low,0
+U0175,Finish Certification,Goal: finish certification,Academic,2024-08-15,Completed,High,100
+U0175,Pay off Loan,Goal: pay off loan,Financial,2025-05-24,Abandoned,High,28
+U0175,Meditate Daily,Goal: meditate daily,Personal,2024-09-01,Completed,Low,100
+U0176,Run 5km,Goal: run 5km,Fitness,2024-09-24,Not Started,High,0
+U0177,Build Portfolio,Goal: build portfolio,Career,2025-02-11,Abandoned,Low,37
+U0177,Quit Junk Food,Goal: quit junk food,Health,2025-04-22,Completed,High,100
+U0177,Run 5km,Goal: run 5km,Fitness,2025-05-01,Completed,High,100
+U0177,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-04,In Progress,Medium,40
+U0177,Get Promoted,Goal: get promoted,Career,2025-08-17,Abandoned,High,14
+U0178,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-05,Abandoned,Medium,23
+U0178,Regular Health Check-up,Goal: regular health check-up,Health,2024-11-01,In Progress,Medium,57
+U0178,Meditate Daily,Goal: meditate daily,Personal,2024-08-10,Not Started,High,0
+U0179,Network 10 Professionals,Goal: network 10 professionals,Career,2024-06-08,In Progress,Medium,32
+U0179,Switch Domain,Goal: switch domain,Career,2025-01-05,Completed,Low,100
+U0179,Build Portfolio,Goal: build portfolio,Career,2025-03-28,Completed,Medium,100
+U0179,Save Emergency Fund,Goal: save emergency fund,Financial,2024-12-01,Completed,High,100
+U0179,Switch Domain,Goal: switch domain,Career,2025-01-17,Not Started,Low,0
+U0179,Learn New Skill,Goal: learn new skill,Academic,2025-02-14,Completed,Low,100
+U0180,Improve Flexibility,Goal: improve flexibility,Fitness,2024-07-03,In Progress,Medium,87
+U0180,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-02-22,Completed,Medium,100
+U0180,Quit Junk Food,Goal: quit junk food,Health,2025-02-16,Not Started,Medium,0
+U0181,Improve Flexibility,Goal: improve flexibility,Fitness,2024-11-28,Not Started,Low,0
+U0181,Learn Cooking,Goal: learn cooking,Personal,2024-12-04,Abandoned,High,25
+U0181,Build Portfolio,Goal: build portfolio,Career,2024-11-22,Completed,High,100
+U0181,Read 12 Books,Goal: read 12 books,Personal,2024-07-22,Abandoned,Low,2
+U0181,Read 12 Books,Goal: read 12 books,Personal,2025-06-25,Completed,Low,100
+U0182,Build Portfolio,Goal: build portfolio,Career,2024-12-19,Not Started,Low,0
+U0182,Drink 2L Water,Goal: drink 2l water,Health,2024-09-10,In Progress,Low,36
+U0182,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-06-07,Not Started,Low,0
+U0182,Buy a Laptop,Goal: buy a laptop,Financial,2024-06-28,Not Started,Low,0
+U0183,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-27,In Progress,Low,67
+U0183,Learn New Skill,Goal: learn new skill,Academic,2024-05-12,In Progress,Medium,63
+U0183,Run 5km,Goal: run 5km,Fitness,2025-02-02,In Progress,Low,47
+U0183,Lose 5kg,Goal: lose 5kg,Fitness,2025-05-25,Abandoned,Medium,8
+U0183,Switch Domain,Goal: switch domain,Career,2025-10-04,Abandoned,Low,21
+U0183,Buy a Laptop,Goal: buy a laptop,Financial,2024-12-22,In Progress,Medium,78
+U0183,Read 12 Books,Goal: read 12 books,Personal,2025-06-29,In Progress,Medium,90
+U0184,Reduce Screen Time,Goal: reduce screen time,Personal,2024-10-17,Not Started,High,0
+U0184,Switch Domain,Goal: switch domain,Career,2025-04-22,In Progress,High,81
+U0184,Meditate Daily,Goal: meditate daily,Personal,2025-04-05,Not Started,Low,0
+U0184,Run 5km,Goal: run 5km,Fitness,2024-09-18,Abandoned,Low,24
+U0184,Drink 2L Water,Goal: drink 2l water,Health,2024-09-09,In Progress,Low,54
+U0184,Run 5km,Goal: run 5km,Fitness,2024-07-01,In Progress,Medium,66
+U0185,Complete Course,Goal: complete course,Academic,2025-03-06,Abandoned,High,12
+U0185,Learn New Skill,Goal: learn new skill,Academic,2024-12-09,In Progress,Low,68
+U0185,Switch Domain,Goal: switch domain,Career,2025-04-15,Abandoned,Low,25
+U0186,Finish Certification,Goal: finish certification,Academic,2024-09-19,Completed,Medium,100
+U0186,Drink 2L Water,Goal: drink 2l water,Health,2024-10-13,In Progress,Medium,70
+U0186,Get Promoted,Goal: get promoted,Career,2024-09-18,Not Started,High,0
+U0186,Build Portfolio,Goal: build portfolio,Career,2025-07-06,In Progress,Low,48
+U0187,Drink 2L Water,Goal: drink 2l water,Health,2025-06-03,In Progress,High,90
+U0187,Pay off Loan,Goal: pay off loan,Financial,2024-12-02,In Progress,Low,49
+U0187,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-03-22,Abandoned,Low,17
+U0187,Quit Junk Food,Goal: quit junk food,Health,2025-01-02,Not Started,High,0
+U0187,Switch Domain,Goal: switch domain,Career,2024-07-10,In Progress,Medium,20
+U0188,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-10-21,In Progress,High,33
+U0189,Pay off Loan,Goal: pay off loan,Financial,2025-03-18,Not Started,Low,0
+U0189,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-14,Not Started,High,0
+U0190,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-06-22,Not Started,High,0
+U0190,Learn New Skill,Goal: learn new skill,Academic,2025-07-25,In Progress,Medium,90
+U0191,Reduce Screen Time,Goal: reduce screen time,Personal,2025-02-24,Not Started,Low,0
+U0191,Run 5km,Goal: run 5km,Fitness,2025-03-25,Completed,Low,100
+U0191,Get Promoted,Goal: get promoted,Career,2025-04-11,Completed,High,100
+U0191,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-06-23,Abandoned,Medium,31
+U0192,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-12,Completed,Low,100
+U0192,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-31,Completed,Low,100
+U0192,Reduce Screen Time,Goal: reduce screen time,Personal,2025-07-27,Not Started,High,0
+U0192,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-02,Abandoned,Low,15
+U0192,Regular Health Check-up,Goal: regular health check-up,Health,2024-12-20,Completed,Medium,100
+U0193,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-08-26,Completed,High,100
+U0193,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-29,Not Started,High,0
+U0193,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-10-09,In Progress,Medium,84
+U0193,Network 10 Professionals,Goal: network 10 professionals,Career,2024-07-13,Completed,Low,100
+U0193,Run 5km,Goal: run 5km,Fitness,2025-03-28,Completed,Medium,100
+U0193,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-26,Completed,Medium,100
+U0193,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-15,In Progress,High,74
+U0194,Save Emergency Fund,Goal: save emergency fund,Financial,2025-04-07,Completed,High,100
+U0194,Pay off Loan,Goal: pay off loan,Financial,2024-08-19,In Progress,High,29
+U0194,Build Portfolio,Goal: build portfolio,Career,2024-11-25,Completed,Medium,100
+U0194,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-05-29,In Progress,Low,66
+U0194,Get Promoted,Goal: get promoted,Career,2024-10-25,In Progress,Low,39
+U0194,Learn New Skill,Goal: learn new skill,Academic,2024-09-30,Not Started,Medium,0
+U0194,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-24,Completed,High,100
+U0195,Get Promoted,Goal: get promoted,Career,2025-01-11,Abandoned,Low,21
+U0195,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-06-18,Abandoned,High,16
+U0195,Learn Cooking,Goal: learn cooking,Personal,2025-01-27,Not Started,Low,0
+U0195,Improve Flexibility,Goal: improve flexibility,Fitness,2024-12-28,Abandoned,High,23
+U0195,Learn New Skill,Goal: learn new skill,Academic,2024-08-06,In Progress,Medium,66
+U0196,Learn New Skill,Goal: learn new skill,Academic,2024-10-09,Completed,High,100
+U0196,Build Portfolio,Goal: build portfolio,Career,2025-03-21,In Progress,Low,81
+U0196,Drink 2L Water,Goal: drink 2l water,Health,2024-08-21,Completed,Medium,100
+U0196,Meditate Daily,Goal: meditate daily,Personal,2024-09-06,Abandoned,High,2
+U0197,Pay off Loan,Goal: pay off loan,Financial,2025-09-23,Not Started,Low,0
+U0197,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-27,Abandoned,Medium,31
+U0197,Complete Course,Goal: complete course,Academic,2025-01-25,Abandoned,Medium,21
+U0197,Switch Domain,Goal: switch domain,Career,2024-12-22,Completed,Low,100
+U0197,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-09-12,Not Started,High,0
+U0197,Network 10 Professionals,Goal: network 10 professionals,Career,2024-08-18,Completed,Low,100
+U0198,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-13,Completed,Medium,100
+U0198,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-22,Not Started,Low,0
+U0198,Read 12 Books,Goal: read 12 books,Personal,2024-12-15,Completed,Medium,100
+U0198,Read 12 Books,Goal: read 12 books,Personal,2024-10-14,Not Started,Low,0
+U0199,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-06-30,Not Started,Low,0
+U0199,Run 5km,Goal: run 5km,Fitness,2024-09-18,Completed,High,100
+U0199,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-07,Completed,High,100
+U0199,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-03-13,Not Started,High,0
+U0199,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-30,Completed,Medium,100
+U0199,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-09-18,In Progress,Medium,77
+U0200,Drink 2L Water,Goal: drink 2l water,Health,2024-12-29,Abandoned,Medium,1
+U0200,Get Promoted,Goal: get promoted,Career,2025-01-24,Abandoned,High,24
+U0200,Buy a Laptop,Goal: buy a laptop,Financial,2025-02-14,Abandoned,Medium,10
+U0201,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-05,In Progress,Medium,56
+U0201,Regular Health Check-up,Goal: regular health check-up,Health,2024-08-20,Completed,High,100
+U0201,Regular Health Check-up,Goal: regular health check-up,Health,2025-09-12,Abandoned,Low,6
+U0201,Learn New Skill,Goal: learn new skill,Academic,2024-11-08,Completed,High,100
+U0201,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-08-05,Completed,Low,100
+U0201,Complete Course,Goal: complete course,Academic,2024-06-06,Not Started,High,0
+U0201,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-16,In Progress,High,83
+U0201,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-09,In Progress,High,79
+U0202,Build Portfolio,Goal: build portfolio,Career,2025-08-07,Not Started,Low,0
+U0202,Get Promoted,Goal: get promoted,Career,2024-10-28,Completed,Medium,100
+U0202,Finish Certification,Goal: finish certification,Academic,2025-02-21,Completed,Medium,100
+U0203,Meditate Daily,Goal: meditate daily,Personal,2024-10-26,Not Started,High,0
+U0203,Learn Cooking,Goal: learn cooking,Personal,2025-01-17,Not Started,High,0
+U0203,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-10-23,Abandoned,Medium,37
+U0203,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-11-15,Abandoned,Medium,8
+U0204,Regular Health Check-up,Goal: regular health check-up,Health,2025-01-19,Completed,Low,100
+U0204,Buy a Laptop,Goal: buy a laptop,Financial,2025-08-17,Completed,High,100
+U0204,Save for Vacation,Goal: save for vacation,Financial,2024-08-21,In Progress,High,89
+U0204,Quit Junk Food,Goal: quit junk food,Health,2025-07-28,Completed,Low,100
+U0204,Run 5km,Goal: run 5km,Fitness,2025-06-14,Abandoned,Low,40
+U0204,Switch Domain,Goal: switch domain,Career,2024-04-30,Completed,Low,100
+U0204,Finish Certification,Goal: finish certification,Academic,2025-05-11,In Progress,High,21
+U0205,Drink 2L Water,Goal: drink 2l water,Health,2024-12-23,Completed,Medium,100
+U0205,Reduce Screen Time,Goal: reduce screen time,Personal,2025-06-01,Abandoned,High,38
+U0205,Read 12 Books,Goal: read 12 books,Personal,2024-04-01,Completed,High,100
+U0205,Learn New Skill,Goal: learn new skill,Academic,2025-10-17,Completed,Medium,100
+U0206,Improve Flexibility,Goal: improve flexibility,Fitness,2024-09-15,Completed,Medium,100
+U0206,Save for Vacation,Goal: save for vacation,Financial,2024-11-06,In Progress,High,28
+U0206,Network 10 Professionals,Goal: network 10 professionals,Career,2025-07-05,Completed,High,100
+U0206,Build Portfolio,Goal: build portfolio,Career,2025-04-18,Completed,Medium,100
+U0206,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-06,Completed,High,100
+U0207,Pay off Loan,Goal: pay off loan,Financial,2024-10-17,Not Started,Medium,0
+U0207,Buy a Laptop,Goal: buy a laptop,Financial,2025-02-21,Completed,Medium,100
+U0207,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-03-25,Not Started,Low,0
+U0208,Regular Health Check-up,Goal: regular health check-up,Health,2024-04-21,Abandoned,Low,25
+U0208,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-05-18,In Progress,Low,56
+U0208,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-07-01,In Progress,High,78
+U0208,Quit Junk Food,Goal: quit junk food,Health,2025-02-25,In Progress,High,51
+U0208,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-09-13,Not Started,Low,0
+U0208,Pay off Loan,Goal: pay off loan,Financial,2024-07-15,Completed,Low,100
+U0208,Learn New Skill,Goal: learn new skill,Academic,2024-09-05,In Progress,High,48
+U0208,Switch Domain,Goal: switch domain,Career,2024-10-27,Completed,Low,100
+U0209,Regular Health Check-up,Goal: regular health check-up,Health,2024-07-10,Completed,Low,100
+U0209,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-23,Abandoned,High,36
+U0209,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-30,In Progress,Medium,52
+U0210,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-25,Not Started,Medium,0
+U0210,Lose 5kg,Goal: lose 5kg,Fitness,2024-04-01,Abandoned,Medium,34
+U0210,Quit Junk Food,Goal: quit junk food,Health,2024-09-12,Not Started,Low,0
+U0210,Switch Domain,Goal: switch domain,Career,2024-06-28,Not Started,High,0
+U0211,Regular Health Check-up,Goal: regular health check-up,Health,2025-03-30,Not Started,High,0
+U0211,Build Portfolio,Goal: build portfolio,Career,2024-05-14,In Progress,Medium,45
+U0211,Improve Flexibility,Goal: improve flexibility,Fitness,2024-08-26,Not Started,Low,0
+U0212,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-11,Completed,High,100
+U0212,Network 10 Professionals,Goal: network 10 professionals,Career,2025-04-18,Completed,Medium,100
+U0212,Learn New Skill,Goal: learn new skill,Academic,2025-05-02,Completed,Medium,100
+U0212,Improve Flexibility,Goal: improve flexibility,Fitness,2024-04-09,Abandoned,Medium,6
+U0212,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-09,In Progress,High,74
+U0212,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-10,Abandoned,High,40
+U0213,Learn New Skill,Goal: learn new skill,Academic,2024-03-03,Abandoned,Low,36
+U0213,Get Promoted,Goal: get promoted,Career,2024-06-17,Not Started,High,0
+U0213,Buy a Laptop,Goal: buy a laptop,Financial,2024-07-15,Completed,Low,100
+U0213,Build Portfolio,Goal: build portfolio,Career,2024-08-18,In Progress,High,64
+U0214,Save Emergency Fund,Goal: save emergency fund,Financial,2024-12-09,Not Started,High,0
+U0214,Read 12 Books,Goal: read 12 books,Personal,2024-09-18,Not Started,Medium,0
+U0215,Run 5km,Goal: run 5km,Fitness,2024-05-22,Completed,High,100
+U0215,Meditate Daily,Goal: meditate daily,Personal,2025-08-21,Not Started,Low,0
+U0215,Run 5km,Goal: run 5km,Fitness,2024-11-04,In Progress,Low,40
+U0215,Switch Domain,Goal: switch domain,Career,2024-08-09,In Progress,High,85
+U0216,Learn New Skill,Goal: learn new skill,Academic,2024-10-22,Abandoned,Medium,28
+U0216,Drink 2L Water,Goal: drink 2l water,Health,2025-03-06,Abandoned,Low,18
+U0216,Improve Flexibility,Goal: improve flexibility,Fitness,2025-08-11,Completed,Medium,100
+U0217,Regular Health Check-up,Goal: regular health check-up,Health,2025-04-18,Not Started,High,0
+U0217,Build Portfolio,Goal: build portfolio,Career,2025-09-30,Completed,High,100
+U0218,Drink 2L Water,Goal: drink 2l water,Health,2025-01-16,Completed,High,100
+U0218,Quit Junk Food,Goal: quit junk food,Health,2025-03-05,Completed,Low,100
+U0218,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-11,Abandoned,High,4
+U0219,Reduce Screen Time,Goal: reduce screen time,Personal,2025-06-03,Completed,High,100
+U0219,Get Promoted,Goal: get promoted,Career,2024-06-16,Abandoned,Medium,22
+U0219,Drink 2L Water,Goal: drink 2l water,Health,2024-08-04,Completed,Medium,100
+U0219,Build Portfolio,Goal: build portfolio,Career,2024-07-15,Not Started,High,0
+U0219,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-30,Completed,Medium,100
+U0220,Get Promoted,Goal: get promoted,Career,2024-11-27,Abandoned,Low,19
+U0220,Network 10 Professionals,Goal: network 10 professionals,Career,2024-12-08,Not Started,Medium,0
+U0220,Quit Junk Food,Goal: quit junk food,Health,2025-01-04,In Progress,Low,62
+U0220,Learn Cooking,Goal: learn cooking,Personal,2025-05-09,In Progress,High,76
+U0220,Build Portfolio,Goal: build portfolio,Career,2024-12-09,Completed,Low,100
+U0220,Learn New Skill,Goal: learn new skill,Academic,2024-10-21,Completed,High,100
+U0220,Reduce Screen Time,Goal: reduce screen time,Personal,2024-08-10,Completed,High,100
+U0221,Lose 5kg,Goal: lose 5kg,Fitness,2025-04-09,Completed,High,100
+U0221,Save Emergency Fund,Goal: save emergency fund,Financial,2024-06-20,In Progress,High,45
+U0221,Save Emergency Fund,Goal: save emergency fund,Financial,2025-02-10,Abandoned,Medium,24
+U0221,Save for Vacation,Goal: save for vacation,Financial,2024-12-12,Completed,Medium,100
+U0221,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-01,In Progress,Medium,79
+U0221,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-03-22,Completed,Medium,100
+U0221,Drink 2L Water,Goal: drink 2l water,Health,2024-11-13,Completed,High,100
+U0221,Save for Vacation,Goal: save for vacation,Financial,2025-03-13,Completed,Low,100
+U0222,Pay off Loan,Goal: pay off loan,Financial,2025-01-21,Completed,High,100
+U0222,Quit Junk Food,Goal: quit junk food,Health,2024-06-08,Not Started,Medium,0
+U0223,Pay off Loan,Goal: pay off loan,Financial,2024-11-29,Not Started,High,0
+U0223,Meditate Daily,Goal: meditate daily,Personal,2025-04-15,Completed,High,100
+U0223,Complete Course,Goal: complete course,Academic,2025-02-03,Completed,High,100
+U0223,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-28,In Progress,Medium,54
+U0223,Finish Certification,Goal: finish certification,Academic,2024-09-21,Completed,Low,100
+U0223,Learn New Skill,Goal: learn new skill,Academic,2025-03-15,Abandoned,Medium,26
+U0224,Learn New Skill,Goal: learn new skill,Academic,2024-10-26,In Progress,Low,38
+U0224,Complete Course,Goal: complete course,Academic,2025-01-05,In Progress,Medium,49
+U0224,Get Promoted,Goal: get promoted,Career,2024-11-12,In Progress,Low,52
+U0224,Save Emergency Fund,Goal: save emergency fund,Financial,2025-09-19,In Progress,Medium,38
+U0224,Network 10 Professionals,Goal: network 10 professionals,Career,2024-11-28,In Progress,High,23
+U0225,Complete Course,Goal: complete course,Academic,2025-01-01,In Progress,Low,20
+U0225,Build Portfolio,Goal: build portfolio,Career,2024-09-14,In Progress,Medium,50
+U0225,Run 5km,Goal: run 5km,Fitness,2025-03-01,Not Started,Medium,0
+U0225,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-30,Abandoned,High,3
+U0225,Drink 2L Water,Goal: drink 2l water,Health,2025-03-25,Not Started,Low,0
+U0226,Quit Junk Food,Goal: quit junk food,Health,2024-11-12,Not Started,Low,0
+U0226,Lose 5kg,Goal: lose 5kg,Fitness,2024-07-21,In Progress,High,76
+U0226,Switch Domain,Goal: switch domain,Career,2024-10-25,Not Started,High,0
+U0227,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-30,Completed,Low,100
+U0227,Get Promoted,Goal: get promoted,Career,2024-06-07,In Progress,High,24
+U0227,Build Portfolio,Goal: build portfolio,Career,2024-07-10,Abandoned,Low,24
+U0227,Save for Vacation,Goal: save for vacation,Financial,2025-11-10,Abandoned,Low,8
+U0227,Switch Domain,Goal: switch domain,Career,2025-02-05,Completed,High,100
+U0227,Get Promoted,Goal: get promoted,Career,2024-11-16,Completed,Medium,100
+U0228,Pay off Loan,Goal: pay off loan,Financial,2025-08-11,Completed,Medium,100
+U0228,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-09,Completed,Medium,100
+U0229,Quit Junk Food,Goal: quit junk food,Health,2024-09-13,Abandoned,High,15
+U0229,Get Promoted,Goal: get promoted,Career,2024-09-20,Completed,Low,100
+U0229,Buy a Laptop,Goal: buy a laptop,Financial,2024-12-17,Completed,Medium,100
+U0229,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-27,Completed,High,100
+U0230,Meditate Daily,Goal: meditate daily,Personal,2025-04-24,Completed,Low,100
+U0230,Buy a Laptop,Goal: buy a laptop,Financial,2024-12-03,Completed,High,100
+U0230,Learn New Skill,Goal: learn new skill,Academic,2024-08-02,Not Started,Low,0
+U0230,Build Portfolio,Goal: build portfolio,Career,2024-11-18,Completed,High,100
+U0230,Drink 2L Water,Goal: drink 2l water,Health,2024-08-25,Abandoned,Medium,2
+U0230,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-07,In Progress,Medium,77
+U0230,Complete Course,Goal: complete course,Academic,2024-04-18,Abandoned,Low,27
+U0230,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-16,In Progress,Low,42
+U0231,Pay off Loan,Goal: pay off loan,Financial,2025-01-04,Completed,Medium,100
+U0231,Regular Health Check-up,Goal: regular health check-up,Health,2024-10-11,In Progress,Low,47
+U0231,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-10-31,Completed,Medium,100
+U0231,Get Promoted,Goal: get promoted,Career,2025-04-19,In Progress,Low,86
+U0231,Network 10 Professionals,Goal: network 10 professionals,Career,2024-09-20,Not Started,Medium,0
+U0231,Switch Domain,Goal: switch domain,Career,2024-11-21,Not Started,Medium,0
+U0232,Quit Junk Food,Goal: quit junk food,Health,2024-10-16,Abandoned,Medium,24
+U0232,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-06-27,Not Started,Low,0
+U0232,Quit Junk Food,Goal: quit junk food,Health,2025-02-08,Not Started,Low,0
+U0233,Meditate Daily,Goal: meditate daily,Personal,2024-11-04,Completed,Medium,100
+U0233,Improve Flexibility,Goal: improve flexibility,Fitness,2024-12-21,Abandoned,Medium,25
+U0234,Learn Cooking,Goal: learn cooking,Personal,2024-10-17,Abandoned,High,17
+U0234,Complete Course,Goal: complete course,Academic,2024-09-06,Not Started,Low,0
+U0235,Read 12 Books,Goal: read 12 books,Personal,2025-01-04,Abandoned,High,30
+U0235,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-02-21,Not Started,High,0
+U0236,Learn Cooking,Goal: learn cooking,Personal,2024-12-18,Completed,Low,100
+U0236,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-05-14,Completed,Low,100
+U0236,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-09-06,Completed,Medium,100
+U0236,Read 12 Books,Goal: read 12 books,Personal,2024-12-11,In Progress,Low,24
+U0237,Run 5km,Goal: run 5km,Fitness,2024-09-12,Not Started,High,0
+U0237,Run 5km,Goal: run 5km,Fitness,2025-04-10,Completed,Medium,100
+U0238,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-03-28,Completed,High,100
+U0238,Pay off Loan,Goal: pay off loan,Financial,2025-03-16,Completed,Medium,100
+U0238,Switch Domain,Goal: switch domain,Career,2025-05-03,Completed,Low,100
+U0238,Regular Health Check-up,Goal: regular health check-up,Health,2025-02-13,Not Started,High,0
+U0238,Meditate Daily,Goal: meditate daily,Personal,2024-08-03,In Progress,Low,77
+U0238,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-06-11,Not Started,High,0
+U0239,Learn New Skill,Goal: learn new skill,Academic,2024-12-07,Completed,High,100
+U0239,Network 10 Professionals,Goal: network 10 professionals,Career,2024-08-07,Abandoned,Medium,24
+U0239,Save for Vacation,Goal: save for vacation,Financial,2025-10-07,In Progress,Low,37
+U0239,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-14,Abandoned,Low,1
+U0240,Reduce Screen Time,Goal: reduce screen time,Personal,2025-02-13,Abandoned,Medium,17
+U0240,Switch Domain,Goal: switch domain,Career,2024-07-26,Not Started,Medium,0
+U0240,Quit Junk Food,Goal: quit junk food,Health,2025-01-30,Not Started,Low,0
+U0240,Save for Vacation,Goal: save for vacation,Financial,2024-09-02,Not Started,Low,0
+U0241,Network 10 Professionals,Goal: network 10 professionals,Career,2025-09-02,In Progress,Low,76
+U0241,Get Promoted,Goal: get promoted,Career,2024-10-01,Completed,Low,100
+U0241,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-01,Completed,Medium,100
+U0241,Finish Certification,Goal: finish certification,Academic,2025-06-20,In Progress,Medium,27
+U0241,Meditate Daily,Goal: meditate daily,Personal,2024-09-30,Completed,High,100
+U0241,Learn Cooking,Goal: learn cooking,Personal,2025-02-07,Abandoned,High,16
+U0241,Build Portfolio,Goal: build portfolio,Career,2025-05-29,In Progress,Medium,75
+U0242,Pay off Loan,Goal: pay off loan,Financial,2025-03-06,In Progress,Medium,26
+U0242,Run 5km,Goal: run 5km,Fitness,2025-06-28,Abandoned,High,21
+U0242,Get Promoted,Goal: get promoted,Career,2024-09-23,Completed,High,100
+U0242,Switch Domain,Goal: switch domain,Career,2025-02-26,Completed,Medium,100
+U0242,Improve Flexibility,Goal: improve flexibility,Fitness,2024-06-19,Completed,High,100
+U0242,Finish Certification,Goal: finish certification,Academic,2024-10-16,Completed,Medium,100
+U0242,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-22,In Progress,Low,43
+U0242,Get Promoted,Goal: get promoted,Career,2024-08-13,In Progress,High,28
+U0243,Quit Junk Food,Goal: quit junk food,Health,2024-09-15,Abandoned,Medium,9
+U0243,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-14,Completed,High,100
+U0243,Build Portfolio,Goal: build portfolio,Career,2025-01-23,Completed,Medium,100
+U0243,Run 5km,Goal: run 5km,Fitness,2024-03-04,Completed,High,100
+U0243,Complete Course,Goal: complete course,Academic,2024-12-05,Completed,Low,100
+U0243,Quit Junk Food,Goal: quit junk food,Health,2025-07-07,Completed,Medium,100
+U0243,Network 10 Professionals,Goal: network 10 professionals,Career,2025-07-23,Not Started,Medium,0
+U0244,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-24,Completed,Low,100
+U0244,Improve Flexibility,Goal: improve flexibility,Fitness,2025-01-12,Completed,High,100
+U0244,Learn Cooking,Goal: learn cooking,Personal,2024-10-03,In Progress,Medium,60
+U0244,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-04-25,Abandoned,Medium,29
+U0244,Run 5km,Goal: run 5km,Fitness,2024-07-19,Completed,Low,100
+U0245,Pay off Loan,Goal: pay off loan,Financial,2024-12-11,Not Started,High,0
+U0245,Save for Vacation,Goal: save for vacation,Financial,2024-09-02,Completed,Low,100
+U0245,Quit Junk Food,Goal: quit junk food,Health,2024-12-22,Completed,Low,100
+U0245,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-02,Not Started,High,0
+U0246,Network 10 Professionals,Goal: network 10 professionals,Career,2024-12-07,In Progress,Low,24
+U0246,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-09,Completed,Low,100
+U0246,Switch Domain,Goal: switch domain,Career,2024-06-08,Completed,High,100
+U0246,Learn New Skill,Goal: learn new skill,Academic,2024-06-19,Completed,Medium,100
+U0246,Get Promoted,Goal: get promoted,Career,2024-05-28,Completed,High,100
+U0246,Pay off Loan,Goal: pay off loan,Financial,2025-02-06,In Progress,Low,28
+U0246,Switch Domain,Goal: switch domain,Career,2024-10-28,In Progress,High,21
+U0246,Buy a Laptop,Goal: buy a laptop,Financial,2024-04-22,In Progress,Medium,83
+U0247,Build Portfolio,Goal: build portfolio,Career,2024-09-14,Not Started,High,0
+U0247,Complete Course,Goal: complete course,Academic,2025-02-26,Abandoned,Low,37
+U0248,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-26,Completed,Medium,100
+U0248,Finish Certification,Goal: finish certification,Academic,2024-10-01,In Progress,Medium,36
+U0248,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-14,In Progress,Low,45
+U0248,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-09-05,Completed,High,100
+U0248,Quit Junk Food,Goal: quit junk food,Health,2025-01-22,In Progress,Medium,72
+U0249,Meditate Daily,Goal: meditate daily,Personal,2025-03-20,In Progress,Medium,80
+U0249,Regular Health Check-up,Goal: regular health check-up,Health,2025-04-04,In Progress,High,86
+U0249,Finish Certification,Goal: finish certification,Academic,2025-01-12,Not Started,High,0
+U0249,Save for Vacation,Goal: save for vacation,Financial,2025-01-09,Completed,High,100
+U0249,Improve Flexibility,Goal: improve flexibility,Fitness,2024-12-21,In Progress,Medium,80
+U0249,Drink 2L Water,Goal: drink 2l water,Health,2025-03-17,Completed,Low,100
+U0249,Meditate Daily,Goal: meditate daily,Personal,2024-06-01,Completed,Low,100
+U0250,Finish Certification,Goal: finish certification,Academic,2024-12-31,In Progress,High,53
+U0250,Improve Flexibility,Goal: improve flexibility,Fitness,2025-01-08,Not Started,High,0
+U0250,Regular Health Check-up,Goal: regular health check-up,Health,2025-06-18,Completed,Medium,100
+U0250,Regular Health Check-up,Goal: regular health check-up,Health,2025-06-02,In Progress,Low,56
+U0251,Lose 5kg,Goal: lose 5kg,Fitness,2025-03-21,Completed,Medium,100
+U0251,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-10-26,In Progress,Medium,22
+U0251,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-10,Completed,High,100
+U0251,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-22,Completed,High,100
+U0252,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-12-22,In Progress,Low,47
+U0252,Drink 2L Water,Goal: drink 2l water,Health,2024-05-18,In Progress,Medium,26
+U0253,Network 10 Professionals,Goal: network 10 professionals,Career,2025-05-03,Completed,Medium,100
+U0253,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-22,Not Started,Medium,0
+U0253,Improve Flexibility,Goal: improve flexibility,Fitness,2024-03-21,Completed,Low,100
+U0253,Buy a Laptop,Goal: buy a laptop,Financial,2025-02-02,In Progress,Medium,69
+U0253,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-18,Abandoned,Low,4
+U0253,Switch Domain,Goal: switch domain,Career,2025-07-06,Not Started,High,0
+U0254,Regular Health Check-up,Goal: regular health check-up,Health,2024-03-07,Abandoned,Medium,15
+U0254,Run 5km,Goal: run 5km,Fitness,2024-10-10,Completed,High,100
+U0254,Switch Domain,Goal: switch domain,Career,2025-02-01,Not Started,Low,0
+U0254,Learn New Skill,Goal: learn new skill,Academic,2025-04-06,In Progress,High,69
+U0255,Drink 2L Water,Goal: drink 2l water,Health,2024-09-08,In Progress,High,21
+U0255,Meditate Daily,Goal: meditate daily,Personal,2024-12-16,Not Started,Medium,0
+U0255,Save Emergency Fund,Goal: save emergency fund,Financial,2024-09-29,Completed,Medium,100
+U0255,Save Emergency Fund,Goal: save emergency fund,Financial,2024-11-22,Completed,Low,100
+U0256,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-08,Completed,Low,100
+U0256,Drink 2L Water,Goal: drink 2l water,Health,2024-11-14,Not Started,Medium,0
+U0256,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-09-15,In Progress,Medium,29
+U0257,Meditate Daily,Goal: meditate daily,Personal,2024-08-29,Completed,High,100
+U0257,Build Portfolio,Goal: build portfolio,Career,2024-07-08,Completed,Medium,100
+U0257,Switch Domain,Goal: switch domain,Career,2024-11-04,In Progress,Low,43
+U0257,Save Emergency Fund,Goal: save emergency fund,Financial,2024-03-24,In Progress,Low,29
+U0257,Buy a Laptop,Goal: buy a laptop,Financial,2025-07-12,In Progress,Low,42
+U0257,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-11-27,In Progress,Low,40
+U0258,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-27,Not Started,Medium,0
+U0258,Switch Domain,Goal: switch domain,Career,2024-07-27,Completed,Medium,100
+U0258,Switch Domain,Goal: switch domain,Career,2024-12-12,In Progress,Medium,64
+U0258,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-08,Completed,Medium,100
+U0258,Read 12 Books,Goal: read 12 books,Personal,2024-07-02,In Progress,Low,75
+U0258,Finish Certification,Goal: finish certification,Academic,2025-02-08,In Progress,Medium,63
+U0258,Pay off Loan,Goal: pay off loan,Financial,2024-09-01,In Progress,Medium,76
+U0259,Read 12 Books,Goal: read 12 books,Personal,2025-04-02,Not Started,Low,0
+U0259,Learn Cooking,Goal: learn cooking,Personal,2024-12-02,Not Started,Low,0
+U0259,Drink 2L Water,Goal: drink 2l water,Health,2024-09-21,Not Started,Medium,0
+U0260,Quit Junk Food,Goal: quit junk food,Health,2025-07-10,Completed,High,100
+U0260,Complete Course,Goal: complete course,Academic,2024-12-22,Not Started,Medium,0
+U0260,Finish Certification,Goal: finish certification,Academic,2025-07-27,In Progress,Medium,33
+U0261,Get Promoted,Goal: get promoted,Career,2025-03-16,Not Started,Low,0
+U0261,Drink 2L Water,Goal: drink 2l water,Health,2024-12-21,Completed,Low,100
+U0261,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-06,In Progress,Low,24
+U0261,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-03,In Progress,Medium,25
+U0261,Pay off Loan,Goal: pay off loan,Financial,2024-04-12,Abandoned,Low,10
+U0261,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-09-02,In Progress,Medium,24
+U0262,Meditate Daily,Goal: meditate daily,Personal,2025-01-08,Completed,High,100
+U0262,Finish Certification,Goal: finish certification,Academic,2025-02-25,Abandoned,High,31
+U0262,Meditate Daily,Goal: meditate daily,Personal,2025-01-16,Completed,Low,100
+U0262,Save for Vacation,Goal: save for vacation,Financial,2025-04-19,Completed,Medium,100
+U0262,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-08-14,Completed,Low,100
+U0262,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-28,Completed,Low,100
+U0262,Pay off Loan,Goal: pay off loan,Financial,2025-08-08,Abandoned,Low,37
+U0263,Regular Health Check-up,Goal: regular health check-up,Health,2024-12-18,Completed,Low,100
+U0264,Build Portfolio,Goal: build portfolio,Career,2025-06-12,Not Started,High,0
+U0264,Meditate Daily,Goal: meditate daily,Personal,2024-07-23,Not Started,Medium,0
+U0264,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-13,Not Started,Low,0
+U0265,Complete Course,Goal: complete course,Academic,2025-09-05,Completed,High,100
+U0265,Improve Flexibility,Goal: improve flexibility,Fitness,2025-01-06,Completed,High,100
+U0265,Build Portfolio,Goal: build portfolio,Career,2025-09-02,Completed,High,100
+U0265,Save Emergency Fund,Goal: save emergency fund,Financial,2025-07-28,Completed,Low,100
+U0265,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-03,Not Started,Low,0
+U0266,Quit Junk Food,Goal: quit junk food,Health,2025-05-29,Completed,Medium,100
+U0266,Save Emergency Fund,Goal: save emergency fund,Financial,2024-07-04,Completed,Medium,100
+U0266,Switch Domain,Goal: switch domain,Career,2025-06-07,Completed,Low,100
+U0266,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-14,Completed,Medium,100
+U0267,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-28,In Progress,Medium,75
+U0267,Get Promoted,Goal: get promoted,Career,2024-11-11,Completed,Medium,100
+U0267,Improve Flexibility,Goal: improve flexibility,Fitness,2025-08-18,Abandoned,Medium,20
+U0267,Save for Vacation,Goal: save for vacation,Financial,2025-06-27,Completed,High,100
+U0267,Improve Flexibility,Goal: improve flexibility,Fitness,2025-01-04,Completed,Low,100
+U0268,Drink 2L Water,Goal: drink 2l water,Health,2025-01-30,Not Started,High,0
+U0268,Save for Vacation,Goal: save for vacation,Financial,2024-10-30,Completed,High,100
+U0268,Pay off Loan,Goal: pay off loan,Financial,2024-11-24,Completed,High,100
+U0268,Save for Vacation,Goal: save for vacation,Financial,2024-05-10,In Progress,High,68
+U0268,Build Portfolio,Goal: build portfolio,Career,2025-03-15,Completed,Medium,100
+U0269,Pay off Loan,Goal: pay off loan,Financial,2024-10-29,Not Started,High,0
+U0269,Get Promoted,Goal: get promoted,Career,2024-09-10,Completed,Medium,100
+U0269,Lose 5kg,Goal: lose 5kg,Fitness,2025-06-07,In Progress,High,47
+U0269,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-08-07,Abandoned,Medium,39
+U0270,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-08-03,Not Started,Low,0
+U0270,Run 5km,Goal: run 5km,Fitness,2024-12-01,Not Started,Low,0
+U0270,Lose 5kg,Goal: lose 5kg,Fitness,2024-05-28,Not Started,Low,0
+U0270,Learn New Skill,Goal: learn new skill,Academic,2024-09-23,Completed,Medium,100
+U0270,Lose 5kg,Goal: lose 5kg,Fitness,2025-03-01,Not Started,High,0
+U0271,Run 5km,Goal: run 5km,Fitness,2025-02-26,In Progress,Medium,81
+U0271,Learn Cooking,Goal: learn cooking,Personal,2025-04-22,Not Started,High,0
+U0271,Lose 5kg,Goal: lose 5kg,Fitness,2024-03-14,Not Started,Medium,0
+U0272,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-15,Completed,Low,100
+U0272,Reduce Screen Time,Goal: reduce screen time,Personal,2025-04-28,Completed,Medium,100
+U0272,Quit Junk Food,Goal: quit junk food,Health,2024-12-21,In Progress,Medium,80
+U0272,Build Portfolio,Goal: build portfolio,Career,2025-09-22,Completed,High,100
+U0272,Run 5km,Goal: run 5km,Fitness,2024-08-09,Not Started,High,0
+U0273,Learn Cooking,Goal: learn cooking,Personal,2025-05-26,Completed,Low,100
+U0273,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-22,Completed,Medium,100
+U0273,Quit Junk Food,Goal: quit junk food,Health,2024-11-14,In Progress,High,35
+U0273,Read 12 Books,Goal: read 12 books,Personal,2025-07-13,Completed,Low,100
+U0273,Drink 2L Water,Goal: drink 2l water,Health,2024-07-16,In Progress,Medium,64
+U0274,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-12,Completed,Low,100
+U0274,Improve Flexibility,Goal: improve flexibility,Fitness,2024-09-18,In Progress,High,76
+U0274,Run 5km,Goal: run 5km,Fitness,2024-11-15,In Progress,Medium,26
+U0274,Quit Junk Food,Goal: quit junk food,Health,2025-01-03,Completed,Low,100
+U0275,Quit Junk Food,Goal: quit junk food,Health,2025-03-29,Completed,Medium,100
+U0275,Reduce Screen Time,Goal: reduce screen time,Personal,2024-07-29,In Progress,Medium,47
+U0275,Quit Junk Food,Goal: quit junk food,Health,2024-12-23,Not Started,Low,0
+U0276,Get Promoted,Goal: get promoted,Career,2025-08-03,Completed,High,100
+U0276,Regular Health Check-up,Goal: regular health check-up,Health,2024-08-19,Not Started,Medium,0
+U0277,Complete Course,Goal: complete course,Academic,2025-03-13,In Progress,Medium,26
+U0277,Save for Vacation,Goal: save for vacation,Financial,2024-11-27,Completed,Low,100
+U0277,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-02-06,Not Started,Medium,0
+U0277,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-15,Not Started,Medium,0
+U0277,Lose 5kg,Goal: lose 5kg,Fitness,2025-04-20,Not Started,Low,0
+U0277,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-21,Completed,Medium,100
+U0278,Improve Flexibility,Goal: improve flexibility,Fitness,2025-03-31,Not Started,High,0
+U0278,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-02-16,Completed,Low,100
+U0278,Lose 5kg,Goal: lose 5kg,Fitness,2024-03-19,Completed,Low,100
+U0278,Network 10 Professionals,Goal: network 10 professionals,Career,2025-06-09,Completed,Medium,100
+U0278,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-01-08,Completed,Low,100
+U0278,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-06-30,In Progress,Medium,85
+U0279,Network 10 Professionals,Goal: network 10 professionals,Career,2024-11-10,In Progress,Medium,88
+U0279,Lose 5kg,Goal: lose 5kg,Fitness,2025-05-19,Not Started,Medium,0
+U0279,Network 10 Professionals,Goal: network 10 professionals,Career,2025-05-17,Not Started,Low,0
+U0279,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-05-15,In Progress,Low,60
+U0279,Buy a Laptop,Goal: buy a laptop,Financial,2025-06-25,Abandoned,Medium,1
+U0279,Pay off Loan,Goal: pay off loan,Financial,2025-03-10,Completed,Low,100
+U0280,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-11-19,Completed,High,100
+U0280,Meditate Daily,Goal: meditate daily,Personal,2025-04-08,In Progress,Low,24
+U0280,Learn New Skill,Goal: learn new skill,Academic,2025-06-03,Abandoned,Medium,24
+U0280,Pay off Loan,Goal: pay off loan,Financial,2024-08-04,Not Started,High,0
+U0280,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-27,Abandoned,High,11
+U0280,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-07-06,Completed,Medium,100
+U0281,Save Emergency Fund,Goal: save emergency fund,Financial,2024-12-01,Not Started,Medium,0
+U0281,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-21,Completed,High,100
+U0281,Regular Health Check-up,Goal: regular health check-up,Health,2024-10-10,Completed,Low,100
+U0281,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-17,Completed,Medium,100
+U0281,Read 12 Books,Goal: read 12 books,Personal,2024-11-22,Abandoned,Medium,18
+U0281,Save for Vacation,Goal: save for vacation,Financial,2025-09-11,Completed,Low,100
+U0282,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-21,In Progress,Medium,58
+U0282,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-02-25,In Progress,Medium,56
+U0282,Save for Vacation,Goal: save for vacation,Financial,2024-11-17,Completed,Low,100
+U0283,Switch Domain,Goal: switch domain,Career,2024-05-22,In Progress,Medium,37
+U0283,Learn New Skill,Goal: learn new skill,Academic,2024-07-22,Completed,Low,100
+U0283,Switch Domain,Goal: switch domain,Career,2025-04-18,Completed,Medium,100
+U0283,Lose 5kg,Goal: lose 5kg,Fitness,2024-04-06,In Progress,Medium,74
+U0283,Improve Flexibility,Goal: improve flexibility,Fitness,2024-10-13,Completed,High,100
+U0284,Finish Certification,Goal: finish certification,Academic,2025-07-11,Not Started,Medium,0
+U0284,Buy a Laptop,Goal: buy a laptop,Financial,2024-07-30,Abandoned,High,21
+U0284,Save Emergency Fund,Goal: save emergency fund,Financial,2024-12-03,In Progress,High,54
+U0284,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-09-09,Completed,Medium,100
+U0285,Meditate Daily,Goal: meditate daily,Personal,2025-03-20,Not Started,High,0
+U0285,Reduce Screen Time,Goal: reduce screen time,Personal,2024-07-27,Not Started,Low,0
+U0285,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-17,Abandoned,Medium,14
+U0286,Improve Flexibility,Goal: improve flexibility,Fitness,2024-07-12,Completed,High,100
+U0286,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-02,In Progress,Medium,49
+U0286,Finish Certification,Goal: finish certification,Academic,2025-02-22,In Progress,Medium,67
+U0286,Switch Domain,Goal: switch domain,Career,2025-03-02,Completed,Low,100
+U0287,Reduce Screen Time,Goal: reduce screen time,Personal,2024-11-13,Abandoned,Medium,1
+U0287,Complete Course,Goal: complete course,Academic,2025-03-03,Not Started,Low,0
+U0288,Pay off Loan,Goal: pay off loan,Financial,2025-03-04,Not Started,Low,0
+U0289,Regular Health Check-up,Goal: regular health check-up,Health,2025-05-18,Completed,Medium,100
+U0289,Drink 2L Water,Goal: drink 2l water,Health,2024-11-26,Completed,Medium,100
+U0290,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-01-04,In Progress,Medium,39
+U0290,Build Portfolio,Goal: build portfolio,Career,2025-01-28,Completed,Medium,100
+U0290,Network 10 Professionals,Goal: network 10 professionals,Career,2024-07-15,In Progress,Low,82
+U0290,Save Emergency Fund,Goal: save emergency fund,Financial,2024-10-18,Completed,Medium,100
+U0290,Get Promoted,Goal: get promoted,Career,2024-12-29,Abandoned,High,17
+U0291,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-12-27,Not Started,Medium,0
+U0291,Switch Domain,Goal: switch domain,Career,2025-04-13,Completed,Medium,100
+U0291,Save Emergency Fund,Goal: save emergency fund,Financial,2025-10-26,Not Started,Low,0
+U0291,Switch Domain,Goal: switch domain,Career,2024-12-18,Not Started,Medium,0
+U0291,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-30,Completed,Low,100
+U0292,Build Portfolio,Goal: build portfolio,Career,2025-08-17,In Progress,Medium,83
+U0292,Network 10 Professionals,Goal: network 10 professionals,Career,2024-11-20,Completed,High,100
+U0292,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-16,In Progress,High,31
+U0292,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-01-30,In Progress,Low,23
+U0292,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-13,Completed,Low,100
+U0293,Run 5km,Goal: run 5km,Fitness,2025-02-15,Completed,Low,100
+U0293,Learn Cooking,Goal: learn cooking,Personal,2024-09-24,Abandoned,High,28
+U0293,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-06-26,Abandoned,High,0
+U0293,Finish Certification,Goal: finish certification,Academic,2024-11-13,In Progress,Medium,62
+U0294,Pay off Loan,Goal: pay off loan,Financial,2025-06-15,In Progress,High,58
+U0294,Build Portfolio,Goal: build portfolio,Career,2025-01-03,Not Started,High,0
+U0294,Network 10 Professionals,Goal: network 10 professionals,Career,2024-12-21,Abandoned,High,34
+U0295,Read 12 Books,Goal: read 12 books,Personal,2024-11-05,Abandoned,Medium,9
+U0295,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-09-04,Not Started,Low,0
+U0296,Save for Vacation,Goal: save for vacation,Financial,2025-02-24,Not Started,High,0
+U0296,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-20,Not Started,High,0
+U0296,Quit Junk Food,Goal: quit junk food,Health,2024-07-02,Not Started,High,0
+U0297,Reduce Screen Time,Goal: reduce screen time,Personal,2024-05-09,Not Started,Low,0
+U0297,Meditate Daily,Goal: meditate daily,Personal,2025-03-01,In Progress,Medium,51
+U0297,Meditate Daily,Goal: meditate daily,Personal,2025-04-11,Not Started,Medium,0
+U0297,Run 5km,Goal: run 5km,Fitness,2024-08-03,Not Started,Low,0
+U0298,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-09-02,In Progress,Low,86
+U0299,Switch Domain,Goal: switch domain,Career,2024-12-31,In Progress,Medium,55
+U0299,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-04-18,Not Started,High,0
+U0299,Finish Certification,Goal: finish certification,Academic,2024-07-09,In Progress,High,27
+U0299,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-14,Completed,Medium,100
+U0300,Read 12 Books,Goal: read 12 books,Personal,2024-09-18,Completed,Low,100
+U0300,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-10-27,In Progress,Low,27
+U0300,Switch Domain,Goal: switch domain,Career,2024-08-10,Completed,Low,100
+U0301,Lose 5kg,Goal: lose 5kg,Fitness,2024-05-22,Abandoned,Medium,25
+U0301,Pay off Loan,Goal: pay off loan,Financial,2025-05-02,In Progress,Low,38
+U0301,Read 12 Books,Goal: read 12 books,Personal,2024-06-03,Completed,High,100
+U0301,Learn New Skill,Goal: learn new skill,Academic,2024-09-12,Not Started,Medium,0
+U0302,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-07-24,Completed,Medium,100
+U0303,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-05-25,Not Started,High,0
+U0304,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-21,Completed,Low,100
+U0304,Learn New Skill,Goal: learn new skill,Academic,2025-05-06,Completed,Medium,100
+U0304,Switch Domain,Goal: switch domain,Career,2025-07-04,In Progress,Low,61
+U0304,Get Promoted,Goal: get promoted,Career,2024-05-09,Not Started,High,0
+U0304,Save Emergency Fund,Goal: save emergency fund,Financial,2025-02-25,Abandoned,Low,29
+U0305,Pay off Loan,Goal: pay off loan,Financial,2025-05-21,Completed,Low,100
+U0305,Finish Certification,Goal: finish certification,Academic,2024-11-10,Completed,Medium,100
+U0305,Learn New Skill,Goal: learn new skill,Academic,2025-01-04,Abandoned,Low,20
+U0305,Quit Junk Food,Goal: quit junk food,Health,2024-04-04,Completed,Medium,100
+U0306,Pay off Loan,Goal: pay off loan,Financial,2025-10-21,In Progress,Medium,72
+U0306,Build Portfolio,Goal: build portfolio,Career,2025-04-05,Completed,Low,100
+U0306,Learn New Skill,Goal: learn new skill,Academic,2025-03-19,Completed,Low,100
+U0306,Complete Course,Goal: complete course,Academic,2025-05-15,Completed,Low,100
+U0306,Build Portfolio,Goal: build portfolio,Career,2025-01-02,Completed,Medium,100
+U0306,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-02,Completed,Low,100
+U0306,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-07,In Progress,Low,45
+U0306,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-04,Abandoned,Low,30
+U0307,Reduce Screen Time,Goal: reduce screen time,Personal,2024-03-18,Not Started,Low,0
+U0307,Drink 2L Water,Goal: drink 2l water,Health,2024-10-17,Not Started,Medium,0
+U0308,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-28,Not Started,High,0
+U0308,Reduce Screen Time,Goal: reduce screen time,Personal,2024-07-29,Completed,High,100
+U0308,Regular Health Check-up,Goal: regular health check-up,Health,2024-06-02,Abandoned,Low,23
+U0308,Pay off Loan,Goal: pay off loan,Financial,2024-12-11,Abandoned,High,38
+U0308,Drink 2L Water,Goal: drink 2l water,Health,2025-01-12,Completed,Medium,100
+U0309,Lose 5kg,Goal: lose 5kg,Fitness,2025-03-15,Not Started,High,0
+U0309,Quit Junk Food,Goal: quit junk food,Health,2024-09-16,Not Started,Medium,0
+U0309,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-11,Completed,High,100
+U0309,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-12,In Progress,Low,80
+U0309,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-19,Not Started,Low,0
+U0309,Save Emergency Fund,Goal: save emergency fund,Financial,2024-07-16,Not Started,Medium,0
+U0310,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-02-07,Not Started,Low,0
+U0310,Network 10 Professionals,Goal: network 10 professionals,Career,2025-07-02,In Progress,High,31
+U0311,Buy a Laptop,Goal: buy a laptop,Financial,2024-10-11,In Progress,Low,75
+U0311,Pay off Loan,Goal: pay off loan,Financial,2025-03-12,Not Started,Medium,0
+U0311,Buy a Laptop,Goal: buy a laptop,Financial,2024-10-14,Completed,Medium,100
+U0311,Build Portfolio,Goal: build portfolio,Career,2025-04-20,Not Started,High,0
+U0311,Switch Domain,Goal: switch domain,Career,2024-07-24,Not Started,High,0
+U0312,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-17,Not Started,Low,0
+U0312,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-29,Completed,Low,100
+U0312,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-12,In Progress,Medium,82
+U0313,Network 10 Professionals,Goal: network 10 professionals,Career,2024-04-25,Abandoned,Low,36
+U0313,Finish Certification,Goal: finish certification,Academic,2025-10-03,In Progress,Low,41
+U0313,Learn New Skill,Goal: learn new skill,Academic,2025-05-14,In Progress,Low,78
+U0313,Drink 2L Water,Goal: drink 2l water,Health,2024-12-07,Completed,Medium,100
+U0313,Learn Cooking,Goal: learn cooking,Personal,2024-12-18,Completed,Low,100
+U0313,Network 10 Professionals,Goal: network 10 professionals,Career,2025-08-22,Completed,Medium,100
+U0314,Regular Health Check-up,Goal: regular health check-up,Health,2025-06-16,Completed,Medium,100
+U0314,Quit Junk Food,Goal: quit junk food,Health,2025-03-14,Completed,Low,100
+U0314,Build Portfolio,Goal: build portfolio,Career,2025-02-21,In Progress,High,22
+U0314,Complete Course,Goal: complete course,Academic,2025-02-06,Completed,Medium,100
+U0314,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-01-10,In Progress,Medium,21
+U0314,Drink 2L Water,Goal: drink 2l water,Health,2025-03-07,Completed,Medium,100
+U0315,Meditate Daily,Goal: meditate daily,Personal,2024-03-23,Not Started,Low,0
+U0315,Finish Certification,Goal: finish certification,Academic,2025-08-05,In Progress,High,73
+U0315,Pay off Loan,Goal: pay off loan,Financial,2025-01-11,Completed,High,100
+U0315,Meditate Daily,Goal: meditate daily,Personal,2025-03-01,Completed,Medium,100
+U0315,Regular Health Check-up,Goal: regular health check-up,Health,2024-09-20,Not Started,High,0
+U0315,Improve Flexibility,Goal: improve flexibility,Fitness,2025-05-19,Not Started,Medium,0
+U0316,Meditate Daily,Goal: meditate daily,Personal,2025-07-30,In Progress,Low,84
+U0316,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-25,Completed,Medium,100
+U0316,Build Portfolio,Goal: build portfolio,Career,2025-04-13,Abandoned,Medium,35
+U0316,Pay off Loan,Goal: pay off loan,Financial,2024-10-10,Completed,Low,100
+U0316,Pay off Loan,Goal: pay off loan,Financial,2025-05-12,Not Started,Medium,0
+U0316,Save Emergency Fund,Goal: save emergency fund,Financial,2024-05-27,In Progress,High,34
+U0317,Buy a Laptop,Goal: buy a laptop,Financial,2024-10-14,In Progress,Medium,77
+U0317,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-08-03,In Progress,Medium,34
+U0318,Meditate Daily,Goal: meditate daily,Personal,2025-02-12,In Progress,High,78
+U0318,Save Emergency Fund,Goal: save emergency fund,Financial,2024-10-31,Abandoned,Medium,40
+U0318,Learn Cooking,Goal: learn cooking,Personal,2025-04-11,Not Started,High,0
+U0319,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-08-01,Abandoned,Low,20
+U0319,Lose 5kg,Goal: lose 5kg,Fitness,2025-05-15,In Progress,Medium,88
+U0320,Pay off Loan,Goal: pay off loan,Financial,2024-07-25,Abandoned,Low,34
+U0320,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-05-24,Not Started,Low,0
+U0320,Learn New Skill,Goal: learn new skill,Academic,2024-09-09,Completed,Low,100
+U0321,Network 10 Professionals,Goal: network 10 professionals,Career,2025-07-27,Not Started,High,0
+U0322,Learn New Skill,Goal: learn new skill,Academic,2024-09-07,Completed,High,100
+U0322,Save for Vacation,Goal: save for vacation,Financial,2024-11-18,In Progress,Low,65
+U0322,Regular Health Check-up,Goal: regular health check-up,Health,2024-12-30,In Progress,Low,83
+U0323,Finish Certification,Goal: finish certification,Academic,2025-08-06,Completed,Medium,100
+U0323,Regular Health Check-up,Goal: regular health check-up,Health,2024-10-14,Not Started,High,0
+U0323,Network 10 Professionals,Goal: network 10 professionals,Career,2024-11-03,Completed,Low,100
+U0323,Drink 2L Water,Goal: drink 2l water,Health,2024-07-16,Completed,Low,100
+U0324,Read 12 Books,Goal: read 12 books,Personal,2024-12-31,Not Started,Low,0
+U0324,Lose 5kg,Goal: lose 5kg,Fitness,2025-08-17,Abandoned,High,16
+U0324,Run 5km,Goal: run 5km,Fitness,2025-09-15,Abandoned,High,39
+U0324,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-05-21,Completed,Low,100
+U0325,Meditate Daily,Goal: meditate daily,Personal,2025-07-25,Completed,Medium,100
+U0325,Get Promoted,Goal: get promoted,Career,2025-02-27,In Progress,High,34
+U0325,Save for Vacation,Goal: save for vacation,Financial,2025-05-13,Not Started,Medium,0
+U0325,Get Promoted,Goal: get promoted,Career,2025-06-11,In Progress,Low,78
+U0325,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-18,In Progress,Low,26
+U0326,Learn New Skill,Goal: learn new skill,Academic,2024-12-14,Completed,Low,100
+U0326,Build Portfolio,Goal: build portfolio,Career,2024-05-11,In Progress,Medium,62
+U0326,Regular Health Check-up,Goal: regular health check-up,Health,2025-02-25,Abandoned,High,23
+U0326,Switch Domain,Goal: switch domain,Career,2024-09-10,Abandoned,High,40
+U0326,Meditate Daily,Goal: meditate daily,Personal,2024-12-12,Completed,Low,100
+U0327,Save for Vacation,Goal: save for vacation,Financial,2025-01-31,Completed,Medium,100
+U0327,Pay off Loan,Goal: pay off loan,Financial,2024-12-15,Not Started,High,0
+U0328,Switch Domain,Goal: switch domain,Career,2024-11-02,In Progress,Low,61
+U0328,Save for Vacation,Goal: save for vacation,Financial,2025-04-09,Completed,High,100
+U0328,Buy a Laptop,Goal: buy a laptop,Financial,2025-07-31,Not Started,Medium,0
+U0328,Read 12 Books,Goal: read 12 books,Personal,2024-07-27,Completed,Low,100
+U0328,Improve Flexibility,Goal: improve flexibility,Fitness,2024-06-14,Not Started,Medium,0
+U0328,Finish Certification,Goal: finish certification,Academic,2025-05-24,Completed,Low,100
+U0328,Pay off Loan,Goal: pay off loan,Financial,2024-12-04,Completed,Low,100
+U0328,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-12-06,Not Started,Medium,0
+U0329,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-05-17,Completed,Low,100
+U0329,Get Promoted,Goal: get promoted,Career,2024-12-06,Completed,Low,100
+U0330,Build Portfolio,Goal: build portfolio,Career,2024-12-22,In Progress,High,28
+U0330,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-01-20,In Progress,High,49
+U0330,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-20,In Progress,High,29
+U0331,Quit Junk Food,Goal: quit junk food,Health,2024-08-14,Abandoned,High,11
+U0331,Learn Cooking,Goal: learn cooking,Personal,2024-08-30,Completed,High,100
+U0331,Complete Course,Goal: complete course,Academic,2025-01-28,Completed,Low,100
+U0331,Build Portfolio,Goal: build portfolio,Career,2025-05-03,Completed,Medium,100
+U0332,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-10-18,Not Started,Low,0
+U0332,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-09-22,Abandoned,Medium,23
+U0332,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-16,Abandoned,Low,37
+U0332,Read 12 Books,Goal: read 12 books,Personal,2024-10-30,Not Started,High,0
+U0332,Reduce Screen Time,Goal: reduce screen time,Personal,2024-06-27,Not Started,Medium,0
+U0332,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-05-18,Completed,Medium,100
+U0333,Save Emergency Fund,Goal: save emergency fund,Financial,2024-06-30,Completed,High,100
+U0333,Build Portfolio,Goal: build portfolio,Career,2025-03-16,Completed,Medium,100
+U0333,Get Promoted,Goal: get promoted,Career,2024-06-18,In Progress,Medium,32
+U0333,Reduce Screen Time,Goal: reduce screen time,Personal,2024-04-11,Completed,Low,100
+U0333,Finish Certification,Goal: finish certification,Academic,2025-06-08,In Progress,Medium,90
+U0333,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-06-25,Abandoned,Low,33
+U0334,Reduce Screen Time,Goal: reduce screen time,Personal,2024-04-17,Not Started,High,0
+U0334,Finish Certification,Goal: finish certification,Academic,2025-01-07,Completed,Low,100
+U0335,Buy a Laptop,Goal: buy a laptop,Financial,2024-08-10,Completed,High,100
+U0335,Network 10 Professionals,Goal: network 10 professionals,Career,2024-05-23,In Progress,High,33
+U0335,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-04,Abandoned,Low,33
+U0335,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-05-14,Abandoned,Medium,10
+U0335,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-08,Completed,Medium,100
+U0335,Learn New Skill,Goal: learn new skill,Academic,2025-01-13,Not Started,Medium,0
+U0336,Read 12 Books,Goal: read 12 books,Personal,2024-10-07,Completed,Medium,100
+U0336,Get Promoted,Goal: get promoted,Career,2025-07-03,Completed,Medium,100
+U0336,Get Promoted,Goal: get promoted,Career,2025-02-10,Completed,High,100
+U0336,Complete Course,Goal: complete course,Academic,2025-09-02,Completed,Low,100
+U0336,Finish Certification,Goal: finish certification,Academic,2024-08-08,In Progress,High,61
+U0337,Quit Junk Food,Goal: quit junk food,Health,2025-04-19,Not Started,High,0
+U0337,Pay off Loan,Goal: pay off loan,Financial,2025-03-06,Abandoned,High,7
+U0337,Quit Junk Food,Goal: quit junk food,Health,2025-03-14,Abandoned,Low,28
+U0337,Lose 5kg,Goal: lose 5kg,Fitness,2025-07-14,Completed,Medium,100
+U0338,Improve Flexibility,Goal: improve flexibility,Fitness,2025-08-25,Abandoned,Medium,14
+U0338,Get Promoted,Goal: get promoted,Career,2025-04-12,In Progress,Medium,48
+U0338,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-02-12,Not Started,Low,0
+U0338,Switch Domain,Goal: switch domain,Career,2025-01-12,In Progress,High,90
+U0338,Quit Junk Food,Goal: quit junk food,Health,2025-05-22,Completed,Low,100
+U0339,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-23,Completed,Low,100
+U0339,Drink 2L Water,Goal: drink 2l water,Health,2025-05-27,Not Started,High,0
+U0340,Save for Vacation,Goal: save for vacation,Financial,2024-09-02,In Progress,Medium,62
+U0340,Build Portfolio,Goal: build portfolio,Career,2025-01-23,Not Started,High,0
+U0340,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-02-03,Abandoned,Low,29
+U0341,Drink 2L Water,Goal: drink 2l water,Health,2024-11-16,Not Started,High,0
+U0341,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-01,Not Started,Medium,0
+U0341,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-14,Not Started,Low,0
+U0342,Pay off Loan,Goal: pay off loan,Financial,2024-07-06,Completed,Medium,100
+U0342,Drink 2L Water,Goal: drink 2l water,Health,2025-01-10,Not Started,Medium,0
+U0343,Build Portfolio,Goal: build portfolio,Career,2024-10-02,Not Started,High,0
+U0343,Meditate Daily,Goal: meditate daily,Personal,2024-12-25,Not Started,High,0
+U0344,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-05-08,Not Started,Low,0
+U0344,Buy a Laptop,Goal: buy a laptop,Financial,2024-10-19,Abandoned,High,15
+U0345,Get Promoted,Goal: get promoted,Career,2025-06-17,In Progress,Low,28
+U0345,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-17,Not Started,Low,0
+U0345,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-22,In Progress,Medium,89
+U0346,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-08,In Progress,High,85
+U0346,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-21,Abandoned,High,14
+U0346,Learn Cooking,Goal: learn cooking,Personal,2025-02-06,Completed,Low,100
+U0346,Finish Certification,Goal: finish certification,Academic,2025-06-11,Completed,High,100
+U0346,Complete Course,Goal: complete course,Academic,2024-07-02,Completed,High,100
+U0347,Quit Junk Food,Goal: quit junk food,Health,2024-05-31,Completed,Medium,100
+U0347,Reduce Screen Time,Goal: reduce screen time,Personal,2024-10-22,Completed,Low,100
+U0347,Save for Vacation,Goal: save for vacation,Financial,2024-09-05,Completed,Low,100
+U0347,Switch Domain,Goal: switch domain,Career,2025-03-08,Completed,High,100
+U0348,Learn Cooking,Goal: learn cooking,Personal,2024-07-09,Not Started,High,0
+U0348,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-11-01,Abandoned,High,0
+U0348,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-07-28,Completed,High,100
+U0348,Save Emergency Fund,Goal: save emergency fund,Financial,2024-12-04,Completed,Low,100
+U0348,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-17,Completed,Low,100
+U0349,Read 12 Books,Goal: read 12 books,Personal,2025-03-03,In Progress,High,20
+U0349,Finish Certification,Goal: finish certification,Academic,2024-03-20,Completed,High,100
+U0350,Meditate Daily,Goal: meditate daily,Personal,2024-12-17,In Progress,Medium,69
+U0350,Meditate Daily,Goal: meditate daily,Personal,2024-09-18,In Progress,Low,51
+U0350,Finish Certification,Goal: finish certification,Academic,2024-12-10,In Progress,High,20
+U0350,Drink 2L Water,Goal: drink 2l water,Health,2024-10-13,In Progress,Low,67
+U0350,Learn New Skill,Goal: learn new skill,Academic,2024-10-15,In Progress,Low,55
+U0351,Reduce Screen Time,Goal: reduce screen time,Personal,2025-04-18,Not Started,Low,0
+U0351,Meditate Daily,Goal: meditate daily,Personal,2024-06-20,Not Started,Medium,0
+U0351,Switch Domain,Goal: switch domain,Career,2024-12-29,Abandoned,Medium,33
+U0352,Regular Health Check-up,Goal: regular health check-up,Health,2025-01-18,Completed,Low,100
+U0352,Improve Flexibility,Goal: improve flexibility,Fitness,2025-04-02,Completed,Medium,100
+U0352,Switch Domain,Goal: switch domain,Career,2025-08-07,Completed,Medium,100
+U0353,Pay off Loan,Goal: pay off loan,Financial,2025-03-10,In Progress,Low,42
+U0353,Lose 5kg,Goal: lose 5kg,Fitness,2024-09-05,Completed,High,100
+U0353,Save Emergency Fund,Goal: save emergency fund,Financial,2025-08-07,Completed,High,100
+U0353,Get Promoted,Goal: get promoted,Career,2025-05-22,Completed,Medium,100
+U0353,Save Emergency Fund,Goal: save emergency fund,Financial,2024-05-12,Not Started,High,0
+U0353,Learn New Skill,Goal: learn new skill,Academic,2025-09-20,Completed,Medium,100
+U0353,Finish Certification,Goal: finish certification,Academic,2024-11-24,Completed,Low,100
+U0354,Drink 2L Water,Goal: drink 2l water,Health,2024-10-08,Abandoned,Medium,18
+U0355,Complete Course,Goal: complete course,Academic,2024-11-30,Completed,High,100
+U0355,Learn New Skill,Goal: learn new skill,Academic,2025-03-23,Abandoned,Medium,38
+U0355,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-25,Completed,Low,100
+U0355,Save Emergency Fund,Goal: save emergency fund,Financial,2025-08-19,Abandoned,Medium,10
+U0355,Network 10 Professionals,Goal: network 10 professionals,Career,2024-08-09,Not Started,Low,0
+U0355,Quit Junk Food,Goal: quit junk food,Health,2025-07-24,Completed,Low,100
+U0356,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-15,Completed,High,100
+U0356,Pay off Loan,Goal: pay off loan,Financial,2025-04-30,Completed,Low,100
+U0356,Build Portfolio,Goal: build portfolio,Career,2025-08-15,Not Started,Low,0
+U0356,Save for Vacation,Goal: save for vacation,Financial,2024-12-27,In Progress,High,29
+U0356,Complete Course,Goal: complete course,Academic,2025-03-31,Not Started,Medium,0
+U0356,Get Promoted,Goal: get promoted,Career,2025-05-01,In Progress,Medium,80
+U0356,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-05-03,Completed,Low,100
+U0357,Get Promoted,Goal: get promoted,Career,2024-12-16,Abandoned,Medium,26
+U0357,Buy a Laptop,Goal: buy a laptop,Financial,2024-11-26,In Progress,High,81
+U0357,Complete Course,Goal: complete course,Academic,2025-07-08,Not Started,Low,0
+U0357,Save for Vacation,Goal: save for vacation,Financial,2024-10-01,Abandoned,Low,7
+U0357,Finish Certification,Goal: finish certification,Academic,2025-09-16,Not Started,Medium,0
+U0358,Reduce Screen Time,Goal: reduce screen time,Personal,2025-04-21,Not Started,High,0
+U0358,Quit Junk Food,Goal: quit junk food,Health,2024-11-03,Abandoned,Low,31
+U0359,Buy a Laptop,Goal: buy a laptop,Financial,2024-12-12,Abandoned,High,13
+U0359,Get Promoted,Goal: get promoted,Career,2025-01-19,Completed,Medium,100
+U0359,Build Portfolio,Goal: build portfolio,Career,2025-01-12,Abandoned,High,23
+U0359,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-03-26,In Progress,High,52
+U0359,Network 10 Professionals,Goal: network 10 professionals,Career,2024-11-22,Completed,High,100
+U0359,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-01,Completed,High,100
+U0359,Learn New Skill,Goal: learn new skill,Academic,2025-07-03,Completed,Medium,100
+U0359,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-10-07,In Progress,Low,61
+U0360,Regular Health Check-up,Goal: regular health check-up,Health,2025-04-12,Completed,Low,100
+U0361,Read 12 Books,Goal: read 12 books,Personal,2024-03-14,Not Started,Low,0
+U0361,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-07,In Progress,Low,83
+U0361,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-08-10,In Progress,High,37
+U0362,Learn Cooking,Goal: learn cooking,Personal,2025-02-07,Completed,High,100
+U0362,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-06,In Progress,Medium,58
+U0362,Meditate Daily,Goal: meditate daily,Personal,2025-09-14,Abandoned,Medium,9
+U0362,Drink 2L Water,Goal: drink 2l water,Health,2024-12-02,Completed,High,100
+U0362,Reduce Screen Time,Goal: reduce screen time,Personal,2024-11-10,In Progress,Medium,38
+U0362,Buy a Laptop,Goal: buy a laptop,Financial,2025-06-14,Not Started,Low,0
+U0363,Lose 5kg,Goal: lose 5kg,Fitness,2024-07-02,Not Started,High,0
+U0364,Improve Flexibility,Goal: improve flexibility,Fitness,2024-08-06,Not Started,Medium,0
+U0365,Switch Domain,Goal: switch domain,Career,2025-01-28,Completed,High,100
+U0365,Finish Certification,Goal: finish certification,Academic,2025-03-25,In Progress,High,87
+U0365,Get Promoted,Goal: get promoted,Career,2024-07-13,Abandoned,Medium,7
+U0365,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-01,Not Started,Low,0
+U0365,Finish Certification,Goal: finish certification,Academic,2025-03-16,In Progress,Low,83
+U0365,Meditate Daily,Goal: meditate daily,Personal,2025-08-26,Completed,Medium,100
+U0366,Learn New Skill,Goal: learn new skill,Academic,2024-05-18,Completed,Medium,100
+U0366,Read 12 Books,Goal: read 12 books,Personal,2024-09-22,Not Started,Low,0
+U0366,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-11-17,Abandoned,High,22
+U0366,Reduce Screen Time,Goal: reduce screen time,Personal,2025-02-23,Abandoned,Low,13
+U0366,Network 10 Professionals,Goal: network 10 professionals,Career,2025-04-11,Abandoned,Low,11
+U0367,Complete Course,Goal: complete course,Academic,2025-05-12,Abandoned,High,0
+U0367,Switch Domain,Goal: switch domain,Career,2025-03-28,Completed,High,100
+U0367,Meditate Daily,Goal: meditate daily,Personal,2024-10-06,Completed,Medium,100
+U0367,Run 5km,Goal: run 5km,Fitness,2024-12-03,Completed,High,100
+U0367,Complete Course,Goal: complete course,Academic,2025-07-04,In Progress,Medium,26
+U0367,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-11-04,Not Started,High,0
+U0368,Regular Health Check-up,Goal: regular health check-up,Health,2025-01-19,Abandoned,High,5
+U0368,Lose 5kg,Goal: lose 5kg,Fitness,2025-04-08,Completed,Medium,100
+U0368,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-05,Completed,Low,100
+U0368,Learn Cooking,Goal: learn cooking,Personal,2025-01-25,In Progress,Low,30
+U0368,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-08-14,Completed,High,100
+U0368,Finish Certification,Goal: finish certification,Academic,2024-11-17,In Progress,High,49
+U0368,Save for Vacation,Goal: save for vacation,Financial,2024-10-16,Not Started,High,0
+U0369,Improve Flexibility,Goal: improve flexibility,Fitness,2025-05-07,Not Started,High,0
+U0369,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-07-14,Not Started,Low,0
+U0370,Improve Flexibility,Goal: improve flexibility,Fitness,2025-08-04,In Progress,High,23
+U0370,Pay off Loan,Goal: pay off loan,Financial,2024-11-16,Abandoned,Medium,7
+U0370,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-08-05,Abandoned,Medium,2
+U0370,Quit Junk Food,Goal: quit junk food,Health,2025-01-20,Not Started,Medium,0
+U0370,Learn New Skill,Goal: learn new skill,Academic,2025-09-13,Completed,Medium,100
+U0370,Run 5km,Goal: run 5km,Fitness,2024-09-03,Not Started,Medium,0
+U0371,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-07-29,Not Started,High,0
+U0371,Pay off Loan,Goal: pay off loan,Financial,2025-04-25,Abandoned,High,32
+U0371,Switch Domain,Goal: switch domain,Career,2024-09-27,Completed,High,100
+U0371,Complete Course,Goal: complete course,Academic,2025-01-03,Abandoned,Low,38
+U0371,Quit Junk Food,Goal: quit junk food,Health,2025-09-13,Abandoned,High,8
+U0372,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-04-30,Not Started,Low,0
+U0372,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-19,Completed,Medium,100
+U0372,Finish Certification,Goal: finish certification,Academic,2025-07-24,In Progress,High,81
+U0372,Save for Vacation,Goal: save for vacation,Financial,2025-05-23,Completed,High,100
+U0372,Pay off Loan,Goal: pay off loan,Financial,2024-07-11,Not Started,Medium,0
+U0372,Learn New Skill,Goal: learn new skill,Academic,2025-09-26,In Progress,High,32
+U0373,Complete Course,Goal: complete course,Academic,2025-08-06,In Progress,Low,88
+U0373,Reduce Screen Time,Goal: reduce screen time,Personal,2025-07-12,Completed,Low,100
+U0373,Learn New Skill,Goal: learn new skill,Academic,2025-07-13,Abandoned,High,25
+U0374,Get Promoted,Goal: get promoted,Career,2024-11-10,Completed,High,100
+U0374,Meditate Daily,Goal: meditate daily,Personal,2025-10-12,Abandoned,High,11
+U0374,Complete Course,Goal: complete course,Academic,2024-08-16,In Progress,Medium,81
+U0374,Complete Course,Goal: complete course,Academic,2024-10-21,In Progress,Low,70
+U0374,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-11-01,In Progress,Low,90
+U0374,Finish Certification,Goal: finish certification,Academic,2025-09-30,Completed,Low,100
+U0374,Finish Certification,Goal: finish certification,Academic,2024-06-25,In Progress,Medium,26
+U0375,Save for Vacation,Goal: save for vacation,Financial,2024-05-15,In Progress,Medium,28
+U0375,Complete Course,Goal: complete course,Academic,2025-02-25,Completed,Low,100
+U0375,Network 10 Professionals,Goal: network 10 professionals,Career,2025-07-07,Abandoned,Low,21
+U0375,Finish Certification,Goal: finish certification,Academic,2025-04-18,Completed,Low,100
+U0375,Get Promoted,Goal: get promoted,Career,2025-07-04,Not Started,High,0
+U0375,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-12-03,Abandoned,High,0
+U0376,Save Emergency Fund,Goal: save emergency fund,Financial,2024-03-26,Completed,Low,100
+U0376,Learn Cooking,Goal: learn cooking,Personal,2025-04-26,Completed,High,100
+U0376,Improve Flexibility,Goal: improve flexibility,Fitness,2024-08-02,In Progress,Low,71
+U0377,Complete Course,Goal: complete course,Academic,2025-04-15,Abandoned,High,12
+U0377,Save for Vacation,Goal: save for vacation,Financial,2024-12-30,Completed,Medium,100
+U0377,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-09-08,In Progress,Low,83
+U0377,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-15,Completed,High,100
+U0377,Buy a Laptop,Goal: buy a laptop,Financial,2024-12-01,In Progress,High,65
+U0378,Network 10 Professionals,Goal: network 10 professionals,Career,2024-08-27,Completed,Medium,100
+U0378,Pay off Loan,Goal: pay off loan,Financial,2024-09-06,Abandoned,Medium,24
+U0378,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-19,Abandoned,Medium,9
+U0378,Save Emergency Fund,Goal: save emergency fund,Financial,2025-11-13,Not Started,Low,0
+U0379,Save for Vacation,Goal: save for vacation,Financial,2024-10-27,Completed,Medium,100
+U0379,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-04-01,Completed,High,100
+U0379,Regular Health Check-up,Goal: regular health check-up,Health,2024-10-28,In Progress,Medium,76
+U0379,Build Portfolio,Goal: build portfolio,Career,2025-01-24,Completed,High,100
+U0379,Learn Cooking,Goal: learn cooking,Personal,2025-01-24,Completed,High,100
+U0380,Build Portfolio,Goal: build portfolio,Career,2025-05-23,In Progress,Medium,74
+U0380,Reduce Screen Time,Goal: reduce screen time,Personal,2024-05-26,Completed,High,100
+U0380,Meditate Daily,Goal: meditate daily,Personal,2025-07-03,Not Started,Medium,0
+U0381,Learn New Skill,Goal: learn new skill,Academic,2024-07-31,Not Started,High,0
+U0381,Improve Flexibility,Goal: improve flexibility,Fitness,2025-03-28,Not Started,High,0
+U0381,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-02-10,Completed,High,100
+U0382,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-11,Completed,Medium,100
+U0382,Meditate Daily,Goal: meditate daily,Personal,2025-08-21,Abandoned,Low,27
+U0382,Save for Vacation,Goal: save for vacation,Financial,2025-01-01,Abandoned,Low,7
+U0382,Save Emergency Fund,Goal: save emergency fund,Financial,2024-09-24,Completed,High,100
+U0382,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-07-28,Completed,Medium,100
+U0383,Switch Domain,Goal: switch domain,Career,2025-06-17,Not Started,Low,0
+U0383,Finish Certification,Goal: finish certification,Academic,2025-01-23,Completed,Low,100
+U0383,Lose 5kg,Goal: lose 5kg,Fitness,2024-09-08,Completed,Medium,100
+U0383,Meditate Daily,Goal: meditate daily,Personal,2025-03-09,Completed,Medium,100
+U0383,Learn New Skill,Goal: learn new skill,Academic,2025-01-15,In Progress,Low,36
+U0383,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-21,Completed,High,100
+U0384,Quit Junk Food,Goal: quit junk food,Health,2025-08-03,Abandoned,Medium,28
+U0384,Buy a Laptop,Goal: buy a laptop,Financial,2025-01-20,In Progress,High,75
+U0384,Quit Junk Food,Goal: quit junk food,Health,2024-12-26,In Progress,Medium,34
+U0384,Get Promoted,Goal: get promoted,Career,2025-03-04,Completed,Medium,100
+U0384,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-17,Abandoned,Medium,27
+U0385,Regular Health Check-up,Goal: regular health check-up,Health,2024-10-10,Abandoned,Medium,39
+U0385,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-06-03,In Progress,High,53
+U0385,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-23,Completed,Medium,100
+U0386,Build Portfolio,Goal: build portfolio,Career,2024-09-20,Completed,High,100
+U0386,Learn New Skill,Goal: learn new skill,Academic,2025-01-27,Completed,Medium,100
+U0386,Get Promoted,Goal: get promoted,Career,2024-07-29,Abandoned,Low,20
+U0386,Reduce Screen Time,Goal: reduce screen time,Personal,2025-03-06,Not Started,Low,0
+U0386,Reduce Screen Time,Goal: reduce screen time,Personal,2024-10-23,Abandoned,Low,24
+U0386,Read 12 Books,Goal: read 12 books,Personal,2025-05-23,Not Started,Low,0
+U0387,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-26,Completed,Low,100
+U0387,Run 5km,Goal: run 5km,Fitness,2025-06-30,Not Started,Medium,0
+U0388,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-02-04,Not Started,High,0
+U0389,Regular Health Check-up,Goal: regular health check-up,Health,2025-02-06,In Progress,High,44
+U0389,Get Promoted,Goal: get promoted,Career,2025-01-13,Not Started,High,0
+U0389,Quit Junk Food,Goal: quit junk food,Health,2025-05-06,Not Started,Medium,0
+U0389,Learn Cooking,Goal: learn cooking,Personal,2025-02-23,Completed,High,100
+U0390,Switch Domain,Goal: switch domain,Career,2024-12-11,Completed,Low,100
+U0390,Quit Junk Food,Goal: quit junk food,Health,2025-04-25,Not Started,Medium,0
+U0390,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-07,In Progress,Low,72
+U0390,Learn Cooking,Goal: learn cooking,Personal,2024-08-17,Not Started,Medium,0
+U0391,Learn New Skill,Goal: learn new skill,Academic,2024-10-06,In Progress,High,57
+U0391,Finish Certification,Goal: finish certification,Academic,2024-09-18,In Progress,High,85
+U0391,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-04-27,Abandoned,High,3
+U0391,Pay off Loan,Goal: pay off loan,Financial,2024-08-16,Not Started,High,0
+U0391,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-07-13,Abandoned,Low,8
+U0391,Save for Vacation,Goal: save for vacation,Financial,2025-05-10,Completed,Low,100
+U0391,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-10,Completed,Low,100
+U0391,Finish Certification,Goal: finish certification,Academic,2024-05-20,Completed,Medium,100
+U0392,Complete Course,Goal: complete course,Academic,2024-09-02,In Progress,Low,57
+U0392,Quit Junk Food,Goal: quit junk food,Health,2025-08-21,In Progress,High,30
+U0392,Build Portfolio,Goal: build portfolio,Career,2025-04-03,Completed,High,100
+U0392,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-18,Not Started,Low,0
+U0392,Regular Health Check-up,Goal: regular health check-up,Health,2025-06-20,Completed,Low,100
+U0393,Network 10 Professionals,Goal: network 10 professionals,Career,2025-01-12,In Progress,Low,63
+U0393,Save for Vacation,Goal: save for vacation,Financial,2024-04-01,Completed,Low,100
+U0394,Learn Cooking,Goal: learn cooking,Personal,2025-03-06,Completed,Medium,100
+U0394,Switch Domain,Goal: switch domain,Career,2025-05-19,Not Started,High,0
+U0394,Build Portfolio,Goal: build portfolio,Career,2024-10-12,Not Started,Medium,0
+U0394,Meditate Daily,Goal: meditate daily,Personal,2024-09-20,In Progress,High,42
+U0394,Meditate Daily,Goal: meditate daily,Personal,2024-06-12,Completed,Low,100
+U0394,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-11,Completed,Medium,100
+U0395,Network 10 Professionals,Goal: network 10 professionals,Career,2025-08-05,Completed,High,100
+U0395,Complete Course,Goal: complete course,Academic,2024-11-10,In Progress,High,22
+U0395,Drink 2L Water,Goal: drink 2l water,Health,2024-04-06,Completed,High,100
+U0395,Get Promoted,Goal: get promoted,Career,2024-09-11,In Progress,Medium,52
+U0395,Meditate Daily,Goal: meditate daily,Personal,2025-05-09,Completed,Medium,100
+U0396,Pay off Loan,Goal: pay off loan,Financial,2025-03-07,Completed,Medium,100
+U0396,Finish Certification,Goal: finish certification,Academic,2025-08-20,Abandoned,High,15
+U0396,Get Promoted,Goal: get promoted,Career,2024-11-05,Completed,Low,100
+U0396,Quit Junk Food,Goal: quit junk food,Health,2024-07-27,In Progress,Medium,65
+U0396,Pay off Loan,Goal: pay off loan,Financial,2025-02-04,Completed,High,100
+U0396,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-03,Completed,High,100
+U0396,Save for Vacation,Goal: save for vacation,Financial,2025-04-04,In Progress,Medium,23
+U0397,Get Promoted,Goal: get promoted,Career,2024-12-09,Abandoned,High,29
+U0397,Drink 2L Water,Goal: drink 2l water,Health,2024-07-13,In Progress,Low,20
+U0397,Learn New Skill,Goal: learn new skill,Academic,2025-05-31,Completed,Medium,100
+U0397,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-21,Completed,High,100
+U0397,Improve Flexibility,Goal: improve flexibility,Fitness,2025-03-06,Completed,Low,100
+U0397,Switch Domain,Goal: switch domain,Career,2025-02-11,Completed,High,100
+U0397,Regular Health Check-up,Goal: regular health check-up,Health,2024-07-15,In Progress,Low,26
+U0398,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-19,Completed,Low,100
+U0398,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-08-13,Abandoned,Medium,18
+U0399,Switch Domain,Goal: switch domain,Career,2024-08-05,Completed,High,100
+U0399,Meditate Daily,Goal: meditate daily,Personal,2025-02-21,In Progress,Medium,36
+U0399,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-10,Completed,High,100
+U0400,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-14,Abandoned,Low,7
+U0400,Run 5km,Goal: run 5km,Fitness,2024-07-07,In Progress,Low,42
+U0400,Switch Domain,Goal: switch domain,Career,2024-06-18,Not Started,High,0
+U0400,Save Emergency Fund,Goal: save emergency fund,Financial,2024-10-18,In Progress,Low,29
+U0400,Save Emergency Fund,Goal: save emergency fund,Financial,2024-11-28,Completed,Low,100
+U0400,Pay off Loan,Goal: pay off loan,Financial,2025-04-03,Abandoned,Low,18
+U0401,Build Portfolio,Goal: build portfolio,Career,2024-05-17,Completed,Low,100
+U0401,Finish Certification,Goal: finish certification,Academic,2024-11-01,Abandoned,Low,0
+U0401,Meditate Daily,Goal: meditate daily,Personal,2025-02-26,Not Started,High,0
+U0401,Learn Cooking,Goal: learn cooking,Personal,2024-12-29,Completed,Low,100
+U0402,Switch Domain,Goal: switch domain,Career,2024-10-29,Abandoned,Low,35
+U0402,Meditate Daily,Goal: meditate daily,Personal,2024-11-28,In Progress,Low,70
+U0402,Pay off Loan,Goal: pay off loan,Financial,2024-07-18,Completed,High,100
+U0402,Quit Junk Food,Goal: quit junk food,Health,2024-11-14,Completed,High,100
+U0402,Quit Junk Food,Goal: quit junk food,Health,2025-04-05,Completed,Medium,100
+U0402,Get Promoted,Goal: get promoted,Career,2025-02-13,Not Started,High,0
+U0403,Drink 2L Water,Goal: drink 2l water,Health,2025-02-05,Abandoned,High,8
+U0403,Buy a Laptop,Goal: buy a laptop,Financial,2024-11-06,Not Started,Low,0
+U0403,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-12-03,Not Started,High,0
+U0404,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-15,Completed,Medium,100
+U0404,Build Portfolio,Goal: build portfolio,Career,2025-03-17,Completed,Low,100
+U0404,Drink 2L Water,Goal: drink 2l water,Health,2024-06-22,Abandoned,Low,9
+U0404,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-10,In Progress,Low,79
+U0405,Run 5km,Goal: run 5km,Fitness,2024-11-17,In Progress,Low,55
+U0405,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-24,Abandoned,Low,2
+U0405,Build Portfolio,Goal: build portfolio,Career,2024-12-16,Not Started,Medium,0
+U0406,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-05,Completed,High,100
+U0406,Run 5km,Goal: run 5km,Fitness,2025-02-18,Completed,Low,100
+U0406,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-10-07,In Progress,Low,27
+U0406,Meditate Daily,Goal: meditate daily,Personal,2025-03-28,Not Started,High,0
+U0406,Regular Health Check-up,Goal: regular health check-up,Health,2025-06-25,In Progress,High,83
+U0407,Complete Course,Goal: complete course,Academic,2025-04-25,Completed,Medium,100
+U0407,Reduce Screen Time,Goal: reduce screen time,Personal,2025-08-12,Not Started,Medium,0
+U0407,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-14,Not Started,Medium,0
+U0407,Drink 2L Water,Goal: drink 2l water,Health,2024-07-10,Not Started,Low,0
+U0408,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-08-06,Completed,High,100
+U0408,Network 10 Professionals,Goal: network 10 professionals,Career,2024-12-24,In Progress,Low,84
+U0408,Build Portfolio,Goal: build portfolio,Career,2025-07-25,Completed,Medium,100
+U0408,Save Emergency Fund,Goal: save emergency fund,Financial,2024-07-24,Completed,Low,100
+U0408,Network 10 Professionals,Goal: network 10 professionals,Career,2024-04-30,In Progress,Medium,79
+U0408,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-09-22,Completed,High,100
+U0409,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-15,In Progress,Medium,52
+U0409,Quit Junk Food,Goal: quit junk food,Health,2025-02-23,Completed,High,100
+U0409,Quit Junk Food,Goal: quit junk food,Health,2024-04-02,Completed,Medium,100
+U0409,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-06-03,In Progress,High,70
+U0410,Switch Domain,Goal: switch domain,Career,2025-02-27,In Progress,Medium,83
+U0410,Save for Vacation,Goal: save for vacation,Financial,2025-10-22,Abandoned,Low,14
+U0410,Regular Health Check-up,Goal: regular health check-up,Health,2024-09-04,Abandoned,Low,10
+U0410,Switch Domain,Goal: switch domain,Career,2024-07-22,Abandoned,High,32
+U0411,Save Emergency Fund,Goal: save emergency fund,Financial,2024-09-16,Abandoned,High,33
+U0411,Get Promoted,Goal: get promoted,Career,2025-03-07,Completed,High,100
+U0411,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-03-20,Completed,Low,100
+U0412,Network 10 Professionals,Goal: network 10 professionals,Career,2024-12-13,In Progress,Medium,66
+U0412,Pay off Loan,Goal: pay off loan,Financial,2025-06-22,Completed,Low,100
+U0412,Save for Vacation,Goal: save for vacation,Financial,2025-02-09,Completed,Low,100
+U0412,Get Promoted,Goal: get promoted,Career,2025-05-12,Abandoned,Medium,28
+U0412,Buy a Laptop,Goal: buy a laptop,Financial,2024-04-23,Abandoned,High,25
+U0412,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-27,Abandoned,Low,36
+U0413,Drink 2L Water,Goal: drink 2l water,Health,2024-10-28,Completed,High,100
+U0413,Save for Vacation,Goal: save for vacation,Financial,2025-03-21,Completed,High,100
+U0413,Learn New Skill,Goal: learn new skill,Academic,2025-03-22,Completed,Medium,100
+U0413,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-23,Abandoned,Low,1
+U0413,Drink 2L Water,Goal: drink 2l water,Health,2025-09-15,Completed,Low,100
+U0413,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-27,In Progress,Low,76
+U0414,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-03-08,Not Started,Medium,0
+U0415,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-01,Abandoned,High,14
+U0415,Build Portfolio,Goal: build portfolio,Career,2025-02-22,Completed,Low,100
+U0415,Finish Certification,Goal: finish certification,Academic,2025-08-14,Completed,Medium,100
+U0415,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-26,In Progress,High,41
+U0415,Build Portfolio,Goal: build portfolio,Career,2024-04-01,Completed,High,100
+U0415,Finish Certification,Goal: finish certification,Academic,2024-05-23,Completed,High,100
+U0415,Improve Flexibility,Goal: improve flexibility,Fitness,2024-12-27,Not Started,Low,0
+U0415,Complete Course,Goal: complete course,Academic,2025-09-16,Abandoned,High,18
+U0416,Drink 2L Water,Goal: drink 2l water,Health,2024-10-31,Completed,Low,100
+U0416,Pay off Loan,Goal: pay off loan,Financial,2025-02-01,Completed,Low,100
+U0417,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-17,Completed,High,100
+U0417,Finish Certification,Goal: finish certification,Academic,2025-01-30,Completed,High,100
+U0417,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-04-27,Not Started,High,0
+U0417,Improve Flexibility,Goal: improve flexibility,Fitness,2024-09-25,Completed,Medium,100
+U0417,Drink 2L Water,Goal: drink 2l water,Health,2025-08-16,Completed,Medium,100
+U0418,Drink 2L Water,Goal: drink 2l water,Health,2024-10-23,Abandoned,Medium,28
+U0418,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-25,Not Started,Medium,0
+U0418,Improve Flexibility,Goal: improve flexibility,Fitness,2024-05-24,Not Started,Low,0
+U0419,Lose 5kg,Goal: lose 5kg,Fitness,2025-05-04,Completed,Low,100
+U0419,Get Promoted,Goal: get promoted,Career,2024-06-01,In Progress,Medium,48
+U0419,Get Promoted,Goal: get promoted,Career,2025-02-20,In Progress,High,64
+U0419,Network 10 Professionals,Goal: network 10 professionals,Career,2024-04-23,In Progress,Medium,66
+U0420,Drink 2L Water,Goal: drink 2l water,Health,2024-12-06,Completed,High,100
+U0420,Quit Junk Food,Goal: quit junk food,Health,2025-08-19,Completed,High,100
+U0420,Meditate Daily,Goal: meditate daily,Personal,2025-01-10,Completed,Low,100
+U0420,Save for Vacation,Goal: save for vacation,Financial,2024-11-23,Not Started,Low,0
+U0421,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-11,In Progress,Low,35
+U0421,Quit Junk Food,Goal: quit junk food,Health,2024-05-22,Not Started,Medium,0
+U0421,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-11,In Progress,Low,88
+U0421,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-04,Completed,Low,100
+U0421,Regular Health Check-up,Goal: regular health check-up,Health,2024-08-03,Completed,Low,100
+U0421,Save for Vacation,Goal: save for vacation,Financial,2024-09-02,Abandoned,Low,5
+U0422,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-31,Completed,Low,100
+U0422,Learn Cooking,Goal: learn cooking,Personal,2025-01-16,Not Started,Medium,0
+U0422,Run 5km,Goal: run 5km,Fitness,2025-09-01,Completed,High,100
+U0422,Complete Course,Goal: complete course,Academic,2024-06-30,In Progress,Medium,67
+U0422,Build Portfolio,Goal: build portfolio,Career,2025-07-21,Completed,High,100
+U0423,Switch Domain,Goal: switch domain,Career,2024-10-30,Completed,Low,100
+U0423,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-04-17,In Progress,Medium,59
+U0423,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-10-03,Completed,Low,100
+U0423,Drink 2L Water,Goal: drink 2l water,Health,2024-03-26,In Progress,Medium,30
+U0423,Learn New Skill,Goal: learn new skill,Academic,2025-04-06,Completed,Medium,100
+U0424,Learn New Skill,Goal: learn new skill,Academic,2025-01-15,In Progress,Medium,67
+U0424,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-06,Not Started,Low,0
+U0424,Complete Course,Goal: complete course,Academic,2024-10-20,Not Started,Low,0
+U0425,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-05-22,In Progress,High,30
+U0425,Save Emergency Fund,Goal: save emergency fund,Financial,2024-11-09,In Progress,Low,28
+U0425,Run 5km,Goal: run 5km,Fitness,2025-05-22,Completed,Low,100
+U0425,Save for Vacation,Goal: save for vacation,Financial,2025-06-20,Not Started,Medium,0
+U0426,Regular Health Check-up,Goal: regular health check-up,Health,2024-06-18,Not Started,High,0
+U0426,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-10,Completed,Low,100
+U0427,Build Portfolio,Goal: build portfolio,Career,2025-04-30,Completed,High,100
+U0427,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-16,In Progress,Low,55
+U0427,Reduce Screen Time,Goal: reduce screen time,Personal,2025-02-15,Not Started,Low,0
+U0428,Improve Flexibility,Goal: improve flexibility,Fitness,2024-11-26,Completed,Medium,100
+U0428,Lose 5kg,Goal: lose 5kg,Fitness,2025-03-08,In Progress,Medium,23
+U0428,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-03-20,Completed,Medium,100
+U0428,Pay off Loan,Goal: pay off loan,Financial,2024-06-03,Completed,Medium,100
+U0429,Read 12 Books,Goal: read 12 books,Personal,2024-12-19,Completed,Low,100
+U0429,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-12-31,In Progress,Low,55
+U0430,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-08-21,Abandoned,Medium,3
+U0430,Regular Health Check-up,Goal: regular health check-up,Health,2024-11-05,Completed,High,100
+U0431,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-28,In Progress,High,86
+U0432,Read 12 Books,Goal: read 12 books,Personal,2024-11-29,In Progress,High,74
+U0432,Improve Flexibility,Goal: improve flexibility,Fitness,2024-09-04,Completed,High,100
+U0432,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-18,Completed,Low,100
+U0432,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-19,Abandoned,Medium,4
+U0432,Complete Course,Goal: complete course,Academic,2025-07-30,Completed,Medium,100
+U0433,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-01,In Progress,High,76
+U0433,Drink 2L Water,Goal: drink 2l water,Health,2025-06-01,Completed,Medium,100
+U0433,Drink 2L Water,Goal: drink 2l water,Health,2025-05-09,Abandoned,High,35
+U0433,Network 10 Professionals,Goal: network 10 professionals,Career,2025-06-02,Not Started,Medium,0
+U0433,Buy a Laptop,Goal: buy a laptop,Financial,2024-08-29,In Progress,Medium,52
+U0434,Build Portfolio,Goal: build portfolio,Career,2025-03-21,Abandoned,Low,27
+U0434,Buy a Laptop,Goal: buy a laptop,Financial,2025-06-24,Not Started,Low,0
+U0434,Improve Flexibility,Goal: improve flexibility,Fitness,2024-11-17,Not Started,Low,0
+U0434,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-10-30,Not Started,High,0
+U0435,Build Portfolio,Goal: build portfolio,Career,2024-09-24,Completed,Low,100
+U0435,Improve Flexibility,Goal: improve flexibility,Fitness,2025-02-26,In Progress,High,87
+U0435,Save Emergency Fund,Goal: save emergency fund,Financial,2025-07-30,Completed,Low,100
+U0436,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-01-12,Completed,Medium,100
+U0436,Lose 5kg,Goal: lose 5kg,Fitness,2024-06-25,In Progress,High,22
+U0436,Quit Junk Food,Goal: quit junk food,Health,2025-03-10,Completed,High,100
+U0437,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-01-14,Abandoned,Medium,23
+U0437,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-24,Completed,High,100
+U0437,Network 10 Professionals,Goal: network 10 professionals,Career,2024-04-26,In Progress,Low,55
+U0437,Build Portfolio,Goal: build portfolio,Career,2024-11-27,In Progress,Medium,50
+U0437,Complete Course,Goal: complete course,Academic,2024-12-06,Not Started,High,0
+U0438,Learn Cooking,Goal: learn cooking,Personal,2025-01-29,In Progress,Medium,55
+U0438,Pay off Loan,Goal: pay off loan,Financial,2025-04-19,In Progress,Low,67
+U0438,Improve Flexibility,Goal: improve flexibility,Fitness,2025-08-17,In Progress,Medium,89
+U0438,Learn New Skill,Goal: learn new skill,Academic,2025-02-05,Not Started,Low,0
+U0439,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-07-14,Not Started,Low,0
+U0439,Complete Course,Goal: complete course,Academic,2024-10-16,In Progress,High,63
+U0439,Read 12 Books,Goal: read 12 books,Personal,2024-11-03,In Progress,Low,51
+U0440,Build Portfolio,Goal: build portfolio,Career,2024-10-13,Abandoned,Low,34
+U0440,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-06-01,Completed,High,100
+U0440,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-12-29,Abandoned,Low,39
+U0441,Regular Health Check-up,Goal: regular health check-up,Health,2025-10-07,Abandoned,Medium,8
+U0441,Network 10 Professionals,Goal: network 10 professionals,Career,2024-12-22,Abandoned,High,40
+U0441,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-26,Not Started,High,0
+U0441,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-17,Abandoned,High,12
+U0441,Save for Vacation,Goal: save for vacation,Financial,2025-01-06,Abandoned,Low,36
+U0441,Buy a Laptop,Goal: buy a laptop,Financial,2024-04-04,In Progress,Medium,81
+U0442,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-04-13,Not Started,High,0
+U0442,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-08-13,In Progress,High,33
+U0442,Drink 2L Water,Goal: drink 2l water,Health,2025-03-29,In Progress,Low,72
+U0442,Switch Domain,Goal: switch domain,Career,2025-05-22,Abandoned,Medium,37
+U0442,Switch Domain,Goal: switch domain,Career,2025-03-02,Completed,High,100
+U0442,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-02-04,In Progress,Medium,42
+U0442,Learn New Skill,Goal: learn new skill,Academic,2024-12-23,Completed,High,100
+U0442,Get Promoted,Goal: get promoted,Career,2025-02-03,Completed,Low,100
+U0443,Run 5km,Goal: run 5km,Fitness,2025-01-05,Completed,Medium,100
+U0443,Run 5km,Goal: run 5km,Fitness,2024-07-29,Not Started,High,0
+U0443,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-07-27,Not Started,High,0
+U0443,Complete Course,Goal: complete course,Academic,2025-03-07,Abandoned,Medium,7
+U0444,Reduce Screen Time,Goal: reduce screen time,Personal,2024-05-01,Completed,Medium,100
+U0444,Reduce Screen Time,Goal: reduce screen time,Personal,2024-05-29,Not Started,Low,0
+U0444,Switch Domain,Goal: switch domain,Career,2024-10-06,In Progress,High,21
+U0444,Meditate Daily,Goal: meditate daily,Personal,2025-05-11,In Progress,High,83
+U0445,Save Emergency Fund,Goal: save emergency fund,Financial,2024-07-02,Completed,Medium,100
+U0445,Lose 5kg,Goal: lose 5kg,Fitness,2024-12-10,Completed,Low,100
+U0445,Quit Junk Food,Goal: quit junk food,Health,2024-06-13,In Progress,High,52
+U0446,Save Emergency Fund,Goal: save emergency fund,Financial,2025-08-26,Completed,Medium,100
+U0446,Build Portfolio,Goal: build portfolio,Career,2025-05-18,Completed,Low,100
+U0446,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-02,In Progress,Low,48
+U0446,Buy a Laptop,Goal: buy a laptop,Financial,2024-04-17,Abandoned,High,29
+U0446,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-26,In Progress,Low,85
+U0447,Meditate Daily,Goal: meditate daily,Personal,2024-12-15,Abandoned,High,23
+U0447,Complete Course,Goal: complete course,Academic,2025-01-08,In Progress,Medium,85
+U0447,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-15,Completed,Low,100
+U0447,Read 12 Books,Goal: read 12 books,Personal,2025-09-11,Completed,Medium,100
+U0447,Finish Certification,Goal: finish certification,Academic,2024-11-24,Completed,High,100
+U0447,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-02-11,Completed,High,100
+U0447,Learn New Skill,Goal: learn new skill,Academic,2024-10-22,Abandoned,Medium,2
+U0448,Learn Cooking,Goal: learn cooking,Personal,2025-05-28,In Progress,Medium,32
+U0448,Read 12 Books,Goal: read 12 books,Personal,2024-09-04,In Progress,High,57
+U0448,Build Portfolio,Goal: build portfolio,Career,2025-04-30,Completed,High,100
+U0448,Get Promoted,Goal: get promoted,Career,2025-02-20,In Progress,High,35
+U0449,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-02-07,Abandoned,Low,6
+U0449,Build Portfolio,Goal: build portfolio,Career,2024-10-05,Completed,High,100
+U0449,Meditate Daily,Goal: meditate daily,Personal,2025-08-22,Not Started,High,0
+U0449,Save for Vacation,Goal: save for vacation,Financial,2024-12-06,In Progress,High,33
+U0450,Drink 2L Water,Goal: drink 2l water,Health,2025-01-06,Abandoned,High,18
+U0450,Save for Vacation,Goal: save for vacation,Financial,2025-05-18,Completed,Medium,100
+U0450,Reduce Screen Time,Goal: reduce screen time,Personal,2024-08-09,Completed,Low,100
+U0450,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-19,In Progress,High,50
+U0450,Get Promoted,Goal: get promoted,Career,2025-10-28,Abandoned,Low,40
+U0450,Build Portfolio,Goal: build portfolio,Career,2024-03-31,Abandoned,Low,21
+U0451,Save for Vacation,Goal: save for vacation,Financial,2024-10-19,Not Started,Medium,0
+U0451,Get Promoted,Goal: get promoted,Career,2025-07-23,Completed,Medium,100
+U0451,Pay off Loan,Goal: pay off loan,Financial,2024-10-14,Completed,Medium,100
+U0451,Buy a Laptop,Goal: buy a laptop,Financial,2025-03-28,Completed,High,100
+U0451,Build Portfolio,Goal: build portfolio,Career,2024-10-26,Abandoned,High,1
+U0452,Build Portfolio,Goal: build portfolio,Career,2024-06-22,Abandoned,Low,23
+U0452,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-09-17,Abandoned,Medium,28
+U0453,Lose 5kg,Goal: lose 5kg,Fitness,2025-01-10,Abandoned,Low,15
+U0453,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-08-27,Not Started,High,0
+U0454,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-21,In Progress,Medium,45
+U0454,Learn Cooking,Goal: learn cooking,Personal,2025-06-27,Completed,High,100
+U0454,Finish Certification,Goal: finish certification,Academic,2025-07-02,Completed,Low,100
+U0455,Get Promoted,Goal: get promoted,Career,2024-09-04,Not Started,High,0
+U0455,Drink 2L Water,Goal: drink 2l water,Health,2024-10-04,Not Started,High,0
+U0456,Meditate Daily,Goal: meditate daily,Personal,2024-10-16,Abandoned,Low,2
+U0456,Learn Cooking,Goal: learn cooking,Personal,2024-10-15,Not Started,High,0
+U0456,Network 10 Professionals,Goal: network 10 professionals,Career,2024-07-14,In Progress,Low,61
+U0457,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-26,Completed,Medium,100
+U0457,Drink 2L Water,Goal: drink 2l water,Health,2025-02-11,Completed,Medium,100
+U0457,Complete Course,Goal: complete course,Academic,2025-02-27,Completed,High,100
+U0458,Network 10 Professionals,Goal: network 10 professionals,Career,2024-03-05,Not Started,Medium,0
+U0459,Learn Cooking,Goal: learn cooking,Personal,2024-05-22,Completed,Medium,100
+U0459,Save for Vacation,Goal: save for vacation,Financial,2024-09-17,Completed,Low,100
+U0459,Regular Health Check-up,Goal: regular health check-up,Health,2025-05-12,Completed,Low,100
+U0460,Learn New Skill,Goal: learn new skill,Academic,2024-09-14,Not Started,Medium,0
+U0460,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-07-11,Abandoned,Low,1
+U0460,Build Portfolio,Goal: build portfolio,Career,2025-03-07,Not Started,High,0
+U0461,Get Promoted,Goal: get promoted,Career,2024-10-21,Completed,Medium,100
+U0461,Switch Domain,Goal: switch domain,Career,2024-08-06,Abandoned,High,34
+U0461,Pay off Loan,Goal: pay off loan,Financial,2025-07-24,Not Started,Medium,0
+U0462,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-04-19,Completed,High,100
+U0462,Get Promoted,Goal: get promoted,Career,2024-11-04,Completed,Medium,100
+U0462,Buy a Laptop,Goal: buy a laptop,Financial,2024-09-07,In Progress,Low,82
+U0462,Complete Course,Goal: complete course,Academic,2025-06-25,Completed,Medium,100
+U0462,Build Portfolio,Goal: build portfolio,Career,2025-08-08,Abandoned,Medium,34
+U0462,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-05,In Progress,Medium,67
+U0462,Save for Vacation,Goal: save for vacation,Financial,2025-06-20,In Progress,Low,38
+U0463,Learn Cooking,Goal: learn cooking,Personal,2025-01-03,In Progress,High,75
+U0463,Drink 2L Water,Goal: drink 2l water,Health,2024-12-13,In Progress,Medium,87
+U0463,Switch Domain,Goal: switch domain,Career,2024-11-15,Abandoned,High,15
+U0463,Save for Vacation,Goal: save for vacation,Financial,2024-12-29,Completed,High,100
+U0464,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-07-01,Completed,Medium,100
+U0464,Learn Cooking,Goal: learn cooking,Personal,2024-11-24,Abandoned,High,5
+U0464,Finish Certification,Goal: finish certification,Academic,2025-03-31,Completed,High,100
+U0465,Regular Health Check-up,Goal: regular health check-up,Health,2025-07-07,In Progress,Medium,23
+U0465,Pay off Loan,Goal: pay off loan,Financial,2024-12-08,In Progress,High,53
+U0465,Complete Course,Goal: complete course,Academic,2025-07-13,In Progress,High,42
+U0465,Save for Vacation,Goal: save for vacation,Financial,2025-09-09,Completed,High,100
+U0465,Buy a Laptop,Goal: buy a laptop,Financial,2025-07-07,Completed,High,100
+U0465,Pay off Loan,Goal: pay off loan,Financial,2025-05-05,In Progress,Medium,23
+U0466,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-01-19,In Progress,Low,62
+U0466,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-07-08,Not Started,Medium,0
+U0467,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-11-21,In Progress,Low,85
+U0467,Buy a Laptop,Goal: buy a laptop,Financial,2025-09-07,Completed,High,100
+U0467,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-11-02,In Progress,Medium,67
+U0467,Read 12 Books,Goal: read 12 books,Personal,2024-12-10,Completed,Low,100
+U0468,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-03-09,Completed,Medium,100
+U0468,Run 5km,Goal: run 5km,Fitness,2024-11-18,In Progress,Medium,50
+U0468,Run 5km,Goal: run 5km,Fitness,2024-10-26,Abandoned,Medium,18
+U0468,Lose 5kg,Goal: lose 5kg,Fitness,2024-09-24,Abandoned,Medium,16
+U0468,Learn Cooking,Goal: learn cooking,Personal,2025-06-14,In Progress,High,23
+U0468,Regular Health Check-up,Goal: regular health check-up,Health,2024-06-29,Completed,Medium,100
+U0468,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-28,Completed,High,100
+U0469,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-08-20,Completed,High,100
+U0469,Regular Health Check-up,Goal: regular health check-up,Health,2024-08-21,Completed,High,100
+U0469,Save Emergency Fund,Goal: save emergency fund,Financial,2025-03-12,Not Started,Medium,0
+U0469,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2025-08-09,Abandoned,Low,20
+U0470,Run 5km,Goal: run 5km,Fitness,2025-02-12,In Progress,Low,83
+U0470,Save for Vacation,Goal: save for vacation,Financial,2025-05-05,Completed,Medium,100
+U0470,Finish Certification,Goal: finish certification,Academic,2024-10-08,Abandoned,Medium,39
+U0470,Get Promoted,Goal: get promoted,Career,2025-02-25,Completed,Low,100
+U0470,Run 5km,Goal: run 5km,Fitness,2025-02-20,Completed,Low,100
+U0470,Buy a Laptop,Goal: buy a laptop,Financial,2025-04-02,Abandoned,Low,0
+U0470,Learn New Skill,Goal: learn new skill,Academic,2025-01-21,Abandoned,Low,26
+U0471,Finish Certification,Goal: finish certification,Academic,2024-11-30,Completed,High,100
+U0471,Learn New Skill,Goal: learn new skill,Academic,2025-04-02,Completed,High,100
+U0471,Run 5km,Goal: run 5km,Fitness,2024-09-08,In Progress,Medium,31
+U0472,Pay off Loan,Goal: pay off loan,Financial,2025-09-08,Not Started,Low,0
+U0472,Network 10 Professionals,Goal: network 10 professionals,Career,2024-08-19,Abandoned,Low,11
+U0472,Switch Domain,Goal: switch domain,Career,2025-06-27,In Progress,Low,23
+U0472,Save Emergency Fund,Goal: save emergency fund,Financial,2025-02-28,In Progress,Low,74
+U0472,Learn New Skill,Goal: learn new skill,Academic,2024-09-02,Completed,Low,100
+U0472,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-06-25,Completed,Low,100
+U0472,Reduce Screen Time,Goal: reduce screen time,Personal,2025-01-08,Completed,Medium,100
+U0473,Read 12 Books,Goal: read 12 books,Personal,2025-02-06,Abandoned,Low,33
+U0473,Lose 5kg,Goal: lose 5kg,Fitness,2024-07-13,Completed,Medium,100
+U0473,Finish Certification,Goal: finish certification,Academic,2024-08-20,Completed,High,100
+U0473,Regular Health Check-up,Goal: regular health check-up,Health,2025-05-30,Not Started,Low,0
+U0474,Lose 5kg,Goal: lose 5kg,Fitness,2025-08-23,Completed,Low,100
+U0474,Switch Domain,Goal: switch domain,Career,2025-07-27,In Progress,Medium,25
+U0474,Build Portfolio,Goal: build portfolio,Career,2024-11-15,In Progress,High,74
+U0474,Drink 2L Water,Goal: drink 2l water,Health,2025-05-10,Completed,Low,100
+U0474,Finish Certification,Goal: finish certification,Academic,2025-03-28,Completed,High,100
+U0475,Meditate Daily,Goal: meditate daily,Personal,2025-04-04,Not Started,Low,0
+U0475,Quit Junk Food,Goal: quit junk food,Health,2025-03-03,Completed,Medium,100
+U0475,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-10,Not Started,Low,0
+U0476,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2025-07-16,Not Started,Medium,0
+U0476,Finish Certification,Goal: finish certification,Academic,2025-07-09,Completed,Medium,100
+U0476,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-08-30,In Progress,High,86
+U0476,Save for Vacation,Goal: save for vacation,Financial,2024-12-02,Not Started,Medium,0
+U0476,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-02-04,In Progress,Medium,65
+U0476,Get Promoted,Goal: get promoted,Career,2024-11-27,In Progress,Medium,60
+U0476,Build Portfolio,Goal: build portfolio,Career,2024-06-09,Completed,Medium,100
+U0476,Complete Course,Goal: complete course,Academic,2025-05-28,Completed,Low,100
+U0477,Meditate Daily,Goal: meditate daily,Personal,2025-05-30,Completed,High,100
+U0477,Build Portfolio,Goal: build portfolio,Career,2025-07-18,Completed,Medium,100
+U0477,Lose 5kg,Goal: lose 5kg,Fitness,2024-08-09,Not Started,High,0
+U0477,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-15,Completed,Medium,100
+U0478,Save Emergency Fund,Goal: save emergency fund,Financial,2024-11-11,Not Started,High,0
+U0478,Get Promoted,Goal: get promoted,Career,2024-12-28,Not Started,Low,0
+U0479,Complete Course,Goal: complete course,Academic,2024-12-17,Completed,Medium,100
+U0479,Network 10 Professionals,Goal: network 10 professionals,Career,2025-05-10,Completed,Low,100
+U0479,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-08-08,Abandoned,Low,22
+U0479,Finish Certification,Goal: finish certification,Academic,2025-06-26,In Progress,Medium,85
+U0479,Build Portfolio,Goal: build portfolio,Career,2025-04-16,Not Started,Medium,0
+U0479,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-05-29,Abandoned,Medium,17
+U0479,Buy a Laptop,Goal: buy a laptop,Financial,2025-08-09,Completed,High,100
+U0480,Save Emergency Fund,Goal: save emergency fund,Financial,2025-05-17,Not Started,High,0
+U0480,Network 10 Professionals,Goal: network 10 professionals,Career,2025-03-19,Abandoned,Low,40
+U0480,Reduce Screen Time,Goal: reduce screen time,Personal,2024-10-23,In Progress,Low,79
+U0481,Finish Certification,Goal: finish certification,Academic,2024-08-16,In Progress,Medium,87
+U0481,Learn Cooking,Goal: learn cooking,Personal,2025-01-25,Completed,Low,100
+U0481,Learn Cooking,Goal: learn cooking,Personal,2025-01-21,In Progress,Low,60
+U0481,Complete Course,Goal: complete course,Academic,2024-11-28,Completed,High,100
+U0481,Network 10 Professionals,Goal: network 10 professionals,Career,2025-04-02,In Progress,Low,78
+U0481,Build Portfolio,Goal: build portfolio,Career,2024-10-16,Completed,Medium,100
+U0482,Build Investment Portfolio,Goal: build investment portfolio,Financial,2025-03-27,Abandoned,High,37
+U0482,Build Portfolio,Goal: build portfolio,Career,2025-01-14,Abandoned,Low,40
+U0482,Switch Domain,Goal: switch domain,Career,2024-08-14,In Progress,High,55
+U0482,Sleep 8 Hours Daily,Goal: sleep 8 hours daily,Health,2024-09-10,In Progress,High,69
+U0483,Lose 5kg,Goal: lose 5kg,Fitness,2024-11-13,In Progress,Medium,84
+U0484,Run 5km,Goal: run 5km,Fitness,2025-05-08,In Progress,Medium,59
+U0484,Network 10 Professionals,Goal: network 10 professionals,Career,2025-08-20,In Progress,Medium,58
+U0484,Finish Certification,Goal: finish certification,Academic,2025-03-24,Completed,High,100
+U0484,Save for Vacation,Goal: save for vacation,Financial,2024-09-18,Not Started,High,0
+U0485,Save for Vacation,Goal: save for vacation,Financial,2025-01-11,In Progress,High,72
+U0486,Lose 5kg,Goal: lose 5kg,Fitness,2025-08-08,Not Started,Low,0
+U0486,Get Promoted,Goal: get promoted,Career,2024-09-25,Abandoned,Medium,26
+U0486,Regular Health Check-up,Goal: regular health check-up,Health,2024-09-24,Completed,Medium,100
+U0486,Reduce Screen Time,Goal: reduce screen time,Personal,2024-06-23,In Progress,High,46
+U0486,Improve Flexibility,Goal: improve flexibility,Fitness,2025-04-11,Completed,Medium,100
+U0487,Learn Cooking,Goal: learn cooking,Personal,2025-04-10,Completed,High,100
+U0487,Quit Junk Food,Goal: quit junk food,Health,2024-03-24,In Progress,Medium,66
+U0487,Complete Course,Goal: complete course,Academic,2024-09-15,In Progress,Low,37
+U0487,Read 12 Books,Goal: read 12 books,Personal,2025-03-04,Completed,Low,100
+U0487,Save for Vacation,Goal: save for vacation,Financial,2024-12-04,In Progress,High,57
+U0488,Read 12 Books,Goal: read 12 books,Personal,2024-12-13,Completed,Low,100
+U0488,Read 12 Books,Goal: read 12 books,Personal,2024-08-13,Completed,Medium,100
+U0488,Read 12 Books,Goal: read 12 books,Personal,2024-08-31,Completed,Medium,100
+U0488,Lose 5kg,Goal: lose 5kg,Fitness,2025-02-21,Completed,Low,100
+U0489,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-06-29,Not Started,Low,0
+U0489,Complete Course,Goal: complete course,Academic,2024-06-01,Completed,High,100
+U0489,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-19,Completed,High,100
+U0489,Regular Health Check-up,Goal: regular health check-up,Health,2025-02-11,Not Started,Medium,0
+U0489,Complete Course,Goal: complete course,Academic,2025-01-09,Completed,Low,100
+U0489,Score 90% in Exam,Goal: score 90% in exam,Academic,2025-01-25,In Progress,Medium,23
+U0489,Quit Junk Food,Goal: quit junk food,Health,2024-09-12,Completed,High,100
+U0489,Regular Health Check-up,Goal: regular health check-up,Health,2025-06-17,In Progress,Low,80
+U0490,Build Investment Portfolio,Goal: build investment portfolio,Financial,2024-11-11,Not Started,Medium,0
+U0490,Reduce Screen Time,Goal: reduce screen time,Personal,2024-08-29,Abandoned,Low,1
+U0490,Lose 5kg,Goal: lose 5kg,Fitness,2024-09-14,Abandoned,High,29
+U0490,Build Portfolio,Goal: build portfolio,Career,2024-08-16,Not Started,Medium,0
+U0490,Switch Domain,Goal: switch domain,Career,2025-02-10,Not Started,Low,0
+U0491,Switch Domain,Goal: switch domain,Career,2024-10-11,Not Started,Low,0
+U0492,Finish Certification,Goal: finish certification,Academic,2024-08-06,Completed,Low,100
+U0492,Learn New Skill,Goal: learn new skill,Academic,2024-05-30,Completed,Low,100
+U0492,Lose 5kg,Goal: lose 5kg,Fitness,2024-10-17,Abandoned,Medium,31
+U0492,Run 5km,Goal: run 5km,Fitness,2025-06-21,Completed,Medium,100
+U0492,Network 10 Professionals,Goal: network 10 professionals,Career,2025-02-27,In Progress,Medium,85
+U0492,Build Portfolio,Goal: build portfolio,Career,2025-03-29,Completed,Medium,100
+U0492,Switch Domain,Goal: switch domain,Career,2025-09-21,In Progress,Medium,20
+U0492,Save for Vacation,Goal: save for vacation,Financial,2025-02-21,In Progress,Medium,37
+U0493,Learn New Skill,Goal: learn new skill,Academic,2024-10-09,Completed,Low,100
+U0493,Lose 5kg,Goal: lose 5kg,Fitness,2024-09-14,In Progress,Medium,83
+U0493,Save Emergency Fund,Goal: save emergency fund,Financial,2024-09-19,In Progress,High,64
+U0494,Finish Certification,Goal: finish certification,Academic,2024-12-29,Completed,Low,100
+U0494,Pay off Loan,Goal: pay off loan,Financial,2024-10-30,Not Started,High,0
+U0494,Learn Cooking,Goal: learn cooking,Personal,2025-01-24,Not Started,High,0
+U0494,Reduce Screen Time,Goal: reduce screen time,Personal,2024-12-07,Not Started,Medium,0
+U0495,Save Emergency Fund,Goal: save emergency fund,Financial,2025-05-10,Completed,Medium,100
+U0496,Lose 5kg,Goal: lose 5kg,Fitness,2025-05-06,Not Started,Low,0
+U0496,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-09-28,In Progress,High,69
+U0496,Meditate Daily,Goal: meditate daily,Personal,2024-09-29,Not Started,High,0
+U0496,Buy a Laptop,Goal: buy a laptop,Financial,2025-05-19,Not Started,High,0
+U0497,Learn Cooking,Goal: learn cooking,Personal,2024-08-01,Completed,Medium,100
+U0497,Network 10 Professionals,Goal: network 10 professionals,Career,2024-10-10,Completed,High,100
+U0498,Switch Domain,Goal: switch domain,Career,2024-12-10,In Progress,Medium,64
+U0498,Save Emergency Fund,Goal: save emergency fund,Financial,2025-06-06,Abandoned,Low,12
+U0498,Network 10 Professionals,Goal: network 10 professionals,Career,2024-07-31,In Progress,Medium,86
+U0498,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-09-16,In Progress,Low,51
+U0499,Save Emergency Fund,Goal: save emergency fund,Financial,2025-01-12,Not Started,Low,0
+U0499,Switch Domain,Goal: switch domain,Career,2024-06-24,In Progress,High,56
+U0499,Score 90% in Exam,Goal: score 90% in exam,Academic,2024-10-19,Completed,Medium,100
+U0499,Switch Domain,Goal: switch domain,Career,2025-07-23,In Progress,High,33
+U0499,Quit Junk Food,Goal: quit junk food,Health,2024-08-06,Not Started,Low,0
+U0499,Reduce Screen Time,Goal: reduce screen time,Personal,2024-09-06,Completed,Low,100
+U0499,Get Promoted,Goal: get promoted,Career,2025-02-13,Abandoned,Low,40
+U0499,Save for Vacation,Goal: save for vacation,Financial,2025-03-30,Completed,Medium,100
+U0500,Pay off Loan,Goal: pay off loan,Financial,2024-05-06,Completed,Low,100
+U0500,Regular Health Check-up,Goal: regular health check-up,Health,2025-03-06,In Progress,Medium,32
+U0500,Complete 30-day Workout,Goal: complete 30-day workout,Fitness,2024-12-01,Completed,Medium,100
+U0500,Meditate Daily,Goal: meditate daily,Personal,2024-11-05,In Progress,Low,36
+U0500,Drink 2L Water,Goal: drink 2l water,Health,2025-01-05,Abandoned,Medium,37
+U0500,Improve Flexibility,Goal: improve flexibility,Fitness,2024-09-09,In Progress,Low,49
+U0500,Finish Certification,Goal: finish certification,Academic,2025-06-01,In Progress,High,63

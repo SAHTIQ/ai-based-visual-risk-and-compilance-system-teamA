@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block title %}Academics — QUANTA{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1 class="q-page-title mb-1">Academics</h1>
+    <p class="q-muted-text mb-0">Track courses, grades, and academic performance</p>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="q-card">
+      <div class="q-card-header">Add / Edit Course</div>
+      <div class="q-card-body">
+        <form id="create-form">
+          <input type="hidden" id="edit-id">
+          <div class="mb-3">
+            <label class="form-label">Course Name</label>
+            <input type="text" class="form-control" id="field-course" placeholder="e.g. Data Structures" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Institution</label>
+            <input type="text" class="form-control" id="field-institution" placeholder="e.g. University" required>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Grade</label>
+              <input type="text" class="form-control" id="field-grade" placeholder="e.g. A+">
+            </div>
+            <div class="col-6">
+              <label class="form-label">GPA</label>
+              <input type="number" step="0.01" class="form-control" id="field-gpa" placeholder="4.0">
+            </div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Semester</label>
+              <input type="text" class="form-control" id="field-semester" placeholder="Fall 2026">
+            </div>
+            <div class="col-6">
+              <label class="form-label">Year</label>
+              <input type="number" class="form-control" id="field-year" placeholder="2026">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="field-status" required>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+              <option value="dropped">Dropped</option>
+            </select>
+          </div>
+          <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-primary flex-grow-1" id="submit-btn">Add Record</button>
+            <button type="button" class="btn btn-outline-secondary" id="clear-btn">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="q-card p-0 overflow-hidden h-100">
+      <div class="q-card-header">Academic Records</div>
+      <div class="table-responsive">
+        <table class="table q-table mb-0">
+          <thead>
+            <tr>
+              <th>Course</th>
+              <th>Institution</th>
+              <th>Grade</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="records-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+import { initCrudPage } from '/static/js/crud.js';
+
+initCrudPage({
+  entityName: 'Academic Record',
+  apiUrl: '/api/academics',
+  fields: [
+    { name: 'course', type: 'text' },
+    { name: 'institution', type: 'text' },
+    { name: 'grade', type: 'text' },
+    { name: 'gpa', type: 'number' },
+    { name: 'semester', type: 'text' },
+    { name: 'year', type: 'number' },
+    { name: 'status', type: 'select' }
+  ],
+  tableColumns: [
+    { key: 'course' },
+    { key: 'institution' },
+    { key: 'grade' },
+    { key: 'status' }
+  ]
+});
+</script>
+{% endblock %}

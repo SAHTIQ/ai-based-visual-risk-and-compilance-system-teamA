@@ -1,0 +1,78 @@
+{
+  "version": "v3",
+  "split": {
+    "type": "per_user_temporal",
+    "train": 0.7,
+    "validation": 0.15,
+    "test": 0.15
+  },
+  "finance": {
+    "selected_model": "finance_xgb",
+    "r2": 0.9156,
+    "rmse": 12578.47,
+    "mae": 7456.87,
+    "category_results": {
+      "Food": {
+        "mae": 697.44,
+        "rmse": 906.17,
+        "r2": 0.9348
+      },
+      "Transport": {
+        "mae": 374.48,
+        "rmse": 511.65,
+        "r2": 0.8761
+      },
+      "Rent": {
+        "mae": 1238.66,
+        "rmse": 2473.4,
+        "r2": 0.8845
+      },
+      "Utilities": {
+        "mae": 412.28,
+        "rmse": 511.72,
+        "r2": 0.6716
+      },
+      "Entertainment": {
+        "mae": 1824.93,
+        "rmse": 2478.23,
+        "r2": 0.8676
+      },
+      "Shopping": {
+        "mae": 5105.12,
+        "rmse": 8618.82,
+        "r2": 0.8934
+      },
+      "Health": {
+        "mae": 1559.67,
+        "rmse": 2293.18,
+        "r2": 0.7277
+      },
+      "Education": {
+        "mae": 2518.43,
+        "rmse": 3980.43,
+        "r2": 0.2622
+      },
+      "Other": {
+        "mae": 1864.02,
+        "rmse": 6644.09,
+        "r2": -0.0013
+      }
+    }
+  },
+  "study": {
+    "selected_model": "study_xgb",
+    "r2": 0.8767,
+    "rmse": 108.14,
+    "mae": 69.96
+  },
+  "habit": {
+    "selected_model": "habit_lr_balanced",
+    "auc": 0.8644,
+    "pr_auc": 0.1297,
+    "positive_f1": 0.2201,
+    "positive_recall": 0.4232,
+    "positive_precision": 0.1487,
+    "accuracy": 0.9238,
+    "threshold": 0.8197
+  }
+}

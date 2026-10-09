@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUANTA — Sign In</title>
+  <link rel="icon" type="image/png" href="/static/img/app-icon.png">
+  <!-- Early theme application to avoid paint flash -->
+  <script>
+    (function() {
+      const THEME_KEY = 'quanta_theme';
+      const saved = localStorage.getItem(THEME_KEY);
+      const theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-bs-theme', theme === 'dark' ? 'dark' : 'light');
+    })();
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="/static/css/style.css" rel="stylesheet">
+
+  <script>window.__FIREBASE_CONFIG__ = {{ firebase_config | tojson }};</script>
+
+  <style>
+    /* ── Reset & Base ───────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      font-family: 'Inter', sans-serif;
+      background: var(--q-bg);
+      color: var(--q-text);
+      overflow-x: hidden;
+      transition: background var(--q-transition), color var(--q-transition);
+    }
+
+    /* ── Scrollbar ──────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: var(--q-scroll-thumb); border-radius: 4px; }
+
+    /* ═══════════════════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════════════════ */
+    .auth-wrap {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: var(--q-bg);
+      position: relative;
+    }
+
+    /* ── Left Hero Panel ────────────────────────────────── */
+    .auth-hero {
+      background: var(--q-bg-card);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 3rem;
+      overflow: hidden;
+      border-right: 1px solid var(--q-border);
+      backdrop-filter: blur(20px);
+    }
+
+    /* Mesh grid background */
+    .auth-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--q-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--q-border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    /* Glowing orbs */
+    .auth-hero::after {
+      content: '';
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--q-accent-glow) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 420px;
+    }
+
+    /* Logo */
+    .q-logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .q-logo-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 22px;
+      background: linear-gradient(135deg, var(--q-accent), #6d28d9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: white;
+      box-shadow: 0 8px 32px var(--q-accent-glow);
+      letter-spacing: -0.02em;
+      position: relative;
+    }
+    .q-logo-icon img {
+      width: 80px; height: 80px;
+      border-radius: 22px;
+      object-fit: cover;
+    }
+    /* Outer ring */
+    .q-logo-ring {
+      position: absolute;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      border: 1.5px solid var(--q-accent-glow);
+      animation: ring-pulse 3s ease-in-out infinite;
+    }
+    .q-logo-ring-2 {
+      position: absolute;
+      width: 124px; height: 124px;
+      border-radius: 50%;
+      border: 1px solid var(--q-border-strong);
+      animation: ring-pulse 3s ease-in-out infinite 0.6s;
+    }
+    @keyframes ring-pulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50%       { transform: scale(1.05); opacity: 0.6; }
+    }
+
+    .hero-brand {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      background: linear-gradient(135deg, var(--q-accent) 0%, var(--q-text) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-tagline {
+      color: var(--q-muted);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.01em;
+    }
+
+    /* Floating icons around hero */
+    .float-icon {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--q-bg-card);
+      border: 1px solid var(--q-border);
+      backdrop-filter: blur(8px);
+      color: var(--q-accent);
+      font-size: 1.4rem;
+      box-shadow: var(--q-shadow-sm);
+      animation: icon-float 5s ease-in-out infinite;
+    }
+    .float-icon.f1 { top: 14%; left: 12%; animation-delay: 0s; }
+    .float-icon.f2 { top: 18%; right: 14%; animation-delay: 1.2s; font-size: 1.1rem; color: var(--q-info); }
+    .float-icon.f3 { bottom: 24%; left: 10%; animation-delay: 2.4s; color: var(--q-success); }
+    .float-icon.f4 { bottom: 18%; right: 12%; animation-delay: 3.6s; color: var(--q-warning); }
+    .float-icon.f5 { top: 50%; left: 5%; animation-delay: 1.8s; color: #ec4899; font-size: 1rem; width: 38px; height: 38px; }
+    .float-icon.f6 { top: 42%; right: 6%; animation-delay: 3s; color: var(--q-accent); font-size: 1rem; width: 38px; height: 38px; }
+
+    @keyframes icon-float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33%       { transform: translateY(-12px) rotate(2deg); }
+      66%       { transform: translateY(-6px) rotate(-1deg); }
+    }
+
+    /* Feature pills */
+    .hero-features {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: left;
+    }
+    .hero-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: var(--q-bg-card);
+      border: 1px solid var(--q-border);
+      box-shadow: var(--q-shadow-sm);
+    }
+    .hero-feature-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .hero-feature-text {
+      font-size: 0.82rem;
+      color: var(--q-muted);
+      line-height: 1.4;
+    }
+    .hero-feature-text strong {
+      color: var(--q-text);
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 1px;
+    }
+
+    .hero-quote {
+      position: absolute;
+      bottom: 2rem;
+      color: var(--q-muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      z-index: 2;
+    }
+
+    /* ── Right Card Panel ───────────────────────────────── */
+    .auth-card-panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background: transparent;
+      overflow-y: auto;
+    }
+
+    .auth-card {
+      width: 100%;
+      max-width: 440px;
+      background: var(--q-bg-card);
+      border: 1px solid var(--q-border-strong);
+      border-radius: 24px;
+      padding: 2.5rem;
+      backdrop-filter: blur(20px);
+      box-shadow: var(--q-shadow);
+    }
+
+    /* Tab indicator */
+    .auth-tabs {
+      display: flex;
+      background: var(--q-accent-dim);
+      border: 1px solid var(--q-border);
+      border-radius: 14px;
+      padding: 4px;
+      margin-bottom: 1.75rem;
+      gap: 4px;
+    }
+    .auth-tab-btn {
+      flex: 1;
+      padding: 9px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--q-muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .auth-tab-btn.active {
+      background: linear-gradient(135deg, var(--q-accent) 0%, #6d28d9 100%);
+      color: white;
+      box-shadow: 0 4px 16px var(--q-accent-glow);
+    }
+    .auth-tab-btn:not(.active):hover {
+      color: var(--q-text);
+      background: var(--q-bg-card-hover);
+    }
+
+    /* Auth panels */
+    .auth-panel { display: none; }
+    .auth-panel.active { display: block; }
+
+    .auth-heading {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--q-text);
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+    .auth-sub {
+      color: var(--q-muted);
+      font-size: 0.87rem;
+      margin-bottom: 1.75rem;
+    }
+
+    /* Form inputs */
+    .q-field {
+      margin-bottom: 1rem;
+    }
+    .q-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--q-text);
+      margin-bottom: 6px;
+    }
+    .q-input-group {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .q-input-icon {
+      position: absolute;
+      left: 14px;
+      color: var(--q-muted);
+      font-size: 1rem;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .q-input {
+      width: 100%;
+      padding: 11px 14px 11px 40px;
+      background: var(--q-input-bg);
+      border: 1px solid var(--q-input-border);
+      border-radius: 12px;
+      color: var(--q-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+      appearance: none;
+    }
+    .q-input::placeholder {
+      color: var(--q-placeholder);
+    }
+    .q-input:focus {
+      border-color: var(--q-accent);
+      background: var(--q-input-focus-bg);
+      box-shadow: 0 0 0 3px var(--q-accent-glow);
+    }
+    .q-input.is-invalid {
+      border-color: var(--q-danger);
+      box-shadow: 0 0 0 3px rgba(239,68,68,0.15);
+    }
+    .q-input.is-valid {
+      border-color: var(--q-success);
+      box-shadow: 0 0 0 3px rgba(16,185,129,0.15);
+    }
+    .q-input.has-right { padding-right: 42px; }
+
+    .q-eye-btn {
+      position: absolute;
+      right: 12px;
+      background: transparent;
+      border: none;
+      color: var(--q-muted);
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+      z-index: 2;
+    }
+    .q-eye-btn:hover { color: var(--q-text); }
+
+    /* Password strength */
+    .strength-track {
+      display: flex;
+      gap: 4px;
+      margin-top: 8px;
+    }
+    .strength-seg {
+      flex: 1;
+      height: 3px;
+      border-radius: 2px;
+      background: var(--q-border);
+      transition: background 0.3s;
+    }
+    .strength-label {
+      font-size: 0.72rem;
+      color: var(--q-muted);
+      margin-top: 4px;
+    }
+
+    /* Forgot row */
+    .forgot-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    /* Primary button */
+    .q-btn-primary {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--q-accent) 0%, #6d28d9 100%);
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px var(--q-accent-glow);
+      letter-spacing: 0.01em;
+      margin-top: 4px;
+    }
+    .q-btn-primary:hover:not(:disabled) {
+      box-shadow: 0 6px 24px var(--q-accent-glow);
+      transform: translateY(-1px);
+    }
+    .q-btn-primary:active:not(:disabled) {
+      transform: translateY(0);
+    }
+    .q-btn-primary:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    .q-btn-primary.green {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      box-shadow: 0 4px 16px rgba(16,185,129,0.3);
+    }
+    .q-btn-primary.green:hover:not(:disabled) {
+      box-shadow: 0 6px 24px rgba(16,185,129,0.45);
+    }
+
+    /* Divider */
+    .q-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 1.25rem 0;
+      color: var(--q-muted);
+      font-size: 0.78rem;
+    }
+    .q-divider::before, .q-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--q-border);
+    }
+
+    /* Social buttons */
+    .q-social-row {
+      display: flex;
+      gap: 10px;
+    }
+    .q-btn-social {
+      flex: 1;
+      padding: 10px 12px;
+      border: 1px solid var(--q-border);
+      border-radius: 12px;
+      background: var(--q-bg-card);
+      color: var(--q-text);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .q-btn-social:hover {
+      background: var(--q-bg-card-hover);
+      border-color: var(--q-border-strong);
+    }
+    .q-btn-social img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+
+    /* Trust badge */
+    .q-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 1.25rem;
+      color: var(--q-muted);
+      font-size: 0.78rem;
+    }
+
+    /* Switch link */
+    .q-switch {
+      text-align: center;
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--q-muted);
+    }
+    .q-link {
+      color: var(--q-accent);
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.15s;
+    }
+    .q-link:hover { color: var(--q-accent-light); text-decoration: underline; }
+
+    /* Terms */
+    .q-terms {
+      font-size: 0.75rem;
+      color: var(--q-muted);
+      text-align: center;
+      margin-top: 12px;
+      line-height: 1.5;
+    }
+    .q-terms a { color: var(--q-accent); text-decoration: none; }
+
+    /* ── Toast ──────────────────────────────────────────── */
+    .q-toast-wrap {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .q-toast {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      backdrop-filter: blur(12px);
+      border: 1px solid;
+      font-size: 0.88rem;
+      min-width: 280px;
+      max-width: 360px;
+      pointer-events: all;
+      animation: toast-in 0.25s ease;
+      box-shadow: var(--q-shadow);
+    }
+    .q-toast.success {
+      background: rgba(16,185,129,0.15);
+      border-color: rgba(16,185,129,0.3);
+      color: var(--q-success);
+    }
+    .q-toast.danger {
+      background: rgba(239,68,68,0.15);
+      border-color: rgba(239,68,68,0.3);
+      color: var(--q-danger);
+    }
+    .q-toast.info {
+      background: var(--q-accent-dim);
+      border-color: var(--q-accent-glow);
+      color: var(--q-accent);
+    }
+    @keyframes toast-in {
+      from { transform: translateY(12px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    /* ── Spinner ────────────────────────────────────────── */
+    .q-spinner {
+      width: 18px; height: 18px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Responsive ─────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .auth-wrap { grid-template-columns: 1fr; }
+      .auth-hero  { display: none; }
+      .auth-card-panel { min-height: 100vh; align-items: flex-start; padding: 2rem 1.25rem; }
+      .auth-card { max-width: 100%; padding: 2rem 1.5rem; border-radius: 20px; }
+    }
+
+    @media (max-width: 360px) {
+      .auth-card { padding: 1.5rem 1.25rem; }
+      .auth-heading { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Theme Toggle for Login Screen -->
+<div class="position-fixed top-0 end-0 p-3" style="z-index: 100;">
+  <button type="button" class="btn btn-sm rounded-pill px-3 py-2 d-flex align-items-center gap-2 shadow-sm" id="auth-theme-toggle-btn" data-theme-toggle style="background: var(--q-bg-card); border: 1px solid var(--q-border-strong); color: var(--q-text); backdrop-filter: blur(12px);">
+    <i class="bi bi-sun-fill q-theme-icon" style="color: var(--q-warning);"></i>
+    <span class="q-theme-label-text fw-semibold" style="font-size: 0.82rem;">Theme</span>
+  </button>
+</div>
+
+<div class="auth-wrap">
+
+  <!-- ═══════════════════════════════════════════════════
+       LEFT — Hero Brand Panel
+  ═══════════════════════════════════════════════════ -->
+  <div class="auth-hero">
+
+    <!-- Floating icons -->
+    <div class="float-icon f1"><i class="bi bi-graph-up-arrow"></i></div>
+    <div class="float-icon f2"><i class="bi bi-cpu-fill"></i></div>
+    <div class="float-icon f3"><i class="bi bi-book-fill"></i></div>
+    <div class="float-icon f4"><i class="bi bi-piggy-bank-fill"></i></div>
+    <div class="float-icon f5"><i class="bi bi-heart-pulse-fill"></i></div>
+    <div class="float-icon f6"><i class="bi bi-lightning-charge-fill"></i></div>
+
+    <div class="hero-content">
+      <!-- Logo -->
+      <div class="q-logo-wrap" style="position:relative;margin-bottom:1.75rem;">
+        <div class="q-logo-ring"></div>
+        <div class="q-logo-ring-2"></div>
+        <div class="q-logo-icon" style="background:transparent;box-shadow:none;">
+          <img src="/static/img/q-emblem-dark.png" alt="Q" class="q-theme-logo-dark" style="width:80px;height:80px;border-radius:22px;object-fit:cover;">
+          <img src="/static/img/q-emblem-mono.png" alt="Q" class="q-theme-logo-light" style="width:80px;height:80px;border-radius:22px;object-fit:cover;">
+        </div>
+      </div>
+
+      <div class="hero-brand">QUANTA</div>
+      <div class="hero-tagline">Your Digital Twin for Smarter Decisions</div>
+
+      <!-- Feature pills -->
+      <div class="hero-features">
+        <div class="hero-feature">
+          <div class="hero-feature-icon" style="background:rgba(0,113,227,0.2);">
+            <i class="bi bi-bar-chart-fill" style="color:#2997ff;"></i>
+          </div>
+          <div class="hero-feature-text">
+            <strong>Financial Forecasting</strong>
+            ML-powered 30-day expense predictions with 91% accuracy
+          </div>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon" style="background:rgba(16,185,129,0.2);">
+            <i class="bi bi-check2-circle" style="color:#10b981;"></i>
+          </div>
+          <div class="hero-feature-text">
+            <strong>Habit Risk Intelligence</strong>
+            Predict which habits are about to break before they do
+          </div>
+        </div>
+        <div class="hero-feature">
+          <div class="hero-feature-icon" style="background:rgba(6,182,212,0.2);">
+            <i class="bi bi-journal-bookmark-fill" style="color:#06b6d4;"></i>
+          </div>
+          <div class="hero-feature-text">
+            <strong>Productivity Analytics</strong>
+            7-day study output forecast + consistency scoring
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-quote">
+      <i class="bi bi-quote me-1"></i>Understand Today. Predict Tomorrow. Grow Always.
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       RIGHT — Auth Card
+  ═══════════════════════════════════════════════════ -->
+  <div class="auth-card-panel">
+    <div class="auth-card">
+
+      <!-- Mobile logo (hidden on desktop) -->
+      <div class="d-flex align-items-center gap-3 mb-4 d-lg-none">
+        <div style="width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center;box-shadow:var(--q-shadow-sm);">
+          <img src="/static/img/q-emblem-dark.png" alt="Q" class="q-theme-logo-dark" style="width:40px;height:40px;border-radius:12px;object-fit:cover;">
+          <img src="/static/img/q-emblem-mono.png" alt="Q" class="q-theme-logo-light" style="width:40px;height:40px;border-radius:12px;object-fit:cover;">
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:1.1rem;letter-spacing:0.08em;background:linear-gradient(135deg,#2997ff,#0071e3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">QUANTA</div>
+          <div style="color:var(--q-muted);font-size:0.72rem;">Your Digital Twin</div>
+        </div>
+      </div>
+
+      <!-- ── Tab switcher ─────────────────────────── -->
+      <div class="auth-tabs" id="auth-tabs" role="tablist">
+        <button class="auth-tab-btn active" id="tab-login-btn"    onclick="showPanel('login')"   role="tab" aria-selected="true">Sign In</button>
+        <button class="auth-tab-btn"        id="tab-register-btn" onclick="showPanel('register')" role="tab" aria-selected="false">Create Account</button>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           PANEL 1 — LOGIN
+      ══════════════════════════════════════════ -->
+      <div id="panel-login" class="auth-panel active" role="tabpanel">
+        <h2 class="auth-heading">Welcome back 👋</h2>
+        <p class="auth-sub">Sign in to continue your journey with Quanta</p>
+
+        <form id="login-form" novalidate>
+          <!-- Email -->
+          <div class="q-field">
+            <label class="q-label" for="login-email">Email address</label>
+            <div class="q-input-group">
+              <i class="bi bi-envelope q-input-icon"></i>
+              <input type="email" class="q-input" id="login-email" placeholder="name@example.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="q-field">
+            <div class="forgot-row">
+              <label class="q-label mb-0" for="login-password">Password</label>
+              <a href="#" class="q-link" style="font-size:0.8rem;font-weight:500;" onclick="showPanel('reset');return false;">Forgot password?</a>
+            </div>
+            <div class="q-input-group">
+              <i class="bi bi-lock q-input-icon"></i>
+              <input type="password" class="q-input has-right" id="login-password" placeholder="••••••••" autocomplete="current-password" required>
+              <button type="button" class="q-eye-btn" onclick="togglePwd('login-password',this)" tabindex="-1">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" class="q-btn-primary" id="login-btn">
+            Sign In <i class="bi bi-arrow-right"></i>
+          </button>
+        </form>
+
+        <div class="q-divider">or continue with</div>
+
+        <div class="q-social-row">
+          <button class="q-btn-social" id="btn-google">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <path d="M17.64 9.20456C17.64 8.56637 17.5827 7.95274 17.4764 7.36365H9V10.845H13.8436C13.635 11.97 13.0009 12.9232 12.0477 13.5614V15.8196H14.9564C16.6582 14.2527 17.64 11.9455 17.64 9.20456Z" fill="#4285F4"/>
+              <path d="M9 18C11.43 18 13.4673 17.1941 14.9564 15.8196L12.0477 13.5614C11.2418 14.1014 10.2109 14.4205 9 14.4205C6.65591 14.4205 4.67182 12.8373 3.96409 10.71H0.957275V13.0418C2.43818 15.9832 5.48182 18 9 18Z" fill="#34A853"/>
+              <path d="M3.96409 10.71C3.78409 10.17 3.68182 9.59319 3.68182 9C3.68182 8.40682 3.78409 7.83 3.96409 7.29V4.95819H0.957275C0.347727 6.17319 0 7.54773 0 9C0 10.4523 0.347727 11.8268 0.957275 13.0418L3.96409 10.71Z" fill="#FBBC05"/>
+              <path d="M9 3.57955C10.3214 3.57955 11.5077 4.03364 12.4405 4.92545L15.0218 2.34409C13.4632 0.891818 11.4259 0 9 0C5.48182 0 2.43818 2.01682 0.957275 4.95818L3.96409 7.29C4.67182 5.16273 6.65591 3.57955 9 3.57955Z" fill="#EA4335"/>
+            </svg>
+            Google
+          </button>
+          <button class="q-btn-social" id="btn-microsoft">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+              <rect width="8.5" height="8.5" fill="#F25022"/>
+              <rect x="9.5" width="8.5" height="8.5" fill="#7FBA00"/>
+              <rect y="9.5" width="8.5" height="8.5" fill="#00A4EF"/>
+              <rect x="9.5" y="9.5" width="8.5" height="8.5" fill="#FFB900"/>
+            </svg>
+            Microsoft
+          </button>
+        </div>
+
+        <div class="q-trust">
+          <i class="bi bi-shield-lock-fill" style="color:#10b981;"></i>
+          Your data is encrypted and secure
+        </div>
+
+        <div class="q-switch">
+          Don't have an account? <a class="q-link" onclick="showPanel('register');return false;" href="#">Sign up free</a>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           PANEL 2 — REGISTER
+      ══════════════════════════════════════════ -->
+      <div id="panel-register" class="auth-panel" role="tabpanel">
+        <h2 class="auth-heading">Create account ✨</h2>
+        <p class="auth-sub">Join Quanta and unlock your digital twin</p>
+
+        <form id="register-form" novalidate>
+          <!-- Full Name -->
+          <div class="q-field">
+            <label class="q-label" for="reg-name">Full Name</label>
+            <div class="q-input-group">
+              <i class="bi bi-person q-input-icon"></i>
+              <input type="text" class="q-input" id="reg-name" placeholder="Aryan Sharma" autocomplete="name" required>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="q-field">
+            <label class="q-label" for="reg-email">Email address</label>
+            <div class="q-input-group">
+              <i class="bi bi-envelope q-input-icon"></i>
+              <input type="email" class="q-input" id="reg-email" placeholder="name@example.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="q-field">
+            <label class="q-label" for="reg-password">Password</label>
+            <div class="q-input-group">
+              <i class="bi bi-lock q-input-icon"></i>
+              <input type="password" class="q-input has-right" id="reg-password" placeholder="Min 8 characters"
+                     autocomplete="new-password" required oninput="updateStrength(this.value)">
+              <button type="button" class="q-eye-btn" onclick="togglePwd('reg-password',this)" tabindex="-1">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+            <!-- Strength meter -->
+            <div class="strength-track">
+              <div class="strength-seg" id="str-1"></div>
+              <div class="strength-seg" id="str-2"></div>
+              <div class="strength-seg" id="str-3"></div>
+              <div class="strength-seg" id="str-4"></div>
+            </div>
+            <div class="strength-label" id="str-label">Enter a password</div>
+          </div>
+
+          <button type="submit" class="q-btn-primary green" id="register-btn" style="margin-top:8px;">
+            Create Account <i class="bi bi-check-lg"></i>
+          </button>
+        </form>
+
+        <div class="q-terms">
+          By creating an account you agree to our
+          <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+        </div>
+
+        <div class="q-switch">
+          Already have an account? <a class="q-link" onclick="showPanel('login');return false;" href="#">Sign in</a>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════
+           PANEL 3 — RESET PASSWORD
+      ══════════════════════════════════════════ -->
+      <div id="panel-reset" class="auth-panel" role="tabpanel">
+        <a href="#" class="q-link d-inline-flex align-items-center gap-1 mb-3" style="font-size:0.85rem;" onclick="showPanel('login');return false;">
+          <i class="bi bi-arrow-left"></i> Back to login
+        </a>
+        <h2 class="auth-heading">Reset password 🔑</h2>
+        <p class="auth-sub">Enter your email and we'll send a reset link</p>
+
+        <form id="reset-form" novalidate>
+          <div class="q-field">
+            <label class="q-label" for="reset-email">Email address</label>
+            <div class="q-input-group">
+              <i class="bi bi-envelope q-input-icon"></i>
+              <input type="email" class="q-input" id="reset-email" placeholder="name@example.com" autocomplete="email" required>
+            </div>
+          </div>
+
+          <button type="submit" class="q-btn-primary" id="reset-btn" style="margin-top:8px;">
+            Send Reset Link <i class="bi bi-send"></i>
+          </button>
+        </form>
+
+        <div class="q-switch" style="margin-top:1rem;">
+          Remember your password? <a class="q-link" onclick="showPanel('login');return false;" href="#">Sign in</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div class="q-toast-wrap" id="toast-wrap"></div>
+
+<!-- ── Scripts ──────────────────────────────────────────────────────── -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module">
+import { loginUser, registerUser, resetPassword, onAuthChange, loginWithGoogle, loginWithMicrosoft } from '/static/js/auth.js';
+import { initTheme } from '/static/js/theme.js';
+
+// Init theme on auth page
+initTheme();
+
+// ── Auth guard ──────────────────────────────────────────────────────
+onAuthChange(user => {
+  if (user && (window.location.pathname.startsWith('/login') || window.location.pathname === '/')) {
+    window.location.href = '/dashboard';
+  }
+});
+
+// ── Panel switcher ──────────────────────────────────────────────────
+window.showPanel = (panel) => {
+  // Update panels
+  document.querySelectorAll('.auth-panel').forEach(p => p.classList.remove('active'));
+  const target = document.getElementById('panel-' + panel);
+  if (target) target.classList.add('active');
+
+  // Update tab buttons (only login/register have tabs)
+  document.querySelectorAll('.auth-tab-btn').forEach(b => {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  const tabBtn = document.getElementById('tab-' + panel + '-btn');
+  if (tabBtn) {
+    tabBtn.classList.add('active');
+    tabBtn.setAttribute('aria-selected', 'true');
+  }
+};
+
+// ── Password visibility toggle ──────────────────────────────────────
+window.togglePwd = (inputId, btn) => {
+  const input = document.getElementById(inputId);
+  const icon  = btn.querySelector('i');
+  if (input.type === 'password') {
+    input.type = 'text';
+    icon.classList.replace('bi-eye', 'bi-eye-slash');
+  } else {
+    input.type = 'password';
+    icon.classList.replace('bi-eye-slash', 'bi-eye');
+  }
+};
+
+// ── Password strength ────────────────────────────────────────────────
+window.updateStrength = (pw) => {
+  let score = 0;
+  if (pw.length >= 6)  score++;
+  if (pw.length >= 10) score++;
+  if (/[A-Z]/.test(pw) && /[0-9]/.test(pw)) score++;
+  if (/[^A-Za-z0-9]/.test(pw)) score++;
+
+  const colors = ['','#ef4444','#f59e0b','#3b82f6','#10b981'];
+  const labels = ['Enter a password','Weak — too short','Fair — add numbers/symbols','Good — almost there','Strong ✓'];
+  const c = colors[score] || '';
+
+  for (let i = 1; i <= 4; i++) {
+    const seg = document.getElementById('str-' + i);
+    seg.style.background = i <= score ? c : 'rgba(0,0,0,0.06)';
+  }
+  const lbl = document.getElementById('str-label');
+  if (lbl) {
+    lbl.textContent = labels[score] || labels[0];
+    lbl.style.color  = c || 'var(--q-muted)';
+  }
+};
+
+// ── Toast ────────────────────────────────────────────────────────────
+function showToast(msg, type = 'success') {
+  const wrap  = document.getElementById('toast-wrap');
+  const icons = { success: 'bi-check-circle-fill', danger: 'bi-x-circle-fill', info: 'bi-info-circle-fill' };
+  const toast = document.createElement('div');
+  toast.className = `q-toast ${type}`;
+  toast.innerHTML = `<i class="bi ${icons[type] || icons.info}"></i><span>${msg}</span>`;
+  wrap.appendChild(toast);
+  setTimeout(() => {
+    toast.style.transition = 'opacity 0.3s, transform 0.3s';
+    toast.style.opacity    = '0';
+    toast.style.transform  = 'translateY(8px)';
+    setTimeout(() => toast.remove(), 350);
+  }, 3500);
+}
+
+// ── Button loading state ─────────────────────────────────────────────
+function setBtnLoading(btn, loading, defaultHTML) {
+  btn.disabled  = loading;
+  btn.innerHTML = loading
+    ? '<div class="q-spinner"></div> Please wait…'
+    : defaultHTML;
+}
+
+// ── LOGIN ────────────────────────────────────────────────────────────
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn     = document.getElementById('login-btn');
+  const email   = document.getElementById('login-email').value.trim();
+  const password = document.getElementById('login-password').value;
+  if (!email || !password) { showToast('Please fill in all fields', 'danger'); return; }
+
+  setBtnLoading(btn, true, 'Sign In <i class="bi bi-arrow-right"></i>');
+  try {
+    await loginUser(email, password);
+    showToast('Signed in successfully! Redirecting…', 'success');
+    window.location.href = '/dashboard';
+  } catch (err) {
+    showToast(friendlyError(err), 'danger');
+    setBtnLoading(btn, false, 'Sign In <i class="bi bi-arrow-right"></i>');
+  }
+});
+
+// ── REGISTER ─────────────────────────────────────────────────────────
+document.getElementById('register-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn      = document.getElementById('register-btn');
+  const name     = document.getElementById('reg-name').value.trim();
+  const email    = document.getElementById('reg-email').value.trim();
+  const password = document.getElementById('reg-password').value;
+
+  if (!name || !email || !password) { showToast('Please fill in all fields', 'danger'); return; }
+  if (password.length < 6) { showToast('Password must be at least 6 characters', 'danger'); return; }
+
+  setBtnLoading(btn, true, 'Create Account <i class="bi bi-check-lg"></i>');
+  try {
+    await registerUser(email, password, name);
+    showToast('Account created! Redirecting…', 'success');
+    window.location.href = '/dashboard';
+  } catch (err) {
+    showToast(friendlyError(err), 'danger');
+    setBtnLoading(btn, false, 'Create Account <i class="bi bi-check-lg"></i>');
+  }
+});
+
+// ── RESET ─────────────────────────────────────────────────────────────
+document.getElementById('reset-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn   = document.getElementById('reset-btn');
+  const email = document.getElementById('reset-email').value.trim();
+  if (!email) { showToast('Please enter your email', 'danger'); return; }
+
+  setBtnLoading(btn, true, 'Send Reset Link <i class="bi bi-send"></i>');
+  try {
+    await resetPassword(email);
+    showToast('Reset link sent — check your inbox!', 'success');
+    setTimeout(() => showPanel('login'), 2000);
+  } catch (err) {
+    showToast(friendlyError(err), 'danger');
+  } finally {
+    setBtnLoading(btn, false, 'Send Reset Link <i class="bi bi-send"></i>');
+  }
+});
+
+// ── GOOGLE ────────────────────────────────────────────────────────────
+document.getElementById('btn-google').addEventListener('click', async () => {
+  try {
+    await loginWithGoogle();
+    showToast('Signed in with Google! Redirecting…', 'success');
+    window.location.href = '/dashboard';
+  }
+  catch (err) { showToast(friendlyError(err), 'danger'); }
+});
+
+// ── MICROSOFT ─────────────────────────────────────────────────────────
+document.getElementById('btn-microsoft').addEventListener('click', async () => {
+  try {
+    await loginWithMicrosoft();
+    showToast('Signed in with Microsoft! Redirecting…', 'success');
+    window.location.href = '/dashboard';
+  }
+  catch (err) { showToast(friendlyError(err), 'danger'); }
+});
+
+// ── Friendly error messages ───────────────────────────────────────────
+function friendlyError(err) {
+  const code = err?.code || '';
+  const msg = err?.message || '';
+  if (code === 'auth/user-not-found' || code === 'auth/wrong-password' || code === 'auth/invalid-credential' || msg.includes('Incorrect email or password'))
+    return 'Invalid email or password. Please try again.';
+  if (code === 'auth/email-already-in-use' || msg.includes('already exists'))
+    return 'This email is already registered. Try signing in.';
+  if (code === 'auth/weak-password' || msg.includes('weak'))
+    return 'Password is too weak. Use at least 6 characters.';
+  if (code === 'auth/invalid-email')
+    return 'Please enter a valid email address.';
+  if (code === 'auth/too-many-requests')
+    return 'Too many attempts. Please wait a few minutes and try again.';
+  if (code === 'auth/network-request-failed')
+    return 'Network error. Check your internet connection.';
+  return msg || 'Something went wrong. Please try again.';
+}
+</script>
+
+</body>
+</html>

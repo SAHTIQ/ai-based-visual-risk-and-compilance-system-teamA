@@ -1,0 +1,158 @@
+================================================================
+QUANTA — ALL MODELS USED IN THE PROJECT
+================================================================
+Generated: September 30, 2026
+Project: Quanta Virtual Twin Platform
+================================================================
+
+
+----------------------------------------------------------------
+1. AI CHATBOT — QUANTA ASSISTANT
+----------------------------------------------------------------
+
+Model Name   : Qwen 3.8 27B
+Provider     : Groq (https://console.groq.com)
+Model ID     : qwen/qwen3.8-27b
+Type         : Large Language Model (LLM)
+Purpose      : Conversational AI assistant
+               - Understands user questions in plain English
+               - Decides which data tools to call
+               - Reads real Firebase data (expenses, habits, goals)
+               - Runs ML predictions
+               - Explains everything in simple language
+API Format   : OpenAI-compatible (chat completions)
+Cost         : Free (Groq free tier)
+Max Response : 500 tokens (~370 words per message)
+
+
+----------------------------------------------------------------
+2. FINANCE FORECAST MODEL
+----------------------------------------------------------------
+
+File         : models/v3/finance_model.joblib
+Algorithm    : XGBRegressor (XGBoost Gradient Boosting)
+Library      : xgboost
+Purpose      : Predicts your total expenses for the next 30 days
+Input        : Historical expense data from Firestore
+Output       : Projected expense amount (in INR) + trend direction
+Features     : Lag values, rolling averages, EWM windows,
+               calendar features (day of week, month, etc.)
+
+
+----------------------------------------------------------------
+3. STUDY FORECAST MODEL
+----------------------------------------------------------------
+
+File         : models/v3/study_model.joblib
+Algorithm    : XGBRegressor (XGBoost Gradient Boosting)
+Library      : xgboost
+Purpose      : Predicts your study hours for the next 7 days
+Input        : Historical study session records from Firestore
+Output       : Forecasted daily study hours + trend insight
+Features     : Lag values, rolling averages, EWM windows,
+               day-of-week patterns, subject breakdown
+
+
+----------------------------------------------------------------
+4. HABIT CHURN RISK MODEL
+----------------------------------------------------------------
+
+File         : models/v3/habit_model.joblib
+Algorithm    : Pipeline (Scikit-learn)
+               (Preprocessor + Classifier)
+Library      : scikit-learn
+Purpose      : Calculates risk score that a user will stop
+               each active habit (churn probability 0.0 to 1.0)
+Input        : Habit tracking records from Firestore
+Output       : Risk score per habit, sorted highest risk first
+Threshold    : Configurable (stored in model payload)
+Supports     : Single model OR weighted ensemble format
+
+
+----------------------------------------------------------------
+5. FINANCE CATEGORY MODELS (9 models)
+----------------------------------------------------------------
+
+File         : models/v3/finance_category_models.joblib
+Algorithm    : Per-category regressors
+Library      : scikit-learn / xgboost
+Purpose      : Predicts spending per expense category
+               separately for more granular forecasting
+Categories   :
+               - Food
+               - Transport
+               - Rent
+               - Utilities
+               - Entertainment
+               - Shopping
+               - Health
+               - Education
+               - Other
+Output       : Predicted spend per category for next period
+
+
+----------------------------------------------------------------
+6. SUPPORTING FILES
+----------------------------------------------------------------
+
+models/v3/finance_features.joblib    — Feature list for finance model
+models/v3/study_features.joblib      — Feature list for study model
+models/v3/habit_features.joblib      — Feature list for habit model
+models/v3/evaluation_results.json    — Model accuracy metrics
+
+
+----------------------------------------------------------------
+ML LIBRARIES USED
+----------------------------------------------------------------
+
+Library            Version     Purpose
+-----------        -------     --------------------------------
+xgboost            >= 2.0      Finance + Study forecasting
+scikit-learn       >= 1.3      Habit risk pipeline, preprocessing
+pandas             latest      Data loading, feature engineering
+numpy              latest      Numerical operations
+joblib             latest      Model save/load (.joblib format)
+imbalanced-learn   >= 0.11     Handle imbalanced habit data
+
+
+----------------------------------------------------------------
+AI / API LIBRARIES USED
+----------------------------------------------------------------
+
+Library            Purpose
+-----------        ----------------------------------------
+openai             OpenAI-compatible API client (used for Groq)
+huggingface_hub    (previous attempt, now replaced by openai)
+google-generativeai Gemini API (fallback if Groq is blocked)
+
+
+----------------------------------------------------------------
+HOW ALL MODELS CONNECT — DATA FLOW
+----------------------------------------------------------------
+
+  Firebase Firestore (your real data)
+            |
+            v
+  ML Models (XGBoost / Sklearn Pipeline)
+    - Finance Model  -> ₹ expense prediction (30 days)
+    - Study Model    -> study hours prediction (7 days)
+    - Habit Model    -> churn risk score (0-100%)
+    - Category Models -> per-category spend breakdown
+            |
+            v
+  Qwen 3.8 27B (via Groq)
+    - Reads ML numbers
+    - Explains in plain English
+    - Answers user questions
+    - Suggests next steps
+            |
+            v
+  User sees the answer in chat
+
+
+================================================================
+NOTE: ML models were trained on synthetic/user data using
+train_models_v2.py and are stored as serialized .joblib files.
+The LLM never guesses numbers — it always calls the ML models
+or Firebase tools to get real data before responding.
+================================================================

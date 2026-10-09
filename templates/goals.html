@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block title %}Goals — QUANTA{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1 class="q-page-title mb-1">Goals</h1>
+    <p class="q-muted-text mb-0">Set milestones and track progress across your life domains</p>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="q-card">
+      <div class="q-card-header">Add / Edit Goal</div>
+      <div class="q-card-body">
+        <form id="create-form">
+          <input type="hidden" id="edit-id">
+          <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" id="field-title" placeholder="e.g. Save ₹1,00,000" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" id="field-description" rows="2" placeholder="Optional details"></textarea>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Category</label>
+              <select class="form-select" id="field-category" required>
+                <option value="finance">Finance</option>
+                <option value="fitness">Fitness</option>
+                <option value="learning">Learning</option>
+                <option value="career">Career</option>
+                <option value="personal">Personal</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Target Date</label>
+              <input type="date" class="form-control" id="field-target_date">
+            </div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Status</label>
+              <select class="form-select" id="field-status" required>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+                <option value="not-started">Not Started</option>
+                <option value="abandoned">Abandoned</option>
+              </select>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Priority</label>
+              <select class="form-select" id="field-priority" required>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="low">Low</option>
+              </select>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Progress (%)</label>
+            <input type="number" class="form-control" id="field-progress_percent" min="0" max="100" placeholder="0–100">
+          </div>
+          <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-primary flex-grow-1" id="submit-btn">Add Record</button>
+            <button type="button" class="btn btn-outline-secondary" id="clear-btn">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="q-card p-0 overflow-hidden h-100">
+      <div class="q-card-header">Goal Records</div>
+      <div class="table-responsive">
+        <table class="table q-table mb-0">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Priority</th>
+              <th>Status</th>
+              <th>Progress</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="records-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+import { initCrudPage } from '/static/js/crud.js';
+
+initCrudPage({
+  entityName: 'Goal',
+  apiUrl: '/api/goals',
+  fields: [
+    { name: 'title', type: 'text' },
+    { name: 'description', type: 'textarea' },
+    { name: 'category', type: 'select' },
+    { name: 'target_date', type: 'date' },
+    { name: 'status', type: 'select' },
+    { name: 'priority', type: 'select' },
+    { name: 'progress_percent', type: 'number' }
+  ],
+  tableColumns: [
+    { key: 'title' },
+    { key: 'category' },
+    { key: 'priority' },
+    { key: 'status' },
+    { key: 'progress_percent' }
+  ]
+});
+</script>
+{% endblock %}

@@ -1,0 +1,745 @@
+{% extends "base.html" %}
+{% block title %}Simulation Lab — QUANTA{% endblock %}
+
+{% block content %}
+<!-- Loading Overlay -->
+<div class="sim-overlay" id="sim-ov">
+  <div class="sim-overlay-box">
+    <div class="sim-spin"></div>
+    <div style="color:var(--q-text);font-weight:600;font-size:1rem;">Running your simulation&hellip;</div>
+    <div style="color:var(--q-muted);font-size:0.82rem;margin-top:6px;" id="ov-msg">Crunching the numbers&hellip;</div>
+  </div>
+</div>
+
+<!-- Hero -->
+<div class="sim-hero mb-4">
+  <div class="row align-items-center">
+    <div class="col-md-7">
+      <h1 class="q-page-title mb-1"><i class="bi bi-lightning-charge-fill me-2" style="color:var(--q-accent-light);"></i>Simulation Lab</h1>
+      <p class="q-muted-text mb-0">Ask <em style="color:var(--q-accent-light);">&ldquo;What if&hellip;?&rdquo;</em> &mdash; model your financial, study &amp; habit futures before committing.</p>
+    </div>
+    <div class="col-md-5 mt-3 mt-md-0 d-flex gap-2 justify-content-md-end flex-wrap">
+      <button class="q-btn-outline" id="btn-cmp"><i class="bi bi-grid-3x3-gap-fill me-1"></i> Compare All Paths</button>
+      <button class="q-btn-primary" id="btn-run"><i class="bi bi-play-fill me-1"></i> Run Simulation</button>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <!-- ====== LEFT: Controls (Sticky Sidebar) ====== -->
+  <div class="col-xl-3 col-lg-4" style="position:sticky;top:20px;align-self:flex-start;z-index:10;">
+
+    <!-- Scenario Picker -->
+    <div class="q-card mb-3">
+      <div class="q-card-header"><i class="bi bi-layers-fill me-2" style="color:var(--q-accent-light);"></i> Choose a Path</div>
+      <div class="q-card-body d-grid gap-2" id="sc-picker">
+        <button class="sim-scenario-btn active-current" data-sc="current">
+          <span style="color:var(--q-muted);font-size:1rem;"><i class="bi bi-dash-circle"></i></span>
+          <div><div style="font-weight:600;color:var(--q-text);font-size:0.85rem;">Current Path</div><div style="font-size:0.72rem;color:var(--q-muted);">Your existing habits unchanged</div></div>
+        </button>
+        <button class="sim-scenario-btn" data-sc="expected">
+          <span style="color:var(--q-accent-light);font-size:1rem;"><i class="bi bi-graph-up"></i></span>
+          <div><div style="font-weight:600;color:var(--q-text);font-size:0.85rem;">Normal Path</div><div style="font-size:0.72rem;color:var(--q-muted);">Realistic gradual improvement</div></div>
+        </button>
+        <button class="sim-scenario-btn" data-sc="best">
+          <span style="color:#10b981;font-size:1rem;"><i class="bi bi-arrow-up-right-circle-fill"></i></span>
+          <div><div style="font-weight:600;color:var(--q-text);font-size:0.85rem;">Best Case</div><div style="font-size:0.72rem;color:var(--q-muted);">Things go really well</div></div>
+        </button>
+        <button class="sim-scenario-btn" data-sc="risk">
+          <span style="color:#ef4444;font-size:1rem;"><i class="bi bi-exclamation-triangle-fill"></i></span>
+          <div><div style="font-weight:600;color:var(--q-text);font-size:0.85rem;">Risk Event</div><div style="font-size:0.72rem;color:var(--q-muted);">A financial shock hits</div></div>
+        </button>
+        <button class="sim-scenario-btn" data-sc="custom">
+          <span style="color:#f59e0b;font-size:1rem;"><i class="bi bi-sliders2"></i></span>
+          <div><div style="font-weight:600;color:var(--q-text);font-size:0.85rem;">Your Lab</div><div style="font-size:0.72rem;color:var(--q-muted);">Define your own scenario</div></div>
+        </button>
+      </div>
+    </div>
+
+    <!-- Time Horizon -->
+    <div class="q-card mb-3">
+      <div class="q-card-body">
+        <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#86868b;margin-bottom:10px;"><i class="bi bi-calendar3 me-1"></i> How far ahead?</div>
+        <div class="d-flex gap-1">
+          <button class="q-btn-outline sim-hbtn flex-fill hbtn" data-days="30">30 Days</button>
+          <button class="q-btn-primary sim-hbtn flex-fill hbtn" data-days="90">90 Days</button>
+          <button class="q-btn-outline sim-hbtn flex-fill hbtn" data-days="180">6 Months</button>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- What-If Sliders -->
+    <div id="cust-ctrl" class="q-card mb-3" style="display:none;max-height:calc(100vh - 220px);overflow-y:auto;">
+      <div class="q-card-header"><i class="bi bi-sliders2 me-1" style="color:#f59e0b;"></i> What-If Sliders</div>
+      <div class="q-card-body">
+        <div class="sim-slider-wrap"><label>Income Change <span class="sv" id="v-income">+0%</span></label><input type="range" class="sim-range" id="sl-income" min="-30" max="50" value="0" step="5"></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#86868b;margin:12px 0 8px;">Spending Changes</div>
+        <div class="sim-slider-wrap"><label>Food &amp; Dining <span class="sv" id="v-food">+0%</span></label><input type="range" class="sim-range" id="sl-food" min="-40" max="40" value="0" step="5"></div>
+        <div class="sim-slider-wrap"><label>Entertainment <span class="sv" id="v-ent">+0%</span></label><input type="range" class="sim-range" id="sl-ent" min="-60" max="60" value="0" step="5"></div>
+        <div class="sim-slider-wrap"><label>Shopping <span class="sv" id="v-shop">+0%</span></label><input type="range" class="sim-range" id="sl-shop" min="-50" max="50" value="0" step="5"></div>
+        <div class="sim-slider-wrap"><label>Transport <span class="sv" id="v-trans">+0%</span></label><input type="range" class="sim-range" id="sl-trans" min="-30" max="30" value="0" step="5"></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#86868b;margin:12px 0 8px;">Emergency Expense</div>
+        <div class="sim-slider-wrap"><label>One-Time Shock <span class="sv sv-neg" id="v-shock">Rs.0</span></label><input type="range" class="sim-range" id="sl-shock" min="0" max="100000" value="0" step="5000"></div>
+        <div class="sim-slider-wrap"><label>Occurs on Day <span class="sv" id="v-shock-day">Day 30</span></label><input type="range" class="sim-range" id="sl-shock-day" min="1" max="89" value="30"></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#86868b;margin:12px 0 8px;">Study &amp; Sleep</div>
+        <div class="sim-slider-wrap"><label>Extra Study Time <span class="sv" id="v-study">+0 min</span></label><input type="range" class="sim-range" id="sl-study" min="-120" max="180" value="0" step="15"></div>
+        <div class="sim-slider-wrap"><label>Sleep Hours <span class="sv" id="v-sleep">7h</span></label><input type="range" class="sim-range" id="sl-sleep" min="5" max="10" value="7" step="0.5"></div>
+        <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#86868b;margin:12px 0 8px;">Habits &amp; Routine</div>
+        <div class="sim-slider-wrap"><label>Habit Discipline <span class="sv" id="v-habit">+0%</span></label><input type="range" class="sim-range" id="sl-habit" min="-40" max="60" value="0" step="5"></div>
+        <button class="q-btn-primary w-100 mt-3" id="btn-run-custom" style="justify-content:center;"><i class="bi bi-play-fill me-1"></i> Run My Scenario</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== RIGHT: Results ====== -->
+  <div class="col-xl-9 col-lg-8">
+    <!-- Empty state -->
+    <div id="sim-empty" class="q-card p-5 text-center" style="min-height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;">
+      <i class="bi bi-lightning-charge" style="font-size:3.5rem;color:var(--q-accent-light);margin-bottom:1rem;"></i>
+      <h4 style="color:var(--q-text);font-weight:700;">Ready to Simulate</h4>
+      <p class="q-muted-text mb-4">Pick a scenario on the left, then click <strong>Run Simulation</strong> to see your projected future.</p>
+      <button class="q-btn-primary" id="btn-run-2" style="font-size:0.95rem;padding:10px 28px;"><i class="bi bi-play-fill me-2"></i> Run Simulation</button>
+    </div>
+
+    <!-- Results panel -->
+    <div id="sim-panel" style="display:none;">
+      <ul class="nav sim-nav mb-3">
+        <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#t-ov">Overview</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-fin">Money</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-prod">Study</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-hab">Habits</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#t-cmp">Compare All</button></li>
+      </ul>
+
+      <div class="tab-content">
+
+        <!-- OVERVIEW TAB -->
+        <div class="tab-pane fade show active" id="t-ov">
+          <div class="row g-3 mb-3">
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Money Saved / Lost</div><div class="sk-value" id="k-bal">&mdash;</div><div class="sk-sub" id="k-bal-s">over simulation period</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Weekly Study</div><div class="sk-value" style="color:#06b6d4;" id="k-study">&mdash;</div><div class="sk-sub">hrs/week predicted</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Habits on Track</div><div class="sk-value" style="color:#10b981;" id="k-habit">&mdash;</div><div class="sk-sub">avg success rate</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Risk of Going Broke</div><div class="sk-value" style="color:#ef4444;" id="k-risk">&mdash;</div><div class="sk-sub">chance of shortfall</div></div></div>
+          </div>
+
+          <div class="row g-3 mb-3">
+            <div class="col-md-5">
+              <div class="sim-chart-card h-100">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <h6 class="mb-0"><i class="bi bi-star-fill me-1" style="color:#f59e0b;"></i> Life Balance Score</h6>
+                </div>
+                <div style="height:230px;position:relative;width:100%;">
+                  <canvas id="c-radar"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:#86868b;margin-bottom:10px;"><i class="bi bi-people-fill me-1"></i> Future Self &mdash; Current Path vs Your Scenario</div>
+              <div class="row g-2">
+                <div class="col-6"><div class="fs-panel fs-panel-curr h-100"><h6>Your Current Path</h6><div id="fs-curr"><div class="q-muted-text small">Loading&hellip;</div></div></div></div>
+                <div class="col-6"><div class="fs-panel fs-panel-scen h-100"><h6 id="fs-lbl">Scenario</h6><div id="fs-scen"><div class="q-muted-text small">Run simulation&hellip;</div></div></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="sim-chart-card"><h6><i class="bi bi-lightbulb-fill me-1" style="color:#f59e0b;"></i> Smart Recommendations</h6><div id="recs" class="d-grid gap-2"></div></div>
+        </div>
+
+        <!-- MONEY TAB -->
+        <div class="tab-pane fade" id="t-fin">
+          <div class="row g-3 mb-3">
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Net Change</div><div class="sk-value" id="f-net">&mdash;</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Risk of Shortfall</div><div class="sk-value" style="color:#ef4444;" id="f-sf">&mdash;</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Goal Success Chance</div><div class="sk-value" style="color:#10b981;" id="f-goal">&mdash;</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Monthly Income</div><div class="sk-value" id="f-inc">&mdash;</div></div></div>
+          </div>
+          <div class="sim-chart-card">
+            <h6><i class="bi bi-graph-up me-1"></i> Balance Forecast <span style="font-size:0.72rem;font-weight:400;color:#86868b;margin-left:8px;">Worst / Normal / Best paths over time</span></h6>
+            <div style="height:210px;position:relative;width:100%;">
+              <canvas id="c-ft"></canvas>
+            </div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="sim-chart-card mb-0">
+                <h6><i class="bi bi-bar-chart-fill me-1"></i> Spending by Category</h6>
+                <div style="height:200px;position:relative;width:100%;">
+                  <canvas id="c-fc"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="sim-chart-card mb-0">
+                <h6><i class="bi bi-distribute-horizontal me-1"></i> Balance at End of Period<span style="font-size:0.68rem;font-weight:400;color:#86868b;display:block;margin-top:2px;">Worst &rarr; Expected &rarr; Best outcomes</span></h6>
+                <div style="height:200px;position:relative;width:100%;">
+                  <canvas id="c-fd"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="sim-chart-card mt-3 mb-0">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <h6 class="mb-0"><i class="bi bi-clouds-fill me-1" style="color:#06b6d4;"></i> 1,000 Futures Dispersion Cloud <span style="font-size:0.72rem;font-weight:400;color:#86868b;margin-left:8px;">Sampled Monte Carlo trajectory outcomes across time</span></h6>
+              <span class="badge" style="background:rgba(6,182,212,0.15);color:#06b6d4;font-size:0.7rem;font-weight:600;">1,000 Simulations</span>
+            </div>
+            <div style="height:210px;position:relative;width:100%;">
+              <canvas id="c-cloud"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- STUDY TAB -->
+        <div class="tab-pane fade" id="t-prod">
+          <div class="row g-3 mb-3">
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Free Time / Day</div><div class="sk-value" style="color:#2997ff;" id="p-avail">&mdash;</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Study Change</div><div class="sk-value" id="p-gain">&mdash;</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Is it Doable?</div><div class="sk-value" id="p-feas">&mdash;</div></div></div>
+            <div class="col-6 col-md-3"><div class="sim-kpi"><div class="sk-label">Ideal Study / Day</div><div class="sk-value" style="color:#06b6d4;" id="p-opt">&mdash;</div></div></div>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-7">
+              <div class="sim-chart-card mb-0">
+                <h6><i class="bi bi-graph-up-arrow me-1"></i> Study Projection<span style="font-size:0.68rem;font-weight:400;color:#86868b;display:block;margin-top:2px;">Current pace vs selected scenario</span></h6>
+                <div style="height:200px;position:relative;width:100%;">
+                  <canvas id="c-study"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="sim-chart-card mb-0">
+                <h6><i class="bi bi-clock-fill me-1"></i> How You Spend Your Day</h6>
+                <div style="height:200px;position:relative;width:100%;">
+                  <canvas id="c-time"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HABITS TAB -->
+        <div class="tab-pane fade" id="t-hab">
+          <div class="row g-3 mb-3" id="hab-cards"></div>
+          <div class="sim-chart-card mt-2 mb-0">
+            <h6><i class="bi bi-graph-up me-1"></i> Habit Consistency Over Time<span style="font-size:0.68rem;font-weight:400;color:#86868b;display:block;margin-top:2px;">Chance each habit sticks &mdash; day by day</span></h6>
+            <div style="height:210px;position:relative;width:100%;">
+              <canvas id="c-ht"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPARE ALL TAB -->
+        <div class="tab-pane fade" id="t-cmp">
+          <div id="cmp-empty" class="q-card p-5 text-center">
+            <i class="bi bi-grid-3x3-gap" style="font-size:3rem;color:rgba(0,113,227,0.35);margin-bottom:1rem;display:block;"></i>
+            <h5 style="color:#1d1d1f;font-weight:700;">Compare All 4 Paths</h5>
+            <p class="q-muted-text mb-4">See Current, Normal, Best Case, and Risk Event side by side.</p>
+            <button class="q-btn-primary" id="btn-cmp-2" style="font-size:0.92rem;padding:10px 24px;"><i class="bi bi-grid-3x3-gap-fill me-2"></i> Compare All Paths</button>
+          </div>
+          <div id="cmp-res" style="display:none;">
+            <div class="sim-chart-card mb-3">
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <h6 class="mb-0"><i class="bi bi-compass me-1" style="color:#10b981;"></i> Decision Frontier &mdash; Risk vs. Return Matrix <span style="font-size:0.72rem;font-weight:400;color:#86868b;margin-left:8px;">Comparing Shortfall Risk (%) vs Net Balance Growth (₹)</span></h6>
+                <span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981;font-size:0.7rem;font-weight:600;">Scenario Trade-Offs</span>
+              </div>
+              <div style="height:230px;position:relative;width:100%;">
+                <canvas id="c-frontier"></canvas>
+              </div>
+            </div>
+            <div class="sim-chart-card">
+              <h6><i class="bi bi-bar-chart-fill me-1"></i> Net Balance &mdash; All Paths</h6>
+              <div style="height:180px;position:relative;width:100%;">
+                <canvas id="c-cb"></canvas>
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <div class="sim-chart-card mb-0">
+                  <h6><i class="bi bi-book-fill me-1"></i> Weekly Study Hours</h6>
+                  <div style="height:200px;position:relative;width:100%;">
+                    <canvas id="c-cs"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="sim-chart-card mb-0">
+                  <h6><i class="bi bi-star-fill me-1" style="color:#f59e0b;"></i> Life Balance Score (All Paths)</h6>
+                  <div style="height:200px;position:relative;width:100%;">
+                    <canvas id="c-cr"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sim-chart-card mb-0"><h6><i class="bi bi-trophy-fill me-1" style="color:#f59e0b;"></i> Scenario Ranking</h6><div id="rank-tbl"></div></div>
+          </div>
+        </div>
+
+      </div><!-- /tab-content -->
+    </div><!-- /sim-panel -->
+  </div><!-- /right col -->
+</div><!-- /row -->
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+{% raw %}
+import { apiCall, formatCurrency, showToast } from '/static/js/api.js';
+import { onAuthChange } from '/static/js/auth.js';
+
+const Chart = window.Chart;
+let activeSc = 'current', hr = 90, baselineData = null;
+const ch = {};
+const get = id => document.getElementById(id);
+const st = (id, v) => { const e = get(id); if (e) e.textContent = v; };
+
+const SC_COLOR = { current:'#6e6e73', expected:'#0071e3', best:'#10b981', risk:'#ef4444', custom:'#f59e0b' };
+const SC_LABEL = { current:'Current Path', expected:'Normal Path', best:'Best Case', risk:'Risk Event', custom:'Your Lab' };
+
+function dc(id) { if (ch[id]) { try { ch[id].destroy(); } catch(e){} delete ch[id]; } }
+function rgba(hex, a) {
+  const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);
+  return `rgba(${r},${g},${b},${a})`;
+}
+
+// FIXED slider: update existing element directly
+function bindSlider(slId, lblId, fmt) {
+  const sl = get(slId), lbl = get(lblId);
+  if (!sl || !lbl) return;
+  const update = () => {
+    const r = fmt(sl.value);
+    if (typeof r === 'object') { lbl.textContent = r.text; lbl.className = 'sv ' + (r.cls||''); }
+    else { lbl.textContent = r; }
+  };
+  sl.addEventListener('input', update);
+  update();
+}
+const pctFmt = v => { const n=+v; return { text:(n>0?'+':'')+n+'%', cls:n>0?'sv-pos':n<0?'sv-neg':'' }; };
+bindSlider('sl-income','v-income',pctFmt);
+bindSlider('sl-food','v-food',pctFmt);
+bindSlider('sl-ent','v-ent',pctFmt);
+bindSlider('sl-shop','v-shop',pctFmt);
+bindSlider('sl-trans','v-trans',pctFmt);
+bindSlider('sl-shock','v-shock', v=>({text:'Rs.'+((+v).toLocaleString('en-IN')), cls:+v>0?'sv-neg':''}));
+bindSlider('sl-shock-day','v-shock-day', v=>({text:'Day '+v, cls:''}));
+bindSlider('sl-study','v-study', v=>{const n=+v;return {text:(n>0?'+':'')+n+' min',cls:n>0?'sv-pos':n<0?'sv-neg':''};});
+bindSlider('sl-sleep','v-sleep', v=>({text:v+'h', cls:''}));
+bindSlider('sl-habit','v-habit',pctFmt);
+
+// Scenario picker
+document.querySelectorAll('.sim-scenario-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.sim-scenario-btn').forEach(b => { b.className='sim-scenario-btn'; });
+    activeSc = btn.dataset.sc;
+    btn.classList.add('active-' + activeSc);
+    get('cust-ctrl').style.display = activeSc==='custom' ? 'block' : 'none';
+  });
+});
+
+// Time horizon
+document.querySelectorAll('.hbtn').forEach(b => {
+  b.addEventListener('click', () => {
+    document.querySelectorAll('.hbtn').forEach(x => { x.classList.remove('q-btn-primary'); x.classList.add('q-btn-outline'); });
+    b.classList.remove('q-btn-outline'); b.classList.add('q-btn-primary');
+    hr = +b.dataset.days;
+    baselineData = null; // invalidate cached baseline
+  });
+});
+
+function buildDelta() {
+  const v = id => +(get(id)?.value||0);
+  return { income_delta_pct:v('sl-income')/100,
+    expense_category_deltas:{food:v('sl-food')/100,entertainment:v('sl-ent')/100,shopping:v('sl-shop')/100,transport:v('sl-trans')/100},
+    one_time_shock:-Math.abs(v('sl-shock')), shock_day:v('sl-shock-day')||30,
+    study_delta_mins_per_day:v('sl-study'), sleep_hours:v('sl-sleep')||7,
+    habit_discipline_delta:v('sl-habit')/100 };
+}
+
+function setButtonsDisabled(disabled) {
+  ['btn-run', 'btn-run-2', 'btn-run-custom', 'btn-cmp', 'btn-cmp-2'].forEach(id => {
+    const b = get(id);
+    if (b) b.disabled = disabled;
+  });
+}
+
+function showLoad(msg) { const e=get('ov-msg');if(e)e.textContent=msg||'Running...';const o=get('sim-ov');if(o)o.style.display='flex'; }
+function hideLoad() { const o=get('sim-ov');if(o)o.style.display='none'; }
+
+async function runSim() {
+  setButtonsDisabled(true);
+  showLoad('Running your simulation...');
+  const body = { scenario:activeSc, horizon_days:hr };
+  if (activeSc==='custom') body.scenario_delta = buildDelta();
+  try {
+    const basePromise = baselineData
+      ? Promise.resolve(baselineData)
+      : apiCall('/api/simulation/run','POST',{scenario:'current',horizon_days:hr});
+    const scenPromise = activeSc!=='current'
+      ? apiCall('/api/simulation/run','POST',body)
+      : basePromise;
+    const [baseRes, scenRes] = await Promise.all([basePromise, scenPromise]);
+    if (!baseRes.success) throw new Error(baseRes.error||'Baseline failed');
+    if (!scenRes.success) throw new Error(scenRes.error||'Simulation failed');
+    baselineData = baseRes;
+    render(scenRes.data, baseRes.data);
+    get('sim-empty').style.display='none'; get('sim-panel').style.display='block';
+    document.querySelector('[data-bs-target="#t-ov"]')?.click();
+  } catch(e) { showToast('Simulation error: '+e.message,'danger'); console.error(e); }
+  finally { hideLoad(); setButtonsDisabled(false); }
+}
+
+async function cmpAll() {
+  setButtonsDisabled(true);
+  showLoad('Comparing all 4 paths...');
+  try {
+    const r = await apiCall('/api/simulation/compare','POST',{horizon_days:hr});
+    if (!r.success) throw new Error(r.error||'Compare failed');
+    get('sim-empty').style.display='none'; get('sim-panel').style.display='block';
+    get('cmp-empty').style.display='none'; get('cmp-res').style.display='block';
+    document.querySelector('[data-bs-target="#t-cmp"]')?.click();
+    renderCmp(r.data);
+  } catch(e) { showToast('Compare error: '+e.message,'danger'); console.error(e); }
+  finally { hideLoad(); setButtonsDisabled(false); }
+}
+
+
+function render(d, base) {
+  const fin=d.finance||{},prod=d.productivity||{},hab=d.habits||[],xd=d.cross_domain||{},recs=d.recommendations||[];
+  const cf=fin.cashflow||{},mc=fin.monte_carlo||{},tb=prod.time_budget||{},fc=prod.forecast||{};
+  const net=cf.net_change||0;
+  const wk=fc.scenario_hrs?.at(-1)??((tb.scenario_study_mins||0)/60);
+  const hs=hab.length?(hab.reduce((s,h)=>s+(h.prob_habit_formed||0),0)/hab.length*100):0;
+  const sf=(mc.prob_shortfall||0)*100;
+
+  st('k-bal',formatCurrency(net)); st('k-bal-s','net change over '+hr+' days');
+  const kb=get('k-bal');if(kb)kb.style.color=net>=0?'#10b981':'#ef4444';
+  st('k-study',wk.toFixed(1)+' hrs/wk'); st('k-habit',hs.toFixed(0)+'%'); st('k-risk',sf.toFixed(1)+'%');
+  st('f-net',formatCurrency(net)); const fn=get('f-net');if(fn)fn.style.color=net>=0?'#10b981':'#ef4444';
+  st('f-sf',sf.toFixed(1)+'%'); st('f-goal',((mc.prob_goal_achieved||0)*100).toFixed(0)+'%'); st('f-inc',formatCurrency(cf.total_income||0));
+  const gain=(tb.scenario_study_mins||0)-(tb.current_study_mins||0);
+  st('p-avail',((tb.available_minutes||0)/60).toFixed(1)+' hrs/day');
+  const pg=get('p-gain');if(pg){pg.textContent=(gain>=0?'+':'')+gain.toFixed(0)+' min/day';pg.style.color=gain>=0?'#10b981':'#ef4444';}
+  const pf=get('p-feas');if(pf){pf.textContent=tb.is_feasible?'Yes':'Tight';pf.style.color=tb.is_feasible?'#10b981':'#f59e0b';}
+  st('p-opt',((prod.optimization?.optimal_study_mins||0)/60).toFixed(1)+' hrs/day');
+  finCharts(mc,cf,fin); prodCharts(prod,tb,fc); habCards(hab); habTraj(hab); radar(xd.life_balance_score); futureSelf(fin,prod,hab,base); renderRecs(recs);
+}
+
+function finCharts(mc,cf,fin) {
+  const col=SC_COLOR[activeSc]||'#0071e3';
+  const dates=mc.dates||cf.daily_balance?.map(d=>d.date)||[];
+  const med=mc.p50||cf.daily_balance?.map(d=>d.balance)||[];
+  dc('ft');
+  ch['ft']=new Chart(get('c-ft').getContext('2d'),{type:'line',data:{labels:dates,datasets:[
+    {label:'Best Case',data:mc.p95||mc.p75||med,borderColor:'#10b981',borderWidth:1.5,borderDash:[4,4],fill:false,tension:.4,pointRadius:0},
+    {label:'Normal Path',data:med,borderColor:col,borderWidth:2.5,backgroundColor:rgba(col,.08),fill:true,tension:.4,pointRadius:0},
+    {label:'Worst Case',data:mc.p5||mc.p25||med,borderColor:'#ef4444',borderWidth:1.5,borderDash:[4,4],fill:false,tension:.4,pointRadius:0},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{color:'#6e6e73',usePointStyle:true}},tooltip:{mode:'index',intersect:false}},
+    scales:{x:{ticks:{maxTicksLimit:8,color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}},
+      y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+
+  const cats=Object.entries(fin.cashflow?.category_breakdown||{});
+  const cc=['#0071e3','#06b6d4','#10b981','#f59e0b','#ef4444','#ec4899','#3b82f6','#2997ff'];
+  dc('fc');
+  ch['fc']=new Chart(get('c-fc').getContext('2d'),{type:'bar',data:{
+    labels:cats.length>0?cats.map(c=>c[0].charAt(0).toUpperCase()+c[0].slice(1)):['No data yet'],
+    datasets:[{data:cats.length>0?cats.map(c=>c[1]):[0],backgroundColor:cats.length>0?cc.slice(0,cats.length):['rgba(0,0,0,0.1)'],borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:'#86868b'},grid:{display:false}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+
+  const ov=[mc.p5,mc.p25,mc.p50,mc.p75,mc.p95].map(a=>a?.at(-1)??0);
+  dc('fd');
+  ch['fd']=new Chart(get('c-fd').getContext('2d'),{type:'bar',data:{labels:['Worst','Low','Expected','High','Best'],
+    datasets:[{data:ov,backgroundColor:['#ef4444','#f59e0b','#0071e3','#06b6d4','#10b981'],borderRadius:6}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:'#86868b'},grid:{display:false}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+
+  // 1,000 Futures Dispersion Cloud (Scatter Plot)
+  const cloudPts = mc.sample_cloud || [];
+  const safePts = cloudPts.filter(p => !p.is_negative);
+  const riskPts = cloudPts.filter(p => p.is_negative);
+  dc('cloud');
+  const cloudCanvas = get('c-cloud');
+  if (cloudCanvas) {
+    ch['cloud'] = new Chart(cloudCanvas.getContext('2d'), {
+      type: 'scatter',
+      data: {
+        datasets: [
+          {
+            label: 'Safe Surplus',
+            data: safePts,
+            backgroundColor: 'rgba(6, 182, 212, 0.45)',
+            borderColor: '#06b6d4',
+            borderWidth: 1,
+            pointRadius: 3.5,
+            pointHoverRadius: 6
+          },
+          {
+            label: 'Deficit Risk',
+            data: riskPts,
+            backgroundColor: 'rgba(239, 68, 68, 0.65)',
+            borderColor: '#ef4444',
+            borderWidth: 1,
+            pointRadius: 4,
+            pointHoverRadius: 6
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top', labels: { color: '#6e6e73', usePointStyle: true, boxWidth: 6 } },
+          tooltip: {
+            callbacks: {
+              label: ctx => `Day ${ctx.raw.x}: ${formatCurrency(ctx.raw.y)} (${ctx.raw.y >= 0 ? 'Surplus' : 'Deficit'})`
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Horizon Timeline (Days)', color: '#86868b', font: { size: 10 } },
+            ticks: { color: '#86868b', maxTicksLimit: 8 },
+            grid: { color: 'rgba(0,0,0,0.04)' }
+          },
+          y: {
+            title: { display: true, text: 'Simulated Balance (₹)', color: '#86868b', font: { size: 10 } },
+            ticks: { callback: v => '₹' + (v/1000).toFixed(0) + 'k', color: '#86868b' },
+            grid: { color: 'rgba(0,0,0,0.04)' }
+          }
+        }
+      }
+    });
+  }
+}
+
+function prodCharts(prod,tb,fc) {
+  const col=SC_COLOR[activeSc]||'#0071e3';
+  dc('sc');
+  ch['sc']=new Chart(get('c-study').getContext('2d'),{type:'line',data:{labels:fc.dates||[],datasets:[
+    {label:'Current Pace',data:fc.baseline_hrs||[],borderColor:'#86868b',borderDash:[5,3],tension:.4,fill:false,pointRadius:2},
+    {label:SC_LABEL[activeSc],data:fc.scenario_hrs||[],borderColor:col,borderWidth:2.5,tension:.4,fill:false},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{color:'#6e6e73',usePointStyle:true}}},
+    scales:{x:{ticks:{color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}},y:{title:{display:true,text:'hrs/week',color:'#86868b'},ticks:{color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+  const sm=(+tb.sleep_hours||7)*60,wm=(+tb.work_hours||8)*60,mm=90,cm=60;
+  const stm=tb.scenario_study_mins||0,fm=tb.scenario_fitness_mins||0,lm=Math.max(0,1440-sm-wm-mm-cm-stm-fm);
+  dc('tc');
+  ch['tc']=new Chart(get('c-time').getContext('2d'),{type:'doughnut',data:{labels:['Sleep','Work','Meals','Travel','Study','Fitness','Free Time'],
+    datasets:[{data:[sm,wm,mm,cm,stm,fm,lm],backgroundColor:['#6366f1','#3b82f6','#10b981','#f59e0b','#2997ff','#ec4899','#86868b'],borderWidth:2,borderColor:'#ffffff'}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'right',labels:{color:'#6e6e73',font:{size:11},usePointStyle:true}}}}});
+}
+
+function habCards(hab) {
+  const sc={'MISSED':'#ef4444','OCCASIONAL':'#f59e0b','REGULAR':'#3b82f6','CONSISTENT':'#10b981'};
+  get('hab-cards').innerHTML=hab.map(h=>{
+    const prob=((h.prob_habit_formed||0)*100).toFixed(0),col=sc[h.current_state]||'var(--q-muted)';
+    const days=h.days_to_consistent?Math.round(h.days_to_consistent)+'d':'Already forming!';
+    return `<div class="col-md-6"><div class="sim-chart-card mb-0 h-100">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;">
+        <span style="font-weight:700;color:var(--q-text);font-size:0.9rem;">${h.habit_name||'Habit'}</span>
+        <span style="font-size:0.72rem;font-weight:700;padding:2px 8px;border-radius:20px;background:${col}20;color:${col};">${h.current_state||'?'}</span>
+      </div>
+      <div style="display:flex;gap:16px;text-align:center;">
+        <div><div style="font-size:0.68rem;color:var(--q-muted);text-transform:uppercase;margin-bottom:2px;">Streak</div><div style="font-weight:700;color:var(--q-text);">${h.current_streak||0}d</div></div>
+        <div><div style="font-size:0.68rem;color:var(--q-muted);text-transform:uppercase;margin-bottom:2px;">Will it Stick?</div><div style="font-weight:700;color:#10b981;">${prob}%</div></div>
+        <div><div style="font-size:0.68rem;color:var(--q-muted);text-transform:uppercase;margin-bottom:2px;">Time to Form</div><div style="font-weight:700;color:var(--q-accent-light);">${days}</div></div>
+      </div>
+      <div style="margin-top:10px;height:4px;border-radius:4px;background:var(--q-progress-track);">
+        <div style="width:${prob}%;height:100%;border-radius:4px;background:${col};transition:width 0.6s;"></div>
+      </div>
+    </div></div>`;
+  }).join('')||'<div class="col-12 text-center q-muted-text py-4">No active habits. Add habits on the Habits page first.</div>';
+}
+
+function habTraj(hab) {
+  if(!hab.length) return;
+  const isDark=document.documentElement.getAttribute('data-theme')!=='light';
+  const tickCol=isDark?'#64748b':'#475569';
+  const gridCol=isDark?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.05)';
+  const cols=['#0f766e','#10b981','#f59e0b','#ec4899','#3b82f6','#ef4444'];
+  dc('ht');
+  ch['ht']=new Chart(get('c-ht').getContext('2d'),{type:'line',data:{labels:hab[0]?.dates||[],
+    datasets:hab.map((h,i)=>({label:h.habit_name||'Habit '+(i+1),data:(h.p_consistent||[]).map(v=>(v*100).toFixed(1)),
+      borderColor:cols[i%cols.length],tension:.4,fill:false,pointRadius:2,borderWidth:2}))},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'top',labels:{color:tickCol,usePointStyle:true}},tooltip:{mode:'index'}},
+      scales:{x:{ticks:{color:tickCol,maxTicksLimit:10},grid:{color:gridCol}},
+        y:{min:0,max:100,title:{display:true,text:'Chance of staying consistent (%)',color:tickCol},ticks:{color:tickCol,callback:v=>v+'%'},grid:{color:gridCol}}}}});
+}
+
+function radar(lb) {
+  if(!lb) return;
+  const isDark=document.documentElement.getAttribute('data-theme')!=='light';
+  const tickCol=isDark?'#64748b':'#475569';
+  const gridCol=isDark?'rgba(255,255,255,0.08)':'rgba(0,0,0,0.08)';
+  const col=SC_COLOR[activeSc]||(isDark?'#7c3aed':'#0f766e');
+  dc('rd');
+  ch['rd']=new Chart(get('c-radar').getContext('2d'),{type:'radar',data:{labels:lb.labels||['Finance','Study','Habits','Fitness'],datasets:[
+    {label:'Current Path',data:lb.baseline||[],backgroundColor:rgba(tickCol,.12),borderColor:tickCol,borderWidth:2,pointRadius:3},
+    {label:activeSc==='current'?'Current Path':SC_LABEL[activeSc],data:activeSc==='current'?lb.baseline:(lb.scenario||[]),backgroundColor:rgba(col,.18),borderColor:col,borderWidth:2,pointRadius:3},
+  ]},options:{responsive:true,maintainAspectRatio:false,
+    scales:{r:{min:0,max:100,ticks:{display:false},grid:{color:gridCol},pointLabels:{color:tickCol}}},
+    plugins:{legend:{position:'bottom',labels:{color:tickCol,usePointStyle:true}}}}});
+}
+
+function futureSelf(fin,prod,hab,base) {
+  const lbs={current:'Current Path',expected:'Normal Path',best:'Best Case',risk:'Risk Event',custom:'Your Lab'};
+  st('fs-lbl',lbs[activeSc]||'Scenario');
+  const mk=(fin2,prod2,hab2)=>{
+    const cf2=fin2.cashflow||{},mc2=fin2.monte_carlo||{},tb2=prod2.time_budget||{};
+    const net2=cf2.net_change||0;
+    const wk2=((tb2.scenario_study_mins||tb2.current_study_mins||0)/60*7);
+    const avgHab=hab2.length?Math.round((hab2.reduce((s,h)=>s+(h.prob_habit_formed||0),0)/hab2.length)*100):0;
+    const sf2=((mc2.prob_shortfall||0)*100).toFixed(0);
+    const nc=net2>=0?'#10b981':'#ef4444';
+    const rc=+sf2>30?'#ef4444':'#10b981';
+    return `<div class="fs-metric"><div class="fmv" style="color:${nc};">${formatCurrency(net2)}</div><div class="fml">Money saved / lost</div></div>
+      <div class="fs-metric"><div class="fmv">${wk2.toFixed(1)}h</div><div class="fml">Weekly study</div></div>
+      <div class="fs-metric"><div class="fmv" style="color:var(--q-accent-light);">${avgHab}%</div><div class="fml">Habit Consistency</div></div>
+      <div class="fs-metric"><div class="fmv" style="color:${rc};">${sf2}%</div><div class="fml">Risk of running short</div></div>`;
+  };
+  const bFin=base?.finance||fin||{};
+  const bProd=base?.productivity||prod;
+  const bHab=base?.habits||hab;
+  get('fs-curr').innerHTML=mk(bFin,bProd,bHab);
+  get('fs-scen').innerHTML=mk(fin,prod,hab);
+}
+
+function renderRecs(recs) {
+  const iB={high:'rgba(239,68,68,0.15)',medium:'rgba(245,158,11,0.15)',low:'rgba(100,116,139,0.15)'};
+  const iC={high:'#ef4444',medium:'#f59e0b',low:'var(--q-muted)'};
+  get('recs').innerHTML=(recs.slice(0,6)||[]).map(r=>`
+    <div class="sim-rec-card rec-${r.domain||'finance'}">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px;">
+        <span style="font-weight:600;color:var(--q-text);font-size:0.88rem;">${r.title}</span>
+        <span style="font-size:0.7rem;font-weight:700;padding:2px 8px;border-radius:20px;background:${iB[r.impact]||iB.low};color:${iC[r.impact]||iC.low};">${r.impact||'info'}</span>
+      </div>
+      <p style="color:var(--q-muted);font-size:0.82rem;margin:0 0 4px;">${r.description}</p>
+      <span style="color:var(--q-muted);font-size:0.72rem;"><i class="bi bi-info-circle me-1"></i>${r.confidence_reason||''}</span>
+    </div>`).join('')||'<p class="q-muted-text small">No recommendations generated.</p>';
+}
+
+function renderCmp(data) {
+  const scs=data.scenarios||{},comp=data.comparison||{},ns=Object.keys(scs);
+  const cols=ns.map(n=>SC_COLOR[n]||'#6e6e73'),caps=ns.map(n=>SC_LABEL[n]||(n.charAt(0).toUpperCase()+n.slice(1)));
+
+  // 1. Decision Frontier Scatter Matrix (Risk vs. Return)
+  const frontierDatasets = ns.map((n) => {
+    const scObj = scs[n] || {};
+    const riskPct = +(comp.shortfall_risk?.[n] ?? ((scObj.finance?.monte_carlo?.prob_shortfall || 0) * 100)).toFixed(1);
+    const netGain = comp.finance_net_change?.[n] ?? scObj.finance?.cashflow?.net_change ?? 0;
+    const studyHours = +(comp.study_weekly_hrs?.[n] ?? scObj.productivity?.forecast?.scenario_hrs?.at(-1) ?? 0).toFixed(1);
+    const c = SC_COLOR[n] || '#6e6e73';
+    const radius = Math.max(7, Math.min(16, 7 + (studyHours / 4)));
+
+    return {
+      label: SC_LABEL[n] || n,
+      data: [{ x: riskPct, y: netGain, study: studyHours, scKey: n }],
+      backgroundColor: rgba(c, 0.55),
+      borderColor: c,
+      borderWidth: 2,
+      pointRadius: radius,
+      pointHoverRadius: radius + 4,
+      pointStyle: n === 'best' ? 'triangle' : n === 'risk' ? 'rectRot' : 'circle'
+    };
+  });
+
+  dc('frontier');
+  const frontierCanvas = get('c-frontier');
+  if (frontierCanvas) {
+    ch['frontier'] = new Chart(frontierCanvas.getContext('2d'), {
+      type: 'scatter',
+      data: { datasets: frontierDatasets },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'top', labels: { color: '#6e6e73', usePointStyle: true, font: { size: 11 } } },
+          tooltip: {
+            callbacks: {
+              label: ctx => {
+                const p = ctx.raw;
+                return [
+                  `★ ${ctx.dataset.label}`,
+                  `• Net Balance: ${formatCurrency(p.y)}`,
+                  `• Shortfall Risk: ${p.x}%`,
+                  `• Study Commitment: ${p.study} hrs/wk`
+                ];
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            title: { display: true, text: 'Financial Fragility / Shortfall Risk (%)', color: '#6e6e73', font: { size: 11, weight: '600' } },
+            ticks: { callback: v => v + '%', color: '#86868b' },
+            grid: { color: 'rgba(0,0,0,0.04)' },
+            min: 0
+          },
+          y: {
+            title: { display: true, text: 'Projected Net Savings (₹)', color: '#6e6e73', font: { size: 11, weight: '600' } },
+            ticks: { callback: v => '₹' + (v/1000).toFixed(0) + 'k', color: '#86868b' },
+            grid: { color: 'rgba(0,0,0,0.04)' }
+          }
+        }
+      }
+    });
+  }
+
+  // 2. Net Balance Bar Chart
+  dc('cb');
+  ch['cb']=new Chart(get('c-cb').getContext('2d'),{type:'bar',data:{labels:caps,datasets:[{
+    data:ns.map(n=>comp.finance_net_change?.[n]??scs[n]?.finance?.cashflow?.net_change??0),backgroundColor:cols,borderRadius:8}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:'#6e6e73'},grid:{display:false}},y:{ticks:{callback:v=>'₹'+(v/1000).toFixed(0)+'k',color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+
+  // 3. Weekly Study Hours Bar Chart
+  dc('cs');
+  ch['cs']=new Chart(get('c-cs').getContext('2d'),{type:'bar',data:{labels:caps,datasets:[{
+    data:ns.map(n=>comp.study_weekly_hrs?.[n]??scs[n]?.productivity?.forecast?.scenario_hrs?.at(-1)??0),backgroundColor:cols,borderRadius:8}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{ticks:{color:'#6e6e73'},grid:{display:false}},y:{title:{display:true,text:'hrs/week',color:'#86868b'},ticks:{color:'#86868b'},grid:{color:'rgba(0,0,0,0.04)'}}}}});
+
+  // 4. Life Balance Radar
+  dc('cr');
+  ch['cr']=new Chart(get('c-cr').getContext('2d'),{type:'radar',data:{labels:['Finance','Study','Habits','Fitness'],
+    datasets:ns.map((n,i)=>({label:caps[i],data:comp.life_balance?.[n]||scs[n]?.cross_domain?.life_balance_score?.scenario||[0,0,0,0],
+      backgroundColor:cols[i]+'25',borderColor:cols[i],borderWidth:2,pointRadius:3}))},
+    options:{responsive:true,maintainAspectRatio:false,scales:{r:{min:0,max:100,ticks:{display:false},grid:{color:'rgba(0,0,0,0.08)'},pointLabels:{color:'#6e6e73'}}},
+      plugins:{legend:{position:'bottom',labels:{color:'#6e6e73',usePointStyle:true}}}}});
+
+  const ranked=data.ranked_scenarios||ns;
+  const rows=ranked.map((sc,i)=>{
+    const n2=comp.finance_net_change?.[sc]??scs[sc]?.finance?.cashflow?.net_change??0;
+    const s2=(comp.study_weekly_hrs?.[sc]??scs[sc]?.productivity?.forecast?.scenario_hrs?.at(-1)??0).toFixed(1);
+    const h2=((comp.habit_consistency?.[sc]??0)*100).toFixed(0);
+    const rowBg=i===0?'background:rgba(16,185,129,0.08);':'';
+    return `<tr style="${rowBg}">
+      <td style="padding:10px 12px;font-weight:700;color:${SC_COLOR[sc]||'#6e6e73'};">${i+1}${i===0?' &#127942;':''}</td>
+      <td style="padding:10px 12px;font-weight:600;color:#1d1d1f;">${SC_LABEL[sc]||caps[i]}</td>
+      <td style="padding:10px 12px;color:${n2>=0?'#10b981':'#ef4444'};font-weight:600;">${formatCurrency(n2)}</td>
+      <td style="padding:10px 12px;color:#06b6d4;font-weight:600;">${s2} hrs</td>
+      <td style="padding:10px 12px;color:#2997ff;font-weight:600;">${h2}%</td>
+    </tr>`;}).join('');
+  get('rank-tbl').innerHTML=`<table style="width:100%;border-collapse:collapse;">
+    <thead><tr style="border-bottom:1px solid rgba(0,0,0,0.08);">
+      <th style="padding:8px 12px;font-size:0.72rem;text-transform:uppercase;color:#86868b;">#</th>
+      <th style="padding:8px 12px;font-size:0.72rem;text-transform:uppercase;color:#86868b;">Path</th>
+      <th style="padding:8px 12px;font-size:0.72rem;text-transform:uppercase;color:#86868b;">Money</th>
+      <th style="padding:8px 12px;font-size:0.72rem;text-transform:uppercase;color:#86868b;">Study</th>
+      <th style="padding:8px 12px;font-size:0.72rem;text-transform:uppercase;color:#86868b;">Habits</th>
+    </tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+// Wire buttons AND automatically run default simulation on initial page load
+const _unsub = onAuthChange(user => {
+  if (!user) return;
+  _unsub();
+  get('btn-run')?.addEventListener('click', runSim);
+  get('btn-run-2')?.addEventListener('click', runSim);
+  get('btn-run-custom')?.addEventListener('click', runSim);
+  get('btn-cmp')?.addEventListener('click', cmpAll);
+  get('btn-cmp-2')?.addEventListener('click', cmpAll);
+
+  // Automatically load the simulation on first visit / sign up
+  runSim();
+});
+{% endraw %}
+</script>
+{% endblock %}

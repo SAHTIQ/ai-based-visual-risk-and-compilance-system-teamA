@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %}Fitness — QUANTA{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1 class="q-page-title mb-1">Fitness</h1>
+    <p class="q-muted-text mb-0">Track workouts, physical activity, and active energy</p>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="q-card">
+      <div class="q-card-header">Add / Edit Session</div>
+      <div class="q-card-body">
+        <form id="create-form">
+          <input type="hidden" id="edit-id">
+          <div class="mb-3">
+            <label class="form-label">Activity Type</label>
+            <select class="form-select" id="field-activity_type" required>
+              <option value="Running">Running</option>
+              <option value="Gym">Gym</option>
+              <option value="Yoga">Yoga</option>
+              <option value="Cycling">Cycling</option>
+              <option value="Swimming">Swimming</option>
+              <option value="Walking">Walking</option>
+              <option value="HIIT">HIIT</option>
+              <option value="Sports">Sports</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Duration (Mins)</label>
+              <input type="number" class="form-control" id="field-duration_minutes" placeholder="30" required>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Calories Burned</label>
+              <input type="number" class="form-control" id="field-calories_burned" placeholder="250">
+            </div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Distance (km)</label>
+              <input type="number" step="0.01" class="form-control" id="field-distance_km" placeholder="5.0">
+            </div>
+            <div class="col-6">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control" id="field-date" required>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Notes</label>
+            <textarea class="form-control" id="field-notes" rows="2" placeholder="Optional notes"></textarea>
+          </div>
+          <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-primary flex-grow-1" id="submit-btn">Add Record</button>
+            <button type="button" class="btn btn-outline-secondary" id="clear-btn">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="q-card p-0 overflow-hidden h-100">
+      <div class="q-card-header">Fitness Records</div>
+      <div class="table-responsive">
+        <table class="table q-table mb-0">
+          <thead>
+            <tr>
+              <th>Activity</th>
+              <th>Duration (m)</th>
+              <th>Calories</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="records-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+import { initCrudPage } from '/static/js/crud.js';
+
+initCrudPage({
+  entityName: 'Fitness Session',
+  apiUrl: '/api/fitness',
+  fields: [
+    { name: 'activity_type', type: 'select' },
+    { name: 'duration_minutes', type: 'number' },
+    { name: 'calories_burned', type: 'number' },
+    { name: 'distance_km', type: 'number' },
+    { name: 'date', type: 'date' },
+    { name: 'notes', type: 'textarea' }
+  ],
+  tableColumns: [
+    { key: 'activity_type' },
+    { key: 'duration_minutes' },
+    { key: 'calories_burned' },
+    { key: 'date', format: 'date' }
+  ]
+});
+</script>
+{% endblock %}

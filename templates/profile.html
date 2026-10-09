@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile - Digital Twin AI{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="q-page-title mb-1">My Profile</h1>
+        <p class="q-muted-text mb-0">Manage your personal settings and account parameters</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-8 col-lg-10 mx-auto">
+        <div class="q-card">
+            <div class="q-card-header">
+                <span>Personal Information</span>
+                <span class="q-muted-text" style="font-size: 0.8rem;">Profile details</span>
+            </div>
+            <div class="q-card-body p-4">
+                <form id="profile-form">
+                    <div class="mb-3">
+                        <label class="form-label">Display Name</label>
+                        <input type="text" class="form-control" id="field-display_name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email (Read Only)</label>
+                        <input type="email" class="form-control" id="field-email" readonly>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Date of Birth</label>
+                            <input type="date" class="form-control" id="field-dob">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Gender</label>
+                            <select class="form-select" id="field-gender">
+                                <option value="">Select...</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not-to-say">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="field-phone">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Location</label>
+                            <input type="text" class="form-control" id="field-location">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Occupation</label>
+                        <input type="text" class="form-control" id="field-occupation">
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label">Bio</label>
+                        <textarea class="form-control" id="field-bio" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="q-btn-primary" id="save-btn" style="padding:10px 24px;">Save Profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+    import { apiCall, showToast } from '/static/js/api.js';
+    import { onAuthChange } from '/static/js/auth.js';
+
+    async function loadProfile() {
+        try {
+            const res = await apiCall('/api/profile');
+            const data = res.data;
+            if (data) {
+                document.getElementById('field-display_name').value = data.display_name || '';
+                document.getElementById('field-email').value = data.email || '';
+                document.getElementById('field-dob').value = data.date_of_birth || '';
+                document.getElementById('field-gender').value = data.gender || '';
+                document.getElementById('field-phone').value = data.phone || '';
+                document.getElementById('field-location').value = data.location || '';
+                document.getElementById('field-occupation').value = data.occupation || '';
+                document.getElementById('field-bio').value = data.bio || '';
+            }
+        } catch (error) {
+            // Profile may not exist yet for new users — that's OK
+            if (!error.message.includes('404')) {
+                showToast('Could not load profile', 'warning');
+            }
+        }
+    }
+
+    document.getElementById('profile-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = document.getElementById('save-btn');
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Saving...';
+
+        const data = {
+            display_name: document.getElementById('field-display_name').value,
+            date_of_birth: document.getElementById('field-dob').value,
+            gender: document.getElementById('field-gender').value,
+            phone: document.getElementById('field-phone').value,
+            location: document.getElementById('field-location').value,
+            occupation: document.getElementById('field-occupation').value,
+            bio: document.getElementById('field-bio').value
+        };
+
+        try {
+            await apiCall('/api/profile', 'PUT', data);
+            showToast('Profile updated successfully!');
+        } catch (error) {
+            showToast(error.message, 'danger');
+        } finally {
+            btn.disabled = false;
+            btn.textContent = 'Save Profile';
+        }
+    });
+
+    // Wait for auth state before loading profile
+    const unsub = onAuthChange(user => {
+        if (user) {
+            unsub();
+            loadProfile();
+        }
+    });
+</script>
+{% endblock %}

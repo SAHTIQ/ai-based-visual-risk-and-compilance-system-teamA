@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block title %}Activity History - Digital Twin AI{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h1 class="q-page-title mb-1">Activity History</h1>
+        <p class="q-muted-text mb-0">Audit trail of actions and milestones across your digital twin</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-8 col-lg-10 mx-auto">
+        <div class="q-card">
+            <div class="q-card-header">
+                <span>Recent Events</span>
+                <span class="q-muted-text" style="font-size: 0.8rem;">Live audit stream</span>
+            </div>
+            <div class="q-card-body p-4">
+                <div id="activity-container">
+                    <div class="text-center q-muted-text my-4" id="loading-spinner">
+                        <div class="spinner-border spinner-border-sm me-2" style="color: var(--q-accent);" role="status"></div>
+                        <span class="small">Loading activities...</span>
+                    </div>
+                    <ul class="timeline" id="activity-list" style="display: none;">
+                        <!-- Activities appended here -->
+                    </ul>
+                </div>
+                <div class="text-center mt-4">
+                    <button class="btn btn-outline-secondary d-none" id="load-more-btn">Load More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+    import { apiCall, showToast } from '/static/js/api.js';
+    import { onAuthChange } from '/static/js/auth.js';
+
+    const list = document.getElementById('activity-list');
+    const spinner = document.getElementById('loading-spinner');
+
+    async function loadActivities() {
+        try {
+            const res = await apiCall(`/api/activities?limit=50`);
+            const data = res.data;
+
+            spinner.style.display = 'none';
+            list.style.display = 'block';
+
+            if (data.length === 0) {
+                list.innerHTML = '<li class="q-muted-text text-center py-4">No activity history yet. Start exploring and adding data!</li>';
+                return;
+            }
+
+            data.forEach(act => {
+                let icon = 'bi-info-circle';
+                let color = 'background: #3b82f6;';
+                if (act.action === 'create') { color = 'background: #10b981;'; icon = 'bi-plus-circle'; }
+                if (act.action === 'update') { color = 'background: #06b6d4;'; icon = 'bi-pencil'; }
+                if (act.action === 'delete') { color = 'background: #ef4444;'; icon = 'bi-trash'; }
+
+                const li = document.createElement('li');
+                li.className = 'timeline-item';
+                li.innerHTML = `
+                    <div class="timeline-icon" style="${color}">
+                        <i class="bi ${icon}"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="d-flex justify-content-between align-items-center mb-1">
+                            <span class="q-forecast-badge" style="font-size:0.7rem;padding:2px 8px;">${act.entity_type || 'system'}</span>
+                            <span class="q-muted-text" style="font-size:0.75rem;">${new Date(act.timestamp || act.created_at).toLocaleString()}</span>
+                        </div>
+                        <div style="font-weight:600;font-size:0.92rem;color:var(--q-text);">${act.summary || act.action}</div>
+                    </div>
+                `;
+                list.appendChild(li);
+            });
+        } catch (error) {
+            spinner.style.display = 'none';
+            showToast('Failed to load activity history', 'danger');
+        }
+    }
+
+    // Wait for auth before loading
+    const unsub = onAuthChange(user => {
+        if (user) {
+            unsub();
+            loadActivities();
+        }
+    });
+</script>
+{% endblock %}

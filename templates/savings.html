@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+{% block title %}Savings — QUANTA{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+  <div>
+    <h1 class="q-page-title mb-1">Savings</h1>
+    <p class="q-muted-text mb-0">Monitor your accumulated wealth and financial goals</p>
+  </div>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="q-kpi-card">
+      <div class="q-kpi-label">Total Savings</div>
+      <div class="q-kpi-value text-success" id="sav-total">₹0</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="q-kpi-card">
+      <div class="q-kpi-label">Target Total</div>
+      <div class="q-kpi-value" id="sav-target">₹0</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="q-kpi-card">
+      <div class="q-kpi-label">Target Progress</div>
+      <div class="q-kpi-value" id="sav-progress">0%</div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4">
+  <div class="col-md-4">
+    <div class="q-card">
+      <div class="q-card-header">Add / Edit Saving</div>
+      <div class="q-card-body">
+        <form id="create-form">
+          <input type="hidden" id="edit-id">
+          <div class="mb-3">
+            <label class="form-label">Type</label>
+            <select class="form-select" id="field-type" required>
+              <option value="bank">Bank Account</option>
+              <option value="investment">Investment / Stocks</option>
+              <option value="emergency">Emergency Fund</option>
+              <option value="crypto">Crypto</option>
+              <option value="retirement">Retirement</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Amount (₹)</label>
+              <input type="number" step="0.01" class="form-control" id="field-amount" placeholder="0.00" required>
+            </div>
+            <div class="col-6">
+              <label class="form-label">Currency</label>
+              <input type="text" class="form-control" id="field-currency" value="INR" required>
+            </div>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <label class="form-label">Target Amount</label>
+              <input type="number" step="0.01" class="form-control" id="field-target_amount" placeholder="0.00">
+            </div>
+            <div class="col-6">
+              <label class="form-label">Target Date</label>
+              <input type="date" class="form-control" id="field-target_date">
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Notes</label>
+            <textarea class="form-control" id="field-notes" rows="2" placeholder="Optional details"></textarea>
+          </div>
+          <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-primary flex-grow-1" id="submit-btn">Save Record</button>
+            <button type="button" class="btn btn-outline-secondary" id="clear-btn">Clear</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="q-card p-0 overflow-hidden h-100">
+      <div class="q-card-header">Savings Records</div>
+      <div class="table-responsive">
+        <table class="table q-table mb-0">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Target</th>
+              <th>Target Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="records-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+import { initCrudPage } from '/static/js/crud.js';
+import { apiCall, formatCurrency } from '/static/js/api.js';
+import { onAuthChange } from '/static/js/auth.js';
+
+initCrudPage({
+  entityName: 'Saving',
+  apiUrl: '/api/savings',
+  fields: [
+    { name: 'type', type: 'select' },
+    { name: 'amount', type: 'number' },
+    { name: 'currency', type: 'text' },
+    { name: 'target_amount', type: 'number' },
+    { name: 'target_date', type: 'date' },
+    { name: 'notes', type: 'textarea' }
+  ],
+  tableColumns: [
+    { key: 'type' },
+    { key: 'amount', format: 'currency' },
+    { key: 'target_amount', format: 'currency' },
+    { key: 'target_date', format: 'date' }
+  ]
+});
+
+async function updateKPIs() {
+  try {
+    const res = await apiCall('/api/savings');
+    if (res.success && res.data) {
+      let total = 0;
+      let targetTotal = 0;
+      res.data.forEach(item => {
+        total += parseFloat(item.amount || 0);
+        if (item.target_amount) targetTotal += parseFloat(item.target_amount || 0);
+      });
+
+      document.getElementById('sav-total').innerText = formatCurrency(total);
+      document.getElementById('sav-target').innerText = targetTotal > 0 ? formatCurrency(targetTotal) : '₹0';
+      if (targetTotal > 0) {
+        const progress = (total / targetTotal) * 100;
+        document.getElementById('sav-progress').innerText = `${progress.toFixed(1)}%`;
+      } else {
+        document.getElementById('sav-progress').innerText = '100%';
+      }
+    }
+  } catch(e) {}
+}
+
+const _unsub = onAuthChange(user => {
+  if (user) { _unsub(); updateKPIs(); }
+});
+</script>
+{% endblock %}

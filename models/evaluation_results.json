@@ -1,0 +1,47 @@
+{
+  "finance_ridge": {
+    "MAE": 428.02,
+    "RMSE": 651.29,
+    "R2": 0.6233
+  },
+  "finance_hgb": {
+    "MAE": 310.16,
+    "RMSE": 423.49,
+    "R2": 0.8408
+  },
+  "finance_xgb": {
+    "MAE": 311.74,
+    "RMSE": 425.72,
+    "R2": 0.8391
+  },
+  "study_ridge": {
+    "MAE": 139.88,
+    "RMSE": 173.55,
+    "R2": 0.3327
+  },
+  "study_hgb": {
+    "MAE": 140.35,
+    "RMSE": 174.14,
+    "R2": 0.3282
+  },
+  "study_xgb": {
+    "MAE": 140.64,
+    "RMSE": 174.57,
+    "R2": 0.3249
+  },
+  "habit_lr": {
+    "Accuracy": 0.6477,
+    "ROC-AUC": 0.7878,
+    "F1_macro": 0.5298
+  },
+  "habit_hgb": {
+    "Accuracy": 0.8687,
+    "ROC-AUC": 0.7731,
+    "F1_macro": 0.6018
+  },
+  "habit_xgb": {
+    "Accuracy": 0.8729,
+    "ROC-AUC": 0.7724,
+    "F1_macro": 0.5993
+  }
+}

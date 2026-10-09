@@ -1,0 +1,1482 @@
+user_id,habit_id,name,category,frequency,target_count,current_streak,max_streak,streak_resets,historical_rate,is_active
+U0001,U0001_H1,Practice Coding,Learning,Daily,1,1,18,153,0.5879,True
+U0001,U0001_H2,Study,Productivity,Daily,1,0,17,139,0.5461,True
+U0001,U0001_H3,Volunteer,Social,Daily,1,1,11,153,0.5663,True
+U0002,U0002_H1,No Social Media after 9PM,Productivity,Daily,1,1,22,120,0.7171,True
+U0002,U0002_H2,Gratitude Journal,Other,Daily,1,0,25,116,0.7629,True
+U0002,U0002_H3,Read Books,Learning,Daily,1,1,22,121,0.7129,True
+U0002,U0002_H4,Read Books,Learning,Daily,1,13,21,112,0.7514,True
+U0002,U0002_H5,Volunteer,Social,Daily,1,6,19,125,0.7357,True
+U0003,U0003_H1,Drink 2L Water,Health,Daily,1,0,12,112,0.4742,True
+U0003,U0003_H2,Gratitude Journal,Other,Weekly,3,0,8,125,0.4742,True
+U0003,U0003_H3,Plan Tomorrow,Productivity,Daily,1,4,12,110,0.4813,True
+U0003,U0003_H4,Journal Writing,Learning,Weekly,4,1,10,118,0.5027,True
+U0004,U0004_H1,Plan Tomorrow,Productivity,Daily,1,4,16,128,0.6939,True
+U0004,U0004_H2,Connect with Friend,Social,Daily,1,6,26,111,0.7464,True
+U0004,U0004_H3,Watch Educational Video,Learning,Weekly,5,6,31,100,0.758,True
+U0005,U0005_H1,Track Expenses,Other,Weekly,4,0,6,113,0.3655,True
+U0006,U0006_H1,Meditate,Health,Weekly,5,2,7,113,0.3526,True
+U0007,U0007_H1,Volunteer,Social,Weekly,4,24,37,81,0.7878,True
+U0007,U0007_H2,Watch Educational Video,Learning,Daily,1,1,28,76,0.8284,True
+U0007,U0007_H3,Drink 2L Water,Health,Weekly,3,31,44,71,0.7925,True
+U0007,U0007_H4,Practice Coding,Learning,Daily,1,16,32,81,0.8175,True
+U0008,U0008_H1,Meditate,Health,Daily,1,2,43,67,0.8298,True
+U0008,U0008_H2,Exercise,Health,Weekly,4,3,53,65,0.8468,True
+U0008,U0008_H3,Track Expenses,Other,Daily,1,3,25,118,0.7163,True
+U0009,U0009_H1,Volunteer,Social,Weekly,4,0,42,100,0.7384,True
+U0009,U0009_H2,Plan Tomorrow,Productivity,Weekly,4,6,41,122,0.7168,True
+U0009,U0009_H3,Practice Coding,Learning,Daily,1,6,25,113,0.7572,True
+U0009,U0009_H4,Wake up at 6AM,Other,Daily,1,1,24,108,0.7572,True
+U0010,U0010_H1,Sleep 8 Hours,Health,Daily,1,6,9,137,0.493,True
+U0010,U0010_H2,Watch Educational Video,Learning,Weekly,4,1,15,138,0.493,True
+U0010,U0010_H3,Wake up at 6AM,Other,Daily,1,0,8,146,0.5147,True
+U0010,U0010_H4,Read 30 Minutes,Productivity,Weekly,3,3,11,140,0.4791,True
+U0011,U0011_H1,Read 30 Minutes,Productivity,Daily,1,2,20,95,0.7678,True
+U0011,U0011_H2,Connect with Friend,Social,Weekly,4,0,42,90,0.7957,True
+U0011,U0011_H3,Read Books,Learning,Weekly,3,1,42,70,0.8421,True
+U0012,U0012_H1,Plan Tomorrow,Productivity,Daily,1,2,26,121,0.675,True
+U0012,U0012_H2,Practice Coding,Learning,Weekly,4,4,17,116,0.7482,True
+U0012,U0012_H3,Connect with Friend,Social,Weekly,5,1,30,114,0.694,True
+U0012,U0012_H4,No Social Media after 9PM,Productivity,Weekly,5,1,25,127,0.6881,True
+U0012,U0012_H5,Meditate,Health,Daily,1,7,26,111,0.7423,True
+U0013,U0013_H1,Wake up at 6AM,Other,Weekly,3,1,36,85,0.763,True
+U0013,U0013_H2,Volunteer,Social,Daily,1,2,24,100,0.6874,True
+U0013,U0013_H3,Exercise,Health,Daily,1,0,42,76,0.8235,True
+U0013,U0013_H4,Exercise,Health,Weekly,5,1,48,57,0.8387,True
+U0013,U0013_H5,Exercise,Health,Weekly,4,0,48,62,0.8235,True
+U0014,U0014_H1,Plan Tomorrow,Productivity,Daily,1,1,5,71,0.2921,True
+U0014,U0014_H2,Read Books,Learning,Daily,1,2,6,82,0.3632,True
+U0014,U0014_H3,Wake up at 6AM,Other,Weekly,3,0,6,77,0.3316,True
+U0015,U0015_H1,Journal Writing,Learning,Weekly,3,1,7,107,0.3799,True
+U0015,U0015_H2,Drink 2L Water,Health,Weekly,4,1,6,99,0.313,True
+U0016,U0016_H1,Read 30 Minutes,Productivity,Daily,1,1,7,115,0.3135,True
+U0017,U0017_H1,Watch Educational Video,Learning,Daily,1,2,14,158,0.5882,True
+U0017,U0017_H2,Track Expenses,Other,Daily,1,1,14,166,0.5551,True
+U0018,U0018_H1,Call Family,Social,Weekly,4,0,5,92,0.2474,True
+U0019,U0019_H1,No Social Media after 9PM,Productivity,Daily,1,0,9,156,0.5203,True
+U0019,U0019_H2,Drink 2L Water,Health,Daily,1,0,13,149,0.5849,True
+U0020,U0020_H1,Journal Writing,Learning,Weekly,4,0,16,134,0.6048,True
+U0020,U0020_H2,Sleep 8 Hours,Health,Daily,1,7,21,119,0.5605,True
+U0021,U0021_H1,No Social Media after 9PM,Productivity,Weekly,3,0,26,106,0.7008,True
+U0021,U0021_H2,Wake up at 6AM,Other,Daily,1,14,34,75,0.8144,True
+U0021,U0021_H3,Study,Productivity,Weekly,4,0,30,102,0.7184,True
+U0021,U0021_H4,Journal Writing,Learning,Daily,1,4,31,104,0.744,True
+U0021,U0021_H5,Eat Healthy,Health,Weekly,5,12,19,100,0.7504,True
+U0022,U0022_H1,Volunteer,Social,Daily,1,2,6,77,0.3781,True
+U0022,U0022_H2,Read Books,Learning,Weekly,4,1,7,68,0.3836,True
+U0023,U0023_H1,Track Expenses,Other,Daily,1,1,15,123,0.5903,True
+U0023,U0023_H2,Meditate,Health,Weekly,5,0,11,150,0.5683,True
+U0023,U0023_H3,Plan Tomorrow,Productivity,Weekly,3,1,9,140,0.5212,True
+U0024,U0024_H1,Practice Coding,Learning,Daily,1,4,9,124,0.5277,True
+U0024,U0024_H2,Gratitude Journal,Other,Weekly,3,0,9,114,0.61,True
+U0025,U0025_H1,No Social Media after 9PM,Productivity,Daily,1,1,6,82,0.3075,True
+U0026,U0026_H1,Wake up at 6AM,Other,Daily,1,1,12,161,0.51,True
+U0026,U0026_H2,Drink 2L Water,Health,Daily,1,0,13,155,0.5571,True
+U0026,U0026_H3,No Social Media after 9PM,Productivity,Daily,1,0,12,145,0.4843,True
+U0027,U0027_H1,Track Expenses,Other,Weekly,4,1,6,86,0.3538,True
+U0027,U0027_H2,Exercise,Health,Daily,1,0,6,87,0.3184,True
+U0028,U0028_H1,Eat Healthy,Health,Weekly,4,0,4,77,0.2405,True
+U0029,U0029_H1,Call Family,Social,Daily,1,3,23,118,0.7321,True
+U0029,U0029_H2,Drink 2L Water,Health,Weekly,3,8,20,127,0.6999,True
+U0029,U0029_H3,No Social Media after 9PM,Productivity,Daily,1,2,20,117,0.7335,True
+U0029,U0029_H4,Track Expenses,Other,Weekly,5,2,24,108,0.7574,True
+U0030,U0030_H1,Practice Coding,Learning,Daily,1,0,41,92,0.7823,True
+U0030,U0030_H2,Exercise,Health,Daily,1,8,40,76,0.8021,True
+U0030,U0030_H3,Watch Educational Video,Learning,Weekly,4,17,50,67,0.8539,True
+U0031,U0031_H1,Connect with Friend,Social,Daily,1,0,20,92,0.7387,True
+U0031,U0031_H2,Meditate,Health,Daily,1,1,30,99,0.7323,True
+U0031,U0031_H3,Gratitude Journal,Other,Daily,1,0,30,99,0.7516,True
+U0031,U0031_H4,Practice Coding,Learning,Daily,1,5,23,106,0.7419,True
+U0032,U0032_H1,Practice Coding,Learning,Weekly,3,0,6,117,0.3581,True
+U0032,U0032_H2,Wake up at 6AM,Other,Daily,1,0,6,96,0.3682,True
+U0032,U0032_H3,Sleep 8 Hours,Health,Weekly,5,0,5,100,0.334,True
+U0033,U0033_H1,Plan Tomorrow,Productivity,Weekly,3,1,20,97,0.7239,True
+U0033,U0033_H2,Journal Writing,Learning,Daily,1,16,42,60,0.8363,True
+U0033,U0033_H3,No Social Media after 9PM,Productivity,Weekly,5,7,22,91,0.7544,True
+U0033,U0033_H4,Meditate,Health,Weekly,3,1,42,76,0.7817,True
+U0034,U0034_H1,Read Books,Learning,Daily,1,9,24,111,0.7601,True
+U0034,U0034_H2,Connect with Friend,Social,Weekly,4,0,19,117,0.7196,True
+U0034,U0034_H3,No Social Media after 9PM,Productivity,Weekly,3,0,16,128,0.6987,True
+U0035,U0035_H1,Read 30 Minutes,Productivity,Daily,1,0,24,128,0.6972,True
+U0035,U0035_H2,Meditate,Health,Daily,1,0,21,124,0.6903,True
+U0035,U0035_H3,Plan Tomorrow,Productivity,Weekly,3,0,21,128,0.7167,True
+U0035,U0035_H4,Journal Writing,Learning,Daily,1,0,27,106,0.7583,True
+U0035,U0035_H5,Call Family,Social,Daily,1,13,29,123,0.7111,True
+U0036,U0036_H1,Journal Writing,Learning,Weekly,5,0,12,108,0.5182,True
+U0036,U0036_H2,Watch Educational Video,Learning,Daily,1,0,8,130,0.5127,True
+U0036,U0036_H3,Plan Tomorrow,Productivity,Daily,1,1,7,125,0.4818,True
+U0036,U0036_H4,Connect with Friend,Social,Weekly,3,1,10,120,0.5182,True
+U0037,U0037_H1,Sleep 8 Hours,Health,Daily,1,0,16,126,0.5309,True
+U0037,U0037_H2,Plan Tomorrow,Productivity,Weekly,3,0,13,124,0.5668,True
+U0038,U0038_H1,Track Expenses,Other,Daily,1,21,50,57,0.8689,True
+U0038,U0038_H2,Read Books,Learning,Daily,1,11,67,56,0.841,True
+U0039,U0039_H1,Drink 2L Water,Health,Daily,1,0,23,123,0.7521,True
+U0039,U0039_H2,Study,Productivity,Daily,1,16,25,123,0.7245,True
+U0039,U0039_H3,Gratitude Journal,Other,Daily,1,1,33,106,0.7617,True
+U0039,U0039_H4,No Social Media after 9PM,Productivity,Daily,1,0,22,120,0.7176,True
+U0040,U0040_H1,Plan Tomorrow,Productivity,Weekly,3,0,13,135,0.5746,True
+U0040,U0040_H2,Eat Healthy,Health,Weekly,3,0,15,130,0.5425,True
+U0040,U0040_H3,Track Expenses,Other,Daily,1,1,12,144,0.565,True
+U0041,U0041_H1,Drink 2L Water,Health,Daily,1,4,6,98,0.3798,True
+U0041,U0041_H2,Study,Productivity,Weekly,5,0,6,88,0.3371,True
+U0042,U0042_H1,Volunteer,Social,Daily,1,0,6,92,0.2535,True
+U0043,U0043_H1,Watch Educational Video,Learning,Weekly,4,1,58,64,0.8541,True
+U0043,U0043_H2,Call Family,Social,Daily,1,14,43,85,0.797,True
+U0043,U0043_H3,Wake up at 6AM,Other,Daily,1,4,46,72,0.8391,True
+U0044,U0044_H1,Connect with Friend,Social,Daily,1,4,24,97,0.7561,True
+U0044,U0044_H2,Sleep 8 Hours,Health,Daily,1,3,74,58,0.8497,True
+U0044,U0044_H3,Eat Healthy,Health,Daily,1,5,58,61,0.8497,True
+U0045,U0045_H1,Read 30 Minutes,Productivity,Daily,1,0,10,131,0.5358,True
+U0045,U0045_H2,Sleep 8 Hours,Health,Weekly,5,2,12,123,0.5683,True
+U0046,U0046_H1,Plan Tomorrow,Productivity,Weekly,5,1,17,114,0.7198,True
+U0046,U0046_H2,Meditate,Health,Daily,1,4,16,99,0.7384,True
+U0046,U0046_H3,Track Expenses,Other,Daily,1,3,19,94,0.7461,True
+U0046,U0046_H4,No Social Media after 9PM,Productivity,Daily,1,4,26,106,0.7291,True
+U0047,U0047_H1,Study,Productivity,Daily,1,0,12,113,0.5259,True
+U0047,U0047_H2,Gratitude Journal,Other,Daily,1,1,12,113,0.5725,True
+U0047,U0047_H3,Volunteer,Social,Weekly,3,2,13,121,0.5796,True
+U0047,U0047_H4,Journal Writing,Learning,Daily,1,3,9,117,0.5331,True
+U0048,U0048_H1,Journal Writing,Learning,Weekly,3,0,5,78,0.309,True
+U0049,U0049_H1,Call Family,Social,Weekly,4,0,9,100,0.2832,True
+U0050,U0050_H1,Practice Coding,Learning,Daily,1,0,7,106,0.334,True
+U0051,U0051_H1,Practice Coding,Learning,Daily,1,3,30,75,0.7823,True
+U0051,U0051_H2,Read 30 Minutes,Productivity,Weekly,3,16,27,118,0.6935,True
+U0051,U0051_H3,Watch Educational Video,Learning,Daily,1,1,20,99,0.7339,True
+U0051,U0051_H4,Connect with Friend,Social,Weekly,5,2,30,101,0.7306,True
+U0051,U0051_H5,Read 30 Minutes,Productivity,Daily,1,2,16,108,0.7081,True
+U0052,U0052_H1,No Social Media after 9PM,Productivity,Weekly,3,0,11,135,0.5025,True
+U0052,U0052_H2,Read 30 Minutes,Productivity,Daily,1,1,13,135,0.5473,True
+U0052,U0052_H3,Connect with Friend,Social,Daily,1,4,16,133,0.5191,True
+U0053,U0053_H1,Connect with Friend,Social,Daily,1,2,17,127,0.6629,True
+U0053,U0053_H2,Practice Coding,Learning,Weekly,3,3,30,115,0.7314,True
+U0053,U0053_H3,Study,Productivity,Weekly,3,3,17,129,0.6943,True
+U0054,U0054_H1,Plan Tomorrow,Productivity,Daily,1,2,23,114,0.7027,True
+U0054,U0054_H2,Eat Healthy,Health,Daily,1,3,48,73,0.7997,True
+U0054,U0054_H3,Gratitude Journal,Other,Weekly,4,2,25,97,0.7774,True
+U0054,U0054_H4,Practice Coding,Learning,Weekly,3,8,21,96,0.7663,True
+U0054,U0054_H5,Sleep 8 Hours,Health,Daily,1,3,64,53,0.8585,True
+U0055,U0055_H1,Plan Tomorrow,Productivity,Daily,1,4,23,105,0.6966,True
+U0055,U0055_H2,Meditate,Health,Weekly,3,8,20,111,0.7162,True
+U0055,U0055_H3,Read Books,Learning,Weekly,4,1,20,99,0.7488,True
+U0056,U0056_H1,Call Family,Social,Weekly,5,3,34,96,0.7832,True
+U0056,U0056_H2,Sleep 8 Hours,Health,Daily,1,0,97,50,0.883,True
+U0056,U0056_H3,Wake up at 6AM,Other,Daily,1,2,33,106,0.7475,True
+U0056,U0056_H4,Sleep 8 Hours,Health,Weekly,4,14,58,71,0.8302,True
+U0057,U0057_H1,Read Books,Learning,Daily,1,0,67,73,0.8323,True
+U0057,U0057_H2,Call Family,Social,Weekly,3,8,38,90,0.7284,True
+U0057,U0057_H3,Read Books,Learning,Daily,1,3,41,60,0.8546,True
+U0057,U0057_H4,Sleep 8 Hours,Health,Weekly,3,6,45,74,0.8083,True
+U0058,U0058_H1,Volunteer,Social,Weekly,4,1,5,113,0.3477,True
+U0058,U0058_H2,Study,Productivity,Weekly,3,0,5,106,0.3207,True
+U0058,U0058_H3,Read Books,Learning,Daily,1,2,7,115,0.3514,True
+U0059,U0059_H1,Read Books,Learning,Daily,1,7,58,62,0.8717,True
+U0059,U0059_H2,Plan Tomorrow,Productivity,Daily,1,4,27,108,0.7448,True
+U0060,U0060_H1,Study,Productivity,Weekly,4,1,11,146,0.5949,True
+U0060,U0060_H2,Call Family,Social,Daily,1,5,13,132,0.563,True
+U0060,U0060_H3,Exercise,Health,Weekly,3,0,26,127,0.5853,True
+U0061,U0061_H1,Practice Coding,Learning,Daily,1,1,10,131,0.5717,True
+U0061,U0061_H2,Meditate,Health,Daily,1,0,11,139,0.4992,True
+U0062,U0062_H1,Drink 2L Water,Health,Daily,1,1,16,146,0.5949,True
+U0062,U0062_H2,Wake up at 6AM,Other,Daily,1,4,10,144,0.5934,True
+U0063,U0063_H1,Sleep 8 Hours,Health,Daily,1,30,41,67,0.8258,True
+U0063,U0063_H2,No Social Media after 9PM,Productivity,Weekly,5,0,19,106,0.7102,True
+U0063,U0063_H3,Volunteer,Social,Daily,1,5,23,94,0.7337,True
+U0063,U0063_H4,Journal Writing,Learning,Weekly,3,0,26,90,0.7638,True
+U0064,U0064_H1,Wake up at 6AM,Other,Weekly,5,1,11,139,0.5483,True
+U0064,U0064_H2,Volunteer,Social,Weekly,3,3,11,133,0.5514,True
+U0064,U0064_H3,Read 30 Minutes,Productivity,Weekly,5,1,10,142,0.5234,True
+U0065,U0065_H1,Drink 2L Water,Health,Weekly,4,0,10,132,0.5291,True
+U0065,U0065_H2,Study,Productivity,Daily,1,6,12,138,0.589,True
+U0066,U0066_H1,Plan Tomorrow,Productivity,Weekly,3,2,5,119,0.285,True
+U0066,U0066_H2,Read Books,Learning,Daily,1,0,6,113,0.2884,True
+U0067,U0067_H1,Watch Educational Video,Learning,Daily,1,1,5,76,0.373,True
+U0068,U0068_H1,Exercise,Health,Daily,1,0,15,139,0.5688,True
+U0068,U0068_H2,Watch Educational Video,Learning,Weekly,4,0,19,128,0.5688,True
+U0069,U0069_H1,Plan Tomorrow,Productivity,Weekly,4,0,21,99,0.7547,True
+U0069,U0069_H2,Sleep 8 Hours,Health,Daily,1,31,31,72,0.7787,True
+U0070,U0070_H1,No Social Media after 9PM,Productivity,Weekly,3,0,19,130,0.6738,True
+U0070,U0070_H2,Journal Writing,Learning,Daily,1,1,30,102,0.7708,True
+U0070,U0070_H3,Exercise,Health,Daily,1,4,19,119,0.7169,True
+U0070,U0070_H4,Wake up at 6AM,Other,Weekly,4,9,25,111,0.7631,True
+U0071,U0071_H1,Journal Writing,Learning,Daily,1,1,10,144,0.5799,True
+U0071,U0071_H2,Exercise,Health,Weekly,3,3,10,157,0.5073,True
+U0072,U0072_H1,Plan Tomorrow,Productivity,Daily,1,0,6,98,0.3377,True
+U0072,U0072_H2,Read Books,Learning,Daily,1,0,5,107,0.4118,True
+U0072,U0072_H3,Track Expenses,Other,Daily,1,1,6,104,0.3442,True
+U0073,U0073_H1,Read Books,Learning,Daily,1,14,43,73,0.8159,True
+U0073,U0073_H2,Read 30 Minutes,Productivity,Daily,1,5,17,108,0.7247,True
+U0074,U0074_H1,Eat Healthy,Health,Weekly,4,6,49,52,0.8689,True
+U0074,U0074_H2,Read Books,Learning,Weekly,5,0,24,92,0.743,True
+U0074,U0074_H3,Sleep 8 Hours,Health,Weekly,5,24,47,67,0.8147,True
+U0075,U0075_H1,Journal Writing,Learning,Weekly,5,3,9,129,0.5355,True
+U0075,U0075_H2,Track Expenses,Other,Daily,1,3,9,129,0.5084,True
+U0075,U0075_H3,Connect with Friend,Social,Daily,1,0,15,122,0.4747,True
+U0076,U0076_H1,Call Family,Social,Weekly,5,6,9,143,0.5244,True
+U0076,U0076_H2,Wake up at 6AM,Other,Daily,1,0,10,159,0.5273,True
+U0076,U0076_H3,Journal Writing,Learning,Weekly,3,1,15,154,0.5628,True
+U0077,U0077_H1,Watch Educational Video,Learning,Daily,1,1,20,114,0.5588,True
+U0077,U0077_H2,Eat Healthy,Health,Weekly,5,0,11,114,0.5226,True
+U0077,U0077_H3,Volunteer,Social,Weekly,5,1,10,128,0.5045,True
+U0077,U0077_H4,Wake up at 6AM,Other,Daily,1,1,10,116,0.528,True
+U0078,U0078_H1,Read Books,Learning,Daily,1,0,56,53,0.8286,True
+U0078,U0078_H2,Watch Educational Video,Learning,Daily,1,5,40,66,0.8018,True
+U0078,U0078_H3,Study,Productivity,Daily,1,0,31,81,0.7732,True
+U0078,U0078_H4,No Social Media after 9PM,Productivity,Weekly,5,0,26,79,0.775,True
+U0079,U0079_H1,Gratitude Journal,Other,Weekly,5,0,13,163,0.5691,True
+U0079,U0079_H2,Meditate,Health,Weekly,4,0,10,152,0.5566,True
+U0079,U0079_H3,Call Family,Social,Daily,1,0,14,159,0.5843,True
+U0080,U0080_H1,Volunteer,Social,Weekly,4,2,7,93,0.3529,True
+U0080,U0080_H2,Gratitude Journal,Other,Daily,1,1,6,110,0.3588,True
+U0081,U0081_H1,Wake up at 6AM,Other,Daily,1,1,26,87,0.8012,True
+U0081,U0081_H2,Meditate,Health,Weekly,4,10,43,61,0.8525,True
+U0081,U0081_H3,Eat Healthy,Health,Weekly,5,28,79,57,0.8587,True
+U0082,U0082_H1,No Social Media after 9PM,Productivity,Daily,1,6,19,122,0.7149,True
+U0082,U0082_H2,Practice Coding,Learning,Daily,1,6,22,109,0.743,True
+U0082,U0082_H3,Wake up at 6AM,Other,Weekly,5,2,40,95,0.7696,True
+U0083,U0083_H1,Connect with Friend,Social,Weekly,5,0,16,141,0.5873,True
+U0083,U0083_H2,Journal Writing,Learning,Weekly,4,8,15,134,0.5813,True
+U0084,U0084_H1,No Social Media after 9PM,Productivity,Daily,1,2,22,97,0.7379,True
+U0084,U0084_H2,Watch Educational Video,Learning,Daily,1,1,57,66,0.8136,True
+U0084,U0084_H3,Journal Writing,Learning,Weekly,4,29,50,63,0.8561,True
+U0085,U0085_H1,Meditate,Health,Weekly,5,3,12,166,0.5852,True
+U0085,U0085_H2,Volunteer,Social,Daily,1,1,17,144,0.522,True
+U0086,U0086_H1,Read Books,Learning,Daily,1,7,17,144,0.6217,True
+U0086,U0086_H2,Study,Productivity,Daily,1,1,12,161,0.5869,True
+U0087,U0087_H1,Read Books,Learning,Weekly,3,0,11,112,0.5278,True
+U0087,U0087_H2,Call Family,Social,Daily,1,3,12,131,0.5243,True
+U0087,U0087_H3,No Social Media after 9PM,Productivity,Daily,1,1,6,138,0.474,True
+U0088,U0088_H1,Gratitude Journal,Other,Daily,1,9,33,104,0.7707,True
+U0088,U0088_H2,No Social Media after 9PM,Productivity,Weekly,5,6,23,124,0.7308,True
+U0088,U0088_H3,Watch Educational Video,Learning,Daily,1,1,24,118,0.7396,True
+U0088,U0088_H4,Watch Educational Video,Learning,Weekly,4,0,21,116,0.7515,True
+U0089,U0089_H1,Study,Productivity,Daily,1,3,17,105,0.6501,True
+U0089,U0089_H2,Eat Healthy,Health,Daily,1,59,59,57,0.8062,True
+U0089,U0089_H3,Track Expenses,Other,Daily,1,5,34,77,0.7856,True
+U0090,U0090_H1,Meditate,Health,Daily,1,0,5,99,0.2583,True
+U0091,U0091_H1,Watch Educational Video,Learning,Daily,1,0,8,100,0.3977,True
+U0091,U0091_H2,Eat Healthy,Health,Daily,1,4,9,94,0.3591,True
+U0091,U0091_H3,Study,Productivity,Weekly,5,4,7,75,0.2955,True
+U0092,U0092_H1,Volunteer,Social,Weekly,5,0,12,155,0.5523,True
+U0092,U0092_H2,No Social Media after 9PM,Productivity,Daily,1,2,9,154,0.5305,True
+U0092,U0092_H3,Eat Healthy,Health,Daily,1,2,11,163,0.5378,True
+U0093,U0093_H1,Sleep 8 Hours,Health,Weekly,3,2,11,155,0.538,True
+U0093,U0093_H2,Call Family,Social,Daily,1,0,12,152,0.5524,True
+U0094,U0094_H1,Read Books,Learning,Daily,1,0,4,116,0.2768,True
+U0094,U0094_H2,Track Expenses,Other,Daily,1,0,6,108,0.2768,True
+U0095,U0095_H1,Meditate,Health,Daily,1,5,7,118,0.5103,True
+U0095,U0095_H2,Read 30 Minutes,Productivity,Daily,1,0,10,120,0.4598,True
+U0096,U0096_H1,Plan Tomorrow,Productivity,Daily,1,0,6,92,0.2778,True
+U0096,U0096_H2,Watch Educational Video,Learning,Weekly,5,0,7,102,0.2877,True
+U0097,U0097_H1,Study,Productivity,Daily,1,0,3,105,0.2959,True
+U0097,U0097_H2,Exercise,Health,Weekly,5,0,5,94,0.2821,True
+U0098,U0098_H1,Journal Writing,Learning,Daily,1,1,11,154,0.5658,True
+U0098,U0098_H2,Wake up at 6AM,Other,Daily,1,1,18,138,0.6035,True
+U0099,U0099_H1,Read 30 Minutes,Productivity,Daily,1,0,28,111,0.7275,True
+U0099,U0099_H2,No Social Media after 9PM,Productivity,Daily,1,1,31,91,0.7732,True
+U0099,U0099_H3,Read Books,Learning,Weekly,5,0,49,75,0.8277,True
+U0099,U0099_H4,Eat Healthy,Health,Weekly,3,12,41,80,0.785,True
+U0100,U0100_H1,Read Books,Learning,Weekly,4,11,39,70,0.8226,True
+U0100,U0100_H2,Journal Writing,Learning,Daily,1,10,50,57,0.8504,True
+U0100,U0100_H3,Plan Tomorrow,Productivity,Daily,1,2,25,74,0.7965,True
+U0101,U0101_H1,Plan Tomorrow,Productivity,Daily,1,6,30,107,0.7521,True
+U0101,U0101_H2,Track Expenses,Other,Daily,1,3,51,82,0.8292,True
+U0101,U0101_H3,Read 30 Minutes,Productivity,Daily,1,11,28,90,0.8182,True
+U0101,U0101_H4,Watch Educational Video,Learning,Weekly,3,9,37,73,0.8347,True
+U0102,U0102_H1,Call Family,Social,Daily,1,0,27,109,0.7785,True
+U0102,U0102_H2,Eat Healthy,Health,Daily,1,14,38,112,0.7634,True
+U0102,U0102_H3,Journal Writing,Learning,Weekly,5,2,48,115,0.7579,True
+U0102,U0102_H4,Study,Productivity,Weekly,5,2,24,132,0.7098,True
+U0103,U0103_H1,Connect with Friend,Social,Daily,1,1,11,141,0.5625,True
+U0103,U0103_H2,Wake up at 6AM,Other,Weekly,3,1,15,159,0.6083,True
+U0104,U0104_H1,Call Family,Social,Daily,1,2,5,78,0.2516,True
+U0104,U0104_H2,Exercise,Health,Daily,1,0,4,77,0.2452,True
+U0105,U0105_H1,Drink 2L Water,Health,Daily,1,2,37,72,0.8437,True
+U0105,U0105_H2,Journal Writing,Learning,Daily,1,5,72,93,0.7873,True
+U0105,U0105_H3,Study,Productivity,Daily,1,1,16,123,0.7135,True
+U0106,U0106_H1,No Social Media after 9PM,Productivity,Weekly,4,2,10,130,0.4968,True
+U0106,U0106_H2,Practice Coding,Learning,Weekly,3,1,13,127,0.6317,True
+U0106,U0106_H3,Volunteer,Social,Daily,1,0,14,124,0.5841,True
+U0106,U0106_H4,Track Expenses,Other,Daily,1,0,12,134,0.5635,True
+U0107,U0107_H1,Read Books,Learning,Weekly,5,1,19,145,0.6119,True
+U0107,U0107_H2,Connect with Friend,Social,Weekly,5,4,11,152,0.5414,True
+U0107,U0107_H3,Meditate,Health,Weekly,5,3,18,145,0.5856,True
+U0107,U0107_H4,Wake up at 6AM,Other,Weekly,4,1,9,169,0.6105,True
+U0108,U0108_H1,Call Family,Social,Daily,1,2,9,115,0.5036,True
+U0108,U0108_H2,Study,Productivity,Daily,1,0,16,114,0.5036,True
+U0108,U0108_H3,Track Expenses,Other,Daily,1,0,13,132,0.5888,True
+U0109,U0109_H1,Track Expenses,Other,Daily,1,0,7,96,0.3704,True
+U0109,U0109_H2,Practice Coding,Learning,Daily,1,1,6,94,0.375,True
+U0110,U0110_H1,Practice Coding,Learning,Weekly,4,2,44,87,0.8031,True
+U0110,U0110_H2,Volunteer,Social,Daily,1,4,31,98,0.8103,True
+U0110,U0110_H3,Sleep 8 Hours,Health,Daily,1,6,38,86,0.8217,True
+U0110,U0110_H4,Journal Writing,Learning,Daily,1,1,39,79,0.8474,True
+U0111,U0111_H1,Volunteer,Social,Weekly,5,3,14,123,0.5245,True
+U0111,U0111_H2,Track Expenses,Other,Weekly,5,1,16,133,0.6142,True
+U0111,U0111_H3,Meditate,Health,Daily,1,1,12,136,0.5381,True
+U0112,U0112_H1,Drink 2L Water,Health,Daily,1,0,6,107,0.3132,True
+U0112,U0112_H2,Volunteer,Social,Weekly,4,0,6,109,0.3736,True
+U0112,U0112_H3,Wake up at 6AM,Other,Daily,1,0,8,119,0.4048,True
+U0113,U0113_H1,Wake up at 6AM,Other,Weekly,3,1,24,116,0.7497,True
+U0113,U0113_H2,Watch Educational Video,Learning,Daily,1,0,13,136,0.7303,True
+U0113,U0113_H3,Plan Tomorrow,Productivity,Daily,1,4,14,136,0.675,True
+U0113,U0113_H4,Journal Writing,Learning,Weekly,4,2,23,119,0.7552,True
+U0114,U0114_H1,Call Family,Social,Daily,1,1,11,136,0.5155,True
+U0114,U0114_H2,Journal Writing,Learning,Weekly,5,0,14,116,0.5367,True
+U0114,U0114_H3,Track Expenses,Other,Daily,1,4,13,131,0.553,True
+U0114,U0114_H4,Read 30 Minutes,Productivity,Weekly,5,0,12,132,0.5008,True
+U0115,U0115_H1,Eat Healthy,Health,Daily,1,1,20,105,0.7416,True
+U0115,U0115_H2,Study,Productivity,Weekly,4,0,21,115,0.737,True
+U0115,U0115_H3,Watch Educational Video,Learning,Daily,1,3,30,85,0.818,True
+U0115,U0115_H4,Volunteer,Social,Daily,1,0,38,96,0.7385,True
+U0116,U0116_H1,Watch Educational Video,Learning,Weekly,4,0,49,92,0.7111,True
+U0116,U0116_H2,Call Family,Social,Daily,1,5,25,91,0.7416,True
+U0116,U0116_H3,Meditate,Health,Daily,1,3,66,52,0.8243,True
+U0116,U0116_H4,Study,Productivity,Daily,1,0,16,106,0.7044,True
+U0116,U0116_H5,Track Expenses,Other,Weekly,4,12,43,85,0.7753,True
+U0117,U0117_H1,Plan Tomorrow,Productivity,Daily,1,0,9,116,0.5277,True
+U0117,U0117_H2,Gratitude Journal,Other,Weekly,4,1,10,117,0.5134,True
+U0117,U0117_H3,Meditate,Health,Daily,1,1,11,124,0.4741,True
+U0117,U0117_H4,Volunteer,Social,Weekly,3,0,11,122,0.4723,True
+U0118,U0118_H1,Read Books,Learning,Daily,1,0,5,92,0.3088,True
+U0118,U0118_H2,Volunteer,Social,Weekly,4,3,6,106,0.3147,True
+U0119,U0119_H1,Exercise,Health,Weekly,4,3,45,55,0.8516,True
+U0119,U0119_H2,Study,Productivity,Weekly,3,3,22,96,0.742,True
+U0119,U0119_H3,Meditate,Health,Daily,1,15,49,55,0.8127,True
+U0119,U0119_H4,Read Books,Learning,Weekly,5,4,23,82,0.7845,True
+U0120,U0120_H1,Meditate,Health,Daily,1,2,6,119,0.2978,True
+U0120,U0120_H2,Practice Coding,Learning,Weekly,4,0,5,113,0.2857,True
+U0121,U0121_H1,Track Expenses,Other,Daily,1,0,11,122,0.4764,True
+U0121,U0121_H2,Study,Productivity,Weekly,3,10,12,111,0.5079,True
+U0121,U0121_H3,Read Books,Learning,Weekly,3,0,14,128,0.5359,True
+U0121,U0121_H4,No Social Media after 9PM,Productivity,Daily,1,4,10,131,0.4799,True
+U0122,U0122_H1,Read 30 Minutes,Productivity,Weekly,3,5,14,97,0.6886,True
+U0122,U0122_H2,Track Expenses,Other,Daily,1,4,44,75,0.7954,True
+U0122,U0122_H3,Sleep 8 Hours,Health,Daily,1,0,40,57,0.847,True
+U0123,U0123_H1,Read Books,Learning,Daily,1,0,17,121,0.624,True
+U0123,U0123_H2,Call Family,Social,Weekly,5,3,10,134,0.5557,True
+U0124,U0124_H1,Wake up at 6AM,Other,Daily,1,47,49,73,0.8448,True
+U0124,U0124_H2,Journal Writing,Learning,Daily,1,1,66,79,0.8379,True
+U0124,U0124_H3,Study,Productivity,Daily,1,1,23,101,0.7651,True
+U0125,U0125_H1,Track Expenses,Other,Daily,1,0,6,119,0.3677,True
+U0125,U0125_H2,Exercise,Health,Daily,1,0,6,99,0.3288,True
+U0126,U0126_H1,Drink 2L Water,Health,Weekly,3,0,9,122,0.5,True
+U0126,U0126_H2,Watch Educational Video,Learning,Daily,1,3,13,110,0.5661,True
+U0127,U0127_H1,Read 30 Minutes,Productivity,Daily,1,0,21,112,0.6656,True
+U0127,U0127_H2,Sleep 8 Hours,Health,Weekly,4,8,41,74,0.832,True
+U0127,U0127_H3,Track Expenses,Other,Daily,1,6,36,94,0.7621,True
+U0127,U0127_H4,Exercise,Health,Daily,1,45,57,68,0.8289,True
+U0128,U0128_H1,Sleep 8 Hours,Health,Daily,1,32,89,60,0.8451,True
+U0128,U0128_H2,Volunteer,Social,Daily,1,9,24,114,0.7145,True
+U0128,U0128_H3,Meditate,Health,Daily,1,26,63,74,0.8336,True
+U0129,U0129_H1,Gratitude Journal,Other,Daily,1,3,56,68,0.8522,True
+U0129,U0129_H2,Exercise,Health,Weekly,4,5,28,86,0.7734,True
+U0129,U0129_H3,Watch Educational Video,Learning,Daily,1,10,49,68,0.8144,True
+U0130,U0130_H1,Read Books,Learning,Weekly,3,0,7,68,0.2377,True
+U0131,U0131_H1,Exercise,Health,Daily,1,3,12,140,0.5478,True
+U0131,U0131_H2,Read 30 Minutes,Productivity,Daily,1,1,12,140,0.5364,True
+U0132,U0132_H1,Sleep 8 Hours,Health,Daily,1,0,4,91,0.3317,True
+U0132,U0132_H2,Volunteer,Social,Daily,1,1,6,74,0.3541,True
+U0133,U0133_H1,Read Books,Learning,Daily,1,2,7,104,0.3961,True
+U0133,U0133_H2,Read 30 Minutes,Productivity,Weekly,4,0,5,98,0.3182,True
+U0134,U0134_H1,Journal Writing,Learning,Daily,1,3,12,143,0.5783,True
+U0134,U0134_H2,Call Family,Social,Weekly,3,0,13,153,0.5362,True
+U0135,U0135_H1,No Social Media after 9PM,Productivity,Daily,1,3,19,119,0.7006,True
+U0135,U0135_H2,Eat Healthy,Health,Daily,1,0,41,115,0.696,True
+U0135,U0135_H3,Track Expenses,Other,Weekly,5,6,27,104,0.7407,True
+U0135,U0135_H4,Volunteer,Social,Weekly,4,0,34,105,0.7207,True
+U0136,U0136_H1,Study,Productivity,Daily,1,4,15,147,0.5591,True
+U0136,U0136_H2,Read Books,Learning,Daily,1,1,14,151,0.6081,True
+U0136,U0136_H3,Connect with Friend,Social,Daily,1,2,11,143,0.5202,True
+U0136,U0136_H4,Exercise,Health,Weekly,3,0,15,142,0.5965,True
+U0137,U0137_H1,Connect with Friend,Social,Daily,1,0,6,92,0.2528,True
+U0137,U0137_H2,Exercise,Health,Daily,1,0,5,103,0.2878,True
+U0138,U0138_H1,Connect with Friend,Social,Daily,1,2,11,113,0.4878,True
+U0138,U0138_H2,Gratitude Journal,Other,Daily,1,0,14,108,0.4915,True
+U0138,U0138_H3,Plan Tomorrow,Productivity,Daily,1,1,9,116,0.4802,True
+U0138,U0138_H4,Eat Healthy,Health,Daily,1,0,9,120,0.5461,True
+U0139,U0139_H1,Track Expenses,Other,Weekly,5,3,13,139,0.5744,True
+U0139,U0139_H2,Watch Educational Video,Learning,Daily,1,0,19,148,0.6112,True
+U0139,U0139_H3,Meditate,Health,Weekly,4,0,22,129,0.6009,True
+U0140,U0140_H1,Connect with Friend,Social,Weekly,4,2,25,116,0.7149,True
+U0140,U0140_H2,Gratitude Journal,Other,Daily,1,0,24,105,0.7731,True
+U0140,U0140_H3,Practice Coding,Learning,Daily,1,28,29,109,0.7463,True
+U0141,U0141_H1,Practice Coding,Learning,Daily,1,1,35,108,0.7143,True
+U0141,U0141_H2,No Social Media after 9PM,Productivity,Daily,1,0,16,117,0.6742,True
+U0141,U0141_H3,Exercise,Health,Daily,1,4,18,111,0.7079,True
+U0141,U0141_H4,Volunteer,Social,Daily,1,0,32,92,0.7432,True
+U0142,U0142_H1,Drink 2L Water,Health,Weekly,4,4,14,135,0.5577,True
+U0142,U0142_H2,Practice Coding,Learning,Weekly,4,0,11,142,0.5687,True
+U0142,U0142_H3,Plan Tomorrow,Productivity,Daily,1,1,10,139,0.5324,True
+U0143,U0143_H1,Practice Coding,Learning,Weekly,4,0,5,102,0.2534,True
+U0144,U0144_H1,Study,Productivity,Weekly,5,3,10,129,0.5248,True
+U0144,U0144_H2,Eat Healthy,Health,Daily,1,0,13,140,0.5898,True
+U0144,U0144_H3,Volunteer,Social,Daily,1,0,16,146,0.5759,True
+U0144,U0144_H4,Track Expenses,Other,Daily,1,1,21,137,0.5851,True
+U0145,U0145_H1,Volunteer,Social,Daily,1,6,10,133,0.5552,True
+U0145,U0145_H2,No Social Media after 9PM,Productivity,Daily,1,1,17,133,0.5568,True
+U0145,U0145_H3,Gratitude Journal,Other,Daily,1,3,13,145,0.5741,True
+U0145,U0145_H4,Watch Educational Video,Learning,Daily,1,2,18,131,0.5741,True
+U0146,U0146_H1,Journal Writing,Learning,Daily,1,1,32,100,0.7979,True
+U0146,U0146_H2,Call Family,Social,Daily,1,2,42,84,0.7979,True
+U0146,U0146_H3,Plan Tomorrow,Productivity,Daily,1,0,18,109,0.7335,True
+U0146,U0146_H4,Practice Coding,Learning,Weekly,3,5,61,68,0.8308,True
+U0147,U0147_H1,Track Expenses,Other,Daily,1,0,23,95,0.7544,True
+U0147,U0147_H2,Volunteer,Social,Daily,1,1,29,100,0.7576,True
+U0147,U0147_H3,Drink 2L Water,Health,Daily,1,6,19,108,0.6842,True
+U0148,U0148_H1,Track Expenses,Other,Daily,1,0,4,63,0.2219,True
+U0148,U0148_H2,Journal Writing,Learning,Daily,1,2,4,73,0.2943,True
+U0149,U0149_H1,Study,Productivity,Daily,1,0,23,121,0.7363,True
+U0149,U0149_H2,Volunteer,Social,Daily,1,14,35,91,0.7546,True
+U0149,U0149_H3,Eat Healthy,Health,Daily,1,4,36,92,0.7812,True
+U0149,U0149_H4,Read Books,Learning,Weekly,4,10,32,88,0.8303,True
+U0150,U0150_H1,Track Expenses,Other,Daily,1,1,13,131,0.5525,True
+U0150,U0150_H2,Read 30 Minutes,Productivity,Daily,1,0,11,124,0.5695,True
+U0150,U0150_H3,Read Books,Learning,Daily,1,0,10,135,0.5661,True
+U0150,U0150_H4,Drink 2L Water,Health,Weekly,4,2,13,127,0.5322,True
+U0151,U0151_H1,Call Family,Social,Weekly,4,0,27,98,0.7496,True
+U0151,U0151_H2,Journal Writing,Learning,Daily,1,1,31,112,0.7389,True
+U0151,U0151_H3,Drink 2L Water,Health,Daily,1,26,46,56,0.8275,True
+U0151,U0151_H4,Meditate,Health,Daily,1,113,113,64,0.8321,True
+U0152,U0152_H1,Practice Coding,Learning,Daily,1,1,7,107,0.3715,True
+U0152,U0152_H2,Exercise,Health,Daily,1,0,7,104,0.3675,True
+U0153,U0153_H1,Eat Healthy,Health,Daily,1,0,6,77,0.3253,True
+U0153,U0153_H2,Read 30 Minutes,Productivity,Daily,1,1,6,73,0.328,True
+U0153,U0153_H3,Watch Educational Video,Learning,Weekly,3,0,7,86,0.3602,True
+U0154,U0154_H1,Read 30 Minutes,Productivity,Daily,1,0,7,81,0.2661,True
+U0155,U0155_H1,No Social Media after 9PM,Productivity,Daily,1,0,20,117,0.7184,True
+U0155,U0155_H2,Practice Coding,Learning,Daily,1,1,16,109,0.7565,True
+U0155,U0155_H3,Volunteer,Social,Daily,1,3,28,104,0.7245,True
+U0155,U0155_H4,Wake up at 6AM,Other,Daily,1,5,27,106,0.7473,True
+U0156,U0156_H1,Sleep 8 Hours,Health,Daily,1,1,4,76,0.2882,True
+U0156,U0156_H2,Track Expenses,Other,Daily,1,1,6,99,0.3684,True
+U0156,U0156_H3,Call Family,Social,Daily,1,1,7,70,0.3358,True
+U0157,U0157_H1,Journal Writing,Learning,Daily,1,10,22,85,0.7711,True
+U0157,U0157_H2,Call Family,Social,Daily,1,18,29,78,0.7794,True
+U0157,U0157_H3,Track Expenses,Other,Weekly,3,7,30,87,0.7662,True
+U0157,U0157_H4,Journal Writing,Learning,Daily,1,8,32,89,0.7745,True
+U0157,U0157_H5,Drink 2L Water,Health,Daily,1,0,19,103,0.7363,True
+U0158,U0158_H1,Volunteer,Social,Daily,1,1,9,160,0.5225,True
+U0158,U0158_H2,Plan Tomorrow,Productivity,Daily,1,1,7,163,0.5167,True
+U0158,U0158_H3,Study,Productivity,Daily,1,0,8,150,0.5065,True
+U0158,U0158_H4,Read Books,Learning,Daily,1,2,11,147,0.5428,True
+U0159,U0159_H1,No Social Media after 9PM,Productivity,Daily,1,0,5,113,0.3264,True
+U0159,U0159_H2,Practice Coding,Learning,Weekly,4,0,6,108,0.3698,True
+U0160,U0160_H1,Connect with Friend,Social,Daily,1,1,12,155,0.5262,True
+U0160,U0160_H2,Exercise,Health,Daily,1,3,12,147,0.5552,True
+U0160,U0160_H3,Journal Writing,Learning,Weekly,5,0,15,143,0.5741,True
+U0161,U0161_H1,Journal Writing,Learning,Daily,1,1,11,146,0.572,True
+U0161,U0161_H2,Volunteer,Social,Weekly,3,1,12,164,0.5565,True
+U0162,U0162_H1,No Social Media after 9PM,Productivity,Daily,1,2,15,118,0.7008,True
+U0162,U0162_H2,Practice Coding,Learning,Weekly,5,2,26,106,0.7472,True
+U0162,U0162_H3,Exercise,Health,Weekly,4,4,22,99,0.7232,True
+U0163,U0163_H1,Call Family,Social,Weekly,5,4,30,113,0.7341,True
+U0163,U0163_H2,Journal Writing,Learning,Weekly,4,7,27,93,0.7961,True
+U0163,U0163_H3,Drink 2L Water,Health,Daily,1,2,35,92,0.7387,True
+U0163,U0163_H4,Study,Productivity,Daily,1,0,40,108,0.7447,True
+U0163,U0163_H5,Read 30 Minutes,Productivity,Daily,1,1,17,114,0.6979,True
+U0164,U0164_H1,Wake up at 6AM,Other,Daily,1,1,7,103,0.3251,True
+U0164,U0164_H2,Volunteer,Social,Daily,1,0,3,94,0.2757,True
+U0165,U0165_H1,No Social Media after 9PM,Productivity,Daily,1,3,29,110,0.7587,True
+U0165,U0165_H2,Watch Educational Video,Learning,Daily,1,4,48,80,0.8229,True
+U0165,U0165_H3,Read Books,Learning,Daily,1,5,45,92,0.8131,True
+U0165,U0165_H4,Exercise,Health,Weekly,5,1,34,77,0.8243,True
+U0166,U0166_H1,Exercise,Health,Daily,1,12,50,66,0.8392,True
+U0166,U0166_H2,Volunteer,Social,Weekly,4,12,33,98,0.7516,True
+U0166,U0166_H3,Drink 2L Water,Health,Daily,1,19,71,53,0.8599,True
+U0166,U0166_H4,Meditate,Health,Weekly,5,12,115,45,0.8885,True
+U0166,U0166_H5,Wake up at 6AM,Other,Weekly,4,6,20,100,0.7373,True
+U0167,U0167_H1,Watch Educational Video,Learning,Daily,1,3,9,123,0.5743,True
+U0167,U0167_H2,Plan Tomorrow,Productivity,Daily,1,0,15,134,0.5811,True
+U0167,U0167_H3,Exercise,Health,Daily,1,2,15,118,0.5625,True
+U0168,U0168_H1,Volunteer,Social,Daily,1,1,5,104,0.3178,True
+U0168,U0168_H2,Read Books,Learning,Weekly,3,0,9,107,0.3508,True
+U0169,U0169_H1,Connect with Friend,Social,Daily,1,0,30,90,0.8018,True
+U0169,U0169_H2,Watch Educational Video,Learning,Weekly,5,15,25,83,0.824,True
+U0169,U0169_H3,Exercise,Health,Weekly,5,3,45,96,0.7692,True
+U0169,U0169_H4,Read Books,Learning,Weekly,4,1,55,64,0.8343,True
+U0170,U0170_H1,Journal Writing,Learning,Daily,1,18,30,93,0.7798,True
+U0170,U0170_H2,Gratitude Journal,Other,Daily,1,1,40,100,0.7677,True
+U0170,U0170_H3,Eat Healthy,Health,Daily,1,3,19,98,0.7255,True
+U0170,U0170_H4,Connect with Friend,Social,Weekly,3,3,20,111,0.7421,True
+U0171,U0171_H1,Read 30 Minutes,Productivity,Daily,1,1,27,107,0.6877,True
+U0171,U0171_H2,Plan Tomorrow,Productivity,Daily,1,1,36,84,0.7143,True
+U0171,U0171_H3,Sleep 8 Hours,Health,Daily,1,8,48,79,0.7791,True
+U0172,U0172_H1,Watch Educational Video,Learning,Daily,1,26,41,85,0.7828,True
+U0172,U0172_H2,Plan Tomorrow,Productivity,Weekly,3,2,27,99,0.7641,True
+U0173,U0173_H1,Exercise,Health,Weekly,3,0,7,77,0.278,True
+U0174,U0174_H1,No Social Media after 9PM,Productivity,Daily,1,1,8,98,0.3482,True
+U0174,U0174_H2,Call Family,Social,Daily,1,1,7,99,0.3227,True
+U0175,U0175_H1,Practice Coding,Learning,Daily,1,8,27,97,0.7339,True
+U0175,U0175_H2,Eat Healthy,Health,Daily,1,0,19,101,0.7274,True
+U0175,U0175_H3,Wake up at 6AM,Other,Weekly,5,9,22,97,0.7371,True
+U0175,U0175_H4,Read 30 Minutes,Productivity,Weekly,3,5,30,91,0.7306,True
+U0176,U0176_H1,Practice Coding,Learning,Weekly,5,1,9,70,0.3963,True
+U0176,U0176_H2,No Social Media after 9PM,Productivity,Weekly,4,0,6,76,0.3543,True
+U0177,U0177_H1,Meditate,Health,Daily,1,8,21,104,0.7523,True
+U0177,U0177_H2,Journal Writing,Learning,Weekly,3,5,58,99,0.7813,True
+U0177,U0177_H3,Read Books,Learning,Daily,1,7,27,87,0.7859,True
+U0177,U0177_H4,No Social Media after 9PM,Productivity,Weekly,4,9,22,115,0.6881,True
+U0177,U0177_H5,Track Expenses,Other,Daily,1,13,29,91,0.7859,True
+U0178,U0178_H1,Drink 2L Water,Health,Weekly,4,1,13,131,0.5593,True
+U0178,U0178_H2,No Social Media after 9PM,Productivity,Daily,1,1,12,142,0.5439,True
+U0179,U0179_H1,Plan Tomorrow,Productivity,Daily,1,0,21,112,0.7106,True
+U0179,U0179_H2,Journal Writing,Learning,Daily,1,4,22,95,0.748,True
+U0179,U0179_H3,Meditate,Health,Daily,1,5,24,103,0.6894,True
+U0179,U0179_H4,Connect with Friend,Social,Daily,1,0,26,104,0.7041,True
+U0180,U0180_H1,Plan Tomorrow,Productivity,Weekly,5,1,9,117,0.3433,True
+U0181,U0181_H1,Track Expenses,Other,Daily,1,3,14,131,0.6351,True
+U0181,U0181_H2,Plan Tomorrow,Productivity,Daily,1,0,9,147,0.5706,True
+U0181,U0181_H3,Connect with Friend,Social,Weekly,4,3,22,135,0.5721,True
+U0182,U0182_H1,Gratitude Journal,Other,Daily,1,2,6,89,0.3803,True
+U0182,U0182_H2,Study,Productivity,Daily,1,0,6,95,0.3579,True
+U0183,U0183_H1,Study,Productivity,Daily,1,0,17,134,0.658,True
+U0183,U0183_H2,Watch Educational Video,Learning,Daily,1,4,27,105,0.7302,True
+U0183,U0183_H3,Meditate,Health,Daily,1,2,24,106,0.7706,True
+U0183,U0183_H4,Connect with Friend,Social,Daily,1,0,29,125,0.7345,True
+U0183,U0183_H5,Wake up at 6AM,Other,Weekly,5,3,23,114,0.7633,True
+U0184,U0184_H1,Sleep 8 Hours,Health,Daily,1,46,46,70,0.8068,True
+U0184,U0184_H2,Journal Writing,Learning,Daily,1,1,19,100,0.7214,True
+U0184,U0184_H3,Drink 2L Water,Health,Weekly,4,11,57,54,0.8598,True
+U0184,U0184_H4,Track Expenses,Other,Daily,1,0,51,80,0.759,True
+U0184,U0184_H5,Call Family,Social,Weekly,3,2,21,94,0.7197,True
+U0185,U0185_H1,Gratitude Journal,Other,Daily,1,9,14,114,0.5663,True
+U0185,U0185_H2,Practice Coding,Learning,Weekly,3,4,12,132,0.6023,True
+U0185,U0185_H3,Meditate,Health,Daily,1,1,14,122,0.5581,True
+U0186,U0186_H1,Track Expenses,Other,Daily,1,0,70,96,0.7634,True
+U0186,U0186_H2,Read Books,Learning,Daily,1,3,43,82,0.7808,True
+U0186,U0186_H3,No Social Media after 9PM,Productivity,Daily,1,0,18,118,0.6924,True
+U0186,U0186_H4,Call Family,Social,Daily,1,10,17,115,0.6767,True
+U0187,U0187_H1,Journal Writing,Learning,Daily,1,3,29,88,0.7728,True
+U0187,U0187_H2,Wake up at 6AM,Other,Daily,1,1,37,96,0.7392,True
+U0187,U0187_H3,Meditate,Health,Weekly,3,4,50,65,0.832,True
+U0187,U0187_H4,Meditate,Health,Daily,1,20,63,62,0.8368,True
+U0188,U0188_H1,Volunteer,Social,Daily,1,1,6,80,0.2748,True
+U0188,U0188_H2,Eat Healthy,Health,Daily,1,0,6,90,0.2928,True
+U0189,U0189_H1,Watch Educational Video,Learning,Daily,1,0,4,122,0.3069,True
+U0189,U0189_H2,Study,Productivity,Daily,1,0,4,109,0.2852,True
+U0190,U0190_H1,No Social Media after 9PM,Productivity,Daily,1,3,5,92,0.303,True
+U0190,U0190_H2,Watch Educational Video,Learning,Daily,1,2,6,96,0.3453,True
+U0191,U0191_H1,Practice Coding,Learning,Daily,1,6,42,92,0.7791,True
+U0191,U0191_H2,Study,Productivity,Daily,1,0,29,101,0.7834,True
+U0191,U0191_H3,Track Expenses,Other,Daily,1,30,60,72,0.8379,True
+U0191,U0191_H4,Sleep 8 Hours,Health,Weekly,4,11,75,77,0.8293,True
+U0192,U0192_H1,Practice Coding,Learning,Daily,1,2,30,90,0.7621,True
+U0192,U0192_H2,Sleep 8 Hours,Health,Daily,1,35,88,58,0.8469,True
+U0192,U0192_H3,Drink 2L Water,Health,Daily,1,11,51,79,0.807,True
+U0192,U0192_H4,Connect with Friend,Social,Daily,1,6,39,92,0.7587,True
+U0192,U0192_H5,Plan Tomorrow,Productivity,Daily,1,1,15,110,0.7055,True
+U0193,U0193_H1,Sleep 8 Hours,Health,Daily,1,7,53,60,0.8222,True
+U0193,U0193_H2,Meditate,Health,Weekly,5,26,96,46,0.8479,True
+U0193,U0193_H3,Watch Educational Video,Learning,Daily,1,0,21,86,0.7812,True
+U0193,U0193_H4,Drink 2L Water,Health,Daily,1,1,59,65,0.8342,True
+U0193,U0193_H5,Volunteer,Social,Daily,1,7,24,87,0.7709,True
+U0194,U0194_H1,Volunteer,Social,Daily,1,1,34,86,0.7729,True
+U0194,U0194_H2,Plan Tomorrow,Productivity,Daily,1,0,24,105,0.7327,True
+U0194,U0194_H3,Wake up at 6AM,Other,Daily,1,2,54,87,0.7907,True
+U0194,U0194_H4,Study,Productivity,Weekly,4,3,20,104,0.7359,True
+U0195,U0195_H1,Gratitude Journal,Other,Weekly,4,0,15,148,0.6113,True
+U0195,U0195_H2,No Social Media after 9PM,Productivity,Weekly,4,4,14,148,0.5603,True
+U0195,U0195_H3,Call Family,Social,Daily,1,1,14,146,0.5333,True
+U0196,U0196_H1,Volunteer,Social,Daily,1,7,16,123,0.5638,True
+U0196,U0196_H2,Wake up at 6AM,Other,Daily,1,0,15,137,0.5977,True
+U0196,U0196_H3,Read 30 Minutes,Productivity,Weekly,4,0,13,130,0.5703,True
+U0197,U0197_H1,Call Family,Social,Daily,1,2,13,135,0.5348,True
+U0197,U0197_H2,Exercise,Health,Daily,1,0,13,139,0.4943,True
+U0197,U0197_H3,Read Books,Learning,Weekly,5,1,7,134,0.4878,True
+U0198,U0198_H1,No Social Media after 9PM,Productivity,Daily,1,0,30,109,0.6655,True
+U0198,U0198_H2,Drink 2L Water,Health,Daily,1,12,52,42,0.8423,True
+U0198,U0198_H3,Eat Healthy,Health,Daily,1,38,41,65,0.8371,True
+U0198,U0198_H4,Read Books,Learning,Daily,1,3,33,77,0.7816,True
+U0198,U0198_H5,Drink 2L Water,Health,Weekly,4,9,50,59,0.8024,True
+U0199,U0199_H1,Track Expenses,Other,Daily,1,1,34,81,0.7557,True
+U0199,U0199_H2,Exercise,Health,Weekly,5,15,39,61,0.8383,True
+U0199,U0199_H3,Plan Tomorrow,Productivity,Daily,1,2,19,93,0.7276,True
+U0199,U0199_H4,Call Family,Social,Daily,1,4,12,100,0.7135,True
+U0200,U0200_H1,Plan Tomorrow,Productivity,Weekly,3,1,8,145,0.5269,True
+U0200,U0200_H2,Read Books,Learning,Daily,1,4,11,134,0.553,True
+U0200,U0200_H3,Read Books,Learning,Daily,1,1,12,133,0.5285,True
+U0200,U0200_H4,Read 30 Minutes,Productivity,Daily,1,0,9,145,0.522,True
+U0201,U0201_H1,No Social Media after 9PM,Productivity,Weekly,4,3,22,116,0.7105,True
+U0201,U0201_H2,Journal Writing,Learning,Daily,1,1,27,86,0.7932,True
+U0201,U0201_H3,Read 30 Minutes,Productivity,Daily,1,4,21,111,0.74,True
+U0201,U0201_H4,Wake up at 6AM,Other,Daily,1,3,20,96,0.7445,True
+U0202,U0202_H1,Read 30 Minutes,Productivity,Weekly,5,0,27,127,0.7187,True
+U0202,U0202_H2,Read Books,Learning,Daily,1,7,56,78,0.8453,True
+U0202,U0202_H3,Eat Healthy,Health,Weekly,4,12,62,90,0.82,True
+U0202,U0202_H4,Read Books,Learning,Weekly,3,9,71,77,0.8383,True
+U0203,U0203_H1,Read 30 Minutes,Productivity,Daily,1,0,6,120,0.3604,True
+U0203,U0203_H2,Wake up at 6AM,Other,Weekly,3,0,7,132,0.4061,True
+U0204,U0204_H1,No Social Media after 9PM,Productivity,Daily,1,3,19,118,0.7218,True
+U0204,U0204_H2,Exercise,Health,Weekly,5,16,62,67,0.8331,True
+U0204,U0204_H3,Sleep 8 Hours,Health,Daily,1,1,119,70,0.8105,True
+U0204,U0204_H4,Wake up at 6AM,Other,Daily,1,2,29,108,0.7594,True
+U0204,U0204_H5,Watch Educational Video,Learning,Daily,1,2,26,100,0.785,True
+U0205,U0205_H1,Connect with Friend,Social,Daily,1,15,19,109,0.7237,True
+U0205,U0205_H2,Gratitude Journal,Other,Daily,1,3,26,109,0.7626,True
+U0205,U0205_H3,No Social Media after 9PM,Productivity,Weekly,3,9,16,128,0.6906,True
+U0205,U0205_H4,Exercise,Health,Daily,1,1,28,98,0.7669,True
+U0206,U0206_H1,Study,Productivity,Daily,1,0,23,110,0.7479,True
+U0206,U0206_H2,Connect with Friend,Social,Weekly,5,1,38,92,0.8009,True
+U0206,U0206_H3,Gratitude Journal,Other,Daily,1,19,38,73,0.8395,True
+U0207,U0207_H1,Journal Writing,Learning,Daily,1,11,56,74,0.8321,True
+U0207,U0207_H2,No Social Media after 9PM,Productivity,Daily,1,5,30,98,0.7656,True
+U0207,U0207_H3,Drink 2L Water,Health,Daily,1,3,31,85,0.8003,True
+U0207,U0207_H4,Wake up at 6AM,Other,Daily,1,3,47,87,0.8119,True
+U0208,U0208_H1,Watch Educational Video,Learning,Daily,1,6,27,101,0.7372,True
+U0208,U0208_H2,Meditate,Health,Daily,1,12,28,94,0.7402,True
+U0208,U0208_H3,No Social Media after 9PM,Productivity,Daily,1,4,16,131,0.6892,True
+U0209,U0209_H1,Journal Writing,Learning,Daily,1,13,50,67,0.8679,True
+U0209,U0209_H2,No Social Media after 9PM,Productivity,Daily,1,1,27,94,0.8082,True
+U0210,U0210_H1,Wake up at 6AM,Other,Daily,1,5,7,101,0.3627,True
+U0211,U0211_H1,Read Books,Learning,Daily,1,0,6,121,0.3258,True
+U0211,U0211_H2,No Social Media after 9PM,Productivity,Daily,1,0,5,88,0.2595,True
+U0212,U0212_H1,Track Expenses,Other,Daily,1,1,23,118,0.7628,True
+U0212,U0212_H2,Plan Tomorrow,Productivity,Weekly,5,6,13,133,0.681,True
+U0212,U0212_H3,Sleep 8 Hours,Health,Daily,1,0,36,117,0.7309,True
+U0212,U0212_H4,Call Family,Social,Daily,1,2,32,117,0.7393,True
+U0212,U0212_H5,Plan Tomorrow,Productivity,Weekly,5,1,14,122,0.724,True
+U0213,U0213_H1,Practice Coding,Learning,Daily,1,2,30,97,0.7745,True
+U0213,U0213_H2,Read Books,Learning,Daily,1,5,23,113,0.7653,True
+U0213,U0213_H3,Connect with Friend,Social,Weekly,4,6,32,96,0.7408,True
+U0214,U0214_H1,Volunteer,Social,Daily,1,0,5,102,0.3075,True
+U0215,U0215_H1,Plan Tomorrow,Productivity,Daily,1,0,9,141,0.4818,True
+U0215,U0215_H2,Connect with Friend,Social,Daily,1,2,17,130,0.5528,True
+U0215,U0215_H3,Watch Educational Video,Learning,Daily,1,3,9,140,0.5462,True
+U0216,U0216_H1,Plan Tomorrow,Productivity,Weekly,4,0,7,111,0.3498,True
+U0217,U0217_H1,Wake up at 6AM,Other,Daily,1,1,15,131,0.5777,True
+U0217,U0217_H2,Watch Educational Video,Learning,Daily,1,3,12,145,0.5518,True
+U0217,U0217_H3,Call Family,Social,Daily,1,0,18,143,0.564,True
+U0218,U0218_H1,No Social Media after 9PM,Productivity,Weekly,3,0,11,130,0.432,True
+U0218,U0218_H2,Exercise,Health,Weekly,4,0,9,141,0.5712,True
+U0219,U0219_H1,Wake up at 6AM,Other,Daily,1,14,26,115,0.732,True
+U0219,U0219_H2,Call Family,Social,Daily,1,6,28,107,0.7602,True
+U0219,U0219_H3,Watch Educational Video,Learning,Daily,1,4,32,110,0.7588,True
+U0219,U0219_H4,Practice Coding,Learning,Daily,1,5,33,114,0.7588,True
+U0220,U0220_H1,No Social Media after 9PM,Productivity,Weekly,5,3,24,97,0.7126,True
+U0220,U0220_H2,Sleep 8 Hours,Health,Daily,1,15,59,53,0.8451,True
+U0220,U0220_H3,Wake up at 6AM,Other,Weekly,3,16,33,92,0.7711,True
+U0220,U0220_H4,Journal Writing,Learning,Weekly,5,1,22,97,0.7349,True
+U0220,U0220_H5,Meditate,Health,Daily,1,0,42,66,0.8399,True
+U0221,U0221_H1,Read 30 Minutes,Productivity,Weekly,5,2,26,106,0.6789,True
+U0221,U0221_H2,Read Books,Learning,Daily,1,2,35,88,0.762,True
+U0221,U0221_H3,Watch Educational Video,Learning,Daily,1,7,16,102,0.7444,True
+U0221,U0221_H4,No Social Media after 9PM,Productivity,Daily,1,4,16,113,0.6917,True
+U0221,U0221_H5,Volunteer,Social,Daily,1,0,21,96,0.7364,True
+U0222,U0222_H1,No Social Media after 9PM,Productivity,Daily,1,0,4,74,0.2405,True
+U0222,U0222_H2,Drink 2L Water,Health,Daily,1,1,6,78,0.2619,True
+U0223,U0223_H1,Meditate,Health,Daily,1,1,34,82,0.8156,True
+U0223,U0223_H2,Plan Tomorrow,Productivity,Weekly,5,1,17,99,0.7391,True
+U0223,U0223_H3,Connect with Friend,Social,Daily,1,21,55,79,0.8219,True
+U0223,U0223_H4,Track Expenses,Other,Daily,1,6,50,84,0.8344,True
+U0224,U0224_H1,Sleep 8 Hours,Health,Weekly,5,1,8,141,0.578,True
+U0224,U0224_H2,Volunteer,Social,Daily,1,0,10,137,0.5505,True
+U0224,U0224_H3,Study,Productivity,Daily,1,0,9,156,0.5459,True
+U0225,U0225_H1,Wake up at 6AM,Other,Daily,1,0,10,147,0.5492,True
+U0225,U0225_H2,Study,Productivity,Daily,1,0,12,159,0.5635,True
+U0226,U0226_H1,Volunteer,Social,Daily,1,2,7,95,0.3226,True
+U0226,U0226_H2,Gratitude Journal,Other,Weekly,5,0,4,92,0.3184,True
+U0226,U0226_H3,Watch Educational Video,Learning,Daily,1,1,6,93,0.3739,True
+U0227,U0227_H1,No Social Media after 9PM,Productivity,Weekly,3,0,20,119,0.6968,True
+U0227,U0227_H2,Connect with Friend,Social,Weekly,5,2,34,117,0.7345,True
+U0227,U0227_H3,Exercise,Health,Daily,1,5,16,123,0.7089,True
+U0227,U0227_H4,Journal Writing,Learning,Daily,1,1,28,103,0.736,True
+U0227,U0227_H5,Watch Educational Video,Learning,Daily,1,21,25,98,0.7798,True
+U0228,U0228_H1,Watch Educational Video,Learning,Daily,1,16,16,118,0.6216,True
+U0228,U0228_H2,Volunteer,Social,Daily,1,4,15,149,0.5898,True
+U0228,U0228_H3,Track Expenses,Other,Daily,1,0,12,130,0.5866,True
+U0229,U0229_H1,Read Books,Learning,Weekly,5,6,21,81,0.7816,True
+U0229,U0229_H2,Sleep 8 Hours,Health,Weekly,4,20,53,58,0.8188,True
+U0229,U0229_H3,Exercise,Health,Weekly,5,4,83,64,0.8317,True
+U0230,U0230_H1,Read Books,Learning,Daily,1,3,28,106,0.7908,True
+U0230,U0230_H2,Call Family,Social,Daily,1,3,25,106,0.7643,True
+U0230,U0230_H3,No Social Media after 9PM,Productivity,Daily,1,3,26,121,0.7406,True
+U0230,U0230_H4,Read Books,Learning,Weekly,5,1,26,116,0.749,True
+U0231,U0231_H1,Journal Writing,Learning,Daily,1,1,11,150,0.5236,True
+U0231,U0231_H2,Journal Writing,Learning,Daily,1,0,12,158,0.5536,True
+U0231,U0231_H3,Gratitude Journal,Other,Daily,1,1,10,156,0.578,True
+U0232,U0232_H1,Meditate,Health,Weekly,3,1,4,88,0.2832,True
+U0233,U0233_H1,Exercise,Health,Daily,1,1,5,66,0.2519,True
+U0234,U0234_H1,Read Books,Learning,Daily,1,0,4,103,0.2821,True
+U0234,U0234_H2,Wake up at 6AM,Other,Daily,1,3,4,104,0.288,True
+U0235,U0235_H1,Exercise,Health,Daily,1,1,6,95,0.3784,True
+U0235,U0235_H2,Practice Coding,Learning,Daily,1,3,6,97,0.3581,True
+U0236,U0236_H1,Watch Educational Video,Learning,Weekly,4,1,9,140,0.4977,True
+U0236,U0236_H2,Plan Tomorrow,Productivity,Daily,1,1,9,145,0.4705,True
+U0236,U0236_H3,Read Books,Learning,Daily,1,0,10,150,0.4947,True
+U0236,U0236_H4,Sleep 8 Hours,Health,Weekly,5,7,12,135,0.5144,True
+U0237,U0237_H1,Gratitude Journal,Other,Daily,1,1,11,140,0.5734,True
+U0237,U0237_H2,Watch Educational Video,Learning,Daily,1,2,14,140,0.6167,True
+U0237,U0237_H3,Sleep 8 Hours,Health,Weekly,4,0,13,140,0.558,True
+U0237,U0237_H4,Volunteer,Social,Weekly,3,1,11,138,0.5595,True
+U0238,U0238_H1,Meditate,Health,Daily,1,0,42,66,0.8312,True
+U0238,U0238_H2,Study,Productivity,Weekly,4,19,19,107,0.7341,True
+U0238,U0238_H3,Connect with Friend,Social,Weekly,3,10,43,82,0.8105,True
+U0238,U0238_H4,Journal Writing,Learning,Weekly,4,9,45,81,0.7882,True
+U0239,U0239_H1,Read Books,Learning,Daily,1,1,21,102,0.7524,True
+U0239,U0239_H2,Connect with Friend,Social,Daily,1,4,25,85,0.7476,True
+U0239,U0239_H3,Plan Tomorrow,Productivity,Daily,1,1,20,107,0.7236,True
+U0240,U0240_H1,Call Family,Social,Daily,1,3,9,121,0.4407,True
+U0240,U0240_H2,Watch Educational Video,Learning,Daily,1,0,5,112,0.3363,True
+U0240,U0240_H3,Wake up at 6AM,Other,Daily,1,1,5,132,0.3858,True
+U0241,U0241_H1,Plan Tomorrow,Productivity,Weekly,5,3,19,109,0.7177,True
+U0241,U0241_H2,Gratitude Journal,Other,Daily,1,0,23,103,0.7524,True
+U0241,U0241_H3,Call Family,Social,Weekly,3,0,26,110,0.7382,True
+U0241,U0241_H4,Sleep 8 Hours,Health,Daily,1,0,23,102,0.7114,True
+U0241,U0241_H5,Watch Educational Video,Learning,Weekly,3,2,20,104,0.7571,True
+U0242,U0242_H1,Practice Coding,Learning,Daily,1,0,24,102,0.731,True
+U0242,U0242_H2,Volunteer,Social,Daily,1,5,30,97,0.7358,True
+U0242,U0242_H3,No Social Media after 9PM,Productivity,Daily,1,0,17,109,0.705,True
+U0242,U0242_H4,Read 30 Minutes,Productivity,Weekly,4,3,20,105,0.6953,True
+U0242,U0242_H5,Wake up at 6AM,Other,Daily,1,0,24,100,0.7261,True
+U0243,U0243_H1,Gratitude Journal,Other,Daily,1,30,40,88,0.7937,True
+U0243,U0243_H2,Read 30 Minutes,Productivity,Weekly,5,5,29,124,0.707,True
+U0243,U0243_H3,Sleep 8 Hours,Health,Daily,1,0,54,60,0.8191,True
+U0243,U0243_H4,Journal Writing,Learning,Daily,1,5,28,83,0.8072,True
+U0244,U0244_H1,Volunteer,Social,Daily,1,5,10,128,0.5257,True
+U0244,U0244_H2,Sleep 8 Hours,Health,Weekly,3,0,11,118,0.5171,True
+U0245,U0245_H1,Study,Productivity,Daily,1,3,34,77,0.7496,True
+U0245,U0245_H2,Practice Coding,Learning,Daily,1,9,41,52,0.8615,True
+U0245,U0245_H3,Wake up at 6AM,Other,Daily,1,12,79,55,0.8348,True
+U0245,U0245_H4,Plan Tomorrow,Productivity,Weekly,3,6,26,83,0.7407,True
+U0246,U0246_H1,Watch Educational Video,Learning,Daily,1,0,46,98,0.7386,True
+U0246,U0246_H2,Exercise,Health,Daily,1,4,17,99,0.7402,True
+U0246,U0246_H3,Read 30 Minutes,Productivity,Weekly,5,0,19,106,0.6797,True
+U0246,U0246_H4,No Social Media after 9PM,Productivity,Daily,1,3,13,118,0.6895,True
+U0247,U0247_H1,Sleep 8 Hours,Health,Daily,1,1,12,146,0.6012,True
+U0247,U0247_H2,No Social Media after 9PM,Productivity,Weekly,5,0,11,154,0.5517,True
+U0247,U0247_H3,Practice Coding,Learning,Daily,1,0,12,144,0.5793,True
+U0248,U0248_H1,Connect with Friend,Social,Daily,1,3,24,105,0.7134,True
+U0248,U0248_H2,Study,Productivity,Daily,1,0,18,114,0.6866,True
+U0248,U0248_H3,Watch Educational Video,Learning,Weekly,5,4,25,106,0.7591,True
+U0249,U0249_H1,Drink 2L Water,Health,Weekly,3,3,30,120,0.7121,True
+U0249,U0249_H2,Call Family,Social,Weekly,5,5,49,112,0.7412,True
+U0249,U0249_H3,Journal Writing,Learning,Daily,1,3,47,95,0.7565,True
+U0249,U0249_H4,No Social Media after 9PM,Productivity,Weekly,4,3,18,131,0.7014,True
+U0250,U0250_H1,Volunteer,Social,Daily,1,1,16,107,0.7017,True
+U0250,U0250_H2,Gratitude Journal,Other,Daily,1,10,29,80,0.7966,True
+U0250,U0250_H3,Exercise,Health,Daily,1,10,54,65,0.8237,True
+U0251,U0251_H1,Gratitude Journal,Other,Daily,1,1,11,122,0.5638,True
+U0251,U0251_H2,Sleep 8 Hours,Health,Daily,1,3,11,123,0.5213,True
+U0251,U0251_H3,Connect with Friend,Social,Daily,1,8,30,111,0.5638,True
+U0251,U0251_H4,Practice Coding,Learning,Daily,1,6,11,115,0.5851,True
+U0252,U0252_H1,Sleep 8 Hours,Health,Daily,1,1,15,114,0.569,True
+U0252,U0252_H2,Read Books,Learning,Daily,1,0,18,121,0.6145,True
+U0252,U0252_H3,Gratitude Journal,Other,Daily,1,5,9,118,0.5589,True
+U0253,U0253_H1,Call Family,Social,Weekly,3,1,36,93,0.7323,True
+U0253,U0253_H2,Gratitude Journal,Other,Weekly,3,9,28,100,0.7862,True
+U0253,U0253_H3,Practice Coding,Learning,Daily,1,2,20,105,0.7492,True
+U0254,U0254_H1,Practice Coding,Learning,Daily,1,1,16,148,0.6293,True
+U0254,U0254_H2,Sleep 8 Hours,Health,Weekly,5,0,14,135,0.598,True
+U0255,U0255_H1,Practice Coding,Learning,Weekly,4,0,6,90,0.357,True
+U0256,U0256_H1,Meditate,Health,Daily,1,0,5,79,0.2691,True
+U0256,U0256_H2,Gratitude Journal,Other,Daily,1,3,5,87,0.3132,True
+U0257,U0257_H1,Watch Educational Video,Learning,Daily,1,3,22,115,0.7298,True
+U0257,U0257_H2,Gratitude Journal,Other,Daily,1,5,30,107,0.7511,True
+U0257,U0257_H3,Practice Coding,Learning,Daily,1,0,22,102,0.7405,True
+U0258,U0258_H1,Connect with Friend,Social,Daily,1,0,20,108,0.7161,True
+U0258,U0258_H2,Study,Productivity,Daily,1,0,21,113,0.7207,True
+U0258,U0258_H3,Plan Tomorrow,Productivity,Daily,1,5,37,108,0.7363,True
+U0259,U0259_H1,Study,Productivity,Daily,1,0,8,87,0.2839,True
+U0259,U0259_H2,Call Family,Social,Daily,1,0,6,83,0.2903,True
+U0260,U0260_H1,Gratitude Journal,Other,Daily,1,6,41,76,0.8224,True
+U0260,U0260_H2,Call Family,Social,Daily,1,5,46,94,0.7672,True
+U0260,U0260_H3,Plan Tomorrow,Productivity,Daily,1,13,20,90,0.7718,True
+U0260,U0260_H4,Exercise,Health,Weekly,4,1,31,79,0.781,True
+U0261,U0261_H1,Track Expenses,Other,Daily,1,5,33,108,0.7645,True
+U0261,U0261_H2,No Social Media after 9PM,Productivity,Daily,1,2,22,125,0.6982,True
+U0261,U0261_H3,Exercise,Health,Daily,1,12,28,113,0.763,True
+U0262,U0262_H1,Plan Tomorrow,Productivity,Daily,1,3,27,120,0.6927,True
+U0262,U0262_H2,Plan Tomorrow,Productivity,Weekly,3,6,32,124,0.6972,True
+U0262,U0262_H3,Volunteer,Social,Weekly,3,4,20,113,0.7181,True
+U0262,U0262_H4,Wake up at 6AM,Other,Daily,1,1,31,99,0.7481,True
+U0263,U0263_H1,Track Expenses,Other,Weekly,5,4,6,81,0.3624,True
+U0263,U0263_H2,Call Family,Social,Daily,1,0,9,79,0.3598,True
+U0264,U0264_H1,Drink 2L Water,Health,Weekly,4,0,4,91,0.3086,True
+U0265,U0265_H1,Exercise,Health,Daily,1,3,94,67,0.826,True
+U0265,U0265_H2,Read Books,Learning,Daily,1,6,24,96,0.7555,True
+U0265,U0265_H3,Sleep 8 Hours,Health,Daily,1,5,51,56,0.8527,True
+U0265,U0265_H4,Connect with Friend,Social,Daily,1,2,43,99,0.7257,True
+U0265,U0265_H5,Plan Tomorrow,Productivity,Daily,1,4,15,118,0.6834,True
+U0266,U0266_H1,Wake up at 6AM,Other,Weekly,4,2,10,144,0.5491,True
+U0266,U0266_H2,Read Books,Learning,Weekly,3,1,9,146,0.5164,True
+U0266,U0266_H3,Plan Tomorrow,Productivity,Daily,1,1,11,149,0.506,True
+U0267,U0267_H1,Wake up at 6AM,Other,Daily,1,4,23,102,0.77,True
+U0267,U0267_H2,Exercise,Health,Weekly,5,6,21,107,0.7359,True
+U0267,U0267_H3,Connect with Friend,Social,Daily,1,1,30,110,0.7107,True
+U0267,U0267_H4,Read 30 Minutes,Productivity,Weekly,5,2,14,125,0.7181,True
+U0267,U0267_H5,Read Books,Learning,Weekly,3,2,25,91,0.7418,True
+U0268,U0268_H1,Watch Educational Video,Learning,Daily,1,3,10,118,0.5395,True
+U0268,U0268_H2,Read Books,Learning,Daily,1,11,13,108,0.5316,True
+U0268,U0268_H3,Drink 2L Water,Health,Weekly,5,1,9,101,0.5099,True
+U0269,U0269_H1,Eat Healthy,Health,Weekly,4,0,9,148,0.5692,True
+U0269,U0269_H2,Journal Writing,Learning,Daily,1,1,10,155,0.611,True
+U0270,U0270_H1,Exercise,Health,Daily,1,1,14,125,0.4732,True
+U0270,U0270_H2,Gratitude Journal,Other,Weekly,4,4,11,126,0.5579,True
+U0271,U0271_H1,Plan Tomorrow,Productivity,Daily,1,2,15,123,0.4833,True
+U0271,U0271_H2,Wake up at 6AM,Other,Daily,1,2,10,128,0.536,True
+U0271,U0271_H3,Volunteer,Social,Daily,1,1,13,127,0.5044,True
+U0272,U0272_H1,Watch Educational Video,Learning,Daily,1,0,14,152,0.5516,True
+U0272,U0272_H2,Study,Productivity,Daily,1,0,9,141,0.4843,True
+U0272,U0272_H3,Volunteer,Social,Weekly,4,1,10,148,0.4843,True
+U0273,U0273_H1,Drink 2L Water,Health,Daily,1,11,64,54,0.8218,True
+U0273,U0273_H2,Watch Educational Video,Learning,Weekly,5,0,37,98,0.7439,True
+U0273,U0273_H3,Gratitude Journal,Other,Weekly,5,0,18,95,0.7509,True
+U0274,U0274_H1,Eat Healthy,Health,Daily,1,18,42,62,0.8347,True
+U0274,U0274_H2,Plan Tomorrow,Productivity,Weekly,3,19,19,109,0.7116,True
+U0274,U0274_H3,Wake up at 6AM,Other,Daily,1,0,47,80,0.7825,True
+U0275,U0275_H1,Exercise,Health,Weekly,3,0,5,82,0.288,True
+U0276,U0276_H1,Call Family,Social,Daily,1,1,8,105,0.2947,True
+U0276,U0276_H2,No Social Media after 9PM,Productivity,Weekly,3,0,4,101,0.2615,True
+U0277,U0277_H1,Watch Educational Video,Learning,Daily,1,4,21,138,0.5911,True
+U0277,U0277_H2,Track Expenses,Other,Daily,1,1,13,155,0.5423,True
+U0278,U0278_H1,Practice Coding,Learning,Daily,1,1,21,109,0.7686,True
+U0278,U0278_H2,Volunteer,Social,Weekly,5,8,21,122,0.7204,True
+U0278,U0278_H3,Study,Productivity,Daily,1,3,23,123,0.7287,True
+U0278,U0278_H4,No Social Media after 9PM,Productivity,Daily,1,0,23,126,0.719,True
+U0278,U0278_H5,Gratitude Journal,Other,Weekly,4,2,25,108,0.7796,True
+U0279,U0279_H1,Wake up at 6AM,Other,Daily,1,2,9,123,0.5357,True
+U0279,U0279_H2,Read 30 Minutes,Productivity,Weekly,3,0,8,130,0.5038,True
+U0280,U0280_H1,Connect with Friend,Social,Daily,1,1,23,113,0.573,True
+U0280,U0280_H2,Journal Writing,Learning,Weekly,4,1,9,130,0.542,True
+U0280,U0280_H3,Read 30 Minutes,Productivity,Daily,1,3,12,127,0.5182,True
+U0280,U0280_H4,Watch Educational Video,Learning,Daily,1,1,10,120,0.5091,True
+U0281,U0281_H1,Drink 2L Water,Health,Daily,1,6,63,66,0.7916,True
+U0281,U0281_H2,Study,Productivity,Daily,1,12,29,95,0.7198,True
+U0281,U0281_H3,Volunteer,Social,Daily,1,2,35,86,0.7671,True
+U0281,U0281_H4,Eat Healthy,Health,Weekly,4,63,93,43,0.8809,True
+U0281,U0281_H5,Gratitude Journal,Other,Daily,1,10,57,66,0.8144,True
+U0282,U0282_H1,Practice Coding,Learning,Daily,1,5,11,109,0.5735,True
+U0282,U0282_H2,Gratitude Journal,Other,Weekly,5,0,11,113,0.5896,True
+U0282,U0282_H3,Connect with Friend,Social,Weekly,5,0,11,125,0.5484,True
+U0282,U0282_H4,No Social Media after 9PM,Productivity,Daily,1,3,13,120,0.5609,True
+U0283,U0283_H1,Call Family,Social,Weekly,4,2,13,108,0.5558,True
+U0283,U0283_H2,Watch Educational Video,Learning,Daily,1,1,9,123,0.5204,True
+U0284,U0284_H1,Volunteer,Social,Daily,1,3,29,94,0.7626,True
+U0284,U0284_H2,Plan Tomorrow,Productivity,Daily,1,0,22,95,0.75,True
+U0284,U0284_H3,Read 30 Minutes,Productivity,Daily,1,2,38,78,0.8082,True
+U0285,U0285_H1,Sleep 8 Hours,Health,Weekly,3,0,6,93,0.2762,True
+U0285,U0285_H2,Study,Productivity,Daily,1,0,5,95,0.3054,True
+U0286,U0286_H1,Watch Educational Video,Learning,Daily,1,1,24,90,0.8088,True
+U0286,U0286_H2,Study,Productivity,Weekly,4,12,27,92,0.795,True
+U0287,U0287_H1,Read 30 Minutes,Productivity,Daily,1,1,3,107,0.2496,True
+U0288,U0288_H1,Read Books,Learning,Weekly,4,0,6,108,0.3097,True
+U0289,U0289_H1,Wake up at 6AM,Other,Daily,1,9,11,134,0.5752,True
+U0289,U0289_H2,Plan Tomorrow,Productivity,Daily,1,2,12,131,0.5507,True
+U0290,U0290_H1,No Social Media after 9PM,Productivity,Daily,1,0,19,110,0.701,True
+U0290,U0290_H2,Sleep 8 Hours,Health,Daily,1,16,16,113,0.7203,True
+U0290,U0290_H3,Call Family,Social,Weekly,3,0,41,88,0.7572,True
+U0290,U0290_H4,Watch Educational Video,Learning,Weekly,5,0,37,94,0.7637,True
+U0291,U0291_H1,Gratitude Journal,Other,Daily,1,15,36,81,0.8076,True
+U0291,U0291_H2,Journal Writing,Learning,Daily,1,12,38,78,0.8076,True
+U0291,U0291_H3,Connect with Friend,Social,Weekly,5,3,43,70,0.8152,True
+U0291,U0291_H4,Plan Tomorrow,Productivity,Daily,1,1,32,97,0.7742,True
+U0292,U0292_H1,Read Books,Learning,Daily,1,10,61,69,0.8563,True
+U0292,U0292_H2,No Social Media after 9PM,Productivity,Daily,1,4,32,90,0.7904,True
+U0293,U0293_H1,Call Family,Social,Daily,1,0,25,93,0.7504,True
+U0293,U0293_H2,Meditate,Health,Daily,1,0,38,55,0.82,True
+U0293,U0293_H3,Eat Healthy,Health,Daily,1,12,45,69,0.8146,True
+U0293,U0293_H4,Sleep 8 Hours,Health,Daily,1,46,51,52,0.8414,True
+U0293,U0293_H5,Track Expenses,Other,Daily,1,1,40,73,0.8146,True
+U0294,U0294_H1,Drink 2L Water,Health,Daily,1,10,13,145,0.551,True
+U0294,U0294_H2,Study,Productivity,Daily,1,0,12,139,0.5236,True
+U0295,U0295_H1,Study,Productivity,Daily,1,1,6,106,0.3429,True
+U0295,U0295_H2,Eat Healthy,Health,Weekly,5,0,6,107,0.3391,True
+U0295,U0295_H3,Gratitude Journal,Other,Daily,1,0,5,112,0.3966,True
+U0296,U0296_H1,Meditate,Health,Weekly,4,1,5,69,0.2319,True
+U0296,U0296_H2,Journal Writing,Learning,Daily,1,1,5,77,0.2993,True
+U0297,U0297_H1,Track Expenses,Other,Weekly,4,1,11,157,0.5182,True
+U0297,U0297_H2,Plan Tomorrow,Productivity,Weekly,5,8,9,152,0.4789,True
+U0297,U0297_H3,Watch Educational Video,Learning,Daily,1,0,11,139,0.5488,True
+U0298,U0298_H1,Read 30 Minutes,Productivity,Weekly,3,0,7,111,0.4017,True
+U0299,U0299_H1,Plan Tomorrow,Productivity,Daily,1,6,18,127,0.7069,True
+U0299,U0299_H2,Read Books,Learning,Daily,1,5,22,125,0.7319,True
+U0299,U0299_H3,No Social Media after 9PM,Productivity,Daily,1,0,14,145,0.6819,True
+U0300,U0300_H1,Read 30 Minutes,Productivity,Daily,1,2,25,81,0.7719,True
+U0300,U0300_H2,Journal Writing,Learning,Weekly,5,26,54,54,0.8405,True
+U0301,U0301_H1,Wake up at 6AM,Other,Weekly,3,10,35,81,0.8259,True
+U0301,U0301_H2,Plan Tomorrow,Productivity,Daily,1,7,32,101,0.7738,True
+U0301,U0301_H3,Journal Writing,Learning,Weekly,5,0,31,88,0.8125,True
+U0302,U0302_H1,No Social Media after 9PM,Productivity,Daily,1,0,5,80,0.2538,True
+U0303,U0303_H1,Gratitude Journal,Other,Daily,1,2,5,95,0.2719,True
+U0304,U0304_H1,Read 30 Minutes,Productivity,Weekly,4,2,26,112,0.7299,True
+U0304,U0304_H2,Call Family,Social,Daily,1,10,30,96,0.7816,True
+U0304,U0304_H3,Watch Educational Video,Learning,Daily,1,3,51,93,0.783,True
+U0304,U0304_H4,Study,Productivity,Weekly,5,0,19,123,0.7026,True
+U0304,U0304_H5,Track Expenses,Other,Daily,1,5,37,111,0.7629,True
+U0305,U0305_H1,Wake up at 6AM,Other,Daily,1,0,6,132,0.5027,True
+U0305,U0305_H2,Eat Healthy,Health,Daily,1,1,17,110,0.5466,True
+U0306,U0306_H1,Watch Educational Video,Learning,Daily,1,6,19,109,0.7424,True
+U0306,U0306_H2,Study,Productivity,Weekly,5,0,16,133,0.6727,True
+U0306,U0306_H3,Study,Productivity,Weekly,3,3,18,111,0.7152,True
+U0307,U0307_H1,Journal Writing,Learning,Weekly,4,0,6,104,0.2784,True
+U0308,U0308_H1,Wake up at 6AM,Other,Daily,1,0,13,138,0.5929,True
+U0308,U0308_H2,Call Family,Social,Daily,1,0,10,132,0.5453,True
+U0309,U0309_H1,Watch Educational Video,Learning,Daily,1,4,10,122,0.5304,True
+U0309,U0309_H2,Practice Coding,Learning,Daily,1,1,11,123,0.5026,True
+U0309,U0309_H3,Sleep 8 Hours,Health,Weekly,4,1,9,131,0.4713,True
+U0309,U0309_H4,Volunteer,Social,Daily,1,0,15,117,0.5391,True
+U0310,U0310_H1,Read 30 Minutes,Productivity,Daily,1,1,11,132,0.5477,True
+U0310,U0310_H2,Drink 2L Water,Health,Daily,1,0,12,122,0.5153,True
+U0310,U0310_H3,Practice Coding,Learning,Weekly,5,0,9,132,0.5784,True
+U0311,U0311_H1,Call Family,Social,Daily,1,1,12,122,0.5757,True
+U0311,U0311_H2,Gratitude Journal,Other,Daily,1,0,13,118,0.6256,True
+U0311,U0311_H3,Read 30 Minutes,Productivity,Weekly,4,0,14,128,0.5607,True
+U0311,U0311_H4,Exercise,Health,Weekly,3,0,13,120,0.5474,True
+U0312,U0312_H1,Exercise,Health,Daily,1,2,42,94,0.7737,True
+U0312,U0312_H2,Practice Coding,Learning,Daily,1,0,39,78,0.8248,True
+U0312,U0312_H3,Volunteer,Social,Weekly,5,4,54,83,0.8029,True
+U0312,U0312_H4,Study,Productivity,Daily,1,0,19,110,0.7504,True
+U0313,U0313_H1,Sleep 8 Hours,Health,Weekly,4,1,52,78,0.8072,True
+U0313,U0313_H2,Practice Coding,Learning,Weekly,4,17,43,69,0.8281,True
+U0313,U0313_H3,No Social Media after 9PM,Productivity,Daily,1,0,21,94,0.7683,True
+U0314,U0314_H1,Journal Writing,Learning,Daily,1,3,24,100,0.7722,True
+U0314,U0314_H2,Connect with Friend,Social,Weekly,3,5,15,116,0.6893,True
+U0314,U0314_H3,Read 30 Minutes,Productivity,Daily,1,0,17,129,0.6908,True
+U0314,U0314_H4,Study,Productivity,Weekly,5,3,19,115,0.6787,True
+U0314,U0314_H5,Watch Educational Video,Learning,Daily,1,1,30,118,0.7285,True
+U0315,U0315_H1,Exercise,Health,Weekly,3,31,79,61,0.8236,True
+U0315,U0315_H2,Plan Tomorrow,Productivity,Daily,1,1,21,111,0.7485,True
+U0315,U0315_H3,Drink 2L Water,Health,Daily,1,22,44,61,0.8589,True
+U0315,U0315_H4,Practice Coding,Learning,Daily,1,11,22,106,0.7362,True
+U0316,U0316_H1,Read 30 Minutes,Productivity,Daily,1,1,27,121,0.712,True
+U0316,U0316_H2,Track Expenses,Other,Daily,1,7,47,97,0.7612,True
+U0316,U0316_H3,Journal Writing,Learning,Daily,1,2,34,101,0.7902,True
+U0316,U0316_H4,Call Family,Social,Daily,1,0,29,109,0.7395,True
+U0317,U0317_H1,Journal Writing,Learning,Weekly,5,10,12,115,0.579,True
+U0317,U0317_H2,Track Expenses,Other,Daily,1,1,14,124,0.5653,True
+U0317,U0317_H3,Meditate,Health,Weekly,5,0,22,132,0.5739,True
+U0317,U0317_H4,Connect with Friend,Social,Weekly,4,5,11,117,0.5893,True
+U0318,U0318_H1,Read Books,Learning,Daily,1,2,5,110,0.376,True
+U0318,U0318_H2,Track Expenses,Other,Daily,1,0,7,101,0.3605,True
+U0319,U0319_H1,Track Expenses,Other,Weekly,5,0,6,123,0.3861,True
+U0320,U0320_H1,Gratitude Journal,Other,Daily,1,3,12,135,0.5604,True
+U0320,U0320_H2,Read 30 Minutes,Productivity,Weekly,4,0,12,125,0.5443,True
+U0320,U0320_H3,Call Family,Social,Weekly,4,0,16,114,0.5588,True
+U0321,U0321_H1,Drink 2L Water,Health,Daily,1,0,5,89,0.2681,True
+U0321,U0321_H2,Track Expenses,Other,Daily,1,0,6,95,0.2964,True
+U0322,U0322_H1,Study,Productivity,Daily,1,4,12,107,0.5184,True
+U0322,U0322_H2,Wake up at 6AM,Other,Daily,1,0,11,106,0.5301,True
+U0323,U0323_H1,Meditate,Health,Daily,1,11,27,102,0.7603,True
+U0323,U0323_H2,Call Family,Social,Weekly,4,0,20,109,0.7632,True
+U0323,U0323_H3,Watch Educational Video,Learning,Daily,1,0,23,97,0.8015,True
+U0323,U0323_H4,Journal Writing,Learning,Daily,1,3,27,90,0.8132,True
+U0323,U0323_H5,Wake up at 6AM,Other,Daily,1,19,29,98,0.7735,True
+U0324,U0324_H1,Connect with Friend,Social,Daily,1,0,11,162,0.5417,True
+U0324,U0324_H2,Journal Writing,Learning,Weekly,3,4,12,157,0.6042,True
+U0324,U0324_H3,No Social Media after 9PM,Productivity,Weekly,4,1,13,154,0.5486,True
+U0325,U0325_H1,Drink 2L Water,Health,Weekly,5,2,15,117,0.705,True
+U0325,U0325_H2,Watch Educational Video,Learning,Daily,1,7,23,108,0.7564,True
+U0325,U0325_H3,Call Family,Social,Daily,1,0,28,115,0.7201,True
+U0326,U0326_H1,Exercise,Health,Weekly,4,1,10,148,0.5498,True
+U0326,U0326_H2,Journal Writing,Learning,Weekly,5,0,9,139,0.5579,True
+U0326,U0326_H3,Connect with Friend,Social,Daily,1,0,10,122,0.553,True
+U0327,U0327_H1,Connect with Friend,Social,Weekly,5,0,4,95,0.2879,True
+U0327,U0327_H2,Exercise,Health,Daily,1,0,7,78,0.2857,True
+U0328,U0328_H1,Wake up at 6AM,Other,Daily,1,1,24,109,0.7587,True
+U0328,U0328_H2,Read 30 Minutes,Productivity,Daily,1,1,38,108,0.7492,True
+U0328,U0328_H3,Connect with Friend,Social,Weekly,4,6,36,91,0.7714,True
+U0328,U0328_H4,Meditate,Health,Daily,1,15,46,94,0.7206,True
+U0329,U0329_H1,Gratitude Journal,Other,Daily,1,1,10,142,0.6015,True
+U0329,U0329_H2,Call Family,Social,Daily,1,1,11,144,0.5444,True
+U0329,U0329_H3,Meditate,Health,Daily,1,0,17,142,0.5774,True
+U0330,U0330_H1,Read Books,Learning,Daily,1,2,12,111,0.5737,True
+U0330,U0330_H2,Track Expenses,Other,Weekly,5,3,8,120,0.5683,True
+U0330,U0330_H3,Connect with Friend,Social,Weekly,3,5,14,108,0.6079,True
+U0330,U0330_H4,Read 30 Minutes,Productivity,Daily,1,2,14,113,0.5342,True
+U0331,U0331_H1,Wake up at 6AM,Other,Daily,1,6,14,146,0.5989,True
+U0331,U0331_H2,Drink 2L Water,Health,Weekly,5,3,10,159,0.5698,True
+U0331,U0331_H3,Connect with Friend,Social,Daily,1,11,11,147,0.5989,True
+U0331,U0331_H4,Study,Productivity,Daily,1,1,13,153,0.5214,True
+U0332,U0332_H1,Study,Productivity,Daily,1,1,8,118,0.4703,True
+U0332,U0332_H2,Track Expenses,Other,Daily,1,0,11,123,0.5781,True
+U0332,U0332_H3,Journal Writing,Learning,Weekly,4,1,8,124,0.4981,True
+U0333,U0333_H1,Track Expenses,Other,Daily,1,5,36,77,0.7899,True
+U0333,U0333_H2,Plan Tomorrow,Productivity,Daily,1,4,37,91,0.7395,True
+U0333,U0333_H3,Practice Coding,Learning,Daily,1,8,84,63,0.8454,True
+U0333,U0333_H4,Study,Productivity,Weekly,4,3,26,86,0.7176,True
+U0334,U0334_H1,Read Books,Learning,Daily,1,0,7,91,0.3712,True
+U0334,U0334_H2,Meditate,Health,Weekly,5,1,7,87,0.3326,True
+U0334,U0334_H3,Gratitude Journal,Other,Daily,1,0,6,92,0.3197,True
+U0335,U0335_H1,Drink 2L Water,Health,Weekly,3,0,27,73,0.7564,True
+U0335,U0335_H2,No Social Media after 9PM,Productivity,Daily,1,3,27,81,0.7291,True
+U0335,U0335_H3,Practice Coding,Learning,Daily,1,3,35,62,0.8436,True
+U0336,U0336_H1,Track Expenses,Other,Daily,1,6,39,71,0.8408,True
+U0336,U0336_H2,Watch Educational Video,Learning,Daily,1,8,61,71,0.8346,True
+U0337,U0337_H1,Read Books,Learning,Weekly,5,6,35,94,0.7727,True
+U0337,U0337_H2,Eat Healthy,Health,Daily,1,26,56,43,0.849,True
+U0337,U0337_H3,Eat Healthy,Health,Daily,1,45,52,50,0.8571,True
+U0337,U0337_H4,Track Expenses,Other,Daily,1,0,42,99,0.7468,True
+U0337,U0337_H5,No Social Media after 9PM,Productivity,Daily,1,4,53,89,0.7549,True
+U0338,U0338_H1,Journal Writing,Learning,Weekly,3,1,12,123,0.541,True
+U0338,U0338_H2,Sleep 8 Hours,Health,Daily,1,0,10,113,0.4813,True
+U0338,U0338_H3,Journal Writing,Learning,Daily,1,0,12,111,0.5224,True
+U0338,U0338_H4,Volunteer,Social,Daily,1,0,9,123,0.4925,True
+U0339,U0339_H1,Read 30 Minutes,Productivity,Daily,1,3,5,91,0.2899,True
+U0340,U0340_H1,Call Family,Social,Weekly,3,0,47,61,0.8206,True
+U0340,U0340_H2,Practice Coding,Learning,Daily,1,13,53,68,0.8429,True
+U0341,U0341_H1,Call Family,Social,Daily,1,0,5,118,0.2953,True
+U0342,U0342_H1,Drink 2L Water,Health,Daily,1,0,5,84,0.229,True
+U0343,U0343_H1,Read 30 Minutes,Productivity,Daily,1,0,5,84,0.367,True
+U0343,U0343_H2,Gratitude Journal,Other,Daily,1,0,7,77,0.3803,True
+U0344,U0344_H1,Volunteer,Social,Weekly,3,2,11,158,0.5262,True
+U0344,U0344_H2,Watch Educational Video,Learning,Daily,1,2,18,144,0.5843,True
+U0344,U0344_H3,Read 30 Minutes,Productivity,Daily,1,3,9,154,0.5087,True
+U0345,U0345_H1,Connect with Friend,Social,Daily,1,0,12,136,0.5539,True
+U0345,U0345_H2,Plan Tomorrow,Productivity,Daily,1,0,14,145,0.5873,True
+U0346,U0346_H1,Eat Healthy,Health,Weekly,3,8,17,123,0.7177,True
+U0346,U0346_H2,No Social Media after 9PM,Productivity,Daily,1,1,26,119,0.6954,True
+U0346,U0346_H3,Journal Writing,Learning,Daily,1,18,26,110,0.7682,True
+U0346,U0346_H4,Study,Productivity,Daily,1,1,14,126,0.6835,True
+U0347,U0347_H1,Volunteer,Social,Weekly,4,9,40,105,0.7321,True
+U0347,U0347_H2,Watch Educational Video,Learning,Weekly,5,2,25,89,0.7646,True
+U0347,U0347_H3,Track Expenses,Other,Daily,1,6,17,99,0.7581,True
+U0347,U0347_H4,Read Books,Learning,Daily,1,0,24,94,0.7662,True
+U0348,U0348_H1,Eat Healthy,Health,Daily,1,4,48,61,0.7959,True
+U0348,U0348_H2,Connect with Friend,Social,Daily,1,69,69,70,0.837,True
+U0348,U0348_H3,Plan Tomorrow,Productivity,Weekly,3,0,28,89,0.741,True
+U0349,U0349_H1,Journal Writing,Learning,Daily,1,0,12,132,0.5357,True
+U0349,U0349_H2,Read 30 Minutes,Productivity,Daily,1,5,11,115,0.5578,True
+U0349,U0349_H3,Volunteer,Social,Daily,1,3,17,126,0.5544,True
+U0350,U0350_H1,Plan Tomorrow,Productivity,Daily,1,11,21,112,0.7403,True
+U0350,U0350_H2,Journal Writing,Learning,Weekly,4,0,34,95,0.7682,True
+U0350,U0350_H3,Practice Coding,Learning,Daily,1,0,28,104,0.7249,True
+U0350,U0350_H4,Wake up at 6AM,Other,Weekly,5,6,32,93,0.8053,True
+U0350,U0350_H5,No Social Media after 9PM,Productivity,Daily,1,2,19,111,0.7063,True
+U0351,U0351_H1,Gratitude Journal,Other,Daily,1,1,9,77,0.295,True
+U0351,U0351_H2,Study,Productivity,Daily,1,1,5,86,0.3094,True
+U0352,U0352_H1,Plan Tomorrow,Productivity,Daily,1,1,21,89,0.7236,True
+U0352,U0352_H2,Eat Healthy,Health,Daily,1,28,62,61,0.7945,True
+U0352,U0352_H3,Wake up at 6AM,Other,Weekly,5,0,27,84,0.7691,True
+U0352,U0352_H4,Sleep 8 Hours,Health,Daily,1,52,52,62,0.7964,True
+U0352,U0352_H5,Read Books,Learning,Daily,1,1,17,90,0.7273,True
+U0353,U0353_H1,Call Family,Social,Daily,1,3,25,101,0.7571,True
+U0353,U0353_H2,Meditate,Health,Weekly,4,3,25,99,0.7421,True
+U0353,U0353_H3,No Social Media after 9PM,Productivity,Daily,1,1,20,124,0.6972,True
+U0353,U0353_H4,Gratitude Journal,Other,Daily,1,0,39,99,0.7631,True
+U0353,U0353_H5,Watch Educational Video,Learning,Daily,1,8,30,102,0.7451,True
+U0354,U0354_H1,Read 30 Minutes,Productivity,Weekly,4,0,6,112,0.3322,True
+U0355,U0355_H1,Wake up at 6AM,Other,Weekly,5,3,56,70,0.8364,True
+U0355,U0355_H2,Volunteer,Social,Daily,1,7,42,72,0.8133,True
+U0355,U0355_H3,Read Books,Learning,Daily,1,0,42,69,0.8441,True
+U0356,U0356_H1,Plan Tomorrow,Productivity,Daily,1,5,13,133,0.6984,True
+U0356,U0356_H2,Read 30 Minutes,Productivity,Daily,1,0,24,112,0.713,True
+U0356,U0356_H3,Volunteer,Social,Daily,1,5,30,110,0.7321,True
+U0356,U0356_H4,Eat Healthy,Health,Daily,1,10,25,116,0.7057,True
+U0357,U0357_H1,Gratitude Journal,Other,Weekly,5,16,36,74,0.8261,True
+U0357,U0357_H2,Read 30 Minutes,Productivity,Weekly,4,5,26,87,0.7359,True
+U0358,U0358_H1,Gratitude Journal,Other,Daily,1,0,6,116,0.3224,True
+U0359,U0359_H1,Exercise,Health,Daily,1,1,20,114,0.7151,True
+U0359,U0359_H2,Read Books,Learning,Weekly,5,5,34,106,0.7891,True
+U0359,U0359_H3,Read Books,Learning,Weekly,5,10,19,124,0.7263,True
+U0359,U0359_H4,Study,Productivity,Daily,1,0,19,116,0.7332,True
+U0360,U0360_H1,Connect with Friend,Social,Weekly,5,0,6,104,0.269,True
+U0361,U0361_H1,Track Expenses,Other,Daily,1,0,9,156,0.6162,True
+U0361,U0361_H2,Read 30 Minutes,Productivity,Daily,1,0,11,158,0.577,True
+U0361,U0361_H3,Journal Writing,Learning,Weekly,5,2,16,147,0.5574,True
+U0361,U0361_H4,Drink 2L Water,Health,Daily,1,0,11,144,0.5504,True
+U0362,U0362_H1,Read Books,Learning,Daily,1,17,32,90,0.7941,True
+U0362,U0362_H2,Drink 2L Water,Health,Daily,1,3,37,113,0.7419,True
+U0362,U0362_H3,Study,Productivity,Daily,1,5,24,116,0.7094,True
+U0362,U0362_H4,Track Expenses,Other,Weekly,3,0,26,112,0.7616,True
+U0362,U0362_H5,Volunteer,Social,Daily,1,2,29,104,0.7687,True
+U0363,U0363_H1,Plan Tomorrow,Productivity,Daily,1,0,6,83,0.2762,True
+U0364,U0364_H1,Gratitude Journal,Other,Daily,1,1,4,88,0.2677,True
+U0365,U0365_H1,Exercise,Health,Weekly,3,0,34,111,0.7182,True
+U0365,U0365_H2,Study,Productivity,Daily,1,2,21,129,0.711,True
+U0365,U0365_H3,Plan Tomorrow,Productivity,Daily,1,4,28,122,0.711,True
+U0366,U0366_H1,No Social Media after 9PM,Productivity,Daily,1,0,6,164,0.5139,True
+U0366,U0366_H2,Read Books,Learning,Weekly,5,1,14,145,0.6175,True
+U0366,U0366_H3,Connect with Friend,Social,Daily,1,2,12,139,0.5796,True
+U0366,U0366_H4,Wake up at 6AM,Other,Weekly,5,3,10,139,0.5839,True
+U0367,U0367_H1,Practice Coding,Learning,Daily,1,2,18,112,0.7265,True
+U0367,U0367_H2,Connect with Friend,Social,Daily,1,2,19,117,0.7235,True
+U0367,U0367_H3,Study,Productivity,Daily,1,0,26,128,0.6861,True
+U0367,U0367_H4,Practice Coding,Learning,Daily,1,1,22,101,0.7339,True
+U0368,U0368_H1,Exercise,Health,Daily,1,3,57,71,0.8093,True
+U0368,U0368_H2,No Social Media after 9PM,Productivity,Daily,1,2,17,95,0.7264,True
+U0368,U0368_H3,Sleep 8 Hours,Health,Weekly,3,0,76,64,0.8458,True
+U0369,U0369_H1,Meditate,Health,Daily,1,2,6,110,0.4062,True
+U0370,U0370_H1,Wake up at 6AM,Other,Weekly,5,4,45,78,0.8476,True
+U0370,U0370_H2,Plan Tomorrow,Productivity,Weekly,3,3,38,93,0.7988,True
+U0371,U0371_H1,Watch Educational Video,Learning,Weekly,4,10,34,90,0.8121,True
+U0371,U0371_H2,Drink 2L Water,Health,Daily,1,0,41,96,0.8036,True
+U0371,U0371_H3,Call Family,Social,Daily,1,6,48,78,0.8401,True
+U0372,U0372_H1,Connect with Friend,Social,Daily,1,0,35,91,0.7717,True
+U0372,U0372_H2,Drink 2L Water,Health,Daily,1,9,24,94,0.7982,True
+U0372,U0372_H3,Watch Educational Video,Learning,Weekly,5,10,30,88,0.8071,True
+U0372,U0372_H4,Plan Tomorrow,Productivity,Daily,1,0,21,99,0.785,True
+U0373,U0373_H1,Read 30 Minutes,Productivity,Daily,1,0,28,105,0.7709,True
+U0373,U0373_H2,Plan Tomorrow,Productivity,Weekly,4,4,26,108,0.7355,True
+U0374,U0374_H1,Plan Tomorrow,Productivity,Weekly,3,4,26,121,0.709,True
+U0374,U0374_H2,Plan Tomorrow,Productivity,Daily,1,19,19,113,0.7076,True
+U0374,U0374_H3,Journal Writing,Learning,Daily,1,0,26,103,0.7938,True
+U0374,U0374_H4,Connect with Friend,Social,Daily,1,2,28,109,0.7302,True
+U0374,U0374_H5,Track Expenses,Other,Daily,1,3,24,112,0.7542,True
+U0375,U0375_H1,Track Expenses,Other,Weekly,5,2,51,72,0.8208,True
+U0375,U0375_H2,Journal Writing,Learning,Daily,1,3,38,66,0.8124,True
+U0375,U0375_H3,Call Family,Social,Daily,1,0,39,74,0.794,True
+U0376,U0376_H1,No Social Media after 9PM,Productivity,Daily,1,0,12,137,0.5727,True
+U0376,U0376_H2,Sleep 8 Hours,Health,Daily,1,1,11,132,0.5262,True
+U0376,U0376_H3,Connect with Friend,Social,Weekly,3,0,12,134,0.5637,True
+U0377,U0377_H1,Study,Productivity,Daily,1,4,19,92,0.7036,True
+U0377,U0377_H2,Eat Healthy,Health,Daily,1,2,57,65,0.7911,True
+U0377,U0377_H3,Journal Writing,Learning,Daily,1,1,23,95,0.7464,True
+U0378,U0378_H1,No Social Media after 9PM,Productivity,Daily,1,0,21,110,0.7611,True
+U0378,U0378_H2,Connect with Friend,Social,Daily,1,3,34,83,0.8083,True
+U0378,U0378_H3,Track Expenses,Other,Daily,1,4,60,77,0.8426,True
+U0379,U0379_H1,Meditate,Health,Daily,1,0,42,74,0.8179,True
+U0379,U0379_H2,Gratitude Journal,Other,Weekly,5,8,29,86,0.7513,True
+U0379,U0379_H3,Eat Healthy,Health,Daily,1,31,59,47,0.8511,True
+U0380,U0380_H1,Eat Healthy,Health,Daily,1,1,13,123,0.5412,True
+U0380,U0380_H2,Wake up at 6AM,Other,Weekly,5,0,18,103,0.5681,True
+U0380,U0380_H3,Plan Tomorrow,Productivity,Daily,1,0,11,129,0.5546,True
+U0381,U0381_H1,Read Books,Learning,Weekly,3,3,4,102,0.3374,True
+U0381,U0381_H2,No Social Media after 9PM,Productivity,Daily,1,1,7,93,0.3111,True
+U0382,U0382_H1,No Social Media after 9PM,Productivity,Daily,1,0,15,109,0.699,True
+U0382,U0382_H2,No Social Media after 9PM,Productivity,Daily,1,3,19,104,0.7201,True
+U0382,U0382_H3,Read Books,Learning,Daily,1,4,39,91,0.7767,True
+U0383,U0383_H1,Study,Productivity,Weekly,4,5,35,110,0.718,True
+U0383,U0383_H2,Drink 2L Water,Health,Daily,1,15,26,99,0.7473,True
+U0383,U0383_H3,Read Books,Learning,Daily,1,1,18,104,0.755,True
+U0384,U0384_H1,Wake up at 6AM,Other,Daily,1,3,57,97,0.7687,True
+U0384,U0384_H2,Read Books,Learning,Weekly,3,0,32,95,0.7783,True
+U0384,U0384_H3,Eat Healthy,Health,Daily,1,0,52,62,0.8421,True
+U0385,U0385_H1,Practice Coding,Learning,Daily,1,5,11,116,0.5419,True
+U0385,U0385_H2,No Social Media after 9PM,Productivity,Daily,1,3,11,126,0.4898,True
+U0386,U0386_H1,Exercise,Health,Daily,1,1,10,131,0.5147,True
+U0386,U0386_H2,Practice Coding,Learning,Weekly,4,0,8,135,0.5702,True
+U0387,U0387_H1,Eat Healthy,Health,Daily,1,0,10,154,0.5493,True
+U0387,U0387_H2,Call Family,Social,Daily,1,3,12,154,0.5507,True
+U0387,U0387_H3,Read Books,Learning,Daily,1,0,18,148,0.5652,True
+U0387,U0387_H4,Plan Tomorrow,Productivity,Daily,1,2,10,153,0.5246,True
+U0388,U0388_H1,Read Books,Learning,Weekly,3,0,7,106,0.392,True
+U0389,U0389_H1,Meditate,Health,Daily,1,1,11,146,0.5368,True
+U0389,U0389_H2,Read 30 Minutes,Productivity,Daily,1,2,9,151,0.5294,True
+U0389,U0389_H3,Practice Coding,Learning,Daily,1,3,11,154,0.5632,True
+U0389,U0389_H4,Study,Productivity,Daily,1,1,11,139,0.5294,True
+U0390,U0390_H1,Volunteer,Social,Weekly,4,1,14,148,0.5257,True
+U0390,U0390_H2,Sleep 8 Hours,Health,Weekly,5,1,11,138,0.4914,True
+U0390,U0390_H3,Study,Productivity,Weekly,3,3,10,136,0.5179,True
+U0390,U0390_H4,Wake up at 6AM,Other,Weekly,4,0,9,146,0.5474,True
+U0391,U0391_H1,Volunteer,Social,Daily,1,0,34,106,0.7356,True
+U0391,U0391_H2,Study,Productivity,Daily,1,3,26,123,0.7069,True
+U0391,U0391_H3,Sleep 8 Hours,Health,Daily,1,3,36,118,0.7328,True
+U0391,U0391_H4,Read 30 Minutes,Productivity,Weekly,4,4,19,121,0.6997,True
+U0391,U0391_H5,Journal Writing,Learning,Weekly,3,3,23,116,0.7414,True
+U0392,U0392_H1,Connect with Friend,Social,Daily,1,0,17,152,0.6089,True
+U0392,U0392_H2,No Social Media after 9PM,Productivity,Daily,1,1,11,150,0.5326,True
+U0393,U0393_H1,Journal Writing,Learning,Daily,1,4,12,148,0.5853,True
+U0393,U0393_H2,Plan Tomorrow,Productivity,Daily,1,0,8,158,0.5471,True
+U0394,U0394_H1,Journal Writing,Learning,Daily,1,1,9,134,0.5651,True
+U0394,U0394_H2,Drink 2L Water,Health,Daily,1,0,7,142,0.4876,True
+U0394,U0394_H3,Connect with Friend,Social,Weekly,5,1,8,132,0.4827,True
+U0395,U0395_H1,Read 30 Minutes,Productivity,Daily,1,0,13,127,0.5529,True
+U0395,U0395_H2,Connect with Friend,Social,Daily,1,12,20,107,0.587,True
+U0395,U0395_H3,Exercise,Health,Weekly,5,2,11,127,0.5836,True
+U0396,U0396_H1,Drink 2L Water,Health,Weekly,3,3,31,129,0.7086,True
+U0396,U0396_H2,Connect with Friend,Social,Daily,1,4,20,137,0.6934,True
+U0396,U0396_H3,Watch Educational Video,Learning,Weekly,3,0,25,123,0.7528,True
+U0396,U0396_H4,No Social Media after 9PM,Productivity,Weekly,5,1,15,140,0.6851,True
+U0396,U0396_H5,Study,Productivity,Daily,1,1,24,125,0.7472,True
+U0397,U0397_H1,Practice Coding,Learning,Daily,1,7,32,88,0.7619,True
+U0397,U0397_H2,Sleep 8 Hours,Health,Weekly,4,11,91,48,0.8642,True
+U0397,U0397_H3,Wake up at 6AM,Other,Daily,1,4,29,86,0.7478,True
+U0397,U0397_H4,Exercise,Health,Daily,1,36,54,68,0.8131,True
+U0398,U0398_H1,Eat Healthy,Health,Weekly,4,1,10,133,0.5673,True
+U0398,U0398_H2,Wake up at 6AM,Other,Daily,1,0,21,118,0.6167,True
+U0398,U0398_H3,Read Books,Learning,Daily,1,1,15,123,0.5792,True
+U0399,U0399_H1,Practice Coding,Learning,Daily,1,0,15,157,0.5216,True
+U0399,U0399_H2,Wake up at 6AM,Other,Daily,1,1,9,160,0.5244,True
+U0399,U0399_H3,Plan Tomorrow,Productivity,Daily,1,0,11,149,0.4986,True
+U0399,U0399_H4,Eat Healthy,Health,Daily,1,0,9,168,0.5417,True
+U0400,U0400_H1,Exercise,Health,Daily,1,4,12,113,0.4836,True
+U0400,U0400_H2,Call Family,Social,Daily,1,2,8,117,0.5164,True
+U0400,U0400_H3,Read 30 Minutes,Productivity,Daily,1,1,9,108,0.4663,True
+U0400,U0400_H4,Track Expenses,Other,Daily,1,0,10,113,0.5145,True
+U0401,U0401_H1,Practice Coding,Learning,Daily,1,7,44,69,0.8267,True
+U0401,U0401_H2,No Social Media after 9PM,Productivity,Daily,1,0,20,97,0.7129,True
+U0402,U0402_H1,Exercise,Health,Weekly,5,66,72,55,0.8597,True
+U0402,U0402_H2,Drink 2L Water,Health,Daily,1,4,38,64,0.8145,True
+U0402,U0402_H3,Practice Coding,Learning,Weekly,3,0,23,97,0.7806,True
+U0402,U0402_H4,Track Expenses,Other,Daily,1,0,25,80,0.7839,True
+U0403,U0403_H1,Watch Educational Video,Learning,Weekly,3,0,7,115,0.312,True
+U0403,U0403_H2,Call Family,Social,Weekly,5,0,6,116,0.3153,True
+U0404,U0404_H1,Connect with Friend,Social,Daily,1,4,16,95,0.7233,True
+U0404,U0404_H2,Track Expenses,Other,Weekly,3,0,25,89,0.7417,True
+U0404,U0404_H3,Journal Writing,Learning,Weekly,5,9,32,83,0.7783,True
+U0405,U0405_H1,Read 30 Minutes,Productivity,Daily,1,2,11,150,0.5479,True
+U0405,U0405_H2,Sleep 8 Hours,Health,Daily,1,0,9,142,0.5708,True
+U0406,U0406_H1,Read 30 Minutes,Productivity,Daily,1,7,23,107,0.7132,True
+U0406,U0406_H2,Exercise,Health,Daily,1,12,42,73,0.8103,True
+U0406,U0406_H3,Sleep 8 Hours,Health,Weekly,4,6,40,63,0.8119,True
+U0406,U0406_H4,Read Books,Learning,Daily,1,4,21,97,0.7727,True
+U0407,U0407_H1,Volunteer,Social,Daily,1,3,13,155,0.5645,True
+U0407,U0407_H2,Read 30 Minutes,Productivity,Daily,1,2,14,178,0.57,True
+U0408,U0408_H1,Track Expenses,Other,Daily,1,7,36,57,0.8557,True
+U0408,U0408_H2,Exercise,Health,Daily,1,25,32,67,0.7852,True
+U0408,U0408_H3,Read Books,Learning,Daily,1,4,66,69,0.8328,True
+U0409,U0409_H1,Volunteer,Social,Weekly,5,2,23,96,0.7477,True
+U0409,U0409_H2,Wake up at 6AM,Other,Daily,1,13,25,82,0.7405,True
+U0409,U0409_H3,Eat Healthy,Health,Daily,1,9,46,60,0.8324,True
+U0410,U0410_H1,Volunteer,Social,Daily,1,1,59,72,0.8036,True
+U0410,U0410_H2,Track Expenses,Other,Weekly,5,2,42,67,0.8183,True
+U0411,U0411_H1,Study,Productivity,Weekly,4,1,14,134,0.5102,True
+U0411,U0411_H2,Sleep 8 Hours,Health,Daily,1,1,11,138,0.595,True
+U0412,U0412_H1,Read 30 Minutes,Productivity,Weekly,4,0,19,125,0.6923,True
+U0412,U0412_H2,Practice Coding,Learning,Daily,1,1,42,98,0.7206,True
+U0412,U0412_H3,Call Family,Social,Daily,1,4,22,103,0.6939,True
+U0413,U0413_H1,Connect with Friend,Social,Daily,1,0,41,115,0.7307,True
+U0413,U0413_H2,Meditate,Health,Daily,1,0,21,126,0.7086,True
+U0413,U0413_H3,No Social Media after 9PM,Productivity,Daily,1,3,20,120,0.7224,True
+U0413,U0413_H4,Plan Tomorrow,Productivity,Daily,1,2,15,129,0.692,True
+U0413,U0413_H5,Read Books,Learning,Weekly,3,3,28,119,0.7445,True
+U0414,U0414_H1,Wake up at 6AM,Other,Weekly,5,1,7,104,0.3041,True
+U0415,U0415_H1,Read Books,Learning,Daily,1,0,25,105,0.7336,True
+U0415,U0415_H2,Sleep 8 Hours,Health,Daily,1,4,26,111,0.7217,True
+U0415,U0415_H3,Read 30 Minutes,Productivity,Daily,1,0,14,127,0.6815,True
+U0416,U0416_H1,Drink 2L Water,Health,Weekly,5,0,5,115,0.2959,True
+U0416,U0416_H2,Practice Coding,Learning,Weekly,3,0,6,122,0.3112,True
+U0417,U0417_H1,Gratitude Journal,Other,Weekly,5,2,26,138,0.6324,True
+U0417,U0417_H2,Call Family,Social,Daily,1,0,13,149,0.5542,True
+U0417,U0417_H3,Sleep 8 Hours,Health,Daily,1,0,12,141,0.5665,True
+U0417,U0417_H4,Plan Tomorrow,Productivity,Weekly,5,0,10,150,0.5556,True
+U0418,U0418_H1,Gratitude Journal,Other,Weekly,3,2,11,120,0.5907,True
+U0418,U0418_H2,Meditate,Health,Weekly,5,2,13,131,0.5408,True
+U0419,U0419_H1,Sleep 8 Hours,Health,Daily,1,1,29,102,0.7563,True
+U0419,U0419_H2,Track Expenses,Other,Weekly,5,2,30,108,0.7429,True
+U0419,U0419_H3,Study,Productivity,Daily,1,1,32,111,0.7266,True
+U0420,U0420_H1,No Social Media after 9PM,Productivity,Daily,1,2,10,145,0.5111,True
+U0420,U0420_H2,Meditate,Health,Daily,1,2,10,155,0.5318,True
+U0420,U0420_H3,Watch Educational Video,Learning,Weekly,4,1,9,150,0.4727,True
+U0420,U0420_H4,Read 30 Minutes,Productivity,Daily,1,4,9,150,0.4934,True
+U0421,U0421_H1,Read 30 Minutes,Productivity,Weekly,5,0,10,145,0.5081,True
+U0421,U0421_H2,Gratitude Journal,Other,Daily,1,1,9,132,0.5243,True
+U0421,U0421_H3,Connect with Friend,Social,Daily,1,0,14,124,0.5583,True
+U0421,U0421_H4,Watch Educational Video,Learning,Weekly,3,3,10,141,0.5243,True
+U0422,U0422_H1,Read Books,Learning,Daily,1,0,11,124,0.5495,True
+U0422,U0422_H2,Call Family,Social,Weekly,4,2,7,118,0.4872,True
+U0423,U0423_H1,Read 30 Minutes,Productivity,Daily,1,0,34,95,0.8072,True
+U0423,U0423_H2,Exercise,Health,Daily,1,3,30,85,0.8239,True
+U0423,U0423_H3,Journal Writing,Learning,Weekly,3,0,34,89,0.7989,True
+U0424,U0424_H1,Call Family,Social,Daily,1,0,5,104,0.2596,True
+U0424,U0424_H2,Study,Productivity,Daily,1,0,5,125,0.2998,True
+U0425,U0425_H1,Read 30 Minutes,Productivity,Weekly,5,11,36,103,0.7447,True
+U0425,U0425_H2,Volunteer,Social,Daily,1,16,27,93,0.8082,True
+U0425,U0425_H3,Gratitude Journal,Other,Daily,1,1,41,75,0.8202,True
+U0425,U0425_H4,Read Books,Learning,Daily,1,0,49,63,0.8489,True
+U0426,U0426_H1,Study,Productivity,Weekly,4,2,5,104,0.2852,True
+U0426,U0426_H2,Volunteer,Social,Weekly,3,0,5,105,0.2944,True
+U0427,U0427_H1,Connect with Friend,Social,Daily,1,2,14,110,0.5177,True
+U0427,U0427_H2,Exercise,Health,Weekly,4,0,13,123,0.5601,True
+U0427,U0427_H3,Gratitude Journal,Other,Weekly,5,0,9,120,0.5671,True
+U0428,U0428_H1,Volunteer,Social,Daily,1,0,21,116,0.7418,True
+U0428,U0428_H2,Exercise,Health,Daily,1,4,66,75,0.8049,True
+U0428,U0428_H3,Gratitude Journal,Other,Daily,1,4,38,97,0.7963,True
+U0429,U0429_H1,Gratitude Journal,Other,Daily,1,0,13,121,0.6131,True
+U0429,U0429_H2,Read 30 Minutes,Productivity,Daily,1,1,11,123,0.5477,True
+U0429,U0429_H3,Sleep 8 Hours,Health,Daily,1,2,17,129,0.5336,True
+U0430,U0430_H1,Plan Tomorrow,Productivity,Daily,1,2,8,103,0.3359,True
+U0431,U0431_H1,Practice Coding,Learning,Daily,1,0,8,105,0.3456,True
+U0432,U0432_H1,No Social Media after 9PM,Productivity,Daily,1,4,9,122,0.5224,True
+U0432,U0432_H2,Read 30 Minutes,Productivity,Daily,1,0,6,131,0.4991,True
+U0433,U0433_H1,Read 30 Minutes,Productivity,Daily,1,6,19,127,0.7125,True
+U0433,U0433_H2,Read Books,Learning,Daily,1,0,22,119,0.7514,True
+U0433,U0433_H3,Exercise,Health,Daily,1,3,28,124,0.7431,True
+U0434,U0434_H1,Connect with Friend,Social,Daily,1,0,52,74,0.7937,True
+U0434,U0434_H2,No Social Media after 9PM,Productivity,Daily,1,4,20,90,0.7701,True
+U0434,U0434_H3,Exercise,Health,Weekly,3,23,63,70,0.8299,True
+U0434,U0434_H4,Study,Productivity,Weekly,4,10,33,96,0.7701,True
+U0435,U0435_H1,Plan Tomorrow,Productivity,Weekly,5,6,21,75,0.7644,True
+U0435,U0435_H2,Track Expenses,Other,Daily,1,5,28,74,0.8094,True
+U0436,U0436_H1,Connect with Friend,Social,Daily,1,0,10,116,0.5115,True
+U0436,U0436_H2,No Social Media after 9PM,Productivity,Daily,1,2,8,111,0.4827,True
+U0436,U0436_H3,Gratitude Journal,Other,Daily,1,1,8,110,0.5,True
+U0436,U0436_H4,Study,Productivity,Weekly,5,0,13,94,0.4731,True
+U0437,U0437_H1,Practice Coding,Learning,Daily,1,4,31,95,0.8244,True
+U0437,U0437_H2,Study,Productivity,Weekly,3,7,28,95,0.7918,True
+U0437,U0437_H3,Watch Educational Video,Learning,Weekly,4,2,40,87,0.8159,True
+U0438,U0438_H1,Volunteer,Social,Daily,1,1,21,98,0.7277,True
+U0438,U0438_H2,Exercise,Health,Daily,1,2,46,62,0.8404,True
+U0438,U0438_H3,Plan Tomorrow,Productivity,Daily,1,3,21,111,0.7042,True
+U0438,U0438_H4,Drink 2L Water,Health,Weekly,5,1,55,67,0.8216,True
+U0438,U0438_H5,Watch Educational Video,Learning,Daily,1,8,22,97,0.7653,True
+U0439,U0439_H1,Plan Tomorrow,Productivity,Daily,1,2,8,116,0.4693,True
+U0439,U0439_H2,Gratitude Journal,Other,Daily,1,7,9,113,0.5287,True
+U0439,U0439_H3,Eat Healthy,Health,Weekly,3,3,9,104,0.4828,True
+U0439,U0439_H4,Watch Educational Video,Learning,Daily,1,1,9,119,0.5307,True
+U0440,U0440_H1,Read 30 Minutes,Productivity,Weekly,5,10,23,94,0.7548,True
+U0440,U0440_H2,Meditate,Health,Daily,1,3,34,71,0.7933,True
+U0440,U0440_H3,Read 30 Minutes,Productivity,Daily,1,0,26,70,0.7986,True
+U0440,U0440_H4,Journal Writing,Learning,Daily,1,4,61,59,0.8599,True
+U0441,U0441_H1,Read Books,Learning,Daily,1,1,51,80,0.8326,True
+U0441,U0441_H2,Meditate,Health,Daily,1,1,51,83,0.8187,True
+U0441,U0441_H3,Plan Tomorrow,Productivity,Daily,1,18,39,88,0.8061,True
+U0442,U0442_H1,Journal Writing,Learning,Weekly,3,0,34,103,0.7371,True
+U0442,U0442_H2,Read 30 Minutes,Productivity,Weekly,3,1,21,133,0.6854,True
+U0442,U0442_H3,Gratitude Journal,Other,Weekly,4,2,23,122,0.7386,True
+U0442,U0442_H4,Call Family,Social,Weekly,4,0,31,115,0.7234,True
+U0442,U0442_H5,Watch Educational Video,Learning,Daily,1,11,29,88,0.7872,True
+U0443,U0443_H1,Wake up at 6AM,Other,Daily,1,0,19,151,0.5592,True
+U0443,U0443_H2,Journal Writing,Learning,Weekly,5,3,11,151,0.5694,True
+U0443,U0443_H3,Read 30 Minutes,Productivity,Daily,1,0,10,160,0.5592,True
+U0443,U0443_H4,Meditate,Health,Daily,1,1,13,130,0.5838,True
+U0444,U0444_H1,Track Expenses,Other,Weekly,5,11,13,119,0.6158,True
+U0444,U0444_H2,Connect with Friend,Social,Daily,1,0,11,127,0.5111,True
+U0444,U0444_H3,Practice Coding,Learning,Daily,1,0,8,122,0.5403,True
+U0444,U0444_H4,No Social Media after 9PM,Productivity,Daily,1,0,17,124,0.5403,True
+U0445,U0445_H1,Exercise,Health,Daily,1,17,70,58,0.8801,True
+U0445,U0445_H2,Volunteer,Social,Daily,1,1,34,112,0.7405,True
+U0445,U0445_H3,Exercise,Health,Weekly,3,1,58,72,0.811,True
+U0446,U0446_H1,Drink 2L Water,Health,Daily,1,12,21,107,0.7117,True
+U0446,U0446_H2,Watch Educational Video,Learning,Daily,1,3,40,114,0.773,True
+U0446,U0446_H3,Study,Productivity,Weekly,5,2,30,130,0.7006,True
+U0446,U0446_H4,Wake up at 6AM,Other,Daily,1,0,24,116,0.7284,True
+U0446,U0446_H5,Watch Educational Video,Learning,Daily,1,4,25,115,0.7284,True
+U0447,U0447_H1,Journal Writing,Learning,Daily,1,0,21,92,0.7372,True
+U0447,U0447_H2,Call Family,Social,Daily,1,0,18,108,0.7179,True
+U0447,U0447_H3,Practice Coding,Learning,Daily,1,0,35,86,0.7853,True
+U0447,U0447_H4,Track Expenses,Other,Daily,1,0,25,97,0.7372,True
+U0448,U0448_H1,No Social Media after 9PM,Productivity,Daily,1,1,13,125,0.4668,True
+U0448,U0448_H2,No Social Media after 9PM,Productivity,Daily,1,0,11,110,0.4742,True
+U0448,U0448_H3,Volunteer,Social,Daily,1,1,10,107,0.4613,True
+U0448,U0448_H4,Exercise,Health,Weekly,3,0,11,114,0.524,True
+U0449,U0449_H1,Eat Healthy,Health,Daily,1,0,14,121,0.5782,True
+U0449,U0449_H2,Gratitude Journal,Other,Daily,1,1,15,139,0.5255,True
+U0450,U0450_H1,Plan Tomorrow,Productivity,Daily,1,7,29,102,0.7565,True
+U0450,U0450_H2,Journal Writing,Learning,Weekly,3,10,42,85,0.8329,True
+U0450,U0450_H3,Read Books,Learning,Daily,1,1,32,76,0.8444,True
+U0451,U0451_H1,Call Family,Social,Daily,1,1,10,143,0.5534,True
+U0451,U0451_H2,Read Books,Learning,Daily,1,0,12,143,0.5549,True
+U0452,U0452_H1,No Social Media after 9PM,Productivity,Daily,1,0,5,95,0.2613,True
+U0453,U0453_H1,Practice Coding,Learning,Weekly,4,0,11,138,0.5869,True
+U0453,U0453_H2,Read 30 Minutes,Productivity,Daily,1,2,11,134,0.5556,True
+U0454,U0454_H1,Drink 2L Water,Health,Daily,1,5,56,69,0.8414,True
+U0454,U0454_H2,No Social Media after 9PM,Productivity,Daily,1,0,20,121,0.74,True
+U0454,U0454_H3,Watch Educational Video,Learning,Daily,1,13,30,105,0.7686,True
+U0455,U0455_H1,Read Books,Learning,Daily,1,1,6,121,0.3507,True
+U0456,U0456_H1,Track Expenses,Other,Weekly,5,0,5,84,0.2437,True
+U0456,U0456_H2,Volunteer,Social,Weekly,5,0,4,89,0.2437,True
+U0457,U0457_H1,No Social Media after 9PM,Productivity,Daily,1,6,26,95,0.7532,True
+U0457,U0457_H2,Gratitude Journal,Other,Weekly,3,3,37,74,0.8101,True
+U0457,U0457_H3,Call Family,Social,Daily,1,9,60,73,0.7808,True
+U0458,U0458_H1,Drink 2L Water,Health,Weekly,5,0,4,89,0.2981,True
+U0459,U0459_H1,Call Family,Social,Daily,1,24,36,69,0.801,True
+U0459,U0459_H2,Exercise,Health,Daily,1,2,41,83,0.7524,True
+U0460,U0460_H1,Eat Healthy,Health,Daily,1,0,8,115,0.3498,True
+U0461,U0461_H1,Track Expenses,Other,Weekly,5,1,9,107,0.346,True
+U0462,U0462_H1,Track Expenses,Other,Weekly,4,0,34,102,0.7558,True
+U0462,U0462_H2,Read 30 Minutes,Productivity,Daily,1,8,23,116,0.6959,True
+U0462,U0462_H3,Practice Coding,Learning,Daily,1,12,26,112,0.7617,True
+U0462,U0462_H4,Connect with Friend,Social,Daily,1,0,27,102,0.7661,True
+U0462,U0462_H5,No Social Media after 9PM,Productivity,Daily,1,0,14,121,0.7018,True
+U0463,U0463_H1,Read Books,Learning,Weekly,4,0,12,133,0.4928,True
+U0463,U0463_H2,Sleep 8 Hours,Health,Weekly,3,0,8,135,0.5088,True
+U0463,U0463_H3,Read 30 Minutes,Productivity,Daily,1,6,12,134,0.4751,True
+U0463,U0463_H4,No Social Media after 9PM,Productivity,Weekly,3,0,11,136,0.4864,True
+U0464,U0464_H1,Gratitude Journal,Other,Daily,1,0,6,109,0.325,True
+U0464,U0464_H2,Call Family,Social,Daily,1,0,5,91,0.2611,True
+U0465,U0465_H1,Study,Productivity,Daily,1,2,20,117,0.6856,True
+U0465,U0465_H2,Read Books,Learning,Daily,1,6,30,96,0.7409,True
+U0465,U0465_H3,Call Family,Social,Daily,1,0,32,98,0.733,True
+U0465,U0465_H4,No Social Media after 9PM,Productivity,Weekly,5,3,25,115,0.6777,True
+U0466,U0466_H1,Practice Coding,Learning,Daily,1,1,15,141,0.5734,True
+U0466,U0466_H2,Call Family,Social,Daily,1,1,12,148,0.5427,True
+U0466,U0466_H3,Gratitude Journal,Other,Weekly,5,0,11,147,0.5874,True
+U0467,U0467_H1,Sleep 8 Hours,Health,Weekly,4,5,12,137,0.6024,True
+U0467,U0467_H2,Track Expenses,Other,Daily,1,2,18,133,0.5904,True
+U0467,U0467_H3,Journal Writing,Learning,Daily,1,0,12,130,0.5437,True
+U0467,U0467_H4,No Social Media after 9PM,Productivity,Daily,1,0,20,136,0.494,True
+U0468,U0468_H1,Meditate,Health,Daily,1,7,51,63,0.8532,True
+U0468,U0468_H2,Practice Coding,Learning,Daily,1,9,23,116,0.7562,True
+U0468,U0468_H3,Exercise,Health,Weekly,4,10,111,58,0.8781,True
+U0468,U0468_H4,Sleep 8 Hours,Health,Daily,1,0,43,65,0.8463,True
+U0469,U0469_H1,Track Expenses,Other,Weekly,4,0,8,126,0.3902,True
+U0470,U0470_H1,Gratitude Journal,Other,Daily,1,0,17,121,0.7444,True
+U0470,U0470_H2,Read Books,Learning,Weekly,4,1,23,130,0.7528,True
+U0470,U0470_H3,Volunteer,Social,Daily,1,8,30,111,0.7458,True
+U0470,U0470_H4,Practice Coding,Learning,Daily,1,7,18,116,0.7583,True
+U0471,U0471_H1,Watch Educational Video,Learning,Daily,1,3,44,66,0.8265,True
+U0471,U0471_H2,Gratitude Journal,Other,Daily,1,6,41,63,0.8333,True
+U0471,U0471_H3,Study,Productivity,Weekly,4,5,28,101,0.7612,True
+U0471,U0471_H4,Volunteer,Social,Daily,1,8,33,83,0.7354,True
+U0472,U0472_H1,Practice Coding,Learning,Daily,1,16,28,106,0.7458,True
+U0472,U0472_H2,Connect with Friend,Social,Weekly,4,5,26,106,0.735,True
+U0472,U0472_H3,No Social Media after 9PM,Productivity,Daily,1,5,15,130,0.6687,True
+U0472,U0472_H4,Gratitude Journal,Other,Daily,1,2,19,104,0.7396,True
+U0473,U0473_H1,Volunteer,Social,Weekly,3,18,53,71,0.8446,True
+U0473,U0473_H2,Track Expenses,Other,Daily,1,2,32,85,0.8058,True
+U0473,U0473_H3,Exercise,Health,Weekly,3,26,45,79,0.8129,True
+U0474,U0474_H1,Gratitude Journal,Other,Daily,1,6,38,95,0.7954,True
+U0474,U0474_H2,Plan Tomorrow,Productivity,Daily,1,6,23,109,0.7237,True
+U0474,U0474_H3,Practice Coding,Learning,Daily,1,0,28,97,0.7756,True
+U0475,U0475_H1,Gratitude Journal,Other,Weekly,3,0,5,116,0.2879,True
+U0476,U0476_H1,Plan Tomorrow,Productivity,Weekly,4,0,24,122,0.6999,True
+U0476,U0476_H2,Eat Healthy,Health,Weekly,3,0,27,123,0.7153,True
+U0476,U0476_H3,Wake up at 6AM,Other,Daily,1,0,19,124,0.7083,True
+U0476,U0476_H4,Watch Educational Video,Learning,Daily,1,3,18,120,0.7307,True
+U0477,U0477_H1,Study,Productivity,Weekly,5,0,20,79,0.7821,True
+U0477,U0477_H2,Practice Coding,Learning,Weekly,4,16,41,71,0.8179,True
+U0477,U0477_H3,Journal Writing,Learning,Daily,1,0,91,70,0.8196,True
+U0478,U0478_H1,Watch Educational Video,Learning,Daily,1,1,6,85,0.2796,True
+U0479,U0479_H1,Wake up at 6AM,Other,Daily,1,1,29,111,0.7371,True
+U0479,U0479_H2,Practice Coding,Learning,Weekly,5,0,22,121,0.7284,True
+U0479,U0479_H3,Journal Writing,Learning,Weekly,5,0,25,104,0.7457,True
+U0480,U0480_H1,Sleep 8 Hours,Health,Weekly,5,0,5,94,0.2795,True
+U0480,U0480_H2,Journal Writing,Learning,Daily,1,1,5,96,0.2795,True
+U0481,U0481_H1,No Social Media after 9PM,Productivity,Weekly,5,2,26,126,0.7286,True
+U0481,U0481_H2,Watch Educational Video,Learning,Daily,1,0,27,98,0.7678,True
+U0481,U0481_H3,Plan Tomorrow,Productivity,Daily,1,2,19,108,0.7591,True
+U0482,U0482_H1,Plan Tomorrow,Productivity,Daily,1,0,13,129,0.6836,True
+U0482,U0482_H2,Study,Productivity,Daily,1,3,21,110,0.7145,True
+U0482,U0482_H3,Call Family,Social,Weekly,3,2,21,103,0.7253,True
+U0483,U0483_H1,Call Family,Social,Daily,1,1,4,90,0.2631,True
+U0483,U0483_H2,Track Expenses,Other,Daily,1,0,6,89,0.2476,True
+U0484,U0484_H1,Eat Healthy,Health,Daily,1,1,30,113,0.7549,True
+U0484,U0484_H2,Read 30 Minutes,Productivity,Daily,1,0,28,134,0.6961,True
+U0484,U0484_H3,Wake up at 6AM,Other,Daily,1,4,32,111,0.7507,True
+U0485,U0485_H1,Meditate,Health,Daily,1,0,4,113,0.2733,True
+U0485,U0485_H2,Journal Writing,Learning,Daily,1,0,4,123,0.3056,True
+U0486,U0486_H1,Read Books,Learning,Weekly,4,3,29,102,0.7518,True
+U0486,U0486_H2,Eat Healthy,Health,Daily,1,25,51,60,0.8374,True
+U0486,U0486_H3,Call Family,Social,Daily,1,11,27,110,0.7417,True
+U0486,U0486_H4,Exercise,Health,Daily,1,25,49,61,0.8273,True
+U0486,U0486_H5,Gratitude Journal,Other,Daily,1,1,23,93,0.775,True
+U0487,U0487_H1,Plan Tomorrow,Productivity,Daily,1,1,35,83,0.7635,True
+U0487,U0487_H2,Plan Tomorrow,Productivity,Daily,1,5,22,92,0.7323,True
+U0488,U0488_H1,Exercise,Health,Daily,1,0,10,119,0.5168,True
+U0488,U0488_H2,Plan Tomorrow,Productivity,Daily,1,2,11,119,0.5822,True
+U0489,U0489_H1,Gratitude Journal,Other,Daily,1,2,28,105,0.7606,True
+U0489,U0489_H2,Watch Educational Video,Learning,Daily,1,5,30,98,0.7797,True
+U0489,U0489_H3,Call Family,Social,Daily,1,0,16,127,0.7034,True
+U0489,U0489_H4,Sleep 8 Hours,Health,Weekly,4,3,16,125,0.6843,True
+U0490,U0490_H1,Read Books,Learning,Daily,1,6,24,99,0.7512,True
+U0490,U0490_H2,Drink 2L Water,Health,Daily,1,7,57,72,0.8228,True
+U0490,U0490_H3,Drink 2L Water,Health,Daily,1,42,85,49,0.8846,True
+U0491,U0491_H1,Journal Writing,Learning,Weekly,3,1,4,91,0.2984,True
+U0491,U0491_H2,Volunteer,Social,Daily,1,0,5,80,0.2695,True
+U0492,U0492_H1,Read 30 Minutes,Productivity,Weekly,4,3,26,120,0.7569,True
+U0492,U0492_H2,Practice Coding,Learning,Daily,1,3,31,114,0.7514,True
+U0492,U0492_H3,Meditate,Health,Daily,1,5,17,133,0.6736,True
+U0493,U0493_H1,Call Family,Social,Daily,1,5,12,117,0.5857,True
+U0493,U0493_H2,Plan Tomorrow,Productivity,Daily,1,6,10,121,0.5122,True
+U0493,U0493_H3,Wake up at 6AM,Other,Daily,1,1,12,118,0.5507,True
+U0494,U0494_H1,Meditate,Health,Daily,1,2,9,100,0.334,True
+U0494,U0494_H2,Wake up at 6AM,Other,Weekly,4,0,7,100,0.3809,True
+U0495,U0495_H1,Read 30 Minutes,Productivity,Daily,1,0,4,101,0.2724,True
+U0495,U0495_H2,Wake up at 6AM,Other,Daily,1,0,4,104,0.2707,True
+U0496,U0496_H1,Track Expenses,Other,Daily,1,11,18,119,0.5608,True
+U0496,U0496_H2,Journal Writing,Learning,Daily,1,3,10,120,0.5354,True
+U0496,U0496_H3,Sleep 8 Hours,Health,Daily,1,2,17,112,0.559,True
+U0496,U0496_H4,Connect with Friend,Social,Daily,1,0,8,119,0.5027,True
+U0497,U0497_H1,Exercise,Health,Weekly,3,0,7,77,0.27,True
+U0497,U0497_H2,Plan Tomorrow,Productivity,Weekly,4,0,5,83,0.2786,True
+U0498,U0498_H1,Watch Educational Video,Learning,Weekly,3,2,64,69,0.8311,True
+U0498,U0498_H2,Read 30 Minutes,Productivity,Daily,1,4,25,106,0.7569,True
+U0499,U0499_H1,Plan Tomorrow,Productivity,Daily,1,1,33,135,0.7047,True
+U0499,U0499_H2,Practice Coding,Learning,Daily,1,0,18,139,0.7104,True
+U0499,U0499_H3,Connect with Friend,Social,Daily,1,0,18,129,0.719,True
+U0500,U0500_H1,Wake up at 6AM,Other,Daily,1,2,18,103,0.7352,True
+U0500,U0500_H2,Journal Writing,Learning,Daily,1,3,17,101,0.7385,True
+U0500,U0500_H3,Plan Tomorrow,Productivity,Weekly,4,0,19,112,0.7122,True
+U0500,U0500_H4,Practice Coding,Learning,Daily,1,0,28,108,0.7171,True
+U0500,U0500_H5,Volunteer,Social,Daily,1,6,25,107,0.7072,True

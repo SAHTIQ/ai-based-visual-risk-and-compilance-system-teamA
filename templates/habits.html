@@ -1,0 +1,583 @@
+{% extends 'base.html' %}
+{% block title %}Habits — QUANTA{% endblock %}
+
+{% block content %}
+<!-- ══════════════════════════════════════════════════════
+     HABITS — Analytics Hub
+     Overview  = real habit data + calendar
+     Forecast  = ML churn risk from /api/ml/habit/all/risk
+     ══════════════════════════════════════════════════════ -->
+
+<!-- Page Header -->
+<div class="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-3">
+  <div>
+    <h1 class="q-page-title mb-1">Habits</h1>
+    <p class="q-muted-text mb-0">Build consistency — see what's working and what's at risk</p>
+  </div>
+  <div class="d-flex align-items-center gap-3 flex-wrap">
+    <button class="q-btn-outline" data-bs-toggle="modal" data-bs-target="#addHabitModal">
+      <i class="bi bi-plus-lg"></i> Add Habit
+    </button>
+    <div class="q-toggle-pill" id="mode-toggle">
+      <button class="q-toggle-btn" data-mode="overview">Overview</button>
+      <button class="q-toggle-btn" data-mode="forecast">⚡ Forecast</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── OVERVIEW ─────────────────────────── -->
+<div class="q-overview-only">
+
+  <!-- KPI Row -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Consistency Score
+            <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+               title="Average completion rate across all active habits. 100% = every habit done every day."></i>
+          </div>
+          <div class="q-kpi-icon"><i class="bi bi-bullseye" style="color:#2997ff;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="habit-consistency-score">—</div>
+        <div class="q-muted-text" style="font-size:0.75rem;">Avg across active habits</div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Active Habits</div>
+          <div class="q-kpi-icon"><i class="bi bi-check2-circle" style="color:#10b981;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="habit-active-count">—</div>
+        <div class="q-muted-text" style="font-size:0.75rem;" id="habit-total-text">Total habits tracked</div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Best Streak</div>
+          <div class="q-kpi-icon"><i class="bi bi-fire" style="color:#f59e0b;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="habit-best-streak">—</div>
+        <div class="q-muted-text" style="font-size:0.75rem;" id="habit-streak-name">days</div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Current Streak</div>
+          <div class="q-kpi-icon"><i class="bi bi-lightning-charge-fill" style="color:#0071e3;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="habit-current-streak">—</div>
+        <div class="q-muted-text" style="font-size:0.75rem;" id="habit-streak-top">Top habit</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analytics Table + Calendar -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-8">
+      <div class="q-card h-100">
+        <div class="q-card-header">
+          Habit Analytics
+          <span class="q-muted-text" style="font-size:0.75rem;font-weight:400;">All active habits</span>
+        </div>
+        <div class="q-card-body p-0">
+          <div class="table-responsive">
+            <table class="table q-table mb-0">
+              <thead>
+                <tr>
+                  <th>Habit</th>
+                  <th>Category</th>
+                  <th>Frequency</th>
+                  <th>Streak
+                    <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+                       title="Consecutive days the habit has been completed."></i>
+                  </th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="habit-analytics-body">
+                <tr><td colspan="5" class="text-center q-muted-text py-4">Loading habits…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="q-card h-100">
+        <div class="q-card-header">
+          30-Day Calendar
+          <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+             title="Each dot = one day. Purple = at least one habit completed. Approximated from streak data."></i>
+        </div>
+        <div class="q-card-body">
+          <div class="q-cal-grid" id="habit-calendar"></div>
+          <div class="d-flex gap-3 mt-3">
+            <span style="color:#6e6e73;font-size:0.78rem;">
+              <span style="display:inline-block;width:12px;height:12px;background:#0071e3;border-radius:3px;margin-right:4px;vertical-align:middle;"></span>Done
+            </span>
+            <span style="color:#6e6e73;font-size:0.78rem;">
+              <span style="display:inline-block;width:12px;height:12px;background:rgba(0,0,0,0.08);border-radius:3px;margin-right:4px;vertical-align:middle;"></span>Missed
+            </span>
+          </div>
+          <hr style="border-color:rgba(0,0,0,0.06);">
+          <div class="mb-1" style="font-size:0.82rem;font-weight:600;color:#1d1d1f;">Insights</div>
+          <div id="habits-improving" class="q-muted-text" style="font-size:0.82rem;line-height:1.5;margin-bottom:8px;"></div>
+          <div id="habits-declining" class="q-muted-text" style="font-size:0.82rem;line-height:1.5;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /overview -->
+
+<!-- ─────────────────────────── FORECAST ─────────────────────────── -->
+<div class="q-forecast-only">
+
+  <!-- Forecast header -->
+  <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+    <span class="q-forecast-badge"><i class="bi bi-cpu me-1"></i>ML Forecast</span>
+    <span class="q-muted-text" style="font-size:0.82rem;">Churn risk predicted from your historical consistency patterns</span>
+    <span id="habit-auc-badge" class="q-confidence medium">Loading…</span>
+  </div>
+
+  <!-- Forecast Summary Row -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-4 col-md-6">
+      <div class="q-card p-4 text-center" style="border-top:2px solid #0071e3;">
+        <div class="q-muted-text small text-uppercase mb-2">High-Risk Habits</div>
+        <div style="font-size:2.4rem;font-weight:700;color:#ef4444;" id="forecast-high-risk">—</div>
+        <div class="q-muted-text mt-2" style="font-size:0.8rem;">Predicted to break within 7 days</div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="q-card p-4 text-center">
+        <div class="q-muted-text small text-uppercase mb-2">Model AUC Score
+          <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+             title="AUC = Area Under Curve. 1.0 = perfect prediction, 0.5 = random. Above 0.8 is excellent."></i>
+        </div>
+        <div style="font-size:2rem;font-weight:700;color:#10b981;" id="metric-auc">—</div>
+        <div class="q-muted-text mt-2" style="font-size:0.8rem;">Logistic Regression · v3 · 500-user training</div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="q-card p-4 text-center">
+        <div class="q-muted-text small text-uppercase mb-2">Habits at Low Risk</div>
+        <div style="font-size:2rem;font-weight:700;color:#10b981;" id="forecast-low-risk">—</div>
+        <div class="q-muted-text mt-2" style="font-size:0.8rem;">Stable — keep the momentum going</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Risk Matrix Chart + Forecast Table -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-6">
+      <div class="q-card h-100">
+        <div class="q-card-header">
+          Habit Risk Matrix
+          <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+             title="X-axis = current streak days. Y-axis = predicted churn probability. Bubble size = days tracked. Red = high risk."></i>
+        </div>
+        <div class="q-card-body">
+          <div style="height:320px;position:relative;">
+            <canvas id="habitRiskChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="q-card h-100">
+        <div class="q-card-header">Per-Habit Forecast</div>
+        <div class="q-card-body p-0">
+          <div class="table-responsive">
+            <table class="table q-table mb-0">
+              <thead>
+                <tr>
+                  <th>Habit</th>
+                  <th>Churn Probability
+                    <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+                       title="Probability (0–100%) the habit will be broken in the next 7 days, according to the ML model."></i>
+                  </th>
+                  <th>Risk Level</th>
+                  <th>Streak</th>
+                </tr>
+              </thead>
+              <tbody id="habit-forecast-body">
+                <tr><td colspan="4" class="text-center q-muted-text py-4">Loading predictions…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recommendations -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-6">
+      <div class="q-card h-100">
+        <div class="q-card-header" style="border-top:2px solid #10b981;">
+          <i class="bi bi-arrow-up-right me-2" style="color:#10b981;"></i>Habits to Protect
+        </div>
+        <div class="q-card-body" id="forecast-improving">
+          <div class="q-muted-text">Loading…</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="q-card h-100">
+        <div class="q-card-header" style="border-top:2px solid #ef4444;">
+          <i class="bi bi-exclamation-triangle-fill me-2" style="color:#ef4444;"></i>Habits at Risk
+        </div>
+        <div class="q-card-body" id="forecast-declining">
+          <div class="q-muted-text">Loading…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="q-muted-text mb-5" style="font-size:0.78rem;">
+    <i class="bi bi-info-circle me-1"></i>
+    Churn risk is estimated by a Logistic Regression model trained on 500 simulated users.
+    This is a <strong>statistical forecast</strong>, not a guarantee. Use it as a signal, not a verdict.
+  </p>
+
+</div><!-- /forecast -->
+
+<!-- ─────────────────────────── CRUD Records (always visible) ───────── -->
+<div class="q-card p-0 overflow-hidden mt-2">
+  <div class="q-card-header">All Habit Records</div>
+  <div class="table-responsive">
+    <table class="table q-table mb-0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Frequency</th>
+          <th>Streak</th>
+          <th>Active</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="records-table-body"></tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ─────────────────────────── Add Habit Modal ──────────────────────── -->
+<div class="modal fade" id="addHabitModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color:var(--q-text);font-weight:600;">Add / Edit Habit</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="create-form">
+          <input type="hidden" id="edit-id">
+          <div class="mb-3">
+            <label class="form-label">Habit Name</label>
+            <input type="text" class="form-control" id="field-name" placeholder="e.g. Morning Run" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" id="field-category">
+              <option value="health">Health</option>
+              <option value="productivity">Productivity</option>
+              <option value="learning">Learning</option>
+              <option value="social">Social</option>
+              <option value="wellness">Wellness</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Frequency</label>
+              <select class="form-select" id="field-frequency">
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Target Count</label>
+              <input type="number" class="form-control" id="field-target_count" value="1" min="1">
+            </div>
+          </div>
+          <div class="mb-3 mt-3">
+            <label class="form-label">Current Streak (days)</label>
+            <input type="number" class="form-control" id="field-current_streak" value="0" min="0">
+          </div>
+          <div class="mb-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="field-is_active" checked>
+              <label class="form-check-label form-label mb-0">Active habit</label>
+            </div>
+          </div>
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-primary flex-grow-1" id="submit-btn">Save Habit</button>
+            <button type="button" class="btn btn-outline-secondary" id="clear-btn" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+import { initCrudPage } from '/static/js/crud.js';
+import { apiCall } from '/static/js/api.js';
+import { initToggle, initTooltips, riskBadge, emptyState } from '/static/js/quanta-ui.js';
+import { onAuthChange } from '/static/js/auth.js';
+
+initToggle();
+initTooltips();
+
+let riskChart = null;
+let riskData  = [];
+let habitData = [];
+let forecastLoaded = false;
+
+// ── OVERVIEW: load real habit records ────────────────────────────────────
+async function loadOverview() {
+  try {
+    const res = await apiCall('/api/habits');
+    habitData = (res?.data || []).filter(h => h.is_active !== false);
+
+    const active   = habitData.filter(h => h.is_active !== false);
+    const total    = res?.data?.length || 0;
+    const streaks  = active.map(h => parseInt(h.current_streak) || 0);
+    const maxStreak = streaks.length > 0 ? Math.max(...streaks) : 0;
+    const topHabit  = active.find(h => parseInt(h.current_streak) === maxStreak);
+    const curStreak = streaks.length > 0 ? Math.max(...streaks) : 0;
+
+    // Consistency score ≈ weighted avg of streaks normalised by target
+    const consistency = active.length > 0
+      ? Math.min(100, Math.round(active.reduce((s, h) => s + Math.min((parseInt(h.current_streak)||0) / Math.max(parseInt(h.target_count)||7, 1) * 100, 100), 0) / active.length))
+      : 0;
+
+    document.getElementById('habit-consistency-score').textContent = consistency + '%';
+    document.getElementById('habit-active-count').textContent      = active.length;
+    document.getElementById('habit-total-text').textContent        = `${total} total habits`;
+    document.getElementById('habit-best-streak').textContent       = maxStreak + ' days';
+    document.getElementById('habit-streak-name').textContent       = topHabit ? topHabit.name : '';
+    document.getElementById('habit-current-streak').textContent    = curStreak + ' days';
+    document.getElementById('habit-streak-top').textContent        = topHabit ? topHabit.name : '';
+
+    // Analytics table
+    const tbody = document.getElementById('habit-analytics-body');
+    if (active.length > 0) {
+      tbody.innerHTML = active.map(h => {
+        const s = parseInt(h.current_streak) || 0;
+        const statusCls = s >= 7 ? '#10b981' : s >= 3 ? '#f59e0b' : '#ef4444';
+        const statusTxt = s >= 7 ? '🔥 Strong' : s >= 3 ? '⚠ Building' : '⭕ Weak';
+        return `<tr>
+          <td style="color:var(--q-text);font-weight:500;">${h.name}</td>
+          <td><span class="badge" style="background:var(--q-accent-dim);color:var(--q-accent-light);border-radius:6px;">${h.category||'—'}</span></td>
+          <td class="q-muted-text">${h.frequency||'daily'}</td>
+          <td style="font-weight:600;color:var(--q-text);">${s} days</td>
+          <td><span style="color:${statusCls};font-size:0.82rem;font-weight:600;">${statusTxt}</span></td>
+        </tr>`;
+      }).join('');
+    } else {
+      tbody.innerHTML = `<tr><td colspan="5" class="text-center q-muted-text py-4">No active habits — add one to get started.</td></tr>`;
+    }
+
+    // 30-day calendar (visual, based on streak heuristic)
+    renderCalendar(active);
+
+  } catch(err) {
+    console.error('Habits overview error:', err);
+  }
+}
+
+function renderCalendar(habits) {
+  const grid = document.getElementById('habit-calendar');
+  if (!grid) return;
+  const today = new Date();
+  let html = '';
+  for (let i = 29; i >= 0; i--) {
+    const day = new Date(today - i * 86400000);
+    const dayStr = day.toISOString().split('T')[0];
+    const isToday = i === 0;
+    // Heuristic: day is "done" if at least one active habit has a streak covering it
+    const daysAgo = i;
+    const anyDone = habits.some(h => parseInt(h.current_streak || 0) > daysAgo);
+    const dotClass = anyDone ? 'done' : 'missed';
+    const todayCls = isToday ? ' today' : '';
+    html += `<div class="q-cal-dot ${dotClass}${todayCls}" title="${dayStr}"></div>`;
+  }
+  grid.innerHTML = html;
+
+  // Insight text
+  const doneCount = habits.length > 0 ? Math.min(30, Math.max(...habits.map(h => parseInt(h.current_streak)||0))) : 0;
+  const pct = Math.round(doneCount / 30 * 100);
+  document.getElementById('habits-improving').innerHTML =
+    doneCount > 0 ? `<span style="color:#10b981;">✓</span> At least one habit active for ${doneCount} of the last 30 days (${pct}% consistency).` : 'Start tracking to see your calendar fill up.';
+  document.getElementById('habits-declining').innerHTML = '';
+}
+
+// ── FORECAST: load ML churn risk ─────────────────────────────────────────
+async function loadForecast() {
+  if (forecastLoaded) return;
+  forecastLoaded = true;
+
+  try {
+    const [riskRes, metricsRes] = await Promise.all([
+      apiCall('/api/ml/habit/all/risk'),
+      apiCall('/api/ml/metrics')
+    ]);
+
+    riskData = riskRes?.data || [];
+
+    // AUC badge
+    if (metricsRes?.data?.habit) {
+      const auc = parseFloat(metricsRes.data.habit.auc).toFixed(4);
+      document.getElementById('metric-auc').textContent = auc;
+      const aucBadge = document.getElementById('habit-auc-badge');
+      if (aucBadge) {
+        aucBadge.outerHTML = parseFloat(auc) >= 0.8
+          ? `<span id="habit-auc-badge" class="q-confidence high"><i class="bi bi-patch-check-fill"></i> High Confidence</span>`
+          : `<span id="habit-auc-badge" class="q-confidence medium"><i class="bi bi-patch-exclamation-fill"></i> Medium Confidence</span>`;
+      }
+    }
+
+    const high = riskData.filter(r => r.risk_level === 'High').length;
+    const low  = riskData.filter(r => r.risk_level === 'Low').length;
+    document.getElementById('forecast-high-risk').textContent = high;
+    document.getElementById('forecast-low-risk').textContent  = low;
+
+    // Per-habit forecast table
+    const ftbody = document.getElementById('habit-forecast-body');
+    if (riskData.length > 0) {
+      ftbody.innerHTML = riskData.map(r => {
+        const pct = Math.round(r.churn_probability * 100);
+        const barColor = r.risk_level === 'High' ? '#ef4444' : r.risk_level === 'Medium' ? '#f59e0b' : '#10b981';
+        return `<tr>
+          <td style="color:var(--q-text);font-weight:500;">${r.name}</td>
+          <td>
+            <div style="display:flex;align-items:center;gap:8px;">
+              <div style="flex:1;height:6px;border-radius:3px;background:var(--q-progress-track);">
+                <div style="width:${pct}%;height:100%;background:${barColor};border-radius:3px;"></div>
+              </div>
+              <span style="color:${barColor};font-weight:600;font-size:0.82rem;min-width:34px;">${pct}%</span>
+            </div>
+          </td>
+          <td>${riskBadge(r.risk_level)}</td>
+          <td style="color:var(--q-text);font-weight:600;">${r.current_streak} days</td>
+        </tr>`;
+      }).join('');
+    } else {
+      ftbody.innerHTML = `<tr><td colspan="4" class="text-center q-muted-text py-4">No habit risk data. Add active habits to see predictions.</td></tr>`;
+    }
+
+    // Improving / at-risk cards
+    const improving = riskData.filter(r => r.risk_level === 'Low').slice(0, 3);
+    const atRisk    = riskData.filter(r => r.risk_level === 'High' || r.risk_level === 'Medium').slice(0, 3);
+
+    document.getElementById('forecast-improving').innerHTML = improving.length > 0
+      ? improving.map(r => `
+          <div class="q-insight-card success mb-2">
+            <i class="bi bi-check-circle-fill q-insight-icon"></i>
+            <p class="q-insight-text"><strong>${r.name}</strong> — ${r.recommendation}</p>
+          </div>`).join('')
+      : `<div class="q-muted-text">No low-risk habits detected yet.</div>`;
+
+    document.getElementById('forecast-declining').innerHTML = atRisk.length > 0
+      ? atRisk.map(r => `
+          <div class="q-insight-card ${r.risk_level === 'High' ? 'danger' : 'warning'} mb-2">
+            <i class="bi bi-exclamation-triangle-fill q-insight-icon"></i>
+            <p class="q-insight-text"><strong>${r.name}</strong> — ${r.recommendation}</p>
+          </div>`).join('')
+      : `<div class="q-insight-card success"><i class="bi bi-check-circle-fill q-insight-icon"></i><p class="q-insight-text">No habits at high risk right now. Keep up the consistency!</p></div>`;
+
+    // Risk matrix bubble chart
+    renderRiskMatrix();
+
+  } catch(err) {
+    console.error('Habits forecast error:', err);
+    document.getElementById('habit-forecast-body').innerHTML = `<tr><td colspan="4" class="text-center q-muted-text py-4">Could not load ML predictions.</td></tr>`;
+  }
+}
+
+function renderRiskMatrix() {
+  const ctx = document.getElementById('habitRiskChart');
+  if (!ctx || riskData.length === 0) {
+    if (ctx) ctx.parentElement.innerHTML = emptyState('No habits to analyse', 'Add active habits to see the risk matrix.');
+    return;
+  }
+  if (riskChart) riskChart.destroy();
+
+  const pts = riskData.map(r => {
+    const p = r.churn_probability * 100;
+    const c = r.risk_level === 'High' ? 'rgba(239,68,68,0.7)'
+            : r.risk_level === 'Medium' ? 'rgba(245,158,11,0.7)'
+            : 'rgba(16,185,129,0.7)';
+    return { x: r.current_streak, y: p, r: Math.max(8, Math.min(r.tracked_days||10, 28)), label: r.name, bg: c, bc: c.replace('0.7','1') };
+  });
+
+  riskChart = new Chart(ctx, {
+    type: 'bubble',
+    data: {
+      datasets: [{
+        label: 'Habit Risk',
+        data: pts,
+        backgroundColor: pts.map(d => d.bg),
+        borderColor:     pts.map(d => d.bc),
+        borderWidth: 1.5,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => ` ${c.raw.label}: ${c.raw.y.toFixed(1)}% risk, ${c.raw.x}-day streak` } }
+      },
+      scales: {
+        x: { beginAtZero: true, title: { display: true, text: 'Current Streak (days)', color: '#86868b' }, ticks: { color: '#86868b' }, grid: { color: 'rgba(0,0,0,0.04)' } },
+        y: { min: 0, max: 100, title: { display: true, text: 'Churn Probability (%)', color: '#86868b' }, ticks: { color: '#86868b', callback: v => v + '%' }, grid: { color: 'rgba(0,0,0,0.04)' } }
+      }
+    }
+  });
+}
+
+// ── Toggle event ──────────────────────────────────────────────────────────
+document.addEventListener('quanta-mode-change', e => {
+  if (e.detail.mode === 'forecast') loadForecast();
+  setTimeout(() => riskChart?.resize(), 60);
+});
+
+// ── CRUD ──────────────────────────────────────────────────────────────────
+initCrudPage({
+  entityName: 'Habit',
+  apiUrl: '/api/habits',
+  fields: [
+    { name: 'name',           type: 'text'     },
+    { name: 'category',       type: 'select'   },
+    { name: 'frequency',      type: 'select'   },
+    { name: 'target_count',   type: 'number'   },
+    { name: 'current_streak', type: 'number'   },
+    { name: 'is_active',      type: 'checkbox' },
+  ],
+  tableColumns: [
+    { key: 'name'           },
+    { key: 'category'       },
+    { key: 'frequency'      },
+    { key: 'current_streak' },
+    { key: 'is_active'      },
+  ],
+  onSuccess: () => {
+    loadOverview();
+  }
+});
+
+const _unsub = onAuthChange(user => {
+  if (user) { _unsub(); loadOverview(); }
+});
+</script>
+{% endblock %}

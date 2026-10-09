@@ -1,0 +1,779 @@
+user_id,course,institution,grade,GPA,semester,year,status
+U0001,Project Management (PMP),PMI,,8.0,Semester 2,2024,In Progress
+U0001,MBA,IIM / Private B-School,,6.8,Semester 4,2024,Dropped
+U0002,Data Science Certification,Coursera,A+,8.1,Semester 1,2024,Completed
+U0002,Python for Data Science,edX,B+,6.1,Semester 3,2024,Completed
+U0003,Data Science Certification,Coursera,,5.8,Semester 2,2024,In Progress
+U0003,Project Management (PMP),PMI,,6.6,Semester 3,2024,In Progress
+U0004,Project Management (PMP),PMI,A,7.4,Semester 4,2024,Completed
+U0005,Bachelor of Technology,ABC Engineering College,,8.4,Semester 4,2024,In Progress
+U0005,B.Com,Commerce College,,6.7,Semester 3,2024,Dropped
+U0005,Bachelor of Science,XYZ University,B+,6.3,Semester 3,2024,Completed
+U0006,Bachelor of Technology,ABC Engineering College,,5.8,Semester 1,2024,In Progress
+U0007,B.Com,Commerce College,B,5.6,Semester 3,2024,Completed
+U0007,Bachelor of Science,XYZ University,B,5.7,Semester 2,2024,Completed
+U0008,MBA,IIM / Private B-School,B+,6.5,Semester 2,2024,Completed
+U0009,Data Science Certification,Coursera,A+,8.9,Semester 2,2024,Completed
+U0009,Financial Modeling,Udemy,B+,6.3,Semester 3,2024,Completed
+U0010,Financial Modeling,Udemy,A+,8.7,Semester 4,2024,Completed
+U0011,B.Com,Commerce College,O,9.7,Semester 4,2024,Completed
+U0011,Bachelor of Technology,ABC Engineering College,,5.9,Semester 3,2024,Dropped
+U0011,Bachelor of Science,XYZ University,B+,6.0,Semester 2,2024,Completed
+U0012,Project Management (PMP),PMI,,6.3,Semester 1,2024,In Progress
+U0012,Data Science Certification,Coursera,,7.4,Semester 3,2024,In Progress
+U0013,Python for Data Science,edX,,6.8,Semester 1,2024,In Progress
+U0014,B.Com,Commerce College,,6.1,Semester 2,2024,In Progress
+U0015,B.Com,Commerce College,,5.7,Semester 1,2024,In Progress
+U0015,Bachelor of Science,XYZ University,,5.1,Semester 1,2024,Dropped
+U0015,Bachelor of Technology,ABC Engineering College,,5.0,Semester 1,2024,In Progress
+U0016,B.Com,Commerce College,,5.3,Semester 4,2024,In Progress
+U0016,Bachelor of Technology,ABC Engineering College,,6.1,Semester 4,2024,Dropped
+U0016,Bachelor of Science,XYZ University,,7.8,Semester 1,2024,Dropped
+U0017,Python for Data Science,edX,,5.1,Semester 2,2024,In Progress
+U0018,MBA,IIM / Private B-School,,8.1,Semester 3,2024,In Progress
+U0019,Python for Data Science,edX,B+,6.0,Semester 4,2024,Completed
+U0019,Project Management (PMP),PMI,,6.3,Semester 2,2024,Dropped
+U0020,Data Science Certification,Coursera,A,7.4,Semester 1,2024,Completed
+U0021,Python for Data Science,edX,,8.4,Semester 3,2024,In Progress
+U0021,MBA,IIM / Private B-School,A,7.8,Semester 1,2024,Completed
+U0022,B.Com,Commerce College,,6.4,Semester 1,2024,In Progress
+U0023,Python for Data Science,edX,,5.6,Semester 1,2024,In Progress
+U0024,Financial Modeling,Udemy,,8.1,Semester 1,2024,In Progress
+U0024,Python for Data Science,edX,,6.4,Semester 2,2024,Dropped
+U0025,Python for Data Science,edX,,7.9,Semester 3,2024,In Progress
+U0025,Project Management (PMP),PMI,A,7.1,Semester 3,2024,Completed
+U0026,Project Management (PMP),PMI,,7.5,Semester 3,2024,In Progress
+U0026,MBA,IIM / Private B-School,,7.2,Semester 4,2024,Dropped
+U0027,Bachelor of Technology,ABC Engineering College,,5.5,Semester 1,2024,In Progress
+U0027,B.Com,Commerce College,,6.2,Semester 2,2024,In Progress
+U0027,Bachelor of Science,XYZ University,,5.6,Semester 2,2024,In Progress
+U0028,Project Management (PMP),PMI,O,9.2,Semester 3,2024,Completed
+U0029,Financial Modeling,Udemy,,8.0,Semester 3,2024,In Progress
+U0029,Project Management (PMP),PMI,A+,8.7,Semester 2,2024,Completed
+U0030,Bachelor of Science,XYZ University,,7.9,Semester 3,2024,In Progress
+U0030,Bachelor of Technology,ABC Engineering College,A+,8.3,Semester 2,2024,Completed
+U0031,Python for Data Science,edX,,8.4,Semester 1,2024,In Progress
+U0031,Project Management (PMP),PMI,,5.8,Semester 3,2024,In Progress
+U0032,Bachelor of Technology,ABC Engineering College,,5.0,Semester 2,2024,In Progress
+U0032,Bachelor of Science,XYZ University,,5.2,Semester 3,2024,In Progress
+U0032,B.Com,Commerce College,,5.7,Semester 4,2024,In Progress
+U0033,Bachelor of Science,XYZ University,B,5.6,Semester 3,2024,Completed
+U0034,MBA,IIM / Private B-School,,5.2,Semester 3,2024,In Progress
+U0035,Project Management (PMP),PMI,,6.4,Semester 4,2024,In Progress
+U0035,Data Science Certification,Coursera,,5.1,Semester 4,2024,In Progress
+U0036,Data Science Certification,Coursera,A,7.3,Semester 2,2024,Completed
+U0037,MBA,IIM / Private B-School,,5.6,Semester 4,2024,In Progress
+U0038,Bachelor of Science,XYZ University,,5.2,Semester 2,2024,In Progress
+U0038,Bachelor of Technology,ABC Engineering College,O,9.4,Semester 3,2024,Completed
+U0038,B.Com,Commerce College,B+,6.4,Semester 2,2024,Completed
+U0039,MBA,IIM / Private B-School,,6.1,Semester 2,2024,In Progress
+U0040,Financial Modeling,Udemy,,5.4,Semester 1,2024,In Progress
+U0041,Bachelor of Technology,ABC Engineering College,,5.3,Semester 4,2024,In Progress
+U0041,Bachelor of Science,XYZ University,,5.9,Semester 1,2024,In Progress
+U0042,MBA,IIM / Private B-School,,6.3,Semester 3,2024,In Progress
+U0043,B.Com,Commerce College,,5.2,Semester 4,2024,In Progress
+U0043,Bachelor of Technology,ABC Engineering College,,5.2,Semester 4,2024,Dropped
+U0043,Bachelor of Science,XYZ University,B+,6.0,Semester 4,2024,Completed
+U0044,Python for Data Science,edX,,8.5,Semester 3,2024,In Progress
+U0045,Data Science Certification,Coursera,,5.5,Semester 4,2024,In Progress
+U0046,Data Science Certification,Coursera,,6.0,Semester 4,2024,In Progress
+U0046,Python for Data Science,edX,,5.8,Semester 1,2024,Dropped
+U0047,MBA,IIM / Private B-School,,5.1,Semester 2,2024,In Progress
+U0048,MBA,IIM / Private B-School,A+,8.9,Semester 1,2024,Completed
+U0049,MBA,IIM / Private B-School,O,9.0,Semester 3,2024,Completed
+U0049,Project Management (PMP),PMI,,6.8,Semester 2,2024,Dropped
+U0050,Bachelor of Science,XYZ University,A,7.0,Semester 3,2024,Completed
+U0050,Bachelor of Technology,ABC Engineering College,A+,8.4,Semester 1,2024,Completed
+U0051,MBA,IIM / Private B-School,,5.2,Semester 4,2024,In Progress
+U0052,Financial Modeling,Udemy,,6.2,Semester 4,2024,In Progress
+U0053,MBA,IIM / Private B-School,,6.2,Semester 4,2024,In Progress
+U0054,Python for Data Science,edX,,6.0,Semester 2,2024,In Progress
+U0054,MBA,IIM / Private B-School,O,9.0,Semester 4,2024,Completed
+U0055,Python for Data Science,edX,,5.1,Semester 3,2024,In Progress
+U0056,Project Management (PMP),PMI,O,9.4,Semester 2,2024,Completed
+U0056,Python for Data Science,edX,B+,6.1,Semester 4,2024,Completed
+U0057,Bachelor of Technology,ABC Engineering College,,6.1,Semester 2,2024,In Progress
+U0057,Bachelor of Science,XYZ University,A+,8.3,Semester 3,2024,Completed
+U0057,B.Com,Commerce College,A,7.7,Semester 2,2024,Completed
+U0058,B.Com,Commerce College,,5.9,Semester 1,2024,In Progress
+U0059,Bachelor of Science,XYZ University,B,5.6,Semester 4,2024,Completed
+U0059,Bachelor of Technology,ABC Engineering College,,8.0,Semester 4,2024,In Progress
+U0060,Project Management (PMP),PMI,,6.7,Semester 1,2024,In Progress
+U0061,Data Science Certification,Coursera,B+,6.3,Semester 3,2024,Completed
+U0061,Financial Modeling,Udemy,,5.4,Semester 2,2024,In Progress
+U0062,Project Management (PMP),PMI,,5.3,Semester 1,2024,In Progress
+U0062,Python for Data Science,edX,,5.6,Semester 3,2024,In Progress
+U0063,Project Management (PMP),PMI,,7.7,Semester 2,2024,In Progress
+U0064,Financial Modeling,Udemy,,7.4,Semester 4,2024,In Progress
+U0065,Financial Modeling,Udemy,,5.3,Semester 4,2024,In Progress
+U0065,Data Science Certification,Coursera,,5.3,Semester 2,2024,Dropped
+U0066,Financial Modeling,Udemy,O,9.0,Semester 4,2024,Completed
+U0067,B.Com,Commerce College,A+,8.8,Semester 4,2024,Completed
+U0067,Bachelor of Science,XYZ University,,5.1,Semester 3,2024,In Progress
+U0068,Python for Data Science,edX,A,7.8,Semester 3,2024,Completed
+U0069,Bachelor of Technology,ABC Engineering College,A+,8.7,Semester 4,2024,Completed
+U0070,Financial Modeling,Udemy,,6.5,Semester 1,2024,In Progress
+U0071,Data Science Certification,Coursera,,6.2,Semester 3,2024,In Progress
+U0072,B.Com,Commerce College,A,7.0,Semester 1,2024,Completed
+U0073,Bachelor of Science,XYZ University,A,7.1,Semester 2,2024,Completed
+U0073,B.Com,Commerce College,A+,8.1,Semester 4,2024,Completed
+U0073,Bachelor of Technology,ABC Engineering College,,6.5,Semester 1,2024,In Progress
+U0074,MBA,IIM / Private B-School,A+,8.5,Semester 3,2024,Completed
+U0074,Python for Data Science,edX,,5.8,Semester 4,2024,In Progress
+U0075,Data Science Certification,Coursera,,7.1,Semester 1,2024,In Progress
+U0076,Financial Modeling,Udemy,A,7.6,Semester 3,2024,Completed
+U0076,MBA,IIM / Private B-School,A,7.0,Semester 4,2024,Completed
+U0077,Financial Modeling,Udemy,B+,6.9,Semester 4,2024,Completed
+U0078,B.Com,Commerce College,B+,6.9,Semester 2,2024,Completed
+U0078,Bachelor of Science,XYZ University,,6.4,Semester 1,2024,In Progress
+U0079,Data Science Certification,Coursera,,6.8,Semester 2,2024,In Progress
+U0080,B.Com,Commerce College,,6.7,Semester 3,2024,In Progress
+U0080,Bachelor of Technology,ABC Engineering College,B,5.8,Semester 3,2024,Completed
+U0080,Bachelor of Science,XYZ University,,5.9,Semester 3,2024,Dropped
+U0081,Data Science Certification,Coursera,O,9.3,Semester 3,2024,Completed
+U0082,Financial Modeling,Udemy,,5.2,Semester 1,2024,In Progress
+U0083,MBA,IIM / Private B-School,,5.5,Semester 4,2024,In Progress
+U0084,B.Com,Commerce College,,5.4,Semester 3,2024,In Progress
+U0085,MBA,IIM / Private B-School,,7.2,Semester 1,2024,In Progress
+U0085,Python for Data Science,edX,,5.6,Semester 3,2024,In Progress
+U0086,MBA,IIM / Private B-School,A+,8.8,Semester 4,2024,Completed
+U0087,Python for Data Science,edX,B+,6.6,Semester 3,2024,Completed
+U0087,Project Management (PMP),PMI,,9.2,Semester 4,2024,In Progress
+U0088,Financial Modeling,Udemy,,5.8,Semester 1,2024,In Progress
+U0089,Financial Modeling,Udemy,,6.1,Semester 3,2024,In Progress
+U0089,MBA,IIM / Private B-School,,6.6,Semester 2,2024,In Progress
+U0090,MBA,IIM / Private B-School,,6.6,Semester 2,2024,In Progress
+U0090,Python for Data Science,edX,B+,6.2,Semester 2,2024,Completed
+U0091,Bachelor of Technology,ABC Engineering College,,6.9,Semester 4,2024,In Progress
+U0091,Bachelor of Science,XYZ University,,5.3,Semester 1,2024,Dropped
+U0091,B.Com,Commerce College,,5.3,Semester 1,2024,In Progress
+U0092,Data Science Certification,Coursera,,5.5,Semester 2,2024,In Progress
+U0093,Python for Data Science,edX,,6.9,Semester 2,2024,In Progress
+U0094,Financial Modeling,Udemy,A,7.5,Semester 4,2024,Completed
+U0095,Data Science Certification,Coursera,B+,6.3,Semester 4,2024,Completed
+U0096,Python for Data Science,edX,,6.3,Semester 2,2024,In Progress
+U0096,Project Management (PMP),PMI,A+,8.4,Semester 4,2024,Completed
+U0097,Project Management (PMP),PMI,,6.8,Semester 3,2024,In Progress
+U0097,Python for Data Science,edX,O,9.5,Semester 3,2024,Completed
+U0098,Data Science Certification,Coursera,,5.7,Semester 3,2024,In Progress
+U0099,B.Com,Commerce College,B,5.7,Semester 4,2024,Completed
+U0100,Bachelor of Science,XYZ University,,7.9,Semester 4,2024,In Progress
+U0100,Bachelor of Technology,ABC Engineering College,,5.5,Semester 4,2024,Dropped
+U0100,B.Com,Commerce College,,6.7,Semester 4,2024,In Progress
+U0101,Bachelor of Science,XYZ University,,7.9,Semester 2,2024,In Progress
+U0101,B.Com,Commerce College,,5.2,Semester 1,2024,In Progress
+U0102,Financial Modeling,Udemy,,5.9,Semester 3,2024,In Progress
+U0103,Project Management (PMP),PMI,A,7.9,Semester 4,2024,Completed
+U0104,Data Science Certification,Coursera,O,9.3,Semester 3,2024,Completed
+U0104,Financial Modeling,Udemy,A+,8.3,Semester 1,2024,Completed
+U0105,Financial Modeling,Udemy,,5.4,Semester 2,2024,In Progress
+U0105,Data Science Certification,Coursera,,6.3,Semester 2,2024,Dropped
+U0106,MBA,IIM / Private B-School,,6.5,Semester 4,2024,In Progress
+U0106,Financial Modeling,Udemy,,5.8,Semester 1,2024,In Progress
+U0107,Data Science Certification,Coursera,,5.9,Semester 3,2024,In Progress
+U0108,Project Management (PMP),PMI,,5.6,Semester 3,2024,In Progress
+U0108,Python for Data Science,edX,,5.4,Semester 1,2024,Dropped
+U0109,Bachelor of Science,XYZ University,,7.4,Semester 4,2024,In Progress
+U0109,Bachelor of Technology,ABC Engineering College,B+,6.4,Semester 3,2024,Completed
+U0110,B.Com,Commerce College,B+,6.9,Semester 2,2024,Completed
+U0110,Bachelor of Science,XYZ University,,5.3,Semester 1,2024,In Progress
+U0110,Bachelor of Technology,ABC Engineering College,,6.2,Semester 1,2024,Dropped
+U0111,Project Management (PMP),PMI,,5.4,Semester 1,2024,In Progress
+U0112,B.Com,Commerce College,,6.0,Semester 1,2024,In Progress
+U0112,Bachelor of Science,XYZ University,,5.7,Semester 4,2024,In Progress
+U0113,MBA,IIM / Private B-School,,6.2,Semester 3,2024,In Progress
+U0113,Project Management (PMP),PMI,A,7.8,Semester 4,2024,Completed
+U0114,MBA,IIM / Private B-School,,6.3,Semester 1,2024,In Progress
+U0114,Financial Modeling,Udemy,,5.0,Semester 1,2024,In Progress
+U0115,Data Science Certification,Coursera,,5.1,Semester 1,2024,In Progress
+U0115,Financial Modeling,Udemy,,5.5,Semester 3,2024,Dropped
+U0116,Project Management (PMP),PMI,A+,8.3,Semester 4,2024,Completed
+U0117,Financial Modeling,Udemy,,5.4,Semester 2,2024,In Progress
+U0117,Data Science Certification,Coursera,B+,6.8,Semester 1,2024,Completed
+U0118,Bachelor of Technology,ABC Engineering College,A,7.5,Semester 3,2024,Completed
+U0118,B.Com,Commerce College,,5.3,Semester 2,2024,In Progress
+U0119,MBA,IIM / Private B-School,,6.0,Semester 2,2024,In Progress
+U0119,Data Science Certification,Coursera,,7.4,Semester 4,2024,In Progress
+U0120,Project Management (PMP),PMI,B+,6.4,Semester 2,2024,Completed
+U0121,Python for Data Science,edX,,6.1,Semester 3,2024,In Progress
+U0122,Project Management (PMP),PMI,,5.4,Semester 2,2024,In Progress
+U0123,Financial Modeling,Udemy,A+,8.9,Semester 1,2024,Completed
+U0123,Project Management (PMP),PMI,,6.2,Semester 1,2024,Dropped
+U0124,Bachelor of Technology,ABC Engineering College,,5.4,Semester 1,2024,In Progress
+U0125,B.Com,Commerce College,,5.8,Semester 4,2024,In Progress
+U0125,Bachelor of Technology,ABC Engineering College,,8.1,Semester 1,2024,In Progress
+U0126,MBA,IIM / Private B-School,B+,6.9,Semester 1,2024,Completed
+U0127,Financial Modeling,Udemy,A+,8.0,Semester 3,2024,Completed
+U0128,Data Science Certification,Coursera,,7.5,Semester 4,2024,In Progress
+U0128,Project Management (PMP),PMI,,6.2,Semester 2,2024,In Progress
+U0129,Bachelor of Technology,ABC Engineering College,B+,6.2,Semester 4,2024,Completed
+U0129,B.Com,Commerce College,,5.3,Semester 2,2024,In Progress
+U0129,Bachelor of Science,XYZ University,A,7.2,Semester 1,2024,Completed
+U0130,Python for Data Science,edX,,6.7,Semester 2,2024,In Progress
+U0131,MBA,IIM / Private B-School,A+,8.9,Semester 1,2024,Completed
+U0131,Financial Modeling,Udemy,,5.9,Semester 3,2024,In Progress
+U0132,Bachelor of Technology,ABC Engineering College,A+,8.6,Semester 1,2024,Completed
+U0133,Bachelor of Science,XYZ University,A+,8.8,Semester 2,2024,Completed
+U0134,MBA,IIM / Private B-School,,6.1,Semester 1,2024,In Progress
+U0135,Financial Modeling,Udemy,,6.0,Semester 3,2024,In Progress
+U0135,Python for Data Science,edX,,6.7,Semester 3,2024,In Progress
+U0136,Data Science Certification,Coursera,B+,6.6,Semester 3,2024,Completed
+U0136,Project Management (PMP),PMI,,6.5,Semester 1,2024,Dropped
+U0137,MBA,IIM / Private B-School,,5.6,Semester 2,2024,In Progress
+U0138,Project Management (PMP),PMI,O,9.2,Semester 3,2024,Completed
+U0139,Python for Data Science,edX,A+,8.4,Semester 3,2024,Completed
+U0139,Project Management (PMP),PMI,B+,6.7,Semester 4,2024,Completed
+U0140,Project Management (PMP),PMI,,5.9,Semester 3,2024,In Progress
+U0140,Data Science Certification,Coursera,,8.5,Semester 2,2024,Dropped
+U0141,MBA,IIM / Private B-School,,6.1,Semester 3,2024,In Progress
+U0142,MBA,IIM / Private B-School,,5.3,Semester 3,2024,In Progress
+U0143,MBA,IIM / Private B-School,,7.0,Semester 2,2024,In Progress
+U0144,Project Management (PMP),PMI,A,7.1,Semester 3,2024,Completed
+U0145,Data Science Certification,Coursera,A+,8.6,Semester 3,2024,Completed
+U0146,B.Com,Commerce College,,6.2,Semester 4,2024,In Progress
+U0146,Bachelor of Technology,ABC Engineering College,A+,8.8,Semester 2,2024,Completed
+U0147,Data Science Certification,Coursera,A+,8.1,Semester 4,2024,Completed
+U0148,Python for Data Science,edX,A,7.8,Semester 1,2024,Completed
+U0149,B.Com,Commerce College,,8.2,Semester 3,2024,In Progress
+U0150,MBA,IIM / Private B-School,O,9.2,Semester 3,2024,Completed
+U0151,MBA,IIM / Private B-School,,6.4,Semester 3,2024,In Progress
+U0152,Bachelor of Science,XYZ University,,6.2,Semester 1,2024,In Progress
+U0153,Bachelor of Technology,ABC Engineering College,A,7.3,Semester 4,2024,Completed
+U0154,Data Science Certification,Coursera,,5.1,Semester 2,2024,In Progress
+U0155,MBA,IIM / Private B-School,B+,6.2,Semester 1,2024,Completed
+U0156,Bachelor of Technology,ABC Engineering College,B,5.5,Semester 4,2024,Completed
+U0156,Bachelor of Science,XYZ University,,5.9,Semester 2,2024,Dropped
+U0157,MBA,IIM / Private B-School,B+,6.5,Semester 3,2024,Completed
+U0158,MBA,IIM / Private B-School,A+,8.9,Semester 3,2024,Completed
+U0158,Financial Modeling,Udemy,A,7.4,Semester 1,2024,Completed
+U0159,B.Com,Commerce College,B+,6.1,Semester 4,2024,Completed
+U0159,Bachelor of Technology,ABC Engineering College,,5.3,Semester 4,2024,Dropped
+U0160,Python for Data Science,edX,,5.3,Semester 4,2024,In Progress
+U0161,Python for Data Science,edX,A+,8.1,Semester 2,2024,Completed
+U0162,MBA,IIM / Private B-School,B+,6.5,Semester 4,2024,Completed
+U0163,Data Science Certification,Coursera,,6.6,Semester 2,2024,In Progress
+U0164,Data Science Certification,Coursera,B+,6.2,Semester 4,2024,Completed
+U0165,Bachelor of Science,XYZ University,,5.5,Semester 2,2024,In Progress
+U0165,B.Com,Commerce College,,5.2,Semester 1,2024,In Progress
+U0166,Data Science Certification,Coursera,O,9.4,Semester 2,2024,Completed
+U0166,MBA,IIM / Private B-School,A+,8.1,Semester 4,2024,Completed
+U0167,Project Management (PMP),PMI,,6.7,Semester 2,2024,In Progress
+U0168,B.Com,Commerce College,,6.8,Semester 3,2024,In Progress
+U0168,Bachelor of Science,XYZ University,,5.0,Semester 3,2024,Dropped
+U0168,Bachelor of Technology,ABC Engineering College,,5.4,Semester 3,2024,Dropped
+U0169,Bachelor of Science,XYZ University,O,9.2,Semester 1,2024,Completed
+U0169,B.Com,Commerce College,A,7.8,Semester 4,2024,Completed
+U0170,Data Science Certification,Coursera,,5.2,Semester 3,2024,In Progress
+U0170,Financial Modeling,Udemy,,6.7,Semester 3,2024,Dropped
+U0171,MBA,IIM / Private B-School,,6.8,Semester 4,2024,In Progress
+U0172,Bachelor of Technology,ABC Engineering College,A,7.9,Semester 4,2024,Completed
+U0173,Python for Data Science,edX,A,7.6,Semester 1,2024,Completed
+U0174,Bachelor of Technology,ABC Engineering College,,5.3,Semester 4,2024,In Progress
+U0174,B.Com,Commerce College,,7.9,Semester 3,2024,In Progress
+U0174,Bachelor of Science,XYZ University,,6.0,Semester 4,2024,Dropped
+U0175,Python for Data Science,edX,,8.1,Semester 3,2024,In Progress
+U0176,B.Com,Commerce College,,5.7,Semester 4,2024,In Progress
+U0176,Bachelor of Science,XYZ University,,6.0,Semester 4,2024,Dropped
+U0177,Python for Data Science,edX,A,7.9,Semester 3,2024,Completed
+U0177,Financial Modeling,Udemy,,5.7,Semester 3,2024,Dropped
+U0178,MBA,IIM / Private B-School,,7.1,Semester 1,2024,In Progress
+U0178,Python for Data Science,edX,,6.9,Semester 1,2024,In Progress
+U0179,Python for Data Science,edX,B+,6.3,Semester 2,2024,Completed
+U0180,Bachelor of Science,XYZ University,,5.5,Semester 2,2024,In Progress
+U0181,MBA,IIM / Private B-School,B+,6.9,Semester 1,2024,Completed
+U0182,Bachelor of Technology,ABC Engineering College,,5.2,Semester 4,2024,In Progress
+U0183,Project Management (PMP),PMI,A+,8.9,Semester 3,2024,Completed
+U0183,Data Science Certification,Coursera,A,7.6,Semester 1,2024,Completed
+U0184,MBA,IIM / Private B-School,,6.2,Semester 1,2024,In Progress
+U0184,Project Management (PMP),PMI,,6.1,Semester 2,2024,In Progress
+U0185,Financial Modeling,Udemy,A+,8.7,Semester 4,2024,Completed
+U0186,Project Management (PMP),PMI,,5.6,Semester 3,2024,In Progress
+U0186,Financial Modeling,Udemy,B+,6.8,Semester 2,2024,Completed
+U0187,MBA,IIM / Private B-School,,6.3,Semester 3,2024,In Progress
+U0188,MBA,IIM / Private B-School,B+,6.4,Semester 1,2024,Completed
+U0188,Financial Modeling,Udemy,A,7.3,Semester 4,2024,Completed
+U0189,Python for Data Science,edX,A+,8.6,Semester 2,2024,Completed
+U0189,Financial Modeling,Udemy,,8.7,Semester 3,2024,Dropped
+U0190,Bachelor of Science,XYZ University,,6.5,Semester 4,2024,In Progress
+U0190,B.Com,Commerce College,,5.8,Semester 3,2024,Dropped
+U0191,Bachelor of Science,XYZ University,A+,8.1,Semester 2,2024,Completed
+U0191,B.Com,Commerce College,A,7.5,Semester 2,2024,Completed
+U0192,Project Management (PMP),PMI,A+,8.3,Semester 3,2024,Completed
+U0193,Data Science Certification,Coursera,,5.9,Semester 1,2024,In Progress
+U0194,MBA,IIM / Private B-School,O,9.2,Semester 1,2024,Completed
+U0195,Project Management (PMP),PMI,,6.3,Semester 2,2024,In Progress
+U0195,MBA,IIM / Private B-School,,8.6,Semester 4,2024,Dropped
+U0196,MBA,IIM / Private B-School,,6.2,Semester 1,2024,In Progress
+U0197,Project Management (PMP),PMI,A,7.9,Semester 3,2024,Completed
+U0198,Data Science Certification,Coursera,,6.6,Semester 3,2024,In Progress
+U0199,Project Management (PMP),PMI,,6.5,Semester 1,2024,In Progress
+U0199,MBA,IIM / Private B-School,,6.5,Semester 2,2024,In Progress
+U0200,Project Management (PMP),PMI,B+,6.4,Semester 4,2024,Completed
+U0201,Financial Modeling,Udemy,,5.3,Semester 1,2024,In Progress
+U0201,MBA,IIM / Private B-School,B+,6.5,Semester 3,2024,Completed
+U0202,Bachelor of Technology,ABC Engineering College,A+,8.6,Semester 3,2024,Completed
+U0202,Bachelor of Science,XYZ University,O,9.3,Semester 2,2024,Completed
+U0203,Bachelor of Technology,ABC Engineering College,A,7.9,Semester 3,2024,Completed
+U0203,B.Com,Commerce College,,8.1,Semester 4,2024,In Progress
+U0203,Bachelor of Science,XYZ University,,6.9,Semester 1,2024,Dropped
+U0204,Data Science Certification,Coursera,O,9.2,Semester 1,2024,Completed
+U0204,MBA,IIM / Private B-School,,5.8,Semester 4,2024,In Progress
+U0205,Data Science Certification,Coursera,A+,8.7,Semester 3,2024,Completed
+U0205,Project Management (PMP),PMI,,7.8,Semester 4,2024,Dropped
+U0206,Bachelor of Science,XYZ University,,5.4,Semester 1,2024,In Progress
+U0206,Bachelor of Technology,ABC Engineering College,,7.0,Semester 2,2024,In Progress
+U0207,Bachelor of Technology,ABC Engineering College,,5.4,Semester 4,2024,In Progress
+U0207,Bachelor of Science,XYZ University,,9.3,Semester 2,2024,Dropped
+U0207,B.Com,Commerce College,B+,6.9,Semester 2,2024,Completed
+U0208,MBA,IIM / Private B-School,,5.4,Semester 2,2024,In Progress
+U0208,Data Science Certification,Coursera,,5.1,Semester 2,2024,In Progress
+U0209,B.Com,Commerce College,,7.1,Semester 1,2024,In Progress
+U0209,Bachelor of Technology,ABC Engineering College,,5.6,Semester 3,2024,In Progress
+U0209,Bachelor of Science,XYZ University,,5.3,Semester 3,2024,Dropped
+U0210,B.Com,Commerce College,O,9.6,Semester 4,2024,Completed
+U0211,Financial Modeling,Udemy,,9.3,Semester 3,2024,In Progress
+U0212,Data Science Certification,Coursera,,6.1,Semester 2,2024,In Progress
+U0213,Python for Data Science,edX,,5.1,Semester 1,2024,In Progress
+U0214,B.Com,Commerce College,,7.5,Semester 2,2024,In Progress
+U0214,Bachelor of Science,XYZ University,,5.9,Semester 2,2024,Dropped
+U0215,Financial Modeling,Udemy,,8.3,Semester 2,2024,In Progress
+U0215,MBA,IIM / Private B-School,,6.7,Semester 2,2024,In Progress
+U0216,B.Com,Commerce College,,6.0,Semester 1,2024,In Progress
+U0216,Bachelor of Technology,ABC Engineering College,A+,8.9,Semester 2,2024,Completed
+U0217,Python for Data Science,edX,,8.0,Semester 4,2024,In Progress
+U0218,Financial Modeling,Udemy,,5.3,Semester 2,2024,In Progress
+U0218,Data Science Certification,Coursera,,5.6,Semester 3,2024,Dropped
+U0219,Project Management (PMP),PMI,,5.3,Semester 4,2024,In Progress
+U0220,Financial Modeling,Udemy,,5.3,Semester 4,2024,In Progress
+U0220,MBA,IIM / Private B-School,,8.4,Semester 1,2024,Dropped
+U0221,Python for Data Science,edX,,6.2,Semester 3,2024,In Progress
+U0221,Project Management (PMP),PMI,,5.2,Semester 2,2024,In Progress
+U0222,MBA,IIM / Private B-School,,6.3,Semester 2,2024,In Progress
+U0222,Python for Data Science,edX,,6.3,Semester 1,2024,In Progress
+U0223,Bachelor of Science,XYZ University,,7.8,Semester 2,2024,In Progress
+U0224,Financial Modeling,Udemy,,6.4,Semester 3,2024,In Progress
+U0225,Data Science Certification,Coursera,,7.4,Semester 1,2024,In Progress
+U0226,Bachelor of Technology,ABC Engineering College,A,7.0,Semester 1,2024,Completed
+U0226,B.Com,Commerce College,B+,6.5,Semester 4,2024,Completed
+U0226,Bachelor of Science,XYZ University,,5.8,Semester 2,2024,In Progress
+U0227,Project Management (PMP),PMI,A+,8.4,Semester 3,2024,Completed
+U0228,Project Management (PMP),PMI,A,7.6,Semester 2,2024,Completed
+U0228,Python for Data Science,edX,,5.8,Semester 4,2024,Dropped
+U0229,Project Management (PMP),PMI,A,7.7,Semester 1,2024,Completed
+U0229,MBA,IIM / Private B-School,,5.2,Semester 1,2024,Dropped
+U0230,Project Management (PMP),PMI,,7.3,Semester 4,2024,In Progress
+U0230,Data Science Certification,Coursera,A+,8.5,Semester 3,2024,Completed
+U0231,Project Management (PMP),PMI,,5.9,Semester 2,2024,In Progress
+U0232,MBA,IIM / Private B-School,A+,8.0,Semester 4,2024,Completed
+U0233,Financial Modeling,Udemy,A,7.5,Semester 2,2024,Completed
+U0233,Data Science Certification,Coursera,,5.4,Semester 2,2024,Dropped
+U0234,Project Management (PMP),PMI,,6.0,Semester 1,2024,In Progress
+U0234,Financial Modeling,Udemy,,7.1,Semester 1,2024,Dropped
+U0235,B.Com,Commerce College,O,9.7,Semester 4,2024,Completed
+U0236,MBA,IIM / Private B-School,,8.8,Semester 4,2024,In Progress
+U0236,Data Science Certification,Coursera,A+,8.2,Semester 4,2024,Completed
+U0237,Data Science Certification,Coursera,,8.0,Semester 3,2024,In Progress
+U0238,B.Com,Commerce College,B,5.7,Semester 1,2024,Completed
+U0239,MBA,IIM / Private B-School,,7.5,Semester 1,2024,In Progress
+U0240,Bachelor of Science,XYZ University,,5.2,Semester 4,2024,In Progress
+U0241,Data Science Certification,Coursera,,5.4,Semester 4,2024,In Progress
+U0241,Python for Data Science,edX,A+,8.3,Semester 1,2024,Completed
+U0242,Python for Data Science,edX,,5.8,Semester 3,2024,In Progress
+U0243,Data Science Certification,Coursera,A+,8.3,Semester 4,2024,Completed
+U0243,MBA,IIM / Private B-School,,7.8,Semester 1,2024,In Progress
+U0244,Project Management (PMP),PMI,,5.7,Semester 3,2024,In Progress
+U0245,Bachelor of Technology,ABC Engineering College,,5.2,Semester 1,2024,In Progress
+U0245,B.Com,Commerce College,,5.7,Semester 4,2024,Dropped
+U0245,Bachelor of Science,XYZ University,,5.4,Semester 4,2024,In Progress
+U0246,Data Science Certification,Coursera,,6.9,Semester 4,2024,In Progress
+U0247,Data Science Certification,Coursera,,8.8,Semester 2,2024,In Progress
+U0248,MBA,IIM / Private B-School,,6.7,Semester 1,2024,In Progress
+U0249,Project Management (PMP),PMI,,5.8,Semester 2,2024,In Progress
+U0250,Financial Modeling,Udemy,,5.8,Semester 4,2024,In Progress
+U0250,Python for Data Science,edX,,5.4,Semester 4,2024,Dropped
+U0251,Python for Data Science,edX,,5.1,Semester 2,2024,In Progress
+U0252,MBA,IIM / Private B-School,,6.9,Semester 4,2024,In Progress
+U0253,Python for Data Science,edX,,7.2,Semester 4,2024,In Progress
+U0254,Financial Modeling,Udemy,,5.8,Semester 1,2024,In Progress
+U0254,Python for Data Science,edX,,6.3,Semester 3,2024,In Progress
+U0255,Bachelor of Technology,ABC Engineering College,,5.9,Semester 1,2024,In Progress
+U0255,Bachelor of Science,XYZ University,,8.1,Semester 2,2024,In Progress
+U0256,Python for Data Science,edX,A+,8.3,Semester 4,2024,Completed
+U0257,Project Management (PMP),PMI,B+,6.3,Semester 4,2024,Completed
+U0258,Data Science Certification,Coursera,,7.1,Semester 3,2024,In Progress
+U0259,Financial Modeling,Udemy,B+,6.5,Semester 2,2024,Completed
+U0260,Bachelor of Technology,ABC Engineering College,O,9.6,Semester 2,2024,Completed
+U0261,Financial Modeling,Udemy,,5.6,Semester 4,2024,In Progress
+U0262,MBA,IIM / Private B-School,B+,6.1,Semester 2,2024,Completed
+U0263,Bachelor of Science,XYZ University,,5.1,Semester 4,2024,In Progress
+U0263,B.Com,Commerce College,,6.4,Semester 4,2024,In Progress
+U0264,Data Science Certification,Coursera,,6.9,Semester 1,2024,In Progress
+U0264,MBA,IIM / Private B-School,,6.4,Semester 4,2024,Dropped
+U0265,Financial Modeling,Udemy,,7.7,Semester 3,2024,In Progress
+U0266,MBA,IIM / Private B-School,,7.1,Semester 2,2024,In Progress
+U0267,Financial Modeling,Udemy,,5.7,Semester 3,2024,In Progress
+U0268,Data Science Certification,Coursera,O,9.4,Semester 4,2024,Completed
+U0268,Financial Modeling,Udemy,,5.0,Semester 3,2024,Dropped
+U0269,Python for Data Science,edX,,5.1,Semester 3,2024,In Progress
+U0269,MBA,IIM / Private B-School,,6.3,Semester 2,2024,In Progress
+U0270,Financial Modeling,Udemy,A+,8.2,Semester 3,2024,Completed
+U0270,MBA,IIM / Private B-School,,6.4,Semester 1,2024,In Progress
+U0271,Data Science Certification,Coursera,,5.7,Semester 3,2024,In Progress
+U0271,Python for Data Science,edX,,6.8,Semester 1,2024,In Progress
+U0272,Python for Data Science,edX,,7.9,Semester 2,2024,In Progress
+U0273,Project Management (PMP),PMI,,6.9,Semester 4,2024,In Progress
+U0274,MBA,IIM / Private B-School,,6.9,Semester 3,2024,In Progress
+U0274,Data Science Certification,Coursera,A+,8.2,Semester 4,2024,Completed
+U0275,Python for Data Science,edX,,7.6,Semester 2,2024,In Progress
+U0276,Python for Data Science,edX,,6.1,Semester 2,2024,In Progress
+U0276,Project Management (PMP),PMI,,5.0,Semester 1,2024,In Progress
+U0277,Financial Modeling,Udemy,,5.8,Semester 2,2024,In Progress
+U0278,Project Management (PMP),PMI,B+,6.8,Semester 1,2024,Completed
+U0278,MBA,IIM / Private B-School,A,7.5,Semester 3,2024,Completed
+U0279,Data Science Certification,Coursera,,7.7,Semester 1,2024,In Progress
+U0279,Project Management (PMP),PMI,A+,8.7,Semester 4,2024,Completed
+U0280,Project Management (PMP),PMI,,5.8,Semester 2,2024,In Progress
+U0281,Data Science Certification,Coursera,A,7.3,Semester 2,2024,Completed
+U0281,MBA,IIM / Private B-School,B+,6.5,Semester 2,2024,Completed
+U0282,Financial Modeling,Udemy,,6.5,Semester 2,2024,In Progress
+U0283,Financial Modeling,Udemy,,6.6,Semester 2,2024,In Progress
+U0284,Bachelor of Science,XYZ University,,7.7,Semester 1,2024,In Progress
+U0284,B.Com,Commerce College,,5.2,Semester 3,2024,In Progress
+U0284,Bachelor of Technology,ABC Engineering College,,6.3,Semester 1,2024,In Progress
+U0285,Data Science Certification,Coursera,,6.3,Semester 3,2024,In Progress
+U0285,Project Management (PMP),PMI,,6.3,Semester 3,2024,Dropped
+U0286,Bachelor of Science,XYZ University,B+,6.5,Semester 4,2024,Completed
+U0287,Project Management (PMP),PMI,,6.6,Semester 1,2024,In Progress
+U0288,Project Management (PMP),PMI,,5.5,Semester 2,2024,In Progress
+U0288,Python for Data Science,edX,,5.3,Semester 2,2024,Dropped
+U0289,Project Management (PMP),PMI,B+,6.8,Semester 4,2024,Completed
+U0290,Data Science Certification,Coursera,,6.3,Semester 2,2024,In Progress
+U0290,Python for Data Science,edX,,7.4,Semester 1,2024,Dropped
+U0291,Bachelor of Science,XYZ University,A+,8.3,Semester 1,2024,Completed
+U0291,B.Com,Commerce College,,5.8,Semester 3,2024,In Progress
+U0291,Bachelor of Technology,ABC Engineering College,,5.6,Semester 4,2024,In Progress
+U0292,Bachelor of Science,XYZ University,,6.9,Semester 1,2024,In Progress
+U0293,MBA,IIM / Private B-School,B+,6.2,Semester 3,2024,Completed
+U0294,Data Science Certification,Coursera,,5.1,Semester 2,2024,In Progress
+U0295,B.Com,Commerce College,B+,6.7,Semester 2,2024,Completed
+U0295,Bachelor of Science,XYZ University,A+,8.1,Semester 3,2024,Completed
+U0295,Bachelor of Technology,ABC Engineering College,,5.2,Semester 1,2024,Dropped
+U0296,MBA,IIM / Private B-School,,7.1,Semester 1,2024,In Progress
+U0297,Python for Data Science,edX,,7.9,Semester 2,2024,In Progress
+U0297,Project Management (PMP),PMI,,5.9,Semester 4,2024,In Progress
+U0298,Bachelor of Technology,ABC Engineering College,,6.0,Semester 1,2024,In Progress
+U0298,B.Com,Commerce College,,5.2,Semester 4,2024,Dropped
+U0299,Data Science Certification,Coursera,,7.0,Semester 2,2024,In Progress
+U0299,Financial Modeling,Udemy,,5.6,Semester 2,2024,In Progress
+U0300,Bachelor of Science,XYZ University,O,9.1,Semester 3,2024,Completed
+U0300,Bachelor of Technology,ABC Engineering College,A,7.2,Semester 1,2024,Completed
+U0301,Bachelor of Technology,ABC Engineering College,B,5.7,Semester 3,2024,Completed
+U0301,Bachelor of Science,XYZ University,,7.2,Semester 2,2024,In Progress
+U0302,Project Management (PMP),PMI,,5.7,Semester 4,2024,In Progress
+U0302,MBA,IIM / Private B-School,O,9.5,Semester 1,2024,Completed
+U0303,Project Management (PMP),PMI,,5.4,Semester 4,2024,In Progress
+U0303,Financial Modeling,Udemy,,8.6,Semester 3,2024,In Progress
+U0304,Python for Data Science,edX,B+,6.8,Semester 3,2024,Completed
+U0304,MBA,IIM / Private B-School,,6.9,Semester 1,2024,Dropped
+U0305,MBA,IIM / Private B-School,,6.8,Semester 3,2024,In Progress
+U0306,Project Management (PMP),PMI,A+,8.3,Semester 2,2024,Completed
+U0307,Project Management (PMP),PMI,,5.7,Semester 3,2024,In Progress
+U0308,MBA,IIM / Private B-School,,5.4,Semester 4,2024,In Progress
+U0308,Project Management (PMP),PMI,,5.7,Semester 1,2024,Dropped
+U0309,Project Management (PMP),PMI,,5.5,Semester 3,2024,In Progress
+U0309,Python for Data Science,edX,,6.7,Semester 1,2024,Dropped
+U0310,Financial Modeling,Udemy,A+,8.9,Semester 3,2024,Completed
+U0311,Financial Modeling,Udemy,A,7.5,Semester 3,2024,Completed
+U0312,Bachelor of Technology,ABC Engineering College,,6.8,Semester 2,2024,In Progress
+U0312,Bachelor of Science,XYZ University,,6.1,Semester 1,2024,Dropped
+U0312,B.Com,Commerce College,,6.7,Semester 4,2024,Dropped
+U0313,B.Com,Commerce College,,5.1,Semester 2,2024,In Progress
+U0313,Bachelor of Science,XYZ University,A,7.2,Semester 3,2024,Completed
+U0314,MBA,IIM / Private B-School,A,7.4,Semester 4,2024,Completed
+U0315,Project Management (PMP),PMI,,6.1,Semester 4,2024,In Progress
+U0316,Project Management (PMP),PMI,,7.2,Semester 4,2024,In Progress
+U0317,Financial Modeling,Udemy,,7.3,Semester 3,2024,In Progress
+U0318,Bachelor of Science,XYZ University,O,9.4,Semester 4,2024,Completed
+U0318,B.Com,Commerce College,,6.8,Semester 2,2024,Dropped
+U0318,Bachelor of Technology,ABC Engineering College,,6.1,Semester 1,2024,In Progress
+U0319,Bachelor of Science,XYZ University,,5.5,Semester 4,2024,In Progress
+U0320,Project Management (PMP),PMI,,6.5,Semester 4,2024,In Progress
+U0321,MBA,IIM / Private B-School,,7.1,Semester 4,2024,In Progress
+U0321,Project Management (PMP),PMI,,6.5,Semester 1,2024,Dropped
+U0322,Financial Modeling,Udemy,B+,6.5,Semester 1,2024,Completed
+U0322,MBA,IIM / Private B-School,O,9.2,Semester 3,2024,Completed
+U0323,Data Science Certification,Coursera,A+,8.3,Semester 2,2024,Completed
+U0323,MBA,IIM / Private B-School,,6.1,Semester 4,2024,In Progress
+U0324,Python for Data Science,edX,,7.0,Semester 1,2024,In Progress
+U0325,Financial Modeling,Udemy,,6.5,Semester 3,2024,In Progress
+U0325,MBA,IIM / Private B-School,,5.9,Semester 1,2024,Dropped
+U0326,Python for Data Science,edX,,7.0,Semester 3,2024,In Progress
+U0327,Financial Modeling,Udemy,,5.6,Semester 4,2024,In Progress
+U0327,Project Management (PMP),PMI,B+,6.7,Semester 1,2024,Completed
+U0328,Project Management (PMP),PMI,,5.8,Semester 1,2024,In Progress
+U0329,MBA,IIM / Private B-School,A,7.7,Semester 4,2024,Completed
+U0330,Financial Modeling,Udemy,A,7.6,Semester 3,2024,Completed
+U0330,MBA,IIM / Private B-School,A+,8.3,Semester 4,2024,Completed
+U0331,Project Management (PMP),PMI,A,7.6,Semester 2,2024,Completed
+U0331,Python for Data Science,edX,,7.0,Semester 4,2024,In Progress
+U0332,Project Management (PMP),PMI,,5.8,Semester 3,2024,In Progress
+U0332,Financial Modeling,Udemy,,7.1,Semester 2,2024,Dropped
+U0333,Bachelor of Technology,ABC Engineering College,B,5.8,Semester 4,2024,Completed
+U0333,B.Com,Commerce College,,6.4,Semester 1,2024,In Progress
+U0334,Bachelor of Technology,ABC Engineering College,O,9.6,Semester 3,2024,Completed
+U0335,B.Com,Commerce College,,6.1,Semester 4,2024,In Progress
+U0335,Bachelor of Technology,ABC Engineering College,A,7.9,Semester 3,2024,Completed
+U0335,Bachelor of Science,XYZ University,,5.9,Semester 1,2024,Dropped
+U0336,Bachelor of Technology,ABC Engineering College,O,9.0,Semester 1,2024,Completed
+U0336,B.Com,Commerce College,,6.5,Semester 3,2024,Dropped
+U0336,Bachelor of Science,XYZ University,,5.6,Semester 3,2024,Dropped
+U0337,Python for Data Science,edX,,5.3,Semester 3,2024,In Progress
+U0337,Project Management (PMP),PMI,A,7.4,Semester 3,2024,Completed
+U0338,Python for Data Science,edX,,5.0,Semester 2,2024,In Progress
+U0339,Project Management (PMP),PMI,,5.3,Semester 4,2024,In Progress
+U0339,Python for Data Science,edX,,6.4,Semester 4,2024,Dropped
+U0340,Bachelor of Science,XYZ University,,8.9,Semester 4,2024,In Progress
+U0340,B.Com,Commerce College,,5.5,Semester 2,2024,In Progress
+U0340,Bachelor of Technology,ABC Engineering College,A+,8.3,Semester 3,2024,Completed
+U0341,MBA,IIM / Private B-School,A,7.4,Semester 2,2024,Completed
+U0342,MBA,IIM / Private B-School,,6.7,Semester 2,2024,In Progress
+U0343,B.Com,Commerce College,,7.4,Semester 1,2024,In Progress
+U0343,Bachelor of Technology,ABC Engineering College,,8.0,Semester 2,2024,Dropped
+U0344,Financial Modeling,Udemy,,6.5,Semester 1,2024,In Progress
+U0345,Project Management (PMP),PMI,,8.9,Semester 3,2024,In Progress
+U0346,MBA,IIM / Private B-School,,5.2,Semester 4,2024,In Progress
+U0347,Python for Data Science,edX,A+,8.2,Semester 4,2024,Completed
+U0348,Bachelor of Technology,ABC Engineering College,,6.1,Semester 4,2024,In Progress
+U0348,B.Com,Commerce College,,6.3,Semester 1,2024,In Progress
+U0349,Python for Data Science,edX,B+,6.6,Semester 3,2024,Completed
+U0349,MBA,IIM / Private B-School,,6.8,Semester 4,2024,Dropped
+U0350,Project Management (PMP),PMI,B+,6.3,Semester 3,2024,Completed
+U0351,Python for Data Science,edX,A,7.4,Semester 2,2024,Completed
+U0351,Financial Modeling,Udemy,A,7.6,Semester 1,2024,Completed
+U0352,Financial Modeling,Udemy,,6.1,Semester 4,2024,In Progress
+U0353,Project Management (PMP),PMI,A+,8.3,Semester 2,2024,Completed
+U0353,Python for Data Science,edX,A,7.1,Semester 3,2024,Completed
+U0354,B.Com,Commerce College,O,9.8,Semester 2,2024,Completed
+U0354,Bachelor of Science,XYZ University,A,7.0,Semester 3,2024,Completed
+U0355,Bachelor of Science,XYZ University,A,7.0,Semester 1,2024,Completed
+U0355,B.Com,Commerce College,,6.7,Semester 1,2024,In Progress
+U0355,Bachelor of Technology,ABC Engineering College,A+,8.1,Semester 4,2024,Completed
+U0356,Financial Modeling,Udemy,B+,6.4,Semester 2,2024,Completed
+U0356,Python for Data Science,edX,,5.2,Semester 4,2024,Dropped
+U0357,B.Com,Commerce College,,5.5,Semester 4,2024,In Progress
+U0357,Bachelor of Technology,ABC Engineering College,,5.9,Semester 2,2024,Dropped
+U0357,Bachelor of Science,XYZ University,,7.8,Semester 3,2024,Dropped
+U0358,Financial Modeling,Udemy,,5.9,Semester 2,2024,In Progress
+U0359,Python for Data Science,edX,A+,8.9,Semester 4,2024,Completed
+U0360,Data Science Certification,Coursera,A,7.5,Semester 1,2024,Completed
+U0360,Python for Data Science,edX,A+,8.3,Semester 2,2024,Completed
+U0361,Project Management (PMP),PMI,,5.9,Semester 1,2024,In Progress
+U0362,MBA,IIM / Private B-School,,7.8,Semester 4,2024,In Progress
+U0362,Project Management (PMP),PMI,A+,8.5,Semester 4,2024,Completed
+U0363,Data Science Certification,Coursera,,5.2,Semester 1,2024,In Progress
+U0364,Financial Modeling,Udemy,,6.1,Semester 4,2024,In Progress
+U0365,Data Science Certification,Coursera,,5.2,Semester 2,2024,In Progress
+U0365,MBA,IIM / Private B-School,A+,8.8,Semester 3,2024,Completed
+U0366,MBA,IIM / Private B-School,,6.7,Semester 4,2024,In Progress
+U0367,Python for Data Science,edX,B+,6.9,Semester 2,2024,Completed
+U0368,Financial Modeling,Udemy,,5.7,Semester 4,2024,In Progress
+U0368,MBA,IIM / Private B-School,,8.3,Semester 4,2024,In Progress
+U0369,Bachelor of Science,XYZ University,,6.0,Semester 3,2024,In Progress
+U0370,Bachelor of Technology,ABC Engineering College,O,9.7,Semester 1,2024,Completed
+U0370,B.Com,Commerce College,,6.9,Semester 4,2024,Dropped
+U0370,Bachelor of Science,XYZ University,O,9.4,Semester 3,2024,Completed
+U0371,Bachelor of Technology,ABC Engineering College,,5.8,Semester 1,2024,In Progress
+U0372,B.Com,Commerce College,,5.0,Semester 3,2024,In Progress
+U0372,Bachelor of Technology,ABC Engineering College,,5.1,Semester 1,2024,In Progress
+U0373,B.Com,Commerce College,,5.2,Semester 1,2024,In Progress
+U0373,Bachelor of Technology,ABC Engineering College,,6.1,Semester 2,2024,In Progress
+U0373,Bachelor of Science,XYZ University,A,7.9,Semester 4,2024,Completed
+U0374,MBA,IIM / Private B-School,,6.7,Semester 4,2024,In Progress
+U0375,Bachelor of Technology,ABC Engineering College,,5.6,Semester 3,2024,In Progress
+U0376,MBA,IIM / Private B-School,,8.1,Semester 2,2024,In Progress
+U0377,MBA,IIM / Private B-School,,5.5,Semester 2,2024,In Progress
+U0378,Bachelor of Technology,ABC Engineering College,,9.3,Semester 3,2024,In Progress
+U0378,Bachelor of Science,XYZ University,A,7.4,Semester 2,2024,Completed
+U0378,B.Com,Commerce College,B+,6.0,Semester 1,2024,Completed
+U0379,Python for Data Science,edX,,5.3,Semester 4,2024,In Progress
+U0380,Project Management (PMP),PMI,,7.6,Semester 3,2024,In Progress
+U0380,Data Science Certification,Coursera,B+,6.2,Semester 2,2024,Completed
+U0381,Bachelor of Science,XYZ University,,6.0,Semester 2,2024,In Progress
+U0381,Bachelor of Technology,ABC Engineering College,,5.5,Semester 2,2024,Dropped
+U0382,Project Management (PMP),PMI,A+,8.4,Semester 1,2024,Completed
+U0383,Project Management (PMP),PMI,,5.4,Semester 2,2024,In Progress
+U0384,Python for Data Science,edX,O,9.3,Semester 2,2024,Completed
+U0385,Financial Modeling,Udemy,A,7.7,Semester 1,2024,Completed
+U0385,Project Management (PMP),PMI,O,9.4,Semester 4,2024,Completed
+U0386,Project Management (PMP),PMI,,7.3,Semester 2,2024,In Progress
+U0387,Project Management (PMP),PMI,,7.7,Semester 4,2024,In Progress
+U0388,Bachelor of Science,XYZ University,,6.6,Semester 4,2024,In Progress
+U0388,B.Com,Commerce College,,6.6,Semester 2,2024,Dropped
+U0388,Bachelor of Technology,ABC Engineering College,A,7.5,Semester 1,2024,Completed
+U0389,Data Science Certification,Coursera,A,7.7,Semester 3,2024,Completed
+U0389,Python for Data Science,edX,A+,8.6,Semester 2,2024,Completed
+U0390,Financial Modeling,Udemy,,6.3,Semester 1,2024,In Progress
+U0391,Python for Data Science,edX,A,7.0,Semester 3,2024,Completed
+U0392,Financial Modeling,Udemy,B+,6.4,Semester 2,2024,Completed
+U0392,Project Management (PMP),PMI,,5.4,Semester 1,2024,In Progress
+U0393,Project Management (PMP),PMI,,8.2,Semester 1,2024,In Progress
+U0394,Financial Modeling,Udemy,,5.7,Semester 1,2024,In Progress
+U0395,MBA,IIM / Private B-School,,7.7,Semester 3,2024,In Progress
+U0396,Data Science Certification,Coursera,,5.8,Semester 3,2024,In Progress
+U0396,Python for Data Science,edX,A,7.2,Semester 2,2024,Completed
+U0397,Data Science Certification,Coursera,,6.5,Semester 1,2024,In Progress
+U0398,Project Management (PMP),PMI,B+,6.9,Semester 3,2024,Completed
+U0399,Python for Data Science,edX,,5.6,Semester 4,2024,In Progress
+U0399,Project Management (PMP),PMI,,7.0,Semester 2,2024,Dropped
+U0400,Data Science Certification,Coursera,A,7.9,Semester 3,2024,Completed
+U0401,B.Com,Commerce College,,8.9,Semester 4,2024,In Progress
+U0402,MBA,IIM / Private B-School,O,9.3,Semester 4,2024,Completed
+U0402,Financial Modeling,Udemy,A,7.4,Semester 2,2024,Completed
+U0403,Python for Data Science,edX,A+,8.5,Semester 2,2024,Completed
+U0403,Data Science Certification,Coursera,,6.2,Semester 3,2024,In Progress
+U0404,Financial Modeling,Udemy,,6.4,Semester 1,2024,In Progress
+U0405,Financial Modeling,Udemy,,7.3,Semester 3,2024,In Progress
+U0405,Data Science Certification,Coursera,,7.8,Semester 2,2024,Dropped
+U0406,Python for Data Science,edX,,6.0,Semester 4,2024,In Progress
+U0407,Data Science Certification,Coursera,A+,8.9,Semester 4,2024,Completed
+U0408,Bachelor of Technology,ABC Engineering College,,5.9,Semester 2,2024,In Progress
+U0409,Python for Data Science,edX,,5.3,Semester 4,2024,In Progress
+U0409,Financial Modeling,Udemy,A+,8.2,Semester 3,2024,Completed
+U0410,B.Com,Commerce College,,5.6,Semester 3,2024,In Progress
+U0410,Bachelor of Science,XYZ University,,5.0,Semester 2,2024,In Progress
+U0410,Bachelor of Technology,ABC Engineering College,O,9.1,Semester 4,2024,Completed
+U0411,Data Science Certification,Coursera,,6.5,Semester 2,2024,In Progress
+U0412,Financial Modeling,Udemy,,7.7,Semester 3,2024,In Progress
+U0413,Project Management (PMP),PMI,,6.2,Semester 1,2024,In Progress
+U0414,Financial Modeling,Udemy,B+,6.2,Semester 4,2024,Completed
+U0414,Python for Data Science,edX,,5.1,Semester 4,2024,Dropped
+U0415,MBA,IIM / Private B-School,A+,8.8,Semester 3,2024,Completed
+U0415,Data Science Certification,Coursera,,5.6,Semester 4,2024,In Progress
+U0416,MBA,IIM / Private B-School,B+,6.9,Semester 1,2024,Completed
+U0417,Python for Data Science,edX,,9.0,Semester 3,2024,In Progress
+U0418,Python for Data Science,edX,A,7.4,Semester 3,2024,Completed
+U0419,Data Science Certification,Coursera,,5.4,Semester 4,2024,In Progress
+U0420,Financial Modeling,Udemy,A+,8.5,Semester 1,2024,Completed
+U0421,Data Science Certification,Coursera,,7.1,Semester 1,2024,In Progress
+U0422,Python for Data Science,edX,A,7.4,Semester 4,2024,Completed
+U0423,B.Com,Commerce College,B+,6.9,Semester 4,2024,Completed
+U0424,Project Management (PMP),PMI,,5.9,Semester 3,2024,In Progress
+U0425,Bachelor of Technology,ABC Engineering College,A,7.1,Semester 4,2024,Completed
+U0425,B.Com,Commerce College,,8.6,Semester 1,2024,Dropped
+U0426,Data Science Certification,Coursera,,6.3,Semester 2,2024,In Progress
+U0427,Python for Data Science,edX,,8.3,Semester 4,2024,In Progress
+U0427,MBA,IIM / Private B-School,,5.2,Semester 2,2024,In Progress
+U0428,Project Management (PMP),PMI,,5.7,Semester 4,2024,In Progress
+U0429,Data Science Certification,Coursera,A,7.2,Semester 3,2024,Completed
+U0430,B.Com,Commerce College,O,9.1,Semester 2,2024,Completed
+U0431,Bachelor of Science,XYZ University,A+,8.3,Semester 1,2024,Completed
+U0432,Project Management (PMP),PMI,A+,8.7,Semester 4,2024,Completed
+U0433,Project Management (PMP),PMI,B+,6.7,Semester 3,2024,Completed
+U0434,Bachelor of Technology,ABC Engineering College,B+,6.6,Semester 4,2024,Completed
+U0434,B.Com,Commerce College,,6.9,Semester 1,2024,In Progress
+U0435,B.Com,Commerce College,,5.9,Semester 3,2024,In Progress
+U0435,Bachelor of Science,XYZ University,,7.1,Semester 3,2024,Dropped
+U0436,Python for Data Science,edX,A+,8.2,Semester 1,2024,Completed
+U0437,B.Com,Commerce College,O,9.6,Semester 4,2024,Completed
+U0438,Python for Data Science,edX,,5.8,Semester 1,2024,In Progress
+U0439,Project Management (PMP),PMI,,7.4,Semester 4,2024,In Progress
+U0439,Financial Modeling,Udemy,A,7.2,Semester 3,2024,Completed
+U0440,Bachelor of Technology,ABC Engineering College,,5.2,Semester 3,2024,In Progress
+U0440,B.Com,Commerce College,B+,6.3,Semester 1,2024,Completed
+U0440,Bachelor of Science,XYZ University,,6.7,Semester 3,2024,Dropped
+U0441,Bachelor of Science,XYZ University,,7.5,Semester 2,2024,In Progress
+U0442,Data Science Certification,Coursera,,6.4,Semester 1,2024,In Progress
+U0443,Data Science Certification,Coursera,,6.1,Semester 4,2024,In Progress
+U0443,Financial Modeling,Udemy,A,7.3,Semester 2,2024,Completed
+U0444,MBA,IIM / Private B-School,,5.8,Semester 3,2024,In Progress
+U0445,Project Management (PMP),PMI,,7.4,Semester 2,2024,In Progress
+U0445,Financial Modeling,Udemy,,6.8,Semester 4,2024,Dropped
+U0446,Python for Data Science,edX,,7.0,Semester 2,2024,In Progress
+U0447,Python for Data Science,edX,A+,8.1,Semester 3,2024,Completed
+U0448,Financial Modeling,Udemy,A,7.2,Semester 2,2024,Completed
+U0448,Python for Data Science,edX,,7.6,Semester 2,2024,Dropped
+U0449,Data Science Certification,Coursera,A+,8.3,Semester 4,2024,Completed
+U0449,Financial Modeling,Udemy,,6.1,Semester 2,2024,Dropped
+U0450,Bachelor of Science,XYZ University,,5.5,Semester 3,2024,In Progress
+U0450,B.Com,Commerce College,A+,8.4,Semester 2,2024,Completed
+U0450,Bachelor of Technology,ABC Engineering College,,9.4,Semester 4,2024,Dropped
+U0451,MBA,IIM / Private B-School,,6.0,Semester 3,2024,In Progress
+U0452,Project Management (PMP),PMI,,5.2,Semester 2,2024,In Progress
+U0452,Python for Data Science,edX,A,7.8,Semester 2,2024,Completed
+U0453,Financial Modeling,Udemy,B+,6.6,Semester 1,2024,Completed
+U0454,Python for Data Science,edX,,9.3,Semester 3,2024,In Progress
+U0455,Bachelor of Science,XYZ University,B+,6.0,Semester 3,2024,Completed
+U0455,Bachelor of Technology,ABC Engineering College,,5.8,Semester 3,2024,Dropped
+U0455,B.Com,Commerce College,,5.6,Semester 4,2024,Dropped
+U0456,Financial Modeling,Udemy,,5.2,Semester 1,2024,In Progress
+U0457,B.Com,Commerce College,B+,6.3,Semester 1,2024,Completed
+U0457,Bachelor of Technology,ABC Engineering College,,5.8,Semester 3,2024,In Progress
+U0458,Python for Data Science,edX,,5.3,Semester 1,2024,In Progress
+U0458,Data Science Certification,Coursera,,5.3,Semester 1,2024,Dropped
+U0459,Bachelor of Science,XYZ University,,6.5,Semester 1,2024,In Progress
+U0459,B.Com,Commerce College,A+,8.1,Semester 3,2024,Completed
+U0460,B.Com,Commerce College,A+,8.5,Semester 3,2024,Completed
+U0460,Bachelor of Technology,ABC Engineering College,O,9.3,Semester 3,2024,Completed
+U0460,Bachelor of Science,XYZ University,,5.9,Semester 2,2024,In Progress
+U0461,B.Com,Commerce College,,5.1,Semester 2,2024,In Progress
+U0462,Project Management (PMP),PMI,,7.3,Semester 2,2024,In Progress
+U0463,Project Management (PMP),PMI,O,9.1,Semester 4,2024,Completed
+U0464,Data Science Certification,Coursera,,6.3,Semester 2,2024,In Progress
+U0464,MBA,IIM / Private B-School,A,7.8,Semester 3,2024,Completed
+U0465,Python for Data Science,edX,A,7.3,Semester 2,2024,Completed
+U0466,Project Management (PMP),PMI,,6.2,Semester 1,2024,In Progress
+U0466,MBA,IIM / Private B-School,,6.2,Semester 4,2024,Dropped
+U0467,Python for Data Science,edX,A,7.3,Semester 2,2024,Completed
+U0468,Data Science Certification,Coursera,,7.6,Semester 3,2024,In Progress
+U0468,MBA,IIM / Private B-School,B+,6.9,Semester 1,2024,Completed
+U0469,Bachelor of Science,XYZ University,,5.9,Semester 1,2024,In Progress
+U0470,MBA,IIM / Private B-School,,6.3,Semester 2,2024,In Progress
+U0470,Financial Modeling,Udemy,O,9.5,Semester 2,2024,Completed
+U0471,B.Com,Commerce College,,5.1,Semester 3,2024,In Progress
+U0471,Bachelor of Science,XYZ University,,5.8,Semester 2,2024,In Progress
+U0472,Financial Modeling,Udemy,A+,8.2,Semester 2,2024,Completed
+U0473,Bachelor of Science,XYZ University,B+,6.0,Semester 3,2024,Completed
+U0474,Python for Data Science,edX,,6.3,Semester 4,2024,In Progress
+U0475,Data Science Certification,Coursera,,6.5,Semester 2,2024,In Progress
+U0475,Financial Modeling,Udemy,,5.3,Semester 1,2024,Dropped
+U0476,Financial Modeling,Udemy,,6.6,Semester 2,2024,In Progress
+U0476,Python for Data Science,edX,,7.8,Semester 4,2024,In Progress
+U0477,Bachelor of Science,XYZ University,A,7.9,Semester 4,2024,Completed
+U0477,Bachelor of Technology,ABC Engineering College,B+,6.9,Semester 4,2024,Completed
+U0477,B.Com,Commerce College,,6.2,Semester 4,2024,In Progress
+U0478,Financial Modeling,Udemy,,6.6,Semester 1,2024,In Progress
+U0478,Python for Data Science,edX,,6.0,Semester 4,2024,Dropped
+U0479,Python for Data Science,edX,O,9.5,Semester 1,2024,Completed
+U0479,Project Management (PMP),PMI,B+,6.6,Semester 1,2024,Completed
+U0480,MBA,IIM / Private B-School,O,9.0,Semester 3,2024,Completed
+U0481,Project Management (PMP),PMI,A,7.5,Semester 2,2024,Completed
+U0481,Python for Data Science,edX,,6.2,Semester 4,2024,Dropped
+U0482,Financial Modeling,Udemy,,5.8,Semester 3,2024,In Progress
+U0483,Project Management (PMP),PMI,,6.1,Semester 4,2024,In Progress
+U0484,Python for Data Science,edX,,6.0,Semester 2,2024,In Progress
+U0485,Financial Modeling,Udemy,A+,8.9,Semester 2,2024,Completed
+U0485,MBA,IIM / Private B-School,,5.9,Semester 1,2024,Dropped
+U0486,MBA,IIM / Private B-School,,5.7,Semester 1,2024,In Progress
+U0487,B.Com,Commerce College,,5.4,Semester 3,2024,In Progress
+U0487,Bachelor of Technology,ABC Engineering College,,6.6,Semester 1,2024,In Progress
+U0488,Data Science Certification,Coursera,A,7.5,Semester 1,2024,Completed
+U0489,Python for Data Science,edX,B+,6.7,Semester 2,2024,Completed
+U0490,Financial Modeling,Udemy,,7.9,Semester 4,2024,In Progress
+U0490,Data Science Certification,Coursera,,7.4,Semester 3,2024,In Progress
+U0491,Project Management (PMP),PMI,,7.0,Semester 2,2024,In Progress
+U0492,Python for Data Science,edX,,5.8,Semester 2,2024,In Progress
+U0492,Project Management (PMP),PMI,,5.2,Semester 2,2024,Dropped
+U0493,Data Science Certification,Coursera,,5.1,Semester 1,2024,In Progress
+U0493,Financial Modeling,Udemy,A+,8.3,Semester 1,2024,Completed
+U0494,Bachelor of Technology,ABC Engineering College,A,7.5,Semester 2,2024,Completed
+U0494,B.Com,Commerce College,,5.8,Semester 1,2024,In Progress
+U0494,Bachelor of Science,XYZ University,A+,8.9,Semester 1,2024,Completed
+U0495,Data Science Certification,Coursera,,6.6,Semester 3,2024,In Progress
+U0496,Python for Data Science,edX,B+,6.3,Semester 2,2024,Completed
+U0496,Data Science Certification,Coursera,A,7.6,Semester 1,2024,Completed
+U0497,MBA,IIM / Private B-School,B+,6.5,Semester 4,2024,Completed
+U0497,Project Management (PMP),PMI,,6.4,Semester 1,2024,In Progress
+U0498,Bachelor of Technology,ABC Engineering College,A,7.7,Semester 1,2024,Completed
+U0499,MBA,IIM / Private B-School,A+,8.0,Semester 4,2024,Completed
+U0499,Data Science Certification,Coursera,,5.1,Semester 1,2024,Dropped
+U0500,Financial Modeling,Udemy,B+,6.5,Semester 2,2024,Completed

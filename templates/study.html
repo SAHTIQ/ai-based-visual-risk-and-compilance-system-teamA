@@ -1,0 +1,624 @@
+{% extends 'base.html' %}
+{% block title %}Study & Focus — QUANTA{% endblock %}
+
+{% block content %}
+<!-- ══════════════════════════════════════════════════════
+     STUDY & FOCUS — Analytics Hub
+     Overview  = real study records from /api/study_records
+     Forecast  = ML 7-day projection from /api/ml/study/forecast
+     ══════════════════════════════════════════════════════ -->
+
+<!-- Page Header -->
+<div class="d-flex justify-content-between align-items-start mb-4 flex-wrap gap-3">
+  <div>
+    <h1 class="q-page-title mb-1">Study & Focus</h1>
+    <p class="q-muted-text mb-0">Track your focus, study sessions, and cognitive output</p>
+  </div>
+  <div class="d-flex align-items-center gap-3 flex-wrap">
+    <button class="q-btn-outline" data-bs-toggle="modal" data-bs-target="#addStudyModal">
+      <i class="bi bi-plus-lg"></i> Log Session
+    </button>
+    <div class="q-toggle-pill" id="mode-toggle">
+      <button class="q-toggle-btn" data-mode="overview">Overview</button>
+      <button class="q-toggle-btn" data-mode="forecast">⚡ Forecast</button>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── OVERVIEW ─────────────────────────── -->
+<div class="q-overview-only">
+
+  <!-- KPI Row -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Productivity Score
+            <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+               title="Score 0–100 based on total hours studied vs. an 8 hr/day benchmark. Higher = more productive."></i>
+          </div>
+          <div class="q-kpi-icon"><i class="bi bi-lightning-charge-fill" style="color:#2997ff;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="prod-score">—</div>
+        <div id="prod-score-bar" class="q-progress mt-2" style="height:4px;">
+          <div class="q-progress-fill" id="prod-score-fill" style="width:0%;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Hours This Month</div>
+          <div class="q-kpi-icon"><i class="bi bi-clock-fill" style="color:#06b6d4;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="prod-hours">—</div>
+        <div id="prod-hours-sub" class="q-muted-text" style="font-size:0.75rem;">total study hours</div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Sessions This Month</div>
+          <div class="q-kpi-icon"><i class="bi bi-journal-bookmark-fill" style="color:#10b981;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="prod-sessions">—</div>
+        <div id="prod-sessions-sub" class="q-muted-text" style="font-size:0.75rem;">study sessions logged</div>
+      </div>
+    </div>
+    <div class="col-xl-3 col-md-6">
+      <div class="q-kpi-card">
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div class="q-kpi-label">Avg Session</div>
+          <div class="q-kpi-icon"><i class="bi bi-stopwatch-fill" style="color:#f59e0b;"></i></div>
+        </div>
+        <div class="q-kpi-value" id="prod-avg-session">—</div>
+        <div class="q-muted-text" style="font-size:0.75rem;">minutes per session</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Row -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-8">
+      <div class="q-card h-100">
+        <div class="q-card-header">
+          Monthly Output Trend
+          <span class="q-muted-text" style="font-size:0.75rem;font-weight:400;">Daily study hours</span>
+        </div>
+        <div class="q-card-body">
+          <div style="height:280px;position:relative;">
+            <canvas id="studyTrendOverviewChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="q-card h-100">
+        <div class="q-card-header">
+          By Subject
+          <span class="q-muted-text" style="font-size:0.75rem;font-weight:400;">Hours this month</span>
+        </div>
+        <div class="q-card-body">
+          <div style="height:200px;position:relative;">
+            <canvas id="studySubjectChart"></canvas>
+          </div>
+          <div id="subject-legend" class="mt-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Sessions -->
+  <div class="row g-3 mb-4">
+    <div class="col-12">
+      <div class="q-card">
+        <div class="q-card-header">Recent Study Sessions</div>
+        <div class="q-card-body p-0">
+          <div class="table-responsive">
+            <table class="table q-table mb-0">
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Subject</th>
+                  <th>Duration</th>
+                  <th>Productivity</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="recent-study-list">
+                <tr><td colspan="5" class="text-center q-muted-text py-4">Loading…</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /overview -->
+
+<!-- ─────────────────────────── FORECAST ─────────────────────────── -->
+<div class="q-forecast-only">
+
+  <!-- Forecast header -->
+  <div class="d-flex align-items-center gap-3 mb-4 flex-wrap">
+    <span class="q-forecast-badge"><i class="bi bi-cpu me-1"></i>ML Forecast</span>
+    <span class="q-muted-text" style="font-size:0.82rem;">Based on your historical study patterns</span>
+    <span id="study-confidence-badge" class="q-confidence medium">Loading…</span>
+  </div>
+
+  <!-- Hero prediction row -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-4 col-md-6">
+      <div class="q-card p-4 text-center" style="border-top:2px solid #0071e3;">
+        <div class="q-muted-text small text-uppercase mb-2">7-Day Study Projection</div>
+        <div style="font-size:2.4rem;font-weight:700;color:#2997ff;letter-spacing:-0.03em;" id="ai-forecast-total">—</div>
+        <div class="q-muted-text mt-2" style="font-size:0.8rem;" id="ai-forecast-hrs">— hrs predicted this week</div>
+        <div class="mt-3" id="study-trend-badge"></div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="q-card p-4 text-center">
+        <div class="q-muted-text small text-uppercase mb-2">Model Accuracy (R²)
+          <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip"
+             title="R² of 1.0 = perfect. 0.87 means the model explains 87% of variance in study output."></i>
+        </div>
+        <div style="font-size:2rem;font-weight:700;color:#10b981;" id="metric-r2">—</div>
+        <div class="q-muted-text mt-2" style="font-size:0.8rem;">XGBoost · v3 · 500-user training</div>
+      </div>
+    </div>
+    <div class="col-xl-4 col-md-6">
+      <div class="q-card p-4 text-center">
+        <div class="q-muted-text small text-uppercase mb-2">Forecast Error (RMSE)</div>
+        <div style="font-size:2rem;font-weight:700;color:#f59e0b;" id="metric-rmse">±—</div>
+        <div class="q-muted-text mt-2" style="font-size:0.8rem;">Minutes deviation per 7-day window</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trajectory + Insight -->
+  <div class="row g-3 mb-4">
+    <div class="col-xl-8">
+      <div class="q-card h-100">
+        <div class="q-card-header">
+          Historical vs Predicted
+          <span class="q-muted-text" style="font-size:0.75rem;font-weight:400;">21-day history + 7-day forecast</span>
+        </div>
+        <div class="q-card-body">
+          <div style="height:300px;position:relative;">
+            <canvas id="studyTrajectoryChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="q-card h-100">
+        <div class="q-card-header">AI Insight</div>
+        <div class="q-card-body">
+          <div id="study-insight-container" class="q-empty">
+            <div class="q-empty-icon"><i class="bi bi-cpu"></i></div>
+            <div class="q-empty-title">Running model…</div>
+          </div>
+          <hr style="border-color:rgba(0,0,0,0.06);margin:16px 0;">
+          <div class="q-muted-text" style="font-size:0.78rem;font-weight:600;margin-bottom:8px;">Trend Direction</div>
+          <div id="ai-trend"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Activity Heatmap -->
+  <div class="row g-3 mb-4">
+    <div class="col-12">
+      <div class="q-card">
+        <div class="q-card-header">
+          Study Activity Heatmap
+          <span class="q-muted-text" style="font-size:0.75rem;font-weight:400;">Last 30 days intensity</span>
+        </div>
+        <div class="q-card-body">
+          <div style="height:220px;position:relative;">
+            <canvas id="studyHeatmapChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="q-muted-text mb-5" style="font-size:0.78rem;">
+    <i class="bi bi-info-circle me-1"></i>
+    Productivity forecasts use an XGBoost model that considers study history, fitness activity, and cross-domain momentum.
+    This is a <strong>statistical projection</strong> — use it to set realistic weekly goals.
+  </p>
+
+</div><!-- /forecast -->
+
+<!-- ─────────────────────────── CRUD (always visible) ──────────────── -->
+<div class="mt-2">
+  <div class="q-card p-0 overflow-hidden">
+    <div class="d-flex justify-content-between align-items-center px-4 py-3" style="border-bottom:1px solid rgba(0,0,0,0.06);">
+      <span style="font-weight:600;color:var(--q-text);">Study Records</span>
+      <button class="q-btn-outline" data-bs-toggle="modal" data-bs-target="#addStudyModal">
+        <i class="bi bi-plus-lg"></i> Log Session
+      </button>
+    </div>
+    <div class="table-responsive">
+      <table class="table q-table mb-0">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Subject</th>
+            <th>Duration (mins)</th>
+            <th>Productivity</th>
+            <th>Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="records-table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── Add Study Modal ───────────────────── -->
+<div class="modal fade" id="addStudyModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color:var(--q-text);font-weight:600;">Log Study Session</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <form id="create-form">
+          <input type="hidden" id="edit-id">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control" id="field-date" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Subject / Topic</label>
+              <input type="text" class="form-control" id="field-subject" placeholder="e.g. Math, Python" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Duration (minutes)</label>
+              <input type="number" class="form-control" id="field-duration_minutes" placeholder="e.g. 90" min="1" required>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Productivity (1–10)
+                <i class="bi bi-info-circle q-info-icon" data-bs-toggle="tooltip" title="How productive was this session? 1=poor, 10=excellent."></i>
+              </label>
+              <input type="number" class="form-control" id="field-productivity_score" min="1" max="10" placeholder="1–10">
+            </div>
+            <div class="col-12">
+              <label class="form-label">Notes</label>
+              <textarea class="form-control" id="field-notes" rows="2" placeholder="Optional notes about this session"></textarea>
+            </div>
+          </div>
+          <div class="d-flex gap-2 mt-4">
+            <button type="submit" class="btn btn-primary flex-grow-1" id="submit-btn">Save Session</button>
+            <button type="button" class="btn btn-outline-secondary" id="clear-btn" data-bs-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module">
+import { initCrudPage } from '/static/js/crud.js';
+import { apiCall } from '/static/js/api.js';
+import { initToggle, initTooltips, renderInsights, emptyState, CAT_COLORS, fmtHrs } from '/static/js/quanta-ui.js';
+import { onAuthChange } from '/static/js/auth.js';
+
+initToggle();
+initTooltips();
+
+let trajChart = null, hmChart = null, trendChart = null, subjectChart = null;
+let forecastLoaded = false;
+
+// ── OVERVIEW: real study records ─────────────────────────────────────────
+async function loadOverview() {
+  try {
+    const res = await apiCall('/api/study');
+    const records = res?.data || [];
+
+    const now    = new Date();
+    const month0 = new Date(now.getFullYear(), now.getMonth(), 1);
+    const thisMonth = records.filter(r => r.date && new Date(r.date) >= month0);
+    const totalMins = thisMonth.reduce((s, r) => s + parseFloat(r.duration_minutes || 0), 0);
+    const totalHrs  = totalMins / 60;
+    const sessions  = thisMonth.length;
+    const avgMins   = sessions > 0 ? Math.round(totalMins / sessions) : 0;
+
+    // Productivity score: hrs / (working days in month * 2 hrs) * 100, capped 100
+    const workDays = Math.max(1, now.getDate());
+    const score    = Math.min(100, Math.round(totalHrs / (workDays * 2) * 100));
+
+    document.getElementById('prod-score').textContent       = score + ' / 100';
+    document.getElementById('prod-score-fill').style.width  = score + '%';
+    document.getElementById('prod-hours').textContent       = totalHrs.toFixed(1) + 'h';
+    document.getElementById('prod-sessions').textContent    = sessions;
+    document.getElementById('prod-avg-session').textContent = avgMins + 'm';
+
+    // Daily trend chart
+    const dayMap = {};
+    records.forEach(r => {
+      if (!r.date) return;
+      dayMap[r.date] = (dayMap[r.date] || 0) + parseFloat(r.duration_minutes || 0) / 60;
+    });
+    const sorted = Object.entries(dayMap).sort((a,b) => a[0].localeCompare(b[0]));
+    renderTrendChart(sorted);
+
+    // Subject breakdown
+    const subMap = {};
+    thisMonth.forEach(r => {
+      const s = r.subject || 'General';
+      subMap[s] = (subMap[s] || 0) + parseFloat(r.duration_minutes || 0) / 60;
+    });
+    const subEntries = Object.entries(subMap).sort((a,b) => b[1]-a[1]);
+    renderSubjectChart(subEntries);
+
+    // Recent sessions table
+    const recent = [...records].sort((a,b) => new Date(b.date)-new Date(a.date)).slice(0, 8);
+    const tbody = document.getElementById('recent-study-list');
+    if (recent.length > 0) {
+      tbody.innerHTML = recent.map(r => {
+        const mins = parseFloat(r.duration_minutes || 0);
+        const prod = r.productivity_score || '—';
+        const bar = prod !== '—' ? `<div style="display:flex;align-items:center;gap:6px;"><div style="width:60px;height:5px;background:rgba(0,0,0,0.08);border-radius:3px;"><div style="width:${prod*10}%;height:100%;background:#0071e3;border-radius:3px;"></div></div><span style="font-size:0.78rem;color:#6e6e73;">${prod}/10</span></div>` : '—';
+        return `<tr>
+          <td class="q-muted-text" style="font-size:0.82rem;">${r.date}</td>
+          <td style="color:var(--q-text);font-weight:500;">${r.subject || '—'}</td>
+          <td><span style="font-weight:600;color:#2997ff;">${fmtHrs(mins)}</span></td>
+          <td>${bar}</td>
+          <td class="q-muted-text" style="font-size:0.82rem;">${r.notes || '—'}</td>
+        </tr>`;
+      }).join('');
+    } else {
+      tbody.innerHTML = `<tr><td colspan="5" class="text-center q-muted-text py-4">No study sessions yet — log one above.</td></tr>`;
+    }
+
+  } catch(err) {
+    console.error('Study overview error:', err);
+  }
+}
+
+function renderTrendChart(dailyData) {
+  const ctx = document.getElementById('studyTrendOverviewChart');
+  if (!ctx) return;
+  if (trendChart) trendChart.destroy();
+
+  if (!dailyData.length) {
+    ctx.parentElement.innerHTML = emptyState('No study data yet', 'Log a session to see your trend.');
+    return;
+  }
+
+  const labels = dailyData.map(([d]) => d);
+  const data   = dailyData.map(([,v]) => v);
+  const rolling7 = data.map((_,i) => {
+    const sl = data.slice(Math.max(0,i-6), i+1);
+    return sl.reduce((s,v)=>s+v,0)/sl.length;
+  });
+
+  trendChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [
+        { label: 'Daily Hours', data, backgroundColor: 'rgba(0,113,227,0.45)', borderColor: '#0071e3', borderWidth:1, borderRadius:4, order:2 },
+        { label: '7-Day Avg', data: rolling7, type:'line', borderColor:'#2997ff', backgroundColor:'transparent', borderWidth:2, tension:0.4, pointRadius:0, order:1 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode:'index', intersect:false },
+      plugins: { legend: { position:'top' } },
+      scales: {
+        x: { ticks: { maxTicksLimit:12, color:'#86868b' }, grid: { color:'rgba(0,0,0,0.04)' } },
+        y: { beginAtZero:true, ticks: { color:'#86868b', callback: v => v+'h' }, grid: { color:'rgba(0,0,0,0.04)' } }
+      }
+    }
+  });
+}
+
+function renderSubjectChart(entries) {
+  const ctx = document.getElementById('studySubjectChart');
+  if (!ctx) return;
+  if (subjectChart) subjectChart.destroy();
+
+  if (!entries.length) {
+    ctx.parentElement.innerHTML = emptyState('No subjects yet', '');
+    return;
+  }
+
+  const labels = entries.map(([s]) => s);
+  const data   = entries.map(([,v]) => parseFloat(v.toFixed(2)));
+  const total  = data.reduce((s,v)=>s+v,0);
+
+  subjectChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: { labels, datasets: [{ data, backgroundColor: CAT_COLORS.slice(0,data.length), borderWidth:2, borderColor:'#ffffff', hoverOffset:6 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '68%',
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.raw.toFixed(1)}h (${(c.raw/total*100).toFixed(1)}%)` } } }
+    }
+  });
+
+  const leg = document.getElementById('subject-legend');
+  if (leg) {
+    leg.innerHTML = entries.slice(0,5).map(([s,v],i) => `
+      <div class="d-flex justify-content-between mb-1" style="font-size:0.8rem;">
+        <span><span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${CAT_COLORS[i]};margin-right:6px;vertical-align:middle;"></span>${s}</span>
+        <span class="q-muted-text">${v.toFixed(1)}h</span>
+      </div>`).join('');
+  }
+}
+
+// ── FORECAST: ML 7-day projection ────────────────────────────────────────
+async function loadForecast() {
+  if (forecastLoaded) return;
+  forecastLoaded = true;
+
+  try {
+    const [metricsRes, forecastRes] = await Promise.all([
+      apiCall('/api/ml/metrics'),
+      apiCall('/api/ml/study/forecast')
+    ]);
+
+    if (metricsRes?.data?.study) {
+      const m  = metricsRes.data.study;
+      const r2 = parseFloat(m.r2);
+      document.getElementById('metric-r2').textContent   = r2.toFixed(4);
+      document.getElementById('metric-rmse').textContent = '±' + Math.round(m.rmse) + 'm';
+      const badge = document.getElementById('study-confidence-badge');
+      if (badge) {
+        badge.outerHTML = r2 >= 0.8
+          ? `<span id="study-confidence-badge" class="q-confidence high"><i class="bi bi-patch-check-fill"></i> High Confidence</span>`
+          : `<span id="study-confidence-badge" class="q-confidence medium"><i class="bi bi-patch-exclamation-fill"></i> Medium Confidence</span>`;
+      }
+    }
+
+    if (forecastRes?.data) {
+      const fd   = forecastRes.data;
+      const mins = fd.projected_7d_study_mins || 0;
+      const hrs  = (mins / 60).toFixed(1);
+
+      document.getElementById('ai-forecast-total').textContent  = Math.round(mins) + ' min';
+      document.getElementById('ai-forecast-hrs').textContent    = hrs + ' hrs predicted this week';
+
+      const trendMap = {
+        upward:   `<span style="color:#10b981;font-size:0.85rem;font-weight:600;"><i class="bi bi-arrow-up-right me-1"></i>Momentum Building</span>`,
+        downward: `<span style="color:#ef4444;font-size:0.85rem;font-weight:600;"><i class="bi bi-arrow-down-right me-1"></i>Momentum Declining</span>`,
+        stable:   `<span style="color:#f59e0b;font-size:0.85rem;font-weight:600;"><i class="bi bi-dash me-1"></i>Stable Pace</span>`,
+      };
+      const trendEl = document.getElementById('study-trend-badge');
+      if (trendEl) trendEl.innerHTML = trendMap[fd.study_trend] || trendMap.stable;
+
+      const aiTrendEl = document.getElementById('ai-trend');
+      if (aiTrendEl) aiTrendEl.innerHTML = trendMap[fd.study_trend] || trendMap.stable;
+
+      // Insight card
+      const insight = document.getElementById('study-insight-container');
+      if (insight && fd.insight) {
+        insight.innerHTML = `<div class="q-insight-card">
+          <i class="bi bi-lightbulb-fill q-insight-icon"></i>
+          <p class="q-insight-text">${fd.insight}</p>
+        </div>`;
+      }
+
+      renderTrajectoryChart(fd.history || [], fd.forecast || []);
+      renderHeatmapChart(fd.heatmap || []);
+    }
+  } catch(err) {
+    console.error('Study forecast error:', err);
+    const insight = document.getElementById('study-insight-container');
+    if (insight) insight.innerHTML = `<div class="q-insight-card warning"><i class="bi bi-exclamation-triangle-fill q-insight-icon"></i><p class="q-insight-text">Could not load ML forecast. Log more sessions to unlock predictions.</p></div>`;
+  }
+}
+
+function renderTrajectoryChart(history, forecast) {
+  const ctx = document.getElementById('studyTrajectoryChart');
+  if (!ctx) return;
+  if (trajChart) trajChart.destroy();
+
+  if (!history.length && !forecast.length) { ctx.parentElement.innerHTML = emptyState(); return; }
+
+  const histLabels = history.map(d => d.date);
+  const histAmts   = history.map(d => d.amount / 60);
+  const foreLabels = forecast.map(d => d.date);
+  const foreAmts   = forecast.map(d => d.amount / 60);
+  const allLabels  = [...histLabels, ...foreLabels];
+
+  trajChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: allLabels,
+      datasets: [
+        { label: 'Historical Hrs', data: [...histAmts, ...Array(foreAmts.length).fill(null)], backgroundColor: 'rgba(0,113,227,0.5)', borderRadius:4, order:2 },
+        { label: 'ML Projection Hrs', data: [...Array(histAmts.length).fill(null), ...foreAmts], backgroundColor: 'rgba(6,182,212,0.6)', borderRadius:4, order:2 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode:'index', intersect:false },
+      plugins: { legend: { position:'top' } },
+      scales: {
+        x: { ticks: { maxTicksLimit:14, color:'#86868b' }, grid: { color:'rgba(0,0,0,0.04)' } },
+        y: { beginAtZero:true, ticks: { color:'#86868b', callback: v => v.toFixed(1)+'h' }, grid: { color:'rgba(0,0,0,0.04)' } }
+      }
+    }
+  });
+}
+
+function renderHeatmapChart(heatmapData) {
+  const ctx = document.getElementById('studyHeatmapChart');
+  if (!ctx) return;
+  if (hmChart) hmChart.destroy();
+
+  if (!heatmapData.length) {
+    ctx.parentElement.innerHTML = emptyState('No activity data', 'Log study sessions to see the heatmap.');
+    return;
+  }
+
+  const labels = heatmapData.map(d => d.date);
+  const data   = heatmapData.map(d => (d.intensity || 0) / 60);
+
+  hmChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Study Hours',
+        data,
+        borderColor: '#0071e3',
+        backgroundColor: 'rgba(0,113,227,0.15)',
+        fill: true, tension: 0.4,
+        pointBackgroundColor: '#0071e3',
+        pointRadius: data.map(v => v > 0 ? 4 : 0),
+        pointHoverRadius: 6
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display:false } },
+      scales: {
+        x: { ticks: { color:'#86868b', maxTicksLimit:10 }, grid: { display:false } },
+        y: { beginAtZero:true, ticks: { color:'#86868b', callback: v => v.toFixed(1)+'h' }, grid: { color:'rgba(0,0,0,0.04)' } }
+      }
+    }
+  });
+}
+
+// ── Toggle event ──────────────────────────────────────────────────────────
+document.addEventListener('quanta-mode-change', e => {
+  if (e.detail.mode === 'forecast') loadForecast();
+  setTimeout(() => [trajChart, hmChart].forEach(c => c?.resize()), 60);
+});
+
+// ── CRUD ──────────────────────────────────────────────────────────────────
+initCrudPage({
+  entityName: 'StudyRecord',
+  apiUrl: '/api/study',
+  fields: [
+    { name: 'date',               type: 'date'   },
+    { name: 'subject',            type: 'text'   },
+    { name: 'duration_minutes',   type: 'number' },
+    { name: 'productivity_score', type: 'number' },
+    { name: 'notes',              type: 'text'   },
+  ],
+  tableColumns: [
+    { key: 'date'             },
+    { key: 'subject'          },
+    { key: 'duration_minutes' },
+    { key: 'productivity_score' },
+    { key: 'notes'            },
+  ],
+});
+
+const _unsub = onAuthChange(user => {
+  if (user) { _unsub(); loadOverview(); }
+});
+</script>
+{% endblock %}

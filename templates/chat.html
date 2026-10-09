@@ -1,0 +1,412 @@
+{% extends "base.html" %}
+{% block title %}QUANTA — AI Assistant{% endblock %}
+
+{% block content %}
+<style>
+/* ── Layout ─────────────────────────────────────────────────────── */
+.q-chat-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 64px); /* subtract topbar */
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 16px 0;
+}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.q-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0 10px;
+  flex-shrink: 0;
+}
+.q-chat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.q-chat-header-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: var(--q-accent-dim);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--q-accent-light);
+  border: 1px solid var(--q-accent-glow);
+}
+.q-chat-header-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--q-text);
+}
+.q-chat-header-sub {
+  font-size: 0.75rem;
+  color: var(--q-muted);
+  margin-top: 1px;
+}
+
+/* ── Messages area ───────────────────────────────────────────────── */
+#q-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--q-scroll-thumb) transparent;
+}
+#q-chat-messages::-webkit-scrollbar { width: 5px; }
+#q-chat-messages::-webkit-scrollbar-track { background: transparent; }
+#q-chat-messages::-webkit-scrollbar-thumb { background: var(--q-scroll-thumb); border-radius: 3px; }
+
+/* ── Welcome screen ──────────────────────────────────────────────── */
+.q-welcome {
+  margin: auto;
+  text-align: center;
+  padding: 40px 16px;
+}
+.q-welcome-logo {
+  font-size: 2.8rem;
+  color: var(--q-accent-light);
+  margin-bottom: 14px;
+}
+.q-welcome-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--q-text);
+  margin-bottom: 8px;
+}
+.q-welcome-sub {
+  font-size: 0.88rem;
+  color: var(--q-muted);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* ── Message bubbles ─────────────────────────────────────────────── */
+.q-msg-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 2px 0;
+}
+.q-msg-user {
+  align-items: flex-end;
+}
+.q-msg-model {
+  align-items: flex-start;
+}
+.q-msg-bubble {
+  max-width: 78%;
+  padding: 11px 16px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+.q-msg-bubble-user {
+  background: var(--q-accent);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+.q-msg-bubble-model {
+  background: var(--q-bg-card);
+  color: var(--q-text);
+  border-bottom-left-radius: 4px;
+  border: 1px solid var(--q-border);
+}
+/* Markdown rendering inside model bubble */
+.q-msg-bubble-model p { margin: 0 0 8px; }
+.q-msg-bubble-model p:last-child { margin-bottom: 0; }
+.q-msg-bubble-model strong { color: var(--q-text); }
+.q-msg-bubble-model code {
+  background: var(--q-nav-hover-bg);
+  padding: 1px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.85em;
+  color: var(--q-accent-light);
+}
+.q-msg-bubble-model pre {
+  background: var(--q-bg-elevated);
+  padding: 10px 14px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 8px 0;
+  border: 1px solid var(--q-border);
+}
+.q-msg-bubble-model pre code {
+  background: transparent;
+  padding: 0;
+  color: var(--q-text);
+}
+.q-md-list { padding-left: 18px; margin: 6px 0; }
+.q-md-list li { margin-bottom: 3px; }
+
+/* ── Typing indicator ────────────────────────────────────────────── */
+.q-typing {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 14px 18px;
+  width: 64px;
+}
+.q-typing span {
+  display: block;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--q-muted);
+  animation: q-bounce 1.2s infinite;
+}
+.q-typing span:nth-child(2) { animation-delay: 0.2s; }
+.q-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes q-bounce {
+  0%, 80%, 100% { transform: translateY(0); background: var(--q-muted); }
+  40% { transform: translateY(-6px); background: var(--q-accent); }
+}
+
+/* ── Tool call badge ─────────────────────────────────────────────── */
+.q-tool-badge-container {
+  max-width: 78%;
+  margin-bottom: 4px;
+}
+.q-tool-toggle {
+  background: var(--q-accent-dim);
+  border: 1px solid var(--q-accent-glow);
+  color: var(--q-accent-light);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 0.77rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s;
+}
+.q-tool-toggle:hover {
+  background: var(--q-accent-glow);
+}
+.q-tool-details {
+  background: var(--q-bg-elevated);
+  border: 1px solid var(--q-border);
+  border-radius: 8px;
+  margin-top: 4px;
+  padding: 8px 12px;
+}
+.q-tool-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 3px 0;
+  font-size: 0.78rem;
+}
+.q-tool-name {
+  color: var(--q-accent-light);
+  font-family: monospace;
+  font-size: 0.8rem;
+  min-width: 180px;
+}
+.q-tool-result {
+  color: var(--q-muted);
+}
+
+/* ── Suggested prompts ───────────────────────────────────────────── */
+#q-suggestions {
+  flex-shrink: 0;
+  padding: 0 0 12px;
+}
+.q-suggest-title {
+  font-size: 0.78rem;
+  color: var(--q-muted);
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.q-suggest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+@media (max-width: 540px) {
+  .q-suggest-grid { grid-template-columns: 1fr; }
+}
+.q-suggest-card {
+  background: var(--q-bg-card);
+  border: 1px solid var(--q-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+}
+.q-suggest-card:hover {
+  background: var(--q-bg-card-hover);
+  border-color: var(--q-accent-glow);
+}
+.q-suggest-icon {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+.q-suggest-label {
+  font-size: 0.8rem;
+  color: var(--q-text);
+  font-weight: 600;
+}
+.q-suggest-text {
+  font-size: 0.75rem;
+  color: var(--q-muted);
+  margin-top: 2px;
+}
+
+/* ── Input area ──────────────────────────────────────────────────── */
+.q-chat-input-area {
+  flex-shrink: 0;
+  padding: 8px 0 20px;
+  border-top: 1px solid var(--q-border);
+}
+.q-input-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  background: var(--q-bg-card);
+  border: 1px solid var(--q-border);
+  border-radius: 16px;
+  padding: 8px 8px 8px 14px;
+  transition: border-color 0.15s;
+}
+.q-input-row:focus-within {
+  border-color: var(--q-accent);
+}
+#q-chat-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--q-text);
+  font-size: 0.92rem;
+  resize: none;
+  min-height: 24px;
+  max-height: 140px;
+  line-height: 1.5;
+  font-family: inherit;
+}
+#q-chat-input::placeholder { color: var(--q-placeholder); }
+#q-chat-send {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  border: none;
+  background: var(--q-accent);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.15s;
+}
+#q-chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
+.q-input-hint {
+  font-size: 0.72rem;
+  color: var(--q-muted);
+  margin-top: 6px;
+  text-align: center;
+}
+</style>
+
+<div class="q-chat-page">
+
+  <!-- Header -->
+  <div class="q-chat-header">
+    <div class="q-chat-header-left">
+      <div class="q-chat-header-icon"><i class="bi bi-stars"></i></div>
+      <div>
+        <div class="q-chat-header-title">Quanta AI</div>
+        <div class="q-chat-header-sub">Personalized decision assistant · Powered by your data</div>
+      </div>
+    </div>
+    <button id="q-chat-clear" class="btn btn-sm" style="background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2);border-radius:8px;font-size:0.78rem;">
+      <i class="bi bi-trash3"></i> Clear
+    </button>
+  </div>
+
+  <!-- Messages -->
+  <div id="q-chat-messages"></div>
+
+  <!-- Suggested prompts -->
+  <div id="q-suggestions">
+    <div class="q-suggest-title">Suggested</div>
+    <div class="q-suggest-grid">
+
+      <button class="q-suggest-card" data-prompt="Can I afford a ₹5,000 purchase this week?">
+        <div class="q-suggest-icon">💰</div>
+        <div class="q-suggest-label">Finance</div>
+        <div class="q-suggest-text">Can I afford a ₹5,000 purchase this week?</div>
+      </button>
+
+      <button class="q-suggest-card" data-prompt="Am I actually consistent with studying?">
+        <div class="q-suggest-icon">📚</div>
+        <div class="q-suggest-label">Study</div>
+        <div class="q-suggest-text">Am I actually consistent with studying?</div>
+      </button>
+
+      <button class="q-suggest-card" data-prompt="Which habits am I most at risk of losing?">
+        <div class="q-suggest-icon">🎯</div>
+        <div class="q-suggest-label">Habits</div>
+        <div class="q-suggest-text">Which habits am I most at risk of losing?</div>
+      </button>
+
+      <button class="q-suggest-card" data-prompt="What will my savings look like next month?">
+        <div class="q-suggest-icon">📈</div>
+        <div class="q-suggest-label">Forecast</div>
+        <div class="q-suggest-text">What will my savings look like next month?</div>
+      </button>
+
+      <button class="q-suggest-card" data-prompt="When am I most productive?">
+        <div class="q-suggest-icon">⚡</div>
+        <div class="q-suggest-label">Productivity</div>
+        <div class="q-suggest-text">When am I most productive?</div>
+      </button>
+
+      <button class="q-suggest-card" data-prompt="Why did my expenses increase recently?">
+        <div class="q-suggest-icon">🔍</div>
+        <div class="q-suggest-label">Analysis</div>
+        <div class="q-suggest-text">Why did my expenses increase recently?</div>
+      </button>
+
+      <button class="q-suggest-card" data-prompt="Show me my active goals and progress.">
+        <div class="q-suggest-icon">🏆</div>
+        <div class="q-suggest-label">Goals</div>
+        <div class="q-suggest-text">Show me my active goals and progress.</div>
+      </button>
+
+      <button class="q-suggest-card" data-prompt="Add a ₹200 food expense for today.">
+        <div class="q-suggest-icon">➕</div>
+        <div class="q-suggest-label">Quick Add</div>
+        <div class="q-suggest-text">Add a ₹200 food expense for today.</div>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Input -->
+  <div class="q-chat-input-area">
+    <div class="q-input-row">
+      <textarea
+        id="q-chat-input"
+        rows="1"
+        placeholder="Ask about your finances, habits, study, goals…"
+        autocomplete="off"
+        spellcheck="true"
+      ></textarea>
+      <button id="q-chat-send" title="Send (Enter)">
+        <i class="bi bi-send-fill"></i>
+      </button>
+    </div>
+    <div class="q-input-hint">Press Enter to send · Shift+Enter for new line</div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="module" src="/static/js/chat.js"></script>
+{% endblock %}
