@@ -39,59 +39,6 @@
 
 ---
 
-### **CERTIFICATE**
-
-```
-========================================================================================
-                                     CERTIFICATE
-========================================================================================
-
-This is to certify that the project report entitled:
-
-          "QUANTA — PERSONAL DIGITAL TWIN PLATFORM: AI-POWERED PERSONAL
-           LIFE INTELLIGENCE, MACHINE LEARNING FORECASTING, MONTE CARLO
-             SIMULATION LABORATORY & CONVERSATIONAL ASSISTANT"
-
-is a bonafide record of the work carried out by:
-
-                         [STUDENT NAME]  —  [ROLL NUMBER]
-
-in partial fulfillment of the requirements for the award of the degree of BACHELOR OF
-TECHNOLOGY in COMPUTER SCIENCE AND ENGINEERING from [INSTITUTION / UNIVERSITY NAME]
-during the academic year 2025–2026.
-
-The results embodied in this report have not been submitted to any other University or
-Institute for the award of any degree or diploma.
-
-
-
-_____________________________                           _____________________________
-   Internal Project Guide                                 Head of the Department
- [Name, Designation & Dept]                            [Name, Designation & Dept]
-
-
-
-_____________________________                           _____________________________
-      External Examiner 1                                    External Examiner 2
-========================================================================================
-```
-
----
-
-### **ACKNOWLEDGEMENT**
-
-I take immense pleasure in expressing my profound gratitude and deep sense of indebtedness to my project supervisor, **[Supervisor Name]**, for their invaluable guidance, constant encouragement, insightful critiques, and unwavering support throughout the lifecycle of this project.
-
-I express my sincere thanks to **[Head of Department Name]**, Head of the Department of Computer Science and Engineering, for providing the necessary facilities, computing resources, and conducive environment that made this research and development endeavour possible.
-
-I also extend my sincere gratitude to all the faculty members of the Department of Computer Science and Engineering for their direct and indirect contributions, constructive suggestions, and academic foundation.
-
-Lastly, I express my heartfelt gratitude to my family and friends for their enduring patience, moral support, and motivation throughout the development of **QUANTA**.
-
-— **[Student Name]**
-
----
-
 ### **TABLE OF CONTENTS**
 
 1. [Chapter 1 — Introduction](#chapter-1--introduction)
@@ -111,26 +58,25 @@ Lastly, I express my heartfelt gratitude to my family and friends for their endu
    - 3.3 [Milestone 3 — Simulation & Intelligence](#33-milestone-3--simulation--intelligence)
    - 3.4 [Milestone 4 — Quanta AI Assistant](#34-milestone-4--quanta-ai-assistant)
 4. [Chapter 4 — Implementation](#chapter-4--implementation)
-   - 4.1 [Frontend Implementation](#41-frontend-implementation)
-   - 4.2 [Backend Implementation](#42-backend-implementation)
-   - 4.3 [Firebase Architecture & Integration](#43-firebase-architecture--integration)
-   - 4.4 [ML Models Pipeline](#44-ml-models-pipeline)
-   - 4.5 [Simulation Engine Implementation](#45-simulation-engine-implementation)
-   - 4.6 [AI Assistant Architecture](#46-ai-assistant-architecture)
-   - 4.7 [Authentication & Security Framework](#47-authentication--security-framework)
+   - 4.1 [Frontend](#41-frontend)
+   - 4.2 [Backend](#42-backend)
+   - 4.3 [Firebase](#43-firebase)
+   - 4.4 [ML Models](#44-ml-models)
+   - 4.5 [Simulation Engine](#45-simulation-engine)
+   - 4.6 [AI Assistant](#46-ai-assistant)
+   - 4.7 [Authentication & Security](#47-authentication--security)
 5. [Chapter 5 — Testing & Results](#chapter-5--testing--results)
    - 5.1 [Functional Testing](#51-functional-testing)
-   - 5.2 [Performance Testing & Latency Optimization](#52-performance-testing--latency-optimization)
-   - 5.3 [Machine Learning Evaluation Results](#53-machine-learning-evaluation-results)
-   - 5.4 [Simulation Engine Results](#54-simulation-engine-results)
-   - 5.5 [Chatbot Evaluation & Tool Calling Verification](#55-chatbot-evaluation--tool-calling-verification)
-   - 5.6 [User Interface Screenshots & Walkthrough](#56-user-interface-screenshots--walkthrough)
-   - 5.7 [Limitations Observed During Testing](#57-limitations-observed-during-testing)
+   - 5.2 [Performance Testing](#52-performance-testing)
+   - 5.3 [ML Results](#53-ml-results)
+   - 5.4 [Simulation Results](#54-simulation-results)
+   - 5.5 [Chatbot Testing](#55-chatbot-testing)
+   - 5.6 [Screenshots](#56-screenshots)
+   - 5.7 [Limitations](#57-limitations)
 6. [Chapter 6 — Conclusion & Future Scope](#chapter-6--conclusion--future-scope)
    - 6.1 [Conclusion](#61-conclusion)
-   - 6.2 [Key Achievements](#62-key-achievements)
+   - 6.2 [Achievements](#62-achievements)
    - 6.3 [Limitations](#63-limitations)
-   - 6.4 [Future Enhancements](#64-future-enhancements)
 7. [References](#references)
 
 ---
@@ -139,9 +85,9 @@ Lastly, I express my heartfelt gratitude to my family and friends for their endu
 
 ## 1.1 Project Overview
 
-In the modern digital era, individuals generate unprecedented quantities of behavioral data every day. Financial expenditures, academic and professional study sessions, fitness workouts, and personal habits leave distinct digital trails. However, contemporary consumer applications process these records in complete isolation: banking applications record past expenditures, habit trackers monitor binary completions, and fitness trackers count steps. None of these applications model how one domain impacts another, nor do they project how current behavioral trajectories shape future outcomes.
+In the contemporary digital landscape, individuals generate vast amounts of behavioral and operational data daily. Financial expenditures, academic and professional study sessions, fitness workouts, and personal habits leave distinct digital trails. However, contemporary consumer applications process these records in complete isolation: banking applications record past expenditures, habit trackers monitor binary completions, and fitness trackers log workout duration. None of these applications model how one domain impacts another, nor do they project how current behavioral trajectories shape future outcomes.
 
-**QUANTA** is an AI-powered personal digital twin platform. Originating in aerospace and industrial engineering (Grieves & Vickers, 2017), a *digital twin* is a dynamic, continuously synchronized virtual computational model of a physical asset. QUANTA translates this paradigm to human life management by synthesizing personal records across five foundational domains:
+**QUANTA** is an AI-powered personal digital twin platform. Originating in aerospace and industrial manufacturing (Grieves & Vickers, 2017), a *digital twin* is a dynamic, continuously synchronized virtual computational model of a physical asset. QUANTA translates this paradigm to human life management by synthesizing personal records across five foundational domains:
 
 1. **Finance & Wealth**: Incomes, expense tracking, categorized budgets, net cash flow, and savings rate.
 2. **Habits & Behavior**: Routine consistency, daily streak maintenance, and churn vulnerability.
@@ -149,7 +95,7 @@ In the modern digital era, individuals generate unprecedented quantities of beha
 4. **Academics**: Course enrollments, credit values, letter grades, and automated SGPA/CGPA computation.
 5. **Fitness & Physical Health**: Workout logs, duration, activity types, and calorie expenditure.
 
-QUANTA combines **Google Cloud Firestore NoSQL storage**, **trained machine learning regression and classification models (v3)**, a **vectorized Monte Carlo simulation engine**, and a **conversational AI agent ("Ask Your Data")** equipped with 23 database tools. The resulting platform allows users to review their current state, forecast future trajectories, simulate hypothetical "what-if" scenarios, and interact with their data through grounded natural language conversation.
+QUANTA combines **Google Cloud Firestore NoSQL storage**, **trained machine learning regression and classification models (v3)**, a **vectorized Monte Carlo simulation engine**, and a **conversational AI agent ("Ask Your Data")** equipped with 23 live database tools. The resulting platform allows users to review their current state, forecast future trajectories, simulate hypothetical "what-if" scenarios, and interact with their data through grounded natural language conversation.
 
 ---
 
@@ -483,7 +429,7 @@ erDiagram
 
 # CHAPTER 4 — IMPLEMENTATION
 
-## 4.1 Frontend Implementation
+## 4.1 Frontend
 
 The user interface of QUANTA is designed as a modern, dark-first glassmorphic analytics console.
 
@@ -532,7 +478,7 @@ export function initToggle(containerId = 'mode-toggle') {
 
 ---
 
-## 4.2 Backend Implementation
+## 4.2 Backend
 
 The backend is built as an enterprise Flask application structured via Blueprints.
 
@@ -564,7 +510,7 @@ def create_app(config_class=Config):
 
 ---
 
-## 4.3 Firebase Architecture & Integration
+## 4.3 Firebase
 
 ### 4.3.1 Client & Admin SDK Roles
 - **Client Web SDK (`auth.js`)**: Executes `signInWithEmailAndPassword`, `createUserWithEmailAndPassword`, and handles token refresh listeners (`onAuthStateChanged`). Obtains the signed JWT `idToken`.
@@ -598,7 +544,7 @@ def require_auth(f):
 
 ---
 
-## 4.4 ML Models Pipeline
+## 4.4 ML Models
 
 ### 4.4.1 Feature Construction & Clean Vectorization
 In `app/services/ml_service.py`, feature engineering mirrors training vectorization exactly:
@@ -634,7 +580,7 @@ if is_completed_today:
 
 ---
 
-## 4.5 Simulation Engine Implementation
+## 4.5 Simulation Engine
 
 ### 4.5.1 Vectorized Monte Carlo Cash Flow (`simulation_service.py`)
 ```python
@@ -665,7 +611,7 @@ def simulate_cashflow(initial_balance, daily_income, daily_expenses_mean,
 
 ---
 
-## 4.6 AI Assistant Architecture
+## 4.6 AI Assistant
 
 ### 4.6.1 Agent Execution Cycle
 ```
@@ -698,7 +644,7 @@ def _is_habit_completion_query(question):
 
 ---
 
-## 4.7 Authentication & Security Framework
+## 4.7 Authentication & Security
 
 1. **Document Scoping**: All queries require matching `uid`:
    ```python
@@ -727,7 +673,7 @@ Comprehensive test cases were designed and executed across all core functional u
 
 ---
 
-## 5.2 Performance Testing & Latency Optimization
+## 5.2 Performance Testing
 
 A major technical achievement of QUANTA is the elimination of Firestore read latency through thread-safe in-memory caching.
 
@@ -751,7 +697,7 @@ xychart-beta
 
 ---
 
-## 5.3 Machine Learning Evaluation Results
+## 5.3 ML Results
 
 ### 5.3.1 Model Performance Benchmarks
 
@@ -768,7 +714,7 @@ Before optimization, habits created recently were penalized by 34 non-existent h
 
 ---
 
-## 5.4 Simulation Engine Results
+## 5.4 Simulation Results
 
 Running 300 vectorized Monte Carlo simulations over a 90-day horizon with daily income $\mu_I = ₹2,000$ and stochastic expenses $\mathcal{N}(₹1,400, ₹450)$:
 - **Median Final Reserve ($P_{50}$)**: $+₹54,200$.
@@ -782,7 +728,7 @@ Under a simulated **Risk Event Shock** (unplanned ₹40,000 expense at day 30):
 
 ---
 
-## 5.5 Chatbot Evaluation & Tool Calling Verification
+## 5.5 Chatbot Testing
 
 The "Ask Your Data" assistant was evaluated across 50 diverse user queries:
 
@@ -807,7 +753,7 @@ Test Query: "i complted reading bok"
 
 ---
 
-## 5.6 User Interface Screenshots & Walkthrough
+## 5.6 Screenshots
 
 1. **Dashboard (`/dashboard`)**:
    - Welcome banner with live fire emoji streak counter (`🔥 2 Day Streak`), level pill (`Lvl 2 Explorer`), and animated XP progress bar.
@@ -825,7 +771,7 @@ Test Query: "i complted reading bok"
 
 ---
 
-## 5.7 Limitations Observed During Testing
+## 5.7 Limitations
 
 1. **External LLM Network Fluctuation**: Reliance on remote cloud LLM endpoints (Groq / HuggingFace) introduces variable latency (800ms–2500ms) dependent on internet connectivity.
 2. **Cold Start Latency**: The first query following server reboot takes ~2.5 seconds to deserialize large Joblib ML models into memory before sub-millisecond caching takes effect.
@@ -843,7 +789,7 @@ The implementation proves that enterprise-grade personal intelligence can be del
 
 ---
 
-## 6.2 Key Achievements
+## 6.2 Achievements
 
 1. **Unified Multi-Domain Engine**: Successfully designed, deployed, and validated 11 Firestore collections spanning finance, habits, study, academics, fitness, and goals.
 2. **High-Accuracy ML Models (v3)**: Delivered predictive models achieving $R^2 = 0.884$ on financial forecasting, $R^2 = 0.852$ on study output, and $AUC = 0.8644$ on habit churn classification.
@@ -859,16 +805,6 @@ The implementation proves that enterprise-grade personal intelligence can be del
 1. **Manual Data Logging**: Requires user discipline to log expenditures and workout sessions (no direct bank integration).
 2. **Single-User Scope**: Multi-tenant data isolation is enforced, but there are no collaborative family or team accounts.
 3. **Browser Execution**: The client is packaged as a web application rather than a compiled iOS/Android binary.
-
----
-
-## 6.4 Future Enhancements
-
-1. **Open Banking & UPI Account Aggregator Integration**: Direct integration with RBI Account Aggregator APIs to automatically ingest Indian banking and UPI transactions with zero manual entry.
-2. **Wearable Device SDK Sync**: Automatic synchronization with Apple HealthKit, Google Health Connect, and Garmin for passive biometric data collection (resting heart rate, sleep cycles, HRV).
-3. **Multi-Agent Reinforcement Learning (MARL)**: Replacing rule-based simulation with reinforcement learning agents trained to discover optimal life balance policies under stochastic shocks.
-4. **Native Mobile Progressive Web App (PWA) & Push Alerts**: Deploying service worker push notifications to alert users before habits enter predicted churn windows.
-5. **On-Device Local SLM Routing**: Embedding a quantized Small Language Model (e.g. Llama-3.2-1B via WebGPU / ONNX) in the browser for 0ms offline tool routing.
 
 ---
 
