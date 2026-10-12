@@ -193,7 +193,8 @@ This repository is pre-configured with a strict `.gitignore` that automatically 
 
 Comprehensive academic and technical documentation is included directly in the repository:
 
-- 📑 **[QUANTA Major Project Report (Full Specification)](docs/QUANTA_PROJECT_DOCUMENTATION.md)** — Complete 6-chapter formal project report, including Title Page, Certificate, Acknowledgement, Functional/Non-Functional Requirements, Milestone Breakdown, Implementation, Latency Benchmarks, and IEEE References.
+- 📑 **[QUANTA Latest Project Documentation (Standard Format)](docs/QUANTA_LATEST_DOCUMENTATION.md)** — Complete 6-chapter formal project documentation matching standard university structure (Title Page, Table of Contents, Chapters 1–6, Testing, Results, References).
+- 📑 **[QUANTA Major Project Report](docs/QUANTA_PROJECT_DOCUMENTATION.md)** — Comprehensive project specification, requirements, architecture, milestones, latency benchmarks, and evaluation results.
 - 🏛️ **[System Architecture Reference](docs/SYSTEM_ARCHITECTURE.md)** — High-level architecture, request pipelines, Firestore data schemas, caching architecture, and Blueprint directory.
 - 🔬 **[Theoretical Foundations & ML Specs](docs/quanta_documentation.md)** — Mathematical formulations of Monte Carlo simulations, Markov chain habit evolution, and v3 model parameters.
 
