@@ -201,5 +201,10 @@ Comprehensive academic and technical documentation is included directly in the r
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.  
 Copyright (c) 2026 MOHAMMED SAHTIQ S & Quanta Contributors.
+
+---
+
+## 👥 Team & Repository Integration
+**ai-based-visual-risk-and-compilance-system-teamA**: Integration of best work of all teammates.
