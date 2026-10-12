@@ -1025,6 +1025,114 @@ function initSimulation() {
   scSelect.addEventListener('change', renderSimChart);
 }
 
+// ─── High-Speed Bootstrap Loader ─────────────────────────────────────────────
+function applyBootstrapData(d) {
+  if (!d) return;
+  if (d.streak) {
+    setCache('streak', d.streak);
+    renderStreakData(d.streak);
+  }
+  if (d.summary) {
+    setCache('summary', d.summary);
+    renderSummaryData(d.summary);
+  }
+  if (d.income_trend) {
+    setCache('income_trend', d.income_trend);
+    renderIncomeChart(d.income_trend);
+  }
+  if (d.expense_breakdown) {
+    setCache('expense_breakdown', d.expense_breakdown);
+    renderExpenseChart(d.expense_breakdown);
+  }
+  if (d.study_trend) {
+    setCache('study_trend', d.study_trend);
+    renderStudyChart(d.study_trend);
+  }
+  if (d.fitness) {
+    setCache('fitness', d.fitness);
+    renderFitnessChart(d.fitness);
+  }
+  if (d.goals) {
+    setCache('goals', d.goals);
+    renderGoalsData(d.goals);
+  }
+  if (d.recent_activity) {
+    setCache('recent_activity', d.recent_activity);
+    renderRecentActivity(d.recent_activity);
+  }
+}
+
+async function loadDashboardBootstrap() {
+  const cachedBoot = getCached('bootstrap');
+  if (cachedBoot) {
+    applyBootstrapData(cachedBoot);
+  } else {
+    // If no full bootstrap in cache, check individual caches for instant 0ms painting
+    const cStreak = getCached('streak'); if (cStreak) renderStreakData(cStreak);
+    const cSum = getCached('summary'); if (cSum) renderSummaryData(cSum);
+    const cInc = getCached('income_trend'); if (cInc) renderIncomeChart(cInc);
+    const cExp = getCached('expense_breakdown'); if (cExp) renderExpenseChart(cExp);
+    const cStd = getCached('study_trend'); if (cStd) renderStudyChart(cStd);
+    const cFit = getCached('fitness'); if (cFit) renderFitnessChart(cFit);
+    const cGoal = getCached('goals'); if (cGoal) renderGoalsData(cGoal);
+    const cAct = getCached('recent_activity'); if (cAct) renderRecentActivity(cAct);
+  }
+
+  try {
+    const res = await apiCall('/api/dashboard/bootstrap');
+    if (res?.data) {
+      setCache('bootstrap', res.data);
+      applyBootstrapData(res.data);
+      apiCall('/api/streak/checkin', 'POST').catch(() => {});
+    }
+  } catch (e) {
+    console.warn('Bootstrap API failed, falling back to separate endpoints:', e.message);
+    await Promise.allSettled([
+      loadStreak(),
+      loadSummary(),
+      loadIncomeChart(),
+      loadExpenseChart(),
+      loadStudyChart(),
+      loadFitnessChart(),
+      loadGoalsChart(),
+      loadRecentActivity(),
+    ]);
+  }
+}
+
+async function loadMLForecasts() {
+  const cachedFinance = getCached('ml_finance');
+  if (cachedFinance) renderFinanceForecast(cachedFinance);
+  const cachedStudy = getCached('ml_study');
+  if (cachedStudy) renderStudyForecast(cachedStudy);
+  const cachedHabit = getCached('ml_habit_risk');
+  if (cachedHabit) renderHabitRisk(cachedHabit);
+
+  try {
+    const res = await apiCall('/api/ml/summary');
+    if (res?.data) {
+      if (res.data.finance) {
+        setCache('ml_finance', res.data.finance);
+        renderFinanceForecast(res.data.finance);
+      }
+      if (res.data.study) {
+        setCache('ml_study', res.data.study);
+        renderStudyForecast(res.data.study);
+      }
+      if (res.data.habits) {
+        setCache('ml_habit_risk', res.data.habits);
+        renderHabitRisk(res.data.habits);
+      }
+      return;
+    }
+  } catch (e) {
+    // Non-blocking fallback to individual calls
+    loadFinanceForecast().catch(() => {});
+    loadStudyForecast().catch(() => {});
+    loadHabitRisk().catch(() => {});
+  }
+}
+
 // ─── Main Init (Protected against duplicate triggering) ──────────────────────
 let isDashInitialized = false;
 
@@ -1045,20 +1153,11 @@ onAuthChange(async user => {
 
   setGreeting();
 
-  // Instant render + background sync via Promise.allSettled
-  await Promise.allSettled([
-    loadStreak(),
-    loadSummary(),
-    loadIncomeChart(),
-    loadExpenseChart(),
-    loadStudyChart(),
-    loadFitnessChart(),
-    loadGoalsChart(),
-    loadRecentActivity(),
-    loadFinanceForecast(),
-    loadStudyForecast(),
-    loadHabitRisk(),
-  ]);
+  // Instant Bootstrap: Loads ALL core dashboard data in 1 single round-trip
+  await loadDashboardBootstrap();
+
+  // Load ML forecasts asynchronously in background without blocking UI
+  loadMLForecasts();
 
   initSimulation();
   initHabitShield();

@@ -240,3 +240,142 @@ def recent_activity():
         return jsonify({"success": True, "data": serialize_docs(docs[:10])})
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
+
+
+@dashboard_bp.route('/bootstrap', methods=['GET'])
+@require_auth
+def bootstrap():
+    """
+    High-speed unified dashboard bootstrap endpoint.
+    Retrieves all user collections in parallel and computes summary, trends,
+    streak, goals, fitness, and recent activity in a single round-trip.
+    Reduces 8+ separate HTTP network requests to exactly 1.
+    """
+    try:
+        from datetime import datetime
+        from concurrent.futures import ThreadPoolExecutor
+        from firebase_admin import firestore
+        from app.services.streak_service import get_streak_data
+
+        today = datetime.now()
+        cur_month = today.strftime('%Y-%m')
+        user_uid = g.uid
+
+        def fetch_col(col_name):
+            try:
+                return get_user_collection_docs(col_name, user_uid)
+            except Exception:
+                return []
+
+        def fetch_streak():
+            try:
+                db = firestore.client()
+                return get_streak_data(user_uid, db)
+            except Exception:
+                return {}
+
+        cols = ['income', 'expenses', 'savings', 'study_records', 'goals', 'habits', 'fitness_records', 'activity_history']
+        docs_map = {}
+
+        with ThreadPoolExecutor(max_workers=9) as executor:
+            future_to_col = {executor.submit(fetch_col, c): c for c in cols}
+            streak_future = executor.submit(fetch_streak)
+
+            for future in future_to_col:
+                col_name = future_to_col[future]
+                docs_map[col_name] = future.result()
+            streak_data = streak_future.result()
+
+        # Compute summary
+        income_docs = docs_map.get('income', [])
+        total_income = sum(doc.get('amount', 0) for doc in income_docs)
+        income_month = sum(doc.get('amount', 0) for doc in income_docs if str(doc.get('date', '')).startswith(cur_month))
+
+        expense_docs = docs_map.get('expenses', [])
+        total_expenses = sum(doc.get('amount', 0) for doc in expense_docs)
+        expenses_month = sum(doc.get('amount', 0) for doc in expense_docs if str(doc.get('date', '')).startswith(cur_month))
+
+        net_savings = total_income - total_expenses
+        net_savings_month = income_month - expenses_month
+
+        savings_docs = docs_map.get('savings', [])
+        total_savings = sum(doc.get('amount', 0) for doc in savings_docs)
+
+        study_docs = docs_map.get('study_records', [])
+        study_hours_total = sum(doc.get('duration_minutes', 0) for doc in study_docs) / 60.0
+        study_hours_month = sum(doc.get('duration_minutes', 0) for doc in study_docs if str(doc.get('date', '')).startswith(cur_month)) / 60.0
+
+        goal_docs = docs_map.get('goals', [])
+        total_goals = len(goal_docs)
+        active_goals = sum(1 for doc in goal_docs if doc.get('status') not in ['completed', 'abandoned'])
+        completed_goals = sum(1 for doc in goal_docs if doc.get('status') == 'completed')
+
+        habit_docs = docs_map.get('habits', [])
+        active_habits = sum(1 for doc in habit_docs if doc.get('is_active', True))
+
+        fitness_docs = docs_map.get('fitness_records', [])
+        fitness_sessions_total = len(fitness_docs)
+        fitness_sessions_month = sum(1 for doc in fitness_docs if str(doc.get('date', '')).startswith(cur_month))
+
+        health_data = _compute_health_score_and_briefing(docs_map, cur_month)
+
+        summary_data = {
+            "total_income": total_income,
+            "income_month": income_month,
+            "total_expenses": total_expenses,
+            "expenses_month": expenses_month,
+            "net_savings": net_savings,
+            "net_savings_month": net_savings_month,
+            "total_savings": total_savings,
+            "study_hours": study_hours_total,
+            "study_hours_month": study_hours_month,
+            "total_goals": total_goals,
+            "active_goals": active_goals,
+            "completed_goals": completed_goals,
+            "active_habits": active_habits,
+            "fitness_sessions": fitness_sessions_total,
+            "fitness_sessions_month": fitness_sessions_month,
+            "health_score": health_data,
+        }
+
+        # Compute income trend
+        income_trend_data = {}
+        for doc in income_docs:
+            d = str(doc.get('date', ''))[:7]
+            if d:
+                income_trend_data[d] = income_trend_data.get(d, 0) + doc.get('amount', 0)
+
+        # Compute expense breakdown
+        expense_breakdown_data = {}
+        for doc in expense_docs:
+            cat = doc.get('category', 'other')
+            expense_breakdown_data[cat] = expense_breakdown_data.get(cat, 0) + doc.get('amount', 0)
+
+        # Compute study trend
+        study_trend_data = {}
+        for doc in study_docs:
+            d = str(doc.get('date', ''))[:7]
+            if d:
+                study_trend_data[d] = study_trend_data.get(d, 0) + (doc.get('duration_minutes', 0) / 60.0)
+
+        # Recent activity
+        activity_docs = docs_map.get('activity_history', [])
+        activity_docs.sort(key=lambda x: str(x.get('created_at', '')), reverse=True)
+        recent_activity_data = serialize_docs(activity_docs[:10])
+
+        return jsonify({
+            "success": True,
+            "data": {
+                "summary": summary_data,
+                "income_trend": income_trend_data,
+                "expense_breakdown": expense_breakdown_data,
+                "study_trend": study_trend_data,
+                "streak": streak_data,
+                "goals": goal_docs[:20],
+                "fitness": fitness_docs[:20],
+                "recent_activity": recent_activity_data
+            }
+        })
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        return jsonify({"success": False, "error": str(e)}), 500

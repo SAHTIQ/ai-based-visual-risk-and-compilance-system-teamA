@@ -120,35 +120,57 @@ export function getCurrentUser() {
 
 let _cachedToken = null;
 let _tokenExpiresAt = 0;
+let _refreshPromise = null;
 
-export function getIdToken() {
+export function getIdToken(forceRefresh = false) {
     const now = Date.now();
-    if (_cachedToken && now < _tokenExpiresAt) {
+    if (!forceRefresh && _cachedToken && now < _tokenExpiresAt) {
         return Promise.resolve(_cachedToken);
     }
-    return new Promise((resolve, reject) => {
+    if (_refreshPromise) {
+        return _refreshPromise;
+    }
+
+    _refreshPromise = new Promise((resolve, reject) => {
         const user = auth.currentUser;
         if (user) {
-            user.getIdToken(false).then(token => {
+            user.getIdToken(forceRefresh).then(token => {
                 _cachedToken = token;
                 _tokenExpiresAt = Date.now() + 5 * 60 * 1000;
                 resolve(token);
-            }).catch(reject);
+            }).catch(err => {
+                _cachedToken = null;
+                _tokenExpiresAt = 0;
+                reject(err);
+            }).finally(() => {
+                _refreshPromise = null;
+            });
         } else {
             const unsubscribe = onAuthStateChanged(auth, (u) => {
                 unsubscribe();
                 if (u) {
-                    u.getIdToken(false).then(token => {
+                    u.getIdToken(forceRefresh).then(token => {
                         _cachedToken = token;
                         _tokenExpiresAt = Date.now() + 5 * 60 * 1000;
                         resolve(token);
-                    }).catch(reject);
+                    }).catch(err => {
+                        _cachedToken = null;
+                        _tokenExpiresAt = 0;
+                        reject(err);
+                    }).finally(() => {
+                        _refreshPromise = null;
+                    });
                 } else {
+                    _cachedToken = null;
+                    _tokenExpiresAt = 0;
+                    _refreshPromise = null;
                     resolve(null);
                 }
             });
         }
     });
+
+    return _refreshPromise;
 }
 
 

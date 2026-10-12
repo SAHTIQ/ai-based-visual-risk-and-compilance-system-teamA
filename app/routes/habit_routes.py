@@ -16,7 +16,7 @@ def create():
     if missing:
         return jsonify({"success": False, "error": f"Missing fields: {missing}"}), 400
         
-    if not validate_enum(data['category'], ['health', 'wellness', 'productivity', 'learning', 'social', 'other']):
+    if not validate_enum(data['category'], ['health', 'wellness', 'productivity', 'learning', 'social', 'finance', 'financial', 'business', 'other']):
         return jsonify({"success": False, "error": "Invalid category"}), 400
 
         
@@ -55,7 +55,7 @@ def get(doc_id):
 @require_auth
 def update(doc_id):
     data = request.get_json() or {}
-    if 'category' in data and not validate_enum(data['category'], ['health', 'wellness', 'productivity', 'learning', 'social', 'other']):
+    if 'category' in data and not validate_enum(data['category'], ['health', 'wellness', 'productivity', 'learning', 'social', 'finance', 'financial', 'business', 'other']):
         return jsonify({"success": False, "error": "Invalid category"}), 400
 
     if 'frequency' in data and not validate_enum(data['frequency'], ['daily', 'weekly', 'monthly']):
@@ -78,6 +78,78 @@ def delete(doc_id):
     try:
         delete_document(COLLECTION, doc_id, g.uid, entity_type=ENTITY_TYPE)
         return jsonify({"success": True})
+    except ValueError as e:
+        return jsonify({"success": False, "error": str(e)}), 404
+    except PermissionError as e:
+        return jsonify({"success": False, "error": str(e)}), 403
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
+@habit_bp.route('/<doc_id>/checkin', methods=['POST'])
+@require_auth
+def checkin_habit(doc_id):
+    """
+    Check in / mark habit completed for today.
+    Increments habit streak, marks last_completed as today,
+    advances the user's platform daily streak (+XP), and updates activity history.
+    """
+    from datetime import date, timedelta
+    from app.services.firebase_service import get_firestore_client
+    from app.services.streak_service import daily_checkin
+    from app.services.crud_service import invalidate_user_cache
+    from app.services.activity_service import log_activity
+
+    try:
+        habit = get_document(COLLECTION, doc_id, g.uid)
+        today_iso = date.today().isoformat()
+        yesterday_iso = (date.today() - timedelta(days=1)).isoformat()
+
+        last_comp_str = str(habit.get('last_completed') or '')[:10]
+        cur_streak = int(habit.get('current_streak', habit.get('streak', 0)) or 0)
+
+        # Check if already completed today
+        if last_comp_str == today_iso:
+            db = get_firestore_client()
+            streak_res = daily_checkin(g.uid, db)
+            return jsonify({
+                "success": True,
+                "already_completed": True,
+                "data": habit,
+                "streak_info": streak_res,
+                "message": f"'{habit.get('name')}' is already completed for today!"
+            })
+
+        # Calculate new habit streak
+        if last_comp_str == yesterday_iso or cur_streak == 0 or not last_comp_str or habit.get('streak_protected'):
+            new_streak = cur_streak + 1
+        else:
+            new_streak = 1
+
+        updates = {
+            "current_streak": new_streak,
+            "streak": new_streak,
+            "streak_count": new_streak,
+            "last_completed": today_iso,
+            "streak_protected": False,
+            "status": "active"
+        }
+        updated_doc = update_document(COLLECTION, doc_id, g.uid, updates, entity_type=ENTITY_TYPE)
+
+        # Trigger user's platform daily checkin & XP
+        db = get_firestore_client()
+        streak_res = daily_checkin(g.uid, db)
+
+        log_activity(g.uid, f"Completed habit '{habit.get('name')}' (Streak: {new_streak}d)", category="habit", impact="positive")
+        invalidate_user_cache(g.uid)
+
+        return jsonify({
+            "success": True,
+            "already_completed": False,
+            "data": updated_doc,
+            "streak_info": streak_res,
+            "message": f"🔥 Checked in! '{habit.get('name')}' streak is now {new_streak} days."
+        })
     except ValueError as e:
         return jsonify({"success": False, "error": str(e)}), 404
     except PermissionError as e:

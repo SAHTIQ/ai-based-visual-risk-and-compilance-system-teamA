@@ -1,42 +1,71 @@
 import { getIdToken } from './auth.js';
 
+const _pendingRequests = new Map();
+
 export async function apiCall(url, method = 'GET', body = null) {
-    const token = await getIdToken();
-    const headers = {
-        'Content-Type': 'application/json'
-    };
-    
-    if (token) {
-        headers['Authorization'] = `Bearer ${token}`;
+    const isGet = method.toUpperCase() === 'GET' && !body;
+    if (isGet && _pendingRequests.has(url)) {
+        return _pendingRequests.get(url);
     }
 
-    const config = {
-        method: method,
-        headers: headers
-    };
+    const reqPromise = (async () => {
+        const token = await getIdToken();
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+        
+        if (token) {
+            headers['Authorization'] = `Bearer ${token}`;
+        }
 
-    if (body) {
-        config.body = JSON.stringify(body);
+        const config = {
+            method: method,
+            headers: headers
+        };
+
+        if (body) {
+            config.body = JSON.stringify(body);
+        }
+
+        let response = await fetch(url, config);
+        
+        // Auto-refresh token and retry on 401
+        if (response.status === 401) {
+            console.warn(`[apiCall] 401 received for ${url}. Attempting silent token refresh...`);
+            try {
+                const refreshedToken = await getIdToken(true);
+                if (refreshedToken) {
+                    headers['Authorization'] = `Bearer ${refreshedToken}`;
+                    response = await fetch(url, config);
+                }
+            } catch (refreshErr) {
+                console.error("[apiCall] Token refresh failed:", refreshErr);
+            }
+        }
+
+        if (response.status === 401) {
+            console.warn("Unauthorized API call after refresh attempt. Redirecting to login.");
+            import('./auth.js').then(module => {
+                module.logoutUser();
+            });
+            throw new Error('Session expired or invalid. Please sign in again.');
+        }
+
+        const data = await response.json();
+        
+        if (!response.ok || !data.success) {
+            throw new Error(data.error || 'API request failed');
+        }
+        
+        return data;
+    })();
+
+    if (isGet) {
+        _pendingRequests.set(url, reqPromise);
+        reqPromise.finally(() => _pendingRequests.delete(url));
     }
 
-    const response = await fetch(url, config);
-    
-    if (response.status === 401) {
-        console.warn("Unauthorized API call. Redirecting to login.");
-        // Sign out locally to clear invalid token/session
-        import('./auth.js').then(module => {
-            module.logoutUser();
-        });
-        throw new Error('Session expired or invalid. Please sign in again.');
-    }
-
-    const data = await response.json();
-    
-    if (!response.ok || !data.success) {
-        throw new Error(data.error || 'API request failed');
-    }
-    
-    return data;
+    return reqPromise;
 }
 
 export function showToast(message, type = 'success') {

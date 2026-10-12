@@ -98,14 +98,16 @@ def create_app(config_name=None):
             'flask_env': os.getenv('FLASK_ENV', 'development'),
         }
 
-    # Prevent browser caching of API responses
+    # Configure caching headers (no-cache for API, 7-day cache for static assets)
     @app.after_request
-    def prevent_caching(response):
+    def configure_headers(response):
         from flask import request
         if request.path.startswith('/api/'):
             response.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, max-age=0'
             response.headers['Pragma'] = 'no-cache'
             response.headers['Expires'] = '0'
+        elif request.path.startswith('/static/'):
+            response.headers['Cache-Control'] = 'public, max-age=604800, immutable'
         return response
 
     return app

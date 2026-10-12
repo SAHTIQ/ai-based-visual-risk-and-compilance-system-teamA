@@ -27,8 +27,18 @@ class Config:
     FIREBASE_MESSAGING_SENDER_ID = os.getenv('FIREBASE_MESSAGING_SENDER_ID', '')
     FIREBASE_APP_ID = os.getenv('FIREBASE_APP_ID', '')
 
-    # Hugging Face AI (Quanta Assistant)
+    # ── Quanta AI Gateway (OpenAI-compatible /chat/completions) ──────────────
+    # Provider-agnostic: works with Gemini, Hugging Face Router, OpenAI, or a
+    # local Ollama server. Only LLM_API_KEY (a provider key) is required.
+    LLM_ENABLED       = os.getenv('LLM_ENABLED', 'true').lower() not in ('false', '0', 'no')
+    LLM_BASE_URL      = os.getenv('LLM_BASE_URL', '')
+    LLM_API_KEY       = os.getenv('LLM_API_KEY', '')
+    LLM_MODEL         = os.getenv('LLM_MODEL', '')          # writer / composer model
+    LLM_PLANNER_MODEL = os.getenv('LLM_PLANNER_MODEL', '')  # fast router model
+
+    # Legacy / alternate provider keys (still honoured by the gateway)
     HF_API_KEY = os.getenv('HF_API_KEY', '')
+    HF_TOKEN   = os.getenv('HF_TOKEN', '')
     HF_MODEL   = os.getenv('HF_MODEL', 'Qwen/Qwen2.5-72B-Instruct')
 
 

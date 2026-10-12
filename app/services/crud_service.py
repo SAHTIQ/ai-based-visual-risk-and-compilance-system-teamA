@@ -25,6 +25,11 @@ def invalidate_user_cache(uid, collection_name=None):
             keys_to_del = [k for k in _USER_CACHE if k[0] == uid]
             for k in keys_to_del:
                 _USER_CACHE.pop(k, None)
+    try:
+        from app.services.ml_service import invalidate_ml_cache
+        invalidate_ml_cache(uid)
+    except Exception:
+        pass
 
 def get_user_collection_docs(collection_name, uid, max_age=CACHE_TTL):
     """

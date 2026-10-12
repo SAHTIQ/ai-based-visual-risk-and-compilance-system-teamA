@@ -68,11 +68,11 @@
   --q-card-border-bottom: rgba(255,255,255,0.06);
 
   /* Tables */
-  --q-table-hover:    rgba(255,255,255,0.03);
-  --q-table-header-bg: rgba(255,255,255,0.02);
-  --q-table-border:   rgba(255,255,255,0.06);
-  --q-table-cell-border: rgba(255,255,255,0.04);
-  --q-table-head-color: #475569;
+  --q-table-hover:    rgba(255,255,255,0.05);
+  --q-table-header-bg: rgba(255,255,255,0.03);
+  --q-table-border:   rgba(255,255,255,0.18);
+  --q-table-cell-border: rgba(255,255,255,0.12);
+  --q-table-head-color: #94a3b8;
 
   /* Toggle pill */
   --q-toggle-bg:      rgba(255,255,255,0.06);
@@ -175,8 +175,8 @@
   /* Tables */
   --q-table-hover:    #efe6fe;
   --q-table-header-bg: #eae0fd;
-  --q-table-border:   rgba(124, 58, 237, 0.1);
-  --q-table-cell-border: rgba(124, 58, 237, 0.06);
+  --q-table-border:   rgba(124, 58, 237, 0.22);
+  --q-table-cell-border: rgba(124, 58, 237, 0.15);
   --q-table-head-color: #5b4a78;
 
   /* Toggle pill */
@@ -1468,68 +1468,58 @@ body.forecast-mode .q-overview-only { display: none; }
   --bs-table-hover-color: var(--q-text) !important;
   --bs-table-accent-bg: transparent !important;
   --bs-table-striped-bg: transparent !important;
-  --bs-table-border-color: var(--q-table-border) !important;
+  --bs-table-border-color: var(--q-table-cell-border) !important;
   background-color: transparent !important;
   color: var(--q-text) !important;
   margin-bottom: 0;
+  border-collapse: collapse !important;
 }
 
-.table > :not(caption) > * > * {
+.table > :not(caption) > * > *,
+.q-table > :not(caption) > * > * {
   background-color: transparent !important;
   box-shadow: none !important;
   color: var(--q-text) !important;
-  border-bottom: 1px solid var(--q-table-border) !important;
+  border-bottom: 1px solid var(--q-table-cell-border) !important;
 }
 
+.table thead th,
 .table th,
 .q-table th {
   color: var(--q-table-head-color) !important;
-  font-size: 0.72rem !important;
-  font-weight: 600 !important;
+  font-size: 0.74rem !important;
+  font-weight: 700 !important;
   text-transform: uppercase !important;
   letter-spacing: 0.08em !important;
   background-color: var(--q-table-header-bg) !important;
-  border-bottom: 1px solid var(--q-table-border) !important;
+  border-bottom: 2px solid var(--q-table-border) !important;
   padding: 12px 16px !important;
+  vertical-align: middle !important;
 }
 
 .table td,
 .q-table td {
-  color: var(--q-muted-light) !important;
+  color: var(--q-text) !important;
   font-size: 0.88rem !important;
-  padding: 12px 16px !important;
+  padding: 14px 16px !important;
   vertical-align: middle !important;
   background-color: transparent !important;
   border-bottom: 1px solid var(--q-table-cell-border) !important;
 }
 
-.table-hover tbody tr:hover > * {
+.table tbody tr,
+.q-table tbody tr {
+  border-bottom: 1px solid var(--q-table-cell-border) !important;
+  transition: background-color 0.15s ease;
+}
+
+.table tbody tr:hover,
+.q-table tbody tr:hover,
+.table-hover tbody tr:hover > *,
+.q-table tbody tr:hover td {
   background-color: var(--q-table-hover) !important;
   color: var(--q-text) !important;
 }
-
-.q-table {
-  width: 100%;
-  color: var(--q-muted-light);
-}
-.q-table th {
-  color: var(--q-table-head-color);
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  border-bottom: 1px solid var(--q-table-border) !important;
-  padding: 12px 16px;
-  font-weight: 600;
-  background: transparent;
-}
-.q-table td {
-  border-bottom: 1px solid var(--q-table-cell-border) !important;
-  padding: 14px 16px;
-  font-size: 0.9rem;
-  vertical-align: middle;
-  color: var(--q-muted-light);
-}
-.q-table tbody tr:hover td { background: var(--q-table-hover); }
 
 /* ═══════════════════════════════════════════════════════════
    FORMS & INPUT CONTROLS

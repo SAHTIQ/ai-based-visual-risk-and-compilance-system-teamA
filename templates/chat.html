@@ -1,409 +1,825 @@
 {% extends "base.html" %}
-{% block title %}QUANTA — AI Assistant{% endblock %}
+{% block title %}QUANTA — AI Assistant Chatbot{% endblock %}
 
 {% block content %}
 <style>
-/* ── Layout ─────────────────────────────────────────────────────── */
-.q-chat-page {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 64px); /* subtract topbar */
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 0 16px 0;
+/* ── Immersive Extended Window Workspace Mode ─────────────────── */
+body.q-chat-full-workspace {
+  overflow: hidden !important;
+}
+body.q-chat-full-workspace .q-sidebar {
+  display: none !important;
+}
+body.q-chat-full-workspace .q-topbar {
+  display: none !important;
+}
+body.q-chat-full-workspace .q-footer {
+  display: none !important;
+}
+body.q-chat-full-workspace .q-main {
+  margin-left: 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  max-width: 100vw !important;
+  overflow: hidden !important;
+}
+body.q-chat-full-workspace .q-chat-dashboard {
+  height: 100vh !important;
+  width: 100vw !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
 }
 
-/* ── Header ─────────────────────────────────────────────────────── */
-.q-chat-header {
+/* ── Main Full-Page Chat Dashboard Container ───────────────────────── */
+.q-chat-dashboard {
+  display: flex;
+  height: calc(100vh - 64px);
+  width: 100%;
+  overflow: hidden;
+  background: var(--q-bg);
+  position: relative;
+  margin: -16px -16px 0 -16px;
+}
+
+/* ── 1. Left Chat History Sidebar (Matching Image Replica) ───────────── */
+.q-chat-sidebar {
+  width: 270px;
+  flex-shrink: 0;
+  background: var(--q-sidebar, var(--q-bg-card));
+  border-end: 1px solid var(--q-border);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1020;
+}
+.q-chat-sidebar.collapsed {
+  margin-left: -270px;
+}
+
+.q-sidebar-header {
+  padding: 16px 14px 12px;
+  border-bottom: 1px solid var(--q-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.q-chats-count-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--q-muted) !important;
+}
+
+.q-new-chat-btn {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: #ffffff !important;
+  border: none;
+  font-weight: 600;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.25);
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.q-new-chat-btn:hover {
+  background: #2563eb;
+  color: #ffffff !important;
+}
+
+.q-search-box {
+  position: relative;
+}
+.q-search-box input {
+  width: 100%;
+  padding: 8px 30px 8px 32px;
+  border-radius: 8px;
+  background: var(--q-input-bg, var(--q-bg-card));
+  border: 1px solid var(--q-border);
+  color: var(--q-text) !important;
+  font-size: 0.82rem;
+}
+.q-search-box input::placeholder {
+  color: var(--q-muted);
+}
+.q-search-box input:focus {
+  border-color: var(--q-accent);
+  outline: none;
+}
+.q-search-box .search-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--q-muted);
+  font-size: 0.82rem;
+}
+.q-search-box .filter-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--q-muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.q-thread-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scrollbar-width: thin;
+}
+
+.q-thread-bucket-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--q-muted) !important;
+  padding: 0 4px 4px;
+}
+
+.q-thread-item {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: var(--q-text) !important;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+  background: transparent;
+  position: relative;
+}
+.q-thread-item:hover {
+  background: var(--q-nav-hover-bg);
+}
+.q-thread-item.active {
+  background: var(--q-accent-dim);
+  border-color: var(--q-accent-glow);
+}
+.q-thread-item-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 0 10px;
-  flex-shrink: 0;
 }
-.q-chat-header-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.q-chat-header-icon {
-  width: 38px; height: 38px;
-  border-radius: 10px;
-  background: var(--q-accent-dim);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.1rem; color: var(--q-accent-light);
-  border: 1px solid var(--q-accent-glow);
-}
-.q-chat-header-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--q-text);
-}
-.q-chat-header-sub {
-  font-size: 0.75rem;
-  color: var(--q-muted);
-  margin-top: 1px;
-}
-
-/* ── Messages area ───────────────────────────────────────────────── */
-#q-chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  padding: 8px 0 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--q-scroll-thumb) transparent;
-}
-#q-chat-messages::-webkit-scrollbar { width: 5px; }
-#q-chat-messages::-webkit-scrollbar-track { background: transparent; }
-#q-chat-messages::-webkit-scrollbar-thumb { background: var(--q-scroll-thumb); border-radius: 3px; }
-
-/* ── Welcome screen ──────────────────────────────────────────────── */
-.q-welcome {
-  margin: auto;
-  text-align: center;
-  padding: 40px 16px;
-}
-.q-welcome-logo {
-  font-size: 2.8rem;
-  color: var(--q-accent-light);
-  margin-bottom: 14px;
-}
-.q-welcome-title {
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--q-text);
-  margin-bottom: 8px;
-}
-.q-welcome-sub {
-  font-size: 0.88rem;
-  color: var(--q-muted);
-  max-width: 380px;
-  margin: 0 auto;
-}
-
-/* ── Message bubbles ─────────────────────────────────────────────── */
-.q-msg-wrapper {
-  display: flex;
-  flex-direction: column;
-  margin: 2px 0;
-}
-.q-msg-user {
-  align-items: flex-end;
-}
-.q-msg-model {
-  align-items: flex-start;
-}
-.q-msg-bubble {
-  max-width: 78%;
-  padding: 11px 16px;
-  border-radius: 16px;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  word-break: break-word;
-}
-.q-msg-bubble-user {
-  background: var(--q-accent);
-  color: #ffffff;
-  border-bottom-right-radius: 4px;
-}
-.q-msg-bubble-model {
-  background: var(--q-bg-card);
-  color: var(--q-text);
-  border-bottom-left-radius: 4px;
-  border: 1px solid var(--q-border);
-}
-/* Markdown rendering inside model bubble */
-.q-msg-bubble-model p { margin: 0 0 8px; }
-.q-msg-bubble-model p:last-child { margin-bottom: 0; }
-.q-msg-bubble-model strong { color: var(--q-text); }
-.q-msg-bubble-model code {
-  background: var(--q-nav-hover-bg);
-  padding: 1px 5px;
-  border-radius: 4px;
-  font-family: monospace;
-  font-size: 0.85em;
-  color: var(--q-accent-light);
-}
-.q-msg-bubble-model pre {
-  background: var(--q-bg-elevated);
-  padding: 10px 14px;
-  border-radius: 8px;
-  overflow-x: auto;
-  margin: 8px 0;
-  border: 1px solid var(--q-border);
-}
-.q-msg-bubble-model pre code {
-  background: transparent;
-  padding: 0;
-  color: var(--q-text);
-}
-.q-md-list { padding-left: 18px; margin: 6px 0; }
-.q-md-list li { margin-bottom: 3px; }
-
-/* ── Typing indicator ────────────────────────────────────────────── */
-.q-typing {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 14px 18px;
-  width: 64px;
-}
-.q-typing span {
-  display: block;
-  width: 7px; height: 7px;
-  border-radius: 50%;
-  background: var(--q-muted);
-  animation: q-bounce 1.2s infinite;
-}
-.q-typing span:nth-child(2) { animation-delay: 0.2s; }
-.q-typing span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes q-bounce {
-  0%, 80%, 100% { transform: translateY(0); background: var(--q-muted); }
-  40% { transform: translateY(-6px); background: var(--q-accent); }
-}
-
-/* ── Tool call badge ─────────────────────────────────────────────── */
-.q-tool-badge-container {
-  max-width: 78%;
-  margin-bottom: 4px;
-}
-.q-tool-toggle {
-  background: var(--q-accent-dim);
-  border: 1px solid var(--q-accent-glow);
-  color: var(--q-accent-light);
-  border-radius: 8px;
-  padding: 5px 12px;
-  font-size: 0.77rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  transition: background 0.15s;
-}
-.q-tool-toggle:hover {
-  background: var(--q-accent-glow);
-}
-.q-tool-details {
-  background: var(--q-bg-elevated);
-  border: 1px solid var(--q-border);
-  border-radius: 8px;
-  margin-top: 4px;
-  padding: 8px 12px;
-}
-.q-tool-item {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding: 3px 0;
-  font-size: 0.78rem;
-}
-.q-tool-name {
-  color: var(--q-accent-light);
-  font-family: monospace;
-  font-size: 0.8rem;
-  min-width: 180px;
-}
-.q-tool-result {
-  color: var(--q-muted);
-}
-
-/* ── Suggested prompts ───────────────────────────────────────────── */
-#q-suggestions {
-  flex-shrink: 0;
-  padding: 0 0 12px;
-}
-.q-suggest-title {
-  font-size: 0.78rem;
-  color: var(--q-muted);
-  margin-bottom: 10px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-.q-suggest-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
-@media (max-width: 540px) {
-  .q-suggest-grid { grid-template-columns: 1fr; }
-}
-.q-suggest-card {
-  background: var(--q-bg-card);
-  border: 1px solid var(--q-border);
-  border-radius: 12px;
-  padding: 12px 14px;
-  cursor: pointer;
-  text-align: left;
-  transition: border-color 0.15s, background 0.15s;
-}
-.q-suggest-card:hover {
-  background: var(--q-bg-card-hover);
-  border-color: var(--q-accent-glow);
-}
-.q-suggest-icon {
-  font-size: 1.1rem;
-  margin-bottom: 4px;
-}
-.q-suggest-label {
-  font-size: 0.8rem;
-  color: var(--q-text);
+.q-thread-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 170px;
   font-weight: 600;
 }
-.q-suggest-text {
-  font-size: 0.75rem;
-  color: var(--q-muted);
+.q-thread-meta {
+  font-size: 0.72rem;
+  color: var(--q-muted) !important;
   margin-top: 2px;
 }
 
-/* ── Input area ──────────────────────────────────────────────────── */
-.q-chat-input-area {
-  flex-shrink: 0;
-  padding: 8px 0 20px;
-  border-top: 1px solid var(--q-border);
-}
-.q-input-row {
+/* ── 2. Center Main Workspace (Spacious Replica) ─────────────────────── */
+.q-chat-main {
+  flex: 1;
   display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  background: var(--q-bg-card);
-  border: 1px solid var(--q-border);
-  border-radius: 16px;
-  padding: 8px 8px 8px 14px;
-  transition: border-color 0.15s;
+  flex-direction: column;
+  background: var(--q-bg);
+  position: relative;
+  min-width: 0;
+  height: 100%;
 }
-.q-input-row:focus-within {
+
+.q-chat-header {
+  padding: 12px 24px;
+  background: var(--q-sidebar, var(--q-bg-card));
+  border-bottom: 1px solid var(--q-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.q-header-title-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.q-header-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--q-text) !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.q-header-subtags {
+  font-size: 0.74rem;
+  color: var(--q-muted) !important;
+}
+
+.q-icon-toggle-btn {
+  background: var(--q-bg-elevated);
+  border: 1px solid var(--q-border);
+  color: var(--q-text) !important;
+  width: 32px; height: 32px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+.q-icon-toggle-btn:hover {
+  background: var(--q-nav-hover-bg);
   border-color: var(--q-accent);
 }
-#q-chat-input {
-  flex: 1;
+
+.q-smart-router {
+  background: var(--q-bg-card);
+  border: 1px solid var(--q-border);
+  color: var(--q-text) !important;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.q-smart-router select {
   background: transparent;
   border: none;
+  color: var(--q-text) !important;
+  font-weight: 600;
+  font-size: 0.78rem;
   outline: none;
-  color: var(--q-text);
-  font-size: 0.92rem;
-  resize: none;
-  min-height: 24px;
-  max-height: 140px;
-  line-height: 1.5;
-  font-family: inherit;
+  cursor: pointer;
 }
-#q-chat-input::placeholder { color: var(--q-placeholder); }
-#q-chat-send {
+.q-smart-router select option {
+  background: var(--q-bg-elevated) !important;
+  color: var(--q-text) !important;
+}
+
+.q-live-status-pill {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--q-success) !important;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.q-live-pulse {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 8px #10b981;
+}
+
+/* Messages Workspace Feed */
+.q-messages-feed {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  scrollbar-width: thin;
+}
+
+.q-feed-container {
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* User & Assistant Rows */
+.q-msg-row {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+.q-msg-row.user {
+  flex-direction: row-reverse;
+}
+
+.q-avatar {
   width: 36px; height: 36px;
   border-radius: 10px;
-  border: none;
-  background: var(--q-accent);
-  color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.9rem;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
   flex-shrink: 0;
-  transition: opacity 0.15s;
 }
-#q-chat-send:disabled { opacity: 0.5; cursor: not-allowed; }
-.q-input-hint {
+.q-avatar.user {
+  background: #2563eb;
+  color: #ffffff;
+}
+.q-avatar.assistant {
+  background: var(--q-bg-card);
+  color: var(--q-accent-light) !important;
+  border: 1px solid var(--q-border);
+}
+
+.q-msg-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 84%;
+}
+.q-msg-row.user .q-msg-content {
+  align-items: flex-end;
+}
+
+.q-bubble {
+  padding: 14px 18px;
+  border-radius: 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  word-break: break-word;
+}
+.q-bubble.user {
+  background: #2563eb;
+  color: #ffffff !important;
+  border-bottom-right-radius: 4px;
+}
+.q-bubble.assistant {
+  background: var(--q-bg-card) !important;
+  color: var(--q-text) !important;
+  border: 1px solid var(--q-border) !important;
+  border-bottom-left-radius: 4px;
+}
+
+/* ── Generative UI Widgets (Exact Reference Mockup) ─────────────────── */
+.q-widget-snapshot {
+  background: var(--q-bg-card) !important;
+  border: 1px solid var(--q-border) !important;
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-top: 8px;
+  width: 100%;
+}
+.q-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.q-widget-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--q-text) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.q-widget-badge {
   font-size: 0.72rem;
-  color: var(--q-muted);
-  margin-top: 6px;
+  font-weight: 600;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+.q-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
   text-align: center;
+  padding: 12px 0;
+  border-top: 1px solid var(--q-border);
+  border-bottom: 1px solid var(--q-border);
+}
+.q-widget-stat-val {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--q-text) !important;
+  line-height: 1.2;
+}
+.q-widget-stat-lbl {
+  font-size: 0.74rem;
+  color: var(--q-muted) !important;
+  margin-top: 2px;
+}
+.q-widget-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--q-muted) !important;
+  margin-top: 12px;
+}
+
+/* Insight Card Widget (Amber Outline) */
+.q-widget-insight {
+  background: var(--q-bg-card) !important;
+  border: 1px solid #f59e0b !important;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 8px;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.1);
+}
+.q-widget-insight-heading {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--q-text) !important;
+  margin-bottom: 6px;
+}
+.q-widget-insight-why {
+  font-size: 0.8rem;
+  color: var(--q-muted) !important;
+}
+
+/* Inline Chat Chart Cards & Interactive Widgets */
+.q-widget-chart-card {
+  background: var(--q-bg-card) !important;
+  border: 1px solid var(--q-border) !important;
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin-top: 8px;
+  width: 100%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+.q-widget-clarification {
+  background: var(--q-bg-card) !important;
+  border: 1px dashed var(--q-border-strong, var(--q-border)) !important;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-top: 8px;
+  width: 100%;
+}
+.q-clarify-chip {
+  transition: all 0.2s ease;
+  font-size: 0.8rem !important;
+  cursor: pointer;
+}
+.q-clarify-chip:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Bottom Composer Floating Box */
+.q-composer-container {
+  padding: 12px 16px 16px;
+  background: transparent;
+  flex-shrink: 0;
+}
+.q-composer-box {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background: var(--q-bg-elevated) !important;
+  border: 1px solid var(--q-border) !important;
+  border-radius: 16px;
+  padding: 12px 16px;
+  transition: border-color 0.2s ease;
+}
+.q-composer-box:focus-within {
+  border-color: var(--q-accent) !important;
+}
+.q-composer-input {
+  width: 100%;
+  border: none;
+  background: transparent !important;
+  color: var(--q-text) !important;
+  font-size: 0.92rem;
+  resize: none;
+  outline: none;
+  max-height: 160px;
+  min-height: 44px;
+}
+.q-composer-input::placeholder {
+  color: var(--q-placeholder, var(--q-muted)) !important;
+}
+.q-composer-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--q-border);
+}
+.q-send-btn {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: #3b82f6;
+  color: #ffffff !important;
+  border: none;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+}
+.q-truthful-footer {
+  font-size: 0.7rem;
+  color: var(--q-muted) !important;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ── 3. Right Drawer: YOUR DATA & CONTEXT ───────────────────────────── */
+.q-chat-context-panel {
+  width: 280px;
+  flex-shrink: 0;
+  background: var(--q-sidebar, var(--q-bg-card));
+  border-start: 1px solid var(--q-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 16px;
+  gap: 16px;
+  z-index: 1020;
+}
+.q-chat-context-panel.collapsed {
+  margin-right: -280px;
+}
+
+.q-context-card {
+  background: var(--q-bg-card) !important;
+  border: 1px solid var(--q-border) !important;
+  border-radius: 12px;
+  padding: 14px;
+  color: var(--q-text) !important;
+}
+.q-context-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--q-muted) !important;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.q-metric-pill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--q-border);
+  font-size: 0.82rem;
+}
+.q-metric-pill:last-child { border-bottom: none; }
+.q-metric-pill strong { color: var(--q-text) !important; }
+
+/* Responsive Overlays */
+@media (max-width: 992px) {
+  .q-chat-sidebar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    transform: translateX(-100%);
+  }
+  .q-chat-sidebar.open {
+    transform: translateX(0);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.25);
+  }
+  .q-chat-context-panel {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    transform: translateX(100%);
+  }
+  .q-chat-context-panel.open {
+    transform: translateX(0);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.25);
+  }
 }
 </style>
 
-<div class="q-chat-page">
+<div class="q-chat-dashboard">
 
-  <!-- Header -->
-  <div class="q-chat-header">
-    <div class="q-chat-header-left">
-      <div class="q-chat-header-icon"><i class="bi bi-stars"></i></div>
-      <div>
-        <div class="q-chat-header-title">Quanta AI</div>
-        <div class="q-chat-header-sub">Personalized decision assistant · Powered by your data</div>
+  <!-- ─── 1. Left Chat History Sidebar (Replica of Reference Image) ────── -->
+  <div class="q-chat-sidebar" id="q-chat-sidebar">
+    <div class="q-sidebar-header">
+      <div class="q-chats-count-label" id="q-chats-count">CHATS (7)</div>
+      
+      <button class="q-new-chat-btn" id="btn-new-chat">
+        <i class="bi bi-plus-lg"></i> New Chat
+      </button>
+
+      <div class="q-search-box">
+        <i class="bi bi-search search-icon"></i>
+        <input type="text" id="q-search-threads" placeholder="Search conversations...">
+        <i class="bi bi-sliders filter-icon" title="Filter options"></i>
       </div>
     </div>
-    <button id="q-chat-clear" class="btn btn-sm" style="background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2);border-radius:8px;font-size:0.78rem;">
-      <i class="bi bi-trash3"></i> Clear
-    </button>
-  </div>
 
-  <!-- Messages -->
-  <div id="q-chat-messages"></div>
-
-  <!-- Suggested prompts -->
-  <div id="q-suggestions">
-    <div class="q-suggest-title">Suggested</div>
-    <div class="q-suggest-grid">
-
-      <button class="q-suggest-card" data-prompt="Can I afford a ₹5,000 purchase this week?">
-        <div class="q-suggest-icon">💰</div>
-        <div class="q-suggest-label">Finance</div>
-        <div class="q-suggest-text">Can I afford a ₹5,000 purchase this week?</div>
-      </button>
-
-      <button class="q-suggest-card" data-prompt="Am I actually consistent with studying?">
-        <div class="q-suggest-icon">📚</div>
-        <div class="q-suggest-label">Study</div>
-        <div class="q-suggest-text">Am I actually consistent with studying?</div>
-      </button>
-
-      <button class="q-suggest-card" data-prompt="Which habits am I most at risk of losing?">
-        <div class="q-suggest-icon">🎯</div>
-        <div class="q-suggest-label">Habits</div>
-        <div class="q-suggest-text">Which habits am I most at risk of losing?</div>
-      </button>
-
-      <button class="q-suggest-card" data-prompt="What will my savings look like next month?">
-        <div class="q-suggest-icon">📈</div>
-        <div class="q-suggest-label">Forecast</div>
-        <div class="q-suggest-text">What will my savings look like next month?</div>
-      </button>
-
-      <button class="q-suggest-card" data-prompt="When am I most productive?">
-        <div class="q-suggest-icon">⚡</div>
-        <div class="q-suggest-label">Productivity</div>
-        <div class="q-suggest-text">When am I most productive?</div>
-      </button>
-
-      <button class="q-suggest-card" data-prompt="Why did my expenses increase recently?">
-        <div class="q-suggest-icon">🔍</div>
-        <div class="q-suggest-label">Analysis</div>
-        <div class="q-suggest-text">Why did my expenses increase recently?</div>
-      </button>
-
-      <button class="q-suggest-card" data-prompt="Show me my active goals and progress.">
-        <div class="q-suggest-icon">🏆</div>
-        <div class="q-suggest-label">Goals</div>
-        <div class="q-suggest-text">Show me my active goals and progress.</div>
-      </button>
-
-      <button class="q-suggest-card" data-prompt="Add a ₹200 food expense for today.">
-        <div class="q-suggest-icon">➕</div>
-        <div class="q-suggest-label">Quick Add</div>
-        <div class="q-suggest-text">Add a ₹200 food expense for today.</div>
-      </button>
-
+    <div class="q-thread-list" id="q-thread-list">
+      <div class="text-center q-muted-text py-4 small">
+        <div class="spinner-border spinner-border-sm text-primary mb-2"></div>
+        <div>Loading conversations...</div>
+      </div>
     </div>
   </div>
 
-  <!-- Input -->
-  <div class="q-chat-input-area">
-    <div class="q-input-row">
-      <textarea
-        id="q-chat-input"
-        rows="1"
-        placeholder="Ask about your finances, habits, study, goals…"
-        autocomplete="off"
-        spellcheck="true"
-      ></textarea>
-      <button id="q-chat-send" title="Send (Enter)">
-        <i class="bi bi-send-fill"></i>
-      </button>
+  <!-- ─── 2. Center Main Workspace (Replica of Reference Image) ───────── -->
+  <div class="q-chat-main">
+    
+    <!-- Top Header -->
+    <div class="q-chat-header">
+      <div class="d-flex align-items-center gap-2">
+        <!-- Sleek Unified Back to Dashboard Button -->
+        <a href="/dashboard" class="btn btn-sm btn-outline-secondary rounded-pill px-3 d-inline-flex align-items-center gap-1 me-1" id="btn-exit-assistant" title="Back to Dashboard" style="font-size:0.8rem; font-weight:500;">
+          <i class="bi bi-arrow-left"></i> <span>Back</span>
+        </a>
+
+        <!-- Full Window Workspace Toggle Icon -->
+        <button class="q-icon-toggle-btn" id="toggle-full-workspace-btn" title="Toggle Full Window View">
+          <i class="bi bi-arrows-angle-expand"></i>
+        </button>
+
+        <!-- Sidebar Toggle Icon -->
+        <button class="q-icon-toggle-btn" id="toggle-history-btn" title="Toggle Sidebar">
+          <i class="bi bi-layout-sidebar"></i>
+        </button>
+        
+        <div class="q-header-title-wrap ms-1">
+          <div class="q-header-title">
+            <span id="q-active-thread-title">Habit Consistency Review</span>
+            <button class="btn btn-link btn-sm text-muted p-0 ms-1" id="btn-rename-thread" title="Rename Title">
+              <i class="bi bi-pencil-square"></i>
+            </button>
+          </div>
+          <div class="q-header-subtags" id="q-active-thread-tags">Productivity • Behaviour • Lifestyle</div>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-2 flex-wrap ms-auto">
+        <!-- Smart Router Dropdown -->
+        <div class="q-smart-router" title="Model Routing Strategy">
+          <i class="bi bi-cpu-fill text-primary"></i>
+          <select id="q-routing-mode">
+            <option value="auto">⚡ Auto (Smart Routing)</option>
+            <option value="primary_only">🔥 Force Primary: Qwen 3 Next Only</option>
+            <option value="local_only">🛡️ Force Local Fallback</option>
+          </select>
+        </div>
+
+        <!-- Verification Indicator Badge -->
+        <div class="q-live-status-pill" id="q-personal-data-badge">
+          <div class="q-live-pulse"></div>
+          <span>Based on personal data</span>
+        </div>
+
+        <!-- + New Thread Button -->
+        <button class="btn btn-sm btn-outline-primary rounded-pill px-3" id="btn-new-thread" title="Branch Child Thread">
+          <i class="bi bi-plus-lg me-1"></i> New Thread
+        </button>
+
+        <!-- Context Panel Toggle Button -->
+        <button class="q-icon-toggle-btn" id="toggle-context-btn" title="Toggle Data Context">
+          <i class="bi bi-info-circle"></i>
+        </button>
+      </div>
     </div>
-    <div class="q-input-hint">Press Enter to send · Shift+Enter for new line</div>
+
+    <!-- Messages Workspace Feed -->
+    <div class="q-messages-feed" id="q-messages-feed">
+      <div class="q-feed-container" id="q-feed-container">
+        <!-- Messages & Generative UI Widgets rendered here dynamically -->
+      </div>
+    </div>
+
+    <!-- Floating Bottom Composer -->
+    <div class="q-composer-container">
+      <div class="q-composer-box">
+        <textarea class="q-composer-input" id="q-chat-input" rows="1" placeholder="Ask about your productivity, habits, behaviour, forecasts, or simulations..."></textarea>
+        
+        <div class="q-composer-toolbar">
+          <div class="d-flex align-items-center gap-3 text-muted">
+            <button class="btn btn-link btn-sm text-muted p-0" title="Attachments"><i class="bi bi-paperclip fs-5"></i></button>
+            <button class="btn btn-link btn-sm text-muted p-0" title="Data Sources Context"><i class="bi bi-database fs-5"></i></button>
+          </div>
+          
+          <div class="d-flex align-items-center gap-3">
+            <span class="text-muted" style="font-size:0.72rem;">Shift + Enter for new line</span>
+            <button class="q-send-btn" id="q-btn-send" title="Send Message">
+              <i class="bi bi-send-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="q-truthful-footer">
+        Personal data grounded • Insufficient evidence explicitly flagged • Privacy guaranteed
+      </div>
+    </div>
   </div>
 
+  <!-- ─── 3. Right Drawer: YOUR DATA & CONTEXT (Replica of Reference Image) ── -->
+  <div class="q-chat-context-panel" id="q-chat-context-panel">
+    
+    <div class="d-flex align-items-center justify-content-between mb-1">
+      <strong class="text-uppercase" style="font-size:0.82rem; letter-spacing:0.05em; color:var(--q-text);">YOUR DATA &amp; CONTEXT</strong>
+      <button class="btn btn-link btn-sm text-muted p-0" id="btn-close-context"><i class="bi bi-x-lg"></i></button>
+    </div>
+
+    <!-- Personal Data Grounding Shield Card -->
+    <div class="q-context-card" style="border-color: rgba(16,185,129,0.3) !important;">
+      <div class="d-flex align-items-center gap-2 text-success fw-bold mb-1" style="font-size:0.84rem;">
+        <i class="bi bi-shield-check"></i> Personal Data Grounding
+      </div>
+      <div class="text-muted" style="font-size:0.75rem; line-height:1.4;">
+        Strict user-data isolation active. Answers are grounded exclusively in verified personal records.
+      </div>
+    </div>
+
+    <!-- Sources Used Card -->
+    <div class="q-context-card">
+      <div class="q-context-title">
+        <span>Sources Used</span>
+        <span class="badge bg-secondary" id="ctx-sources-count" style="font-size:0.68rem;">2 sources active</span>
+      </div>
+      <div id="q-context-sources">
+        <div class="q-metric-pill">
+          <span><i class="bi bi-check-circle-fill text-success me-2"></i>Productivity records</span>
+        </div>
+        <div class="q-metric-pill">
+          <span><i class="bi bi-check-circle-fill text-success me-2"></i>Productivity forecast model</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Domain Summaries Card -->
+    <div class="q-context-card">
+      <div class="q-context-title">
+        <span>DOMAIN SUMMARIES</span>
+      </div>
+      <div id="q-context-domains">
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold" style="font-size:0.82rem;"><i class="bi bi-lightning-charge me-1 text-primary"></i> Productivity</span>
+            <a href="/productivity" class="text-primary text-decoration-none" style="font-size:0.74rem;">View ↗</a>
+          </div>
+          <div class="d-flex justify-content-between text-muted" style="font-size:0.76rem; margin-top:2px;">
+            <span>Score: <strong id="ctx-prod-score">84/100</strong></span>
+            <span>Consistency: <strong id="ctx-prod-consistency">64.3%</strong></span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold" style="font-size:0.82rem;"><i class="bi bi-check2-circle me-1 text-warning"></i> Habits</span>
+            <a href="/habits" class="text-primary text-decoration-none" style="font-size:0.74rem;">View ↗</a>
+          </div>
+          <div class="text-muted" style="font-size:0.76rem; margin-top:2px;">
+            Active habits: <strong id="ctx-habits-val">0</strong>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold" style="font-size:0.82rem;"><i class="bi bi-book me-1 text-info"></i> Study &amp; Learning</span>
+            <a href="/study" class="text-primary text-decoration-none" style="font-size:0.74rem;">View ↗</a>
+          </div>
+          <div class="text-muted" style="font-size:0.76rem; margin-top:2px;">
+            Recent hours: <strong id="ctx-study-val">18.5 hrs</strong>
+          </div>
+        </div>
+
+        <div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-bold" style="font-size:0.82rem;"><i class="bi bi-diagram-3 me-1 text-success"></i> Forecast &amp; Simulation</span>
+            <a href="/simulation" class="text-primary text-decoration-none" style="font-size:0.74rem;">View ↗</a>
+          </div>
+          <div class="d-flex justify-content-between text-muted" style="font-size:0.76rem; margin-top:2px;">
+            <span>Forecast status: <strong class="text-success">Active</strong></span>
+            <span>Simulation: <strong class="text-success">Ready</strong></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saved Insights Card -->
+    <div class="q-context-card">
+      <div class="q-context-title">
+        <span>Saved Insights (<span id="ctx-insights-count">0</span>)</span>
+        <i class="bi bi-bookmark-fill text-warning"></i>
+      </div>
+      <div id="q-saved-insights-container">
+        <div class="text-muted small py-2" style="font-size:0.76rem; line-height:1.4;">
+          Save key insights from assistant responses using the "..." menu on messages.
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
 {% endblock %}
 

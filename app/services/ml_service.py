@@ -18,6 +18,8 @@ receives the feature vector it was trained on.
 
 import os
 import json
+import time
+from threading import Lock
 import numpy as np
 import pandas as pd
 import joblib
@@ -28,6 +30,21 @@ from app.services.crud_service import get_user_collection_docs
 MODEL_DIR = os.path.join(os.getcwd(), 'models', 'v3')
 
 _models = {}
+
+# ─── High-Performance In-Memory ML Inference Cache ────────────────────────────
+_ML_CACHE_LOCK = Lock()
+_ML_CACHE = {}  # Key: (domain, uid) -> {'time': float, 'data': any}
+ML_CACHE_TTL = 120  # 2 minutes
+
+def invalidate_ml_cache(uid=None, domain=None):
+    """Invalidate cached ML forecast data for a user or domain."""
+    with _ML_CACHE_LOCK:
+        if uid is None:
+            _ML_CACHE.clear()
+            return
+        keys = [k for k in _ML_CACHE if k[1] == uid and (domain is None or k[0] == domain)]
+        for k in keys:
+            _ML_CACHE.pop(k, None)
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -287,6 +304,13 @@ def forecast_finance(uid):
     if 'finance' not in _models:
         return None
 
+    now = time.time()
+    cache_key = ('finance', uid)
+    with _ML_CACHE_LOCK:
+        cached = _ML_CACHE.get(cache_key)
+        if cached and (now - cached['time']) < ML_CACHE_TTL:
+            return cached['data']
+
     db         = get_db()
     today      = datetime.now()
     start_date = today - timedelta(days=65)
@@ -438,7 +462,7 @@ def forecast_finance(uid):
     top_categories = [(c["category"], c["total"]) for c in category_breakdown[:3]]
     insight = _finance_insight(prediction, monthly_inc, trend, top_categories)
 
-    return {
+    res = {
         "projected_30d_expenses": float(prediction),
         "current_monthly_income": float(monthly_inc),
         "expense_trend":          trend,
@@ -448,6 +472,9 @@ def forecast_finance(uid):
         "heatmap":                heatmap_data,
         "insight":                insight,
     }
+    with _ML_CACHE_LOCK:
+        _ML_CACHE[cache_key] = {'time': now, 'data': res}
+    return res
 
 def forecast_study(uid):
     """
@@ -466,6 +493,13 @@ def forecast_study(uid):
     load_models()
     if 'study' not in _models:
         return None
+
+    now = time.time()
+    cache_key = ('study', uid)
+    with _ML_CACHE_LOCK:
+        cached = _ML_CACHE.get(cache_key)
+        if cached and (now - cached['time']) < ML_CACHE_TTL:
+            return cached['data']
 
     db         = get_db()
     today      = datetime.now()
@@ -574,7 +608,7 @@ def forecast_study(uid):
 
     insight = _study_insight(prediction, trend, recent_avg, past_avg)
 
-    return {
+    res = {
         "projected_7d_study_mins": round(prediction, 1),
         "projected_7d_study_hrs":  round(prediction / 60.0, 2),
         "study_trend":             trend,
@@ -583,6 +617,9 @@ def forecast_study(uid):
         "heatmap":                 heatmap,
         "insight":                 insight,
     }
+    with _ML_CACHE_LOCK:
+        _ML_CACHE[cache_key] = {'time': now, 'data': res}
+    return res
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -598,8 +635,16 @@ def get_all_habit_risks(uid):
     if 'habit_payload' not in _models:
         return None
 
-    today   = datetime.now()
-    results = []
+    now = time.time()
+    cache_key = ('habits', uid)
+    with _ML_CACHE_LOCK:
+        cached = _ML_CACHE.get(cache_key)
+        if cached and (now - cached['time']) < ML_CACHE_TTL:
+            return cached['data']
+
+    today     = datetime.now()
+    today_iso = today.strftime('%Y-%m-%d')
+    results   = []
 
     for h in get_user_collection_docs('habits', uid):
         if not h.get('is_active', True):
@@ -607,9 +652,90 @@ def get_all_habit_risks(uid):
 
         habit_id       = h.get('id', '')
         category       = str(h.get('category', 'Other'))
-        current_streak = int(h.get('current_streak', 0))
+        current_streak = int(h.get('current_streak', h.get('streak', 0)) or 0)
         label          = str(h.get('name', 'Unknown'))
 
+        last_completed = str(h.get('last_completed') or '')[:10]
+        is_completed_today = (last_completed == today_iso)
+        is_shielded = bool(h.get('streak_protected', False))
+
+        # Check creation date to avoid penalizing newly created habits
+        created_at = h.get('created_at')
+        days_since_created = 35
+        if created_at:
+            try:
+                if hasattr(created_at, 'date'):
+                    c_date = created_at.date()
+                elif isinstance(created_at, str):
+                    c_date = datetime.fromisoformat(created_at.replace('Z', '+00:00')).date()
+                else:
+                    c_date = today.date()
+                days_since_created = max(1, (today.date() - c_date).days + 1)
+            except Exception:
+                days_since_created = 35
+
+        # 1. If completed today: Streak is safely maintained/advancing for today!
+        if is_completed_today:
+            churn_prob = round(max(0.02, 0.10 - min(current_streak, 8) * 0.01), 4)
+            risk_label = "Low"
+            recommendation = (
+                f"'{label}' is completed for today! Your {current_streak}-day streak is protected."
+                if current_streak > 1 else
+                f"'{label}' is completed for today! Great job starting your streak."
+            )
+            results.append({
+                "id":                habit_id,
+                "name":              label,
+                "category":          category,
+                "current_streak":    current_streak,
+                "churn_probability": churn_prob,
+                "risk_level":        risk_label,
+                "recommendation":    recommendation,
+                "tracked_days":      min(35, max(current_streak + 1, days_since_created)),
+                "completed_today":   True,
+                "streak_protected":  is_shielded,
+            })
+            continue
+
+        # 2. If streak is shielded:
+        if is_shielded:
+            churn_prob = 0.05
+            risk_label = "Low"
+            recommendation = f"'{label}' is streak-shielded. Complete it before tomorrow to maintain progress."
+            results.append({
+                "id":                habit_id,
+                "name":              label,
+                "category":          category,
+                "current_streak":    current_streak,
+                "churn_probability": churn_prob,
+                "risk_level":        risk_label,
+                "recommendation":    recommendation,
+                "tracked_days":      min(35, max(current_streak + 1, days_since_created)),
+                "completed_today":   False,
+                "streak_protected":  True,
+            })
+            continue
+
+        # 3. If it's a new habit (<= 7 days old) with consistent check-ins:
+        if days_since_created <= 7 and current_streak >= max(0, days_since_created - 1):
+            churn_prob = round(max(0.08, 0.28 - current_streak * 0.04), 4)
+            risk_label = "Low"
+            recommendation = f"'{label}' is off to a great start with a {current_streak}-day streak! Keep building the neural pathway."
+            results.append({
+                "id":                habit_id,
+                "name":              label,
+                "category":          category,
+                "current_streak":    current_streak,
+                "churn_probability": churn_prob,
+                "risk_level":        risk_label,
+                "recommendation":    recommendation,
+                "tracked_days":      days_since_created,
+                "completed_today":   False,
+                "streak_protected":  False,
+            })
+            continue
+
+        # 4. Standard statistical/ML inference for habits with longer history
         start_date = today - timedelta(days=35)
         dates      = pd.date_range(start_date.date(), today.date(), freq="D")
         grid       = pd.DataFrame({"date": dates})
@@ -669,10 +795,14 @@ def get_all_habit_risks(uid):
             "churn_probability": round(churn_prob, 4),
             "risk_level":        risk_label,
             "recommendation":    recommendation,
-            "tracked_days":      min(35, current_streak + 5),
+            "tracked_days":      min(35, max(current_streak + 5, days_since_created)),
+            "completed_today":   False,
+            "streak_protected":  False,
         })
 
     results.sort(key=lambda x: x["churn_probability"], reverse=True)
+    with _ML_CACHE_LOCK:
+        _ML_CACHE[cache_key] = {'time': now, 'data': results}
     return results
 
 

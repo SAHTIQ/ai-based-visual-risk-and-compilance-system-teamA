@@ -69,3 +69,6 @@ build/
 # Log files
 *.log
 logs/
+
+# Internal Metadata
+.sixth/

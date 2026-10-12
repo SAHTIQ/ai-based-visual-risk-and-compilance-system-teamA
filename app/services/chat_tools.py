@@ -33,7 +33,8 @@ from app.utils.serializers import serialize_doc
 # ──────────────────────────────────────────────────────────────────────────────
 
 def _db():
-    return firestore.client()
+    from app.services.firebase_service import get_firestore_client
+    return get_firestore_client()
 
 
 def _list_col(collection, uid, limit=50):
@@ -60,6 +61,11 @@ def _create_doc(collection, uid, data, required_fields=None):
     data['created_at'] = firestore.SERVER_TIMESTAMP
     data['updated_at'] = firestore.SERVER_TIMESTAMP
     _, ref = db.collection(collection).add(data)
+    try:
+        from app.services.crud_service import invalidate_user_cache
+        invalidate_user_cache(uid, collection)
+    except Exception:
+        pass
     return {"id": ref.id, "success": True}
 
 
@@ -78,6 +84,11 @@ def _update_doc(collection, doc_id, uid, data):
     data.pop('created_at', None)
     data['updated_at'] = firestore.SERVER_TIMESTAMP
     ref.update(data)
+    try:
+        from app.services.crud_service import invalidate_user_cache
+        invalidate_user_cache(uid, collection)
+    except Exception:
+        pass
     return {"success": True, "id": doc_id}
 
 
@@ -91,6 +102,11 @@ def _delete_doc(collection, doc_id, uid):
     if snap.to_dict().get('uid') != uid:
         return {"error": "Permission denied."}
     ref.delete()
+    try:
+        from app.services.crud_service import invalidate_user_cache
+        invalidate_user_cache(uid, collection)
+    except Exception:
+        pass
     return {"success": True, "id": doc_id}
 
 
@@ -236,13 +252,61 @@ EXPENSE_CATEGORIES = ['food', 'transport', 'rent', 'utilities',
                       'entertainment', 'education', 'health', 'shopping', 'other']
 
 
-def create_expense(uid, amount, category, date, note="", **_):
-    """Create a new expense record."""
-    if category not in EXPENSE_CATEGORIES:
-        return {"error": f"Invalid category '{category}'. Valid: {EXPENSE_CATEGORIES}"}
-    return _create_doc('expenses', uid, {
-        "amount": float(amount), "category": category, "date": date, "note": note
+def normalize_expense_category(cat: str) -> str:
+    c = (cat or "").strip().lower()
+    if c in EXPENSE_CATEGORIES:
+        return c
+    if any(k in c for k in ("food", "grocer", "dine", "dining", "meal", "coffee", "restaurant", "cafe", "dinner", "lunch", "breakfast", "snack")):
+        return "food"
+    if any(k in c for k in ("transport", "fuel", "gas", "petrol", "diesel", "taxi", "cab", "uber", "ola", "bus", "train", "metro", "flight", "commute", "travel")):
+        return "transport"
+    if any(k in c for k in ("rent", "apartment", "lease", "hostel", "pg", "flat", "housing")):
+        return "rent"
+    if any(k in c for k in ("utilit", "bill", "electric", "water", "wifi", "internet", "phone", "recharge")):
+        return "utilities"
+    if any(k in c for k in ("entertain", "movie", "film", "party", "game", "gaming", "stream", "netflix", "spotify", "hobby", "fun")):
+        return "entertainment"
+    if any(k in c for k in ("educat", "book", "course", "tuition", "school", "college", "fees", "study", "learning", "class")):
+        return "education"
+    if any(k in c for k in ("health", "med", "doctor", "pharmacy", "hospital", "clinic", "gym", "fitness", "wellness")):
+        return "health"
+    if any(k in c for k in ("shop", "cloth", "wear", "electronics", "gadget", "amazon", "flipkart", "store", "buy", "purchase")):
+        return "shopping"
+    return "other"
+
+
+def create_expense(uid, amount, category="other", date=None, note="", **_):
+    """Create a new expense record with auto-normalized category and default date."""
+    try:
+        amt = float(amount)
+        if amt <= 0:
+            return {"error": "Amount must be greater than zero."}
+    except (ValueError, TypeError):
+        return {"error": f"Invalid amount '{amount}'."}
+
+    norm_category = normalize_expense_category(category)
+    record_date = date or datetime.now().strftime("%Y-%m-%d")
+
+    full_note = note or ""
+    if norm_category == "other" and category and category.lower() != "other":
+        full_note = f"[{category.capitalize()}] {full_note}".strip()
+
+    res = _create_doc('expenses', uid, {
+        "amount": amt,
+        "category": norm_category,
+        "date": record_date,
+        "note": full_note,
+        "currency": "INR"
     })
+    if res.get("success"):
+        return {
+            "success": True,
+            "id": res.get("id"),
+            "amount": amt,
+            "category": norm_category,
+            "message": f"Successfully recorded expense of ₹{amt:,.2f} under category '{norm_category}'."
+        }
+    return res
 
 
 def update_expense(uid, doc_id, amount=None, category=None, date=None, note=None, **_):
@@ -251,9 +315,7 @@ def update_expense(uid, doc_id, amount=None, category=None, date=None, note=None
     if amount is not None:
         data['amount'] = float(amount)
     if category is not None:
-        if category not in EXPENSE_CATEGORIES:
-            return {"error": f"Invalid category '{category}'."}
-        data['category'] = category
+        data['category'] = normalize_expense_category(category)
     if date is not None:
         data['date'] = date
     if note is not None:
@@ -268,16 +330,144 @@ def delete_expense(uid, doc_id, **_):
     return _delete_doc('expenses', doc_id, uid)
 
 
+SAVINGS_TYPES = ['bank', 'investment', 'emergency', 'crypto', 'retirement', 'other']
+
+
+def normalize_savings_type(raw_type: str) -> str:
+    t = (raw_type or "").strip().lower()
+    if t in SAVINGS_TYPES:
+        return t
+    if any(k in t for k in ("invest", "business", "stock", "equity", "share", "fund", "mutual", "trading", "gold")):
+        return "investment"
+    if any(k in t for k in ("bank", "saving", "deposit", "fd", "account", "cash", "recurring")):
+        return "bank"
+    if any(k in t for k in ("emergenc", "safety", "rainy", "buffer")):
+        return "emergency"
+    if any(k in t for k in ("crypto", "btc", "eth", "coin", "token", "web3")):
+        return "crypto"
+    if any(k in t for k in ("retire", "pension", "401k", "pf", "epf", "ppf")):
+        return "retirement"
+    return "other"
+
+
+def create_savings(uid, amount, type="investment", date=None, target_amount=None, note="", **_):
+    """Log a savings or investment deposit/record."""
+    try:
+        amt = float(amount)
+        if amt <= 0:
+            return {"error": "Amount must be greater than zero."}
+    except (ValueError, TypeError):
+        return {"error": f"Invalid amount '{amount}'."}
+
+    norm_type = normalize_savings_type(type)
+    record_date = date or datetime.now().strftime("%Y-%m-%d")
+
+    full_note = note or ""
+    if norm_type == "other" and type and type.lower() != "other":
+        full_note = f"[{type.capitalize()}] {full_note}".strip()
+
+    payload = {
+        "amount": amt,
+        "type": norm_type,
+        "date": record_date,
+        "currency": "INR",
+        "note": full_note,
+        "notes": full_note,
+    }
+    if target_amount:
+        try:
+            payload["target_amount"] = float(target_amount)
+        except Exception:
+            pass
+
+    res = _create_doc('savings', uid, payload)
+    if res.get("success"):
+        return {
+            "success": True,
+            "id": res.get("id"),
+            "amount": amt,
+            "type": norm_type,
+            "message": f"Successfully recorded savings entry of ₹{amt:,.2f} under {norm_type}."
+        }
+    return res
+
+
+def update_savings(uid, doc_id, amount=None, type=None, date=None, note=None, **_):
+    """Update a savings record."""
+    data = {}
+    if amount is not None:
+        data['amount'] = float(amount)
+    if type is not None:
+        data['type'] = normalize_savings_type(type)
+    if date is not None:
+        data['date'] = date
+    if note is not None:
+        data['note'] = note
+        data['notes'] = note
+    if not data:
+        return {"error": "No fields to update."}
+    return _update_doc('savings', doc_id, uid, data)
+
+
+def delete_savings(uid, doc_id, **_):
+    """Delete a savings record."""
+    return _delete_doc('savings', doc_id, uid)
+
+
 INCOME_SOURCES = ['salary', 'freelance', 'scholarship', 'allowance', 'gift', 'investment', 'other']
 
 
-def create_income(uid, amount, source, date, note="", **_):
-    """Create a new income record."""
-    if source not in INCOME_SOURCES:
-        return {"error": f"Invalid source '{source}'. Valid: {INCOME_SOURCES}"}
-    return _create_doc('income', uid, {
-        "amount": float(amount), "source": source, "date": date, "note": note
+def normalize_income_source(src: str) -> str:
+    s = (src or "").strip().lower()
+    if s in INCOME_SOURCES:
+        return s
+    if any(k in s for k in ("salar", "job", "paycheck", "wages", "bonus", "work")):
+        return "salary"
+    if any(k in s for k in ("free", "gig", "consult", "client", "contract", "project")):
+        return "freelance"
+    if any(k in s for k in ("scholar", "stipend", "grant", "fellowship")):
+        return "scholarship"
+    if any(k in s for k in ("allow", "pocket", "parent", "family")):
+        return "allowance"
+    if any(k in s for k in ("gift", "present", "reward")):
+        return "gift"
+    if any(k in s for k in ("invest", "business", "dividend", "interest", "profit", "stock", "crypto", "equity", "share", "venture")):
+        return "investment"
+    return "other"
+
+
+def create_income(uid, amount, source="other", date=None, note="", **_):
+    """Create a new income record with auto-normalized source and default date."""
+    try:
+        amt = float(amount)
+        if amt <= 0:
+            return {"error": "Amount must be greater than zero."}
+    except (ValueError, TypeError):
+        return {"error": f"Invalid amount '{amount}'."}
+
+    norm_source = normalize_income_source(source)
+    record_date = date or datetime.now().strftime("%Y-%m-%d")
+
+    full_note = note or ""
+    if norm_source == "other" and source and source.lower() != "other":
+        full_note = f"[{source.capitalize()}] {full_note}".strip()
+
+    res = _create_doc('income', uid, {
+        "amount": amt,
+        "source": norm_source,
+        "date": record_date,
+        "note": full_note,
+        "currency": "INR"
     })
+    if res.get("success"):
+        return {
+            "success": True,
+            "id": res.get("id"),
+            "amount": amt,
+            "source": norm_source,
+            "message": f"Successfully recorded income of ₹{amt:,.2f} from {norm_source}."
+        }
+    return res
 
 
 def update_income(uid, doc_id, amount=None, source=None, date=None, note=None, **_):
@@ -455,21 +645,113 @@ def get_habits(uid, **_):
     return {"habits": _list_col('habits', uid, limit=100)}
 
 
-HABIT_CATEGORIES = ['health', 'wellness', 'productivity', 'learning', 'social', 'other']
+HABIT_CATEGORIES = ['health', 'wellness', 'productivity', 'learning', 'social', 'finance', 'business', 'other']
 HABIT_FREQUENCIES = ['daily', 'weekly', 'monthly']
 
 
-def create_habit(uid, name, category, frequency="daily", note="", **_):
-    """Create a new habit."""
-    if category not in HABIT_CATEGORIES:
-        return {"error": f"Invalid category '{category}'. Valid: {HABIT_CATEGORIES}"}
-    if frequency not in HABIT_FREQUENCIES:
-        return {"error": f"Invalid frequency. Valid: {HABIT_FREQUENCIES}"}
-    return _create_doc('habits', uid, {
-        "name": name, "category": category,
-        "frequency": frequency, "note": note,
-        "is_active": True, "current_streak": 0,
+def normalize_habit_category(cat: str) -> str:
+    c = (cat or "").strip().lower()
+    if c in HABIT_CATEGORIES:
+        return c
+    if any(k in c for k in ("financ", "money", "sav", "invest", "budget", "wealth", "rupee")):
+        return "finance"
+    if any(k in c for k in ("business", "venture", "startup", "trade", "sales", "client")):
+        return "business"
+    if any(k in c for k in ("health", "fitness", "workout", "gym", "exercise", "walk", "run", "diet", "sleep")):
+        return "health"
+    if any(k in c for k in ("wellness", "meditat", "mindful", "mental", "peace")):
+        return "wellness"
+    if any(k in c for k in ("productiv", "work", "focus", "deep", "discipline", "routine")):
+        return "productivity"
+    if any(k in c for k in ("learn", "study", "read", "book", "course", "skill")):
+        return "learning"
+    if any(k in c for k in ("social", "family", "friend", "network")):
+        return "social"
+    return "other"
+
+
+def create_habit(uid, name, category="other", frequency="daily", target_count=1, note="", **_):
+    """Create a new habit with intelligent auto-normalization."""
+    if not name or not str(name).strip():
+        return {"error": "Habit name cannot be empty."}
+
+    norm_cat = normalize_habit_category(category)
+    freq = str(frequency).strip().lower()
+    if freq not in HABIT_FREQUENCIES:
+        freq = "daily"
+
+    full_note = note or ""
+    if norm_cat == "other" and category and category.lower() not in ("other", "finance", "business"):
+        full_note = f"[{category.capitalize()}] {full_note}".strip()
+
+    res = _create_doc('habits', uid, {
+        "name": str(name).strip(),
+        "category": norm_cat,
+        "frequency": freq,
+        "target_count": int(target_count or 1),
+        "note": full_note,
+        "is_active": True,
+        "current_streak": 0,
     })
+    if res.get("success"):
+        return {
+            "success": True,
+            "id": res.get("id"),
+            "name": str(name).strip(),
+            "category": norm_cat,
+            "frequency": freq,
+            "message": f"Successfully created habit '{name}' in category '{norm_cat}' ({freq})."
+        }
+    return res
+
+
+GOAL_CATEGORIES = ['financial', 'finance', 'academic', 'learning', 'fitness', 'personal', 'career', 'health']
+
+
+def normalize_goal_category(cat: str) -> str:
+    c = (cat or "").strip().lower()
+    if c in GOAL_CATEGORIES:
+        return c
+    if any(k in c for k in ("financ", "money", "sav", "invest", "budget", "wealth")):
+        return "financial"
+    if any(k in c for k in ("academ", "grade", "gpa", "exam", "score")):
+        return "academic"
+    if any(k in c for k in ("learn", "study", "read", "course", "skill")):
+        return "learning"
+    if any(k in c for k in ("fit", "gym", "health", "weight", "run")):
+        return "fitness"
+    if any(k in c for k in ("career", "job", "work", "promot", "intern")):
+        return "career"
+    return "personal"
+
+
+def create_goal(uid, title, target_amount=None, category="financial", target_date=None, note="", **_):
+    """Create a new personal or financial goal."""
+    if not title or not str(title).strip():
+        return {"error": "Goal title cannot be empty."}
+
+    norm_cat = normalize_goal_category(category)
+    payload = {
+        "title": str(title).strip(),
+        "category": norm_cat,
+        "status": "in-progress",
+        "priority": "medium",
+        "progress_percentage": 0.0,
+        "current": 0.0,
+        "target": float(target_amount or 0.0),
+        "target_date": target_date or "",
+        "notes": note or "",
+    }
+    res = _create_doc('goals', uid, payload)
+    if res.get("success"):
+        return {
+            "success": True,
+            "id": res.get("id"),
+            "title": str(title).strip(),
+            "category": norm_cat,
+            "message": f"Successfully created goal '{title}' in category '{norm_cat}'."
+        }
+    return res
 
 
 def update_habit(uid, doc_id, name=None, category=None, frequency=None,
@@ -479,9 +761,7 @@ def update_habit(uid, doc_id, name=None, category=None, frequency=None,
     if name is not None:
         data['name'] = name
     if category is not None:
-        if category not in HABIT_CATEGORIES:
-            return {"error": f"Invalid category '{category}'."}
-        data['category'] = category
+        data['category'] = normalize_habit_category(category)
     if frequency is not None:
         if frequency not in HABIT_FREQUENCIES:
             return {"error": f"Invalid frequency."}
@@ -498,6 +778,167 @@ def update_habit(uid, doc_id, name=None, category=None, frequency=None,
 def delete_habit(uid, doc_id, **_):
     """Delete a habit."""
     return _delete_doc('habits', doc_id, uid)
+
+
+def complete_habit(uid, habit_name=None, doc_id=None, **_):
+    """
+    Mark a habit as completed for today, increment its streak,
+    and trigger the platform daily check-in (+XP, daily streak advancement).
+    """
+    from datetime import date, timedelta
+    from app.services.streak_service import daily_checkin, get_streak_data
+    from app.services.firebase_service import get_firestore_client
+    from app.services.crud_service import invalidate_user_cache
+    from app.services.activity_service import log_activity
+
+    habits = _list_col('habits', uid, limit=100)
+    if not habits:
+        return {
+            "status": "not_found",
+            "error": "You don't have any habits recorded yet. You can ask me to track one (e.g. 'Track daily reading habit') first!"
+        }
+
+    target = None
+    if doc_id:
+        target = next((h for h in habits if h.get('id') == doc_id or h.get('doc_id') == doc_id), None)
+
+    if not target and habit_name:
+        clean_name = str(habit_name).strip().lower()
+        # 1. Exact match
+        target = next((h for h in habits if (h.get('name') or '').strip().lower() == clean_name), None)
+        # 2. Substring match
+        if not target:
+            target = next((h for h in habits if clean_name in (h.get('name') or '').lower() or (h.get('name') or '').lower() in clean_name), None)
+        # 3. Word token overlap match
+        if not target:
+            stopwords = {
+                "this", "the", "my", "habit", "habits", "today", "a", "an", "daily",
+                "i", "have", "completed", "complete", "completd", "finish", "finished",
+                "did", "done", "of", "with", "for", "marked", "mark", "that", "and"
+            }
+            tokens = set(re.findall(r'\w+', clean_name)) - stopwords
+            if tokens:
+                for h in habits:
+                    h_tokens = set(re.findall(r'\w+', (h.get('name') or '').lower()))
+                    if tokens & h_tokens:
+                        target = h
+                        break
+        # 4. Fuzzy word matching with difflib (e.g. 'bok' -> 'book')
+        if not target and tokens:
+            import difflib
+            for h in habits:
+                h_tokens = set(re.findall(r'\w+', (h.get('name') or '').lower()))
+                for t in tokens:
+                    if difflib.get_close_matches(t, list(h_tokens), n=1, cutoff=0.6):
+                        target = h
+                        break
+                if target:
+                    break
+
+        # 5. Category match
+        if not target:
+            for h in habits:
+                if (h.get('category') or '').lower() in clean_name or clean_name in (h.get('category') or '').lower():
+                    target = h
+                    break
+
+    # If no target identified yet:
+    if not target:
+        active = [h for h in habits if h.get('is_active', True) is not False]
+        if len(active) == 1:
+            target = active[0]
+        elif len(habits) == 1:
+            target = habits[0]
+        else:
+            active_list = active if active else habits
+            return {
+                "status": "needs_selection",
+                "message": f"Which habit did you complete today? You have {len(active_list)} habits: " +
+                           ", ".join([f"**{h.get('name')}**" for h in active_list[:5]]) + ".",
+                "habits": [{"name": h.get("name"), "id": h.get("id")} for h in active_list]
+            }
+
+    today_iso = date.today().isoformat()
+    yesterday_iso = (date.today() - timedelta(days=1)).isoformat()
+    last_comp_str = str(target.get('last_completed') or '')[:10]
+    cur_streak = int(target.get('current_streak', target.get('streak', 0)) or 0)
+    db = get_firestore_client()
+
+    already_done = (last_comp_str == today_iso)
+
+    if already_done:
+        new_streak = cur_streak
+        streak_data = get_streak_data(uid, db)
+        daily_st = streak_data.get('streak_count', 0)
+        xp = streak_data.get('xp', 0)
+        level_title = streak_data.get('level_title', 'Rookie')
+        msg = f"You've already checked in for **{target.get('name')}** today! Your habit streak is safely maintained at **{cur_streak} days** (Daily platform streak: **{daily_st} days**)."
+        milestone = None
+    else:
+        if last_comp_str == yesterday_iso or cur_streak == 0 or not last_comp_str or target.get('streak_protected'):
+            new_streak = cur_streak + 1
+        else:
+            new_streak = 1
+
+        updates = {
+            "current_streak": new_streak,
+            "streak": new_streak,
+            "streak_count": new_streak,
+            "last_completed": today_iso,
+            "streak_protected": False,
+            "status": "active"
+        }
+        _update_doc('habits', target.get('id'), uid, updates)
+
+        # Trigger user's platform daily check-in
+        streak_res = daily_checkin(uid, db)
+        daily_st = streak_res.get('streak_count', 1)
+        xp_gained = streak_res.get('xp_gained', 10)
+        xp = streak_res.get('xp', 0)
+        level_title = streak_res.get('level_title', 'Rookie')
+        milestone = streak_res.get('milestone')
+
+        log_activity(uid, f"Completed habit '{target.get('name')}' (Streak: {new_streak}d)", category="habit", impact="positive")
+        invalidate_user_cache(uid)
+
+        msg = (
+            f"✅ Checked in **{target.get('name')}** for today! "
+            f"Your habit streak is now **{new_streak} days** 🔥. "
+            f"Your daily platform streak reached **{daily_st} days** (+{xp_gained} XP, Level: {level_title})!"
+        )
+
+    # Attach interactive check-in widget
+    widget = {
+        "type": "habit_checkin_card",
+        "payload": {
+            "title": "Habit Completed Today",
+            "habit_name": target.get("name"),
+            "category": target.get("category", "other"),
+            "habit_streak": new_streak,
+            "previous_streak": cur_streak,
+            "daily_streak": daily_st,
+            "xp_gained": 10 if not already_done else 0,
+            "total_xp": xp,
+            "level": level_title,
+            "milestone": milestone,
+            "already_completed": already_done,
+            "completed_date": today_iso,
+            "view_url": "/habits"
+        }
+    }
+
+    return {
+        "success": True,
+        "habit_id": target.get("id"),
+        "habit_name": target.get("name"),
+        "habit_streak": new_streak,
+        "daily_streak": daily_st,
+        "already_completed": already_done,
+        "total_xp": xp,
+        "level": level_title,
+        "message": msg,
+        "_widgets": [widget]
+    }
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -946,6 +1387,9 @@ TOOL_FUNCTIONS = {
     "create_expense":            create_expense,
     "update_expense":            update_expense,
     "delete_expense":            delete_expense,
+    "create_savings":            create_savings,
+    "update_savings":            update_savings,
+    "delete_savings":            delete_savings,
     "create_income":             create_income,
     "update_income":             update_income,
     "delete_income":             delete_income,
@@ -959,6 +1403,8 @@ TOOL_FUNCTIONS = {
     "create_habit":              create_habit,
     "update_habit":              update_habit,
     "delete_habit":              delete_habit,
+    "complete_habit":            complete_habit,
+    "create_goal":               create_goal,
     "get_goal_summary":          get_goal_summary,
     "get_activity_summary":      get_activity_summary,
     "get_productivity_analysis": get_productivity_analysis,

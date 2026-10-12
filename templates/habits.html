@@ -96,10 +96,11 @@
                        title="Consecutive days the habit has been completed."></i>
                   </th>
                   <th>Status</th>
+                  <th>Today</th>
                 </tr>
               </thead>
               <tbody id="habit-analytics-body">
-                <tr><td colspan="5" class="text-center q-muted-text py-4">Loading habits…</td></tr>
+                <tr><td colspan="6" class="text-center q-muted-text py-4">Loading habits…</td></tr>
               </tbody>
             </table>
           </div>
@@ -331,7 +332,7 @@
 {% block scripts %}
 <script type="module">
 import { initCrudPage } from '/static/js/crud.js';
-import { apiCall } from '/static/js/api.js';
+import { apiCall, showToast } from '/static/js/api.js';
 import { initToggle, initTooltips, riskBadge, emptyState } from '/static/js/quanta-ui.js';
 import { onAuthChange } from '/static/js/auth.js';
 
@@ -371,21 +372,46 @@ async function loadOverview() {
 
     // Analytics table
     const tbody = document.getElementById('habit-analytics-body');
+    const todayIso = new Date().toISOString().split('T')[0];
     if (active.length > 0) {
       tbody.innerHTML = active.map(h => {
         const s = parseInt(h.current_streak) || 0;
         const statusCls = s >= 7 ? '#10b981' : s >= 3 ? '#f59e0b' : '#ef4444';
         const statusTxt = s >= 7 ? '🔥 Strong' : s >= 3 ? '⚠ Building' : '⭕ Weak';
+        const isDoneToday = h.last_completed === todayIso;
+        const todayAction = isDoneToday
+          ? `<span class="badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3);font-size:0.75rem;padding:4px 8px;border-radius:6px;"><i class="bi bi-check2-square me-1"></i>Completed</span>`
+          : `<button class="btn btn-sm btn-outline-success checkin-habit-btn py-0 px-2" data-id="${h.id||h.doc_id}" data-name="${h.name}" style="font-size:0.75rem;"><i class="bi bi-square me-1"></i>Check-in</button>`;
         return `<tr>
           <td style="color:var(--q-text);font-weight:500;">${h.name}</td>
           <td><span class="badge" style="background:var(--q-accent-dim);color:var(--q-accent-light);border-radius:6px;">${h.category||'—'}</span></td>
           <td class="q-muted-text">${h.frequency||'daily'}</td>
           <td style="font-weight:600;color:var(--q-text);">${s} days</td>
           <td><span style="color:${statusCls};font-size:0.82rem;font-weight:600;">${statusTxt}</span></td>
+          <td>${todayAction}</td>
         </tr>`;
       }).join('');
+
+      tbody.onclick = async (e) => {
+        const btn = e.target.closest('.checkin-habit-btn');
+        if (!btn) return;
+        const id = btn.dataset.id;
+        const name = btn.dataset.name;
+        btn.disabled = true;
+        try {
+          const res = await apiCall(`/api/habits/${id}/checkin`, 'POST');
+          if (res && res.success) {
+            showToast(res.message || `Checked in '${name}'! Streak increased 🔥`, 'success');
+            await loadOverview();
+          }
+        } catch (err) {
+          showToast('Check-in failed: ' + err.message, 'danger');
+        } finally {
+          btn.disabled = false;
+        }
+      };
     } else {
-      tbody.innerHTML = `<tr><td colspan="5" class="text-center q-muted-text py-4">No active habits — add one to get started.</td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="6" class="text-center q-muted-text py-4">No active habits — add one to get started.</td></tr>`;
     }
 
     // 30-day calendar (visual, based on streak heuristic)

@@ -189,12 +189,17 @@ This repository is pre-configured with a strict `.gitignore` that automatically 
 
 ---
 
-## 📖 Documentation
+## 📖 Documentation & Architecture Manuals
 
-For detailed architectural specs, mathematical foundations of Monte Carlo & Markov simulations, and feature documentation, check the [docs/quanta_documentation.md](docs/quanta_documentation.md) file.
+Comprehensive academic and technical documentation is included directly in the repository:
+
+- 📑 **[QUANTA Major Project Report (Full Specification)](docs/QUANTA_PROJECT_DOCUMENTATION.md)** — Complete 6-chapter formal project report, including Title Page, Certificate, Acknowledgement, Functional/Non-Functional Requirements, Milestone Breakdown, Implementation, Latency Benchmarks, and IEEE References.
+- 🏛️ **[System Architecture Reference](docs/SYSTEM_ARCHITECTURE.md)** — High-level architecture, request pipelines, Firestore data schemas, caching architecture, and Blueprint directory.
+- 🔬 **[Theoretical Foundations & ML Specs](docs/quanta_documentation.md)** — Mathematical formulations of Monte Carlo simulations, Markov chain habit evolution, and v3 model parameters.
 
 ---
 
 ## 📄 License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
+Copyright (c) 2026 MOHAMMED SAHTIQ S & Quanta Contributors.
